@@ -44,19 +44,6 @@
 <?php endwhile; ?>
 
 
-
-
-<div class="row">
-  <div class="small-12 columns">
-    <p>
-      <?php // echo get_meta($page->ID, 'home_video', true); ?>
-    </p>
-    <div class="post-content no-vc">
-      <?php the_content();?>
-    </div>
-  </div>
-</div>
-
 <?php
 
 

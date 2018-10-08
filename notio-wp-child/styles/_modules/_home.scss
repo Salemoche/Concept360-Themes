@@ -50,7 +50,7 @@ body.home, body.page-template-landing {
                     min-height: 100vh !important;
                     left: 0 !important;
                     top: 0 !important;
-                    transform: scale(2) !important;
+                    transform: scale(2.5) !important;
                 }
 
                 iframe {
@@ -74,14 +74,13 @@ body.home, body.page-template-landing {
 
 
                 &__title {
-                    margin-top: 25%;
-                    margin-bottom: 20%;
                     z-index: 1;
+                    @include center-vertically;
+                    left: $spacing-side-large;
     
                     h1 {
-                        font-size: 4rem;
+                        font-size: 3.5rem;
                         font-weight: $bold;
-                        width: 50%;
                         color: white;
                     }
     
@@ -90,22 +89,35 @@ body.home, body.page-template-landing {
                         font-size: 1rem;
                         color: $red;
                         text-transform: uppercase;
-                        width: 50%;
-    
                     }
+
                 }
     
                 &__project-category__container {
+
+                    position: absolute;
+                    top: 80vh;
+                    left: $spacing-side-large;
+                    width: 60%;
     
                     h3 {
                         font-size: 1.2rem;
                         color: white;
                         margin-bottom: 5px;
+                        display: inline;
+                        transition: $transition-time;
                     }
     
                     p {
                         font-size: 1rem;
                         color: white;
+                    }
+
+                    
+                    a:hover {
+                        > h3 {
+                            box-shadow: inset 0px -7px 0px 0px rgba(227,27,35,75);
+                        }
                     }
                 }
             }
@@ -186,8 +198,34 @@ body.home, body.page-template-landing {
 
         &__random-projects {
             background: gray;
-            height: 200px;
+            height: $teaser-height;
             margin-bottom: $spacing-bottom;
+            font-size: 2rem;
+            // display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            padding: 0;
+
+            .projects__project {
+                
+                flex-basis: 33.3%;
+                flex-grow: 1;
+                height: $teaser-height;
+                min-width: 33%;
+                max-width: 34%;
+                width: 33.3%;
+
+                float: left;
+
+                // &__info__container {
+                //     position: relative;
+
+                //     h3, p {
+                //         @include center-vertically;
+                //     }
+                // }
+
+            }
         }
 
         &__customers {

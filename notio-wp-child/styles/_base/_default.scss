@@ -48,17 +48,17 @@ div[role=main] {
         div {
             @include center;
             width: 80%;
-            transition: $transition-time;
 
             h3 {
-                // text-align: center;
+                transition: $transition-time;
+                display: inline;
             }
         }
 
         &:hover {
 
-            div {
-                transform: translate(-50%, -50%) scale(1.1);
+            h3 {
+                box-shadow: inset 0px -12px 0px 0px rgba(227,27,35,75);
             }
         } 
     }
@@ -95,6 +95,20 @@ div[role=main] {
     * {
         color: white;
     }
+}
+
+.ytp-title, .ytp-button, .ytp-watermark, .yt-uix-sessionlink {
+    opacity: 0 !important;
+    display: none !important;
+    visibility: hidden;
+}
+
+.rev_slider_wrapper {
+
+    .rs-fullvideo-cover {
+        pointer-events: none;
+    }
+
 }
 
 .quote__container, .press__container {

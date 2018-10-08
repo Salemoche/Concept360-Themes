@@ -6,8 +6,42 @@
   <div class="landing row">
     <div class="landing__landing columns small-12">
       <div class="landing__landing__video">
-        <?php the_content(); // the_field('landing_video'); ?>
-        <h1>*VIDEO*</h1>
+      <?php
+
+      // get iframe HTML
+      $iframe = get_field('landing_video');
+
+
+      // use preg_match to find iframe src
+      preg_match('/src="(.+?)"/', $iframe, $matches);
+      $src = $matches[1];
+      // $src .= 'vq=hd1080';
+
+
+      // add extra params to iframe src
+      $params = array(
+          'controls'    => 0,
+          'hd'        => 3,
+          'autohide'    => 1,
+          'autoplay' => 1,
+          'mute' => 1
+      );
+
+      $new_src = add_query_arg($params, $src);
+
+      $iframe = str_replace($src, $new_src, $iframe);
+
+
+      // add extra attributes to iframe html
+      $attributes = 'frameborder="2"';
+
+      $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+
+
+      // echo $iframe
+      echo $iframe;
+
+      ?>
       </div>
       <div class="landing__landing__text">
         <div class="landing__landing__text__title">

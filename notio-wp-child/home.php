@@ -6,7 +6,42 @@
   <div class="home row">
     <div class="home__landing columns small-12">
       <div class="home__landing__video">
-        <?php the_content(); // the_field('home_video'); ?>
+        <?php //the_content(); // the_field('home_video'); ?>
+        <?php
+
+        // get iframe HTML
+        $iframe = get_field('home_video');
+
+
+        // use preg_match to find iframe src
+        preg_match('/src="(.+?)"/', $iframe, $matches);
+        $src = $matches[1];
+
+
+        // add extra params to iframe src
+        $params = array(
+            'controls'    => 0,
+            'hd'        => 3,
+            'autohide'    => 1,
+            'autoplay' => 1,
+            'mute' => 1
+        );
+
+        $new_src = add_query_arg($params, $src);
+
+        $iframe = str_replace($src, $new_src, $iframe);
+
+
+        // add extra attributes to iframe html
+        $attributes = 'frameborder="2"';
+
+        $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+
+
+        // echo $iframe
+        echo $iframe;
+
+      ?>
       </div>
       <div class="home__landing__text">
         <div class="home__landing__text__title">
@@ -21,12 +56,16 @@
             </a>
           </div>
           <div class="home__landing__text__project-category home__landing_project-category--insights columns small-4">
-            <h3>Insights</h3>
-            <p><?php echo get_post_meta($post->ID, 'landing_insights_text', true); ?></p>
-          </div>
+            <a href="<?php echo get_permalink(704)?>">
+              <h3>Insights</h3>
+              <p><?php echo get_post_meta($post->ID, 'landing_insights_text', true); ?></p>
+            </a>
+            </div>
           <div class="home__landing__text__project-category home__landing_project-category--showcase columns small-4">
-            <h3>Showcase</h3>
-            <p><?php echo get_post_meta($post->ID, 'landing_showcase_text', true); ?></p>
+            <a href="<?php echo get_permalink(686)?>">
+              <h3>Showcase</h3>
+              <p><?php echo get_post_meta($post->ID, 'landing_showcase_text', true); ?></p>
+            </a>
           </div>
         </div>
       </div>
@@ -86,6 +125,45 @@
           
           add_shortcode('wpb-random-posts','wpb_rand_posts');
           add_filter('widget_text', 'do_shortcode'); 
+      ?>
+
+      <?php 
+
+        for ($i=0; $i < 3; $i++) { 
+          $randIndex = rand(0, count(get_posts())-1); 
+          $randPost = get_posts()[$randIndex];
+          // echo $post->ID;
+          // echo $post->title;
+          $image_id = get_post_meta($randPost->ID, 'project_image-main', true);
+          $image_url = wp_get_attachment_image_src( $image_id )[0];
+          $post_description = get_post_meta($randPost->ID, 'project_description', true);
+          $post_description_length = strlen($post_description);
+          $post_description_short = $post_description_length > 80 ? substr($post_description, 0, 80) . "..." : $post_description; 
+        ?>
+        <?php if(has_category(37)): ?>
+          <div class="projects__project project__insight project__thumbnail <?php echo get_post_meta($randPost->ID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
+            <a href="<?php the_permalink($randPost->ID) ?>">
+              <div class="projects__project__info__container">
+                <h3><?php get_the_title($randPost->ID); ?></h3>
+              </div>
+            </a>
+          </div>
+        <?php else: ?>
+          <div class="projects__project project__thumbnail <?php echo get_post_meta($randPost->ID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
+            <a href="<?php the_permalink($randPost->ID) ?>">
+              <div class="projects__project__info__container">
+                <img src="<?php echo $image_url ?>" alt="">
+                <div class="projects__project__info project-hover-info">
+                  <h3><?php echo get_the_title($randPost->ID); ?></h3>
+                  <p><?php echo $post_description_short ?></p>
+                <?php echo has_category(37); ?>
+                </div>
+              </div>
+            </a>
+          </div>
+        <?php endif; ?>
+      <?php
+        }
       ?>
     </div>
     <div class="home__customers columns small-12 row">

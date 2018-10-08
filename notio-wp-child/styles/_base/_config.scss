@@ -15,12 +15,13 @@ $gray: #f2f2f2;
 $spacing-bottom: 30px;
 $spacing-bottom-large: 50px;
 $spacing-side: 40px;
+$spacing-side-large: 80px;
 $menu-height: 90px;
 $submenu-margin: 15px;
 $submenu-font-size: 1rem;
 $spacing-top-submenu: calc(#{$menu-height} + #{$submenu-margin} * 2 + #{$submenu-font-size} + 10px);
 $main-image-height: 50vh;
-$teaser-height: 200px;
+$teaser-height: 250px;
 
 //
 // Breakpoints
