@@ -1,0 +1,44 @@
+//
+// Colors
+//
+
+$anthrazit: #282828;
+$anthrazit-rgba: rgba(40,40,40,0.7);
+$white: #f9f9f9;
+$red: #e31b23;
+$gray: #f2f2f2;
+
+//
+// Spacing
+//
+
+$spacing-bottom: 30px;
+$spacing-side: 40px;
+$menu-height: 90px;
+$submenu-margin: 15px;
+$submenu-font-size: 1rem;
+$spacing-top-submenu: calc(#{$menu-height} + #{$submenu-margin} * 2 + $submenu-font-size);
+
+//
+// Breakpoints
+//
+
+$breakpoint-small: 320px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1440px;
+
+//
+// Font
+//
+
+$light: 100;
+$regular: 300;
+$bold: 600;
+$black: 800;
+
+
+//
+// Other
+//
+
+$transition-time: .3s;

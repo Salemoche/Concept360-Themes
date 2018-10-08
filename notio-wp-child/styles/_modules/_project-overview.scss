@@ -1,0 +1,33 @@
+.projects {
+
+    margin: 0 auto;
+
+    &__project-container {
+
+        // display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .projects__project {
+            
+            flex-basis: 33.3%;
+            flex-grow: 1;
+            height: 200px;
+            min-width: 33%;
+            max-width: 34%;
+            width: 33.3%;
+
+            float: left;
+
+            &__highlight {
+                flex-basis: 66.6%;
+                flex-grow: 2;
+                flex-shrink: 2;
+                height: 400px;
+                max-width: unset;
+                width: 66.6%;
+            }
+
+        }
+    }
+}

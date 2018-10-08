@@ -1,0 +1,14 @@
+<wpml-config>
+	<admin-texts>
+		<key name="option_tree">
+	    <key name="*"/>
+	  </key>
+	</admin-texts>
+  <custom-types>
+      <custom-type translate="1">portfolio</custom-type>
+      <custom-type translate="1">revslider</custom-type>
+  </custom-types>
+  <taxonomies>
+      <taxonomy translate="1">project-category</taxonomy>
+  </taxonomies>
+</wpml-config>

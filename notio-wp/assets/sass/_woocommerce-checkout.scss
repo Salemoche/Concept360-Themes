@@ -1,0 +1,173 @@
+.woocommerce-checkout {
+	.form-row {
+		margin: 0;
+	}
+	.select2-container {
+		margin-bottom: 27px;
+	}
+	abbr {
+		border: none;	
+	}
+}
+.woocommerce-info {
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 12px;
+	color: $color1;
+	a:not(.button) {
+		color: $color2;	
+	}
+	margin-bottom: 20px;
+	form + & {
+		margin-top: 20px;	
+	}
+	
+	& + form {
+		
+		@include min-break($break-small) {
+			max-width: 40%;
+			margin: 0 auto;	
+		}
+	}
+}
+form.woocommerce-checkout {
+	margin-top: 30px;
+}
+#customer_details {
+	
+	#ship-to-different-address {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: flex-end;
+		align-items: center;
+		label {
+			display: inline-block;
+			font-size: 12px;
+			font-weight: 600;
+			margin: 0;
+			
+			span {
+				margin-left: 15px;	
+			}
+		}
+	}
+	.create-account {
+		margin-bottom: 30px;
+		label {
+			display: inline-block;	
+			margin: 0 0 0 10px;
+		}
+		p {
+			font-size: 16px;	
+		}
+	}
+	#billing_address_1,
+	#shipping_address_1 {
+		margin-bottom: 5px;
+	}
+}
+.shop_table {
+	&.woocommerce-checkout-review-order-table {
+	 	margin-bottom: 0;
+	 	
+	 	thead tr th:first-child,
+	 	tfoot th,
+	 	tbody tr td:first-child {
+	 		padding-left: 0;
+	 	}
+	 	thead tr th:last-child,
+ 		tbody tr td:last-child,
+ 		tfoot tr td:last-child {
+ 			width: 170px;
+ 		}
+	}
+}
+.payment_methods {
+	list-style: none;
+	.wc_payment_method {
+		padding: 20px 0 20px 0;
+		border-bottom: 1px solid rgba(#000,0.07);
+		
+		&:last-child {
+			border-bottom: 0;	
+		}
+		&.payment_method_paypal {
+			img {
+				display: none;	
+			}
+			label {
+				align-items: center;
+				display: inline-flex;
+			}
+			.about_paypal {
+				font-size: 80%;
+				margin-left: 20px;
+				font-weight: 400;
+			}
+		}
+	}
+	label {
+		display: inline-block;
+		margin-left: 15px;
+		font-size: 14px;
+		font-weight: 600;	
+		text-transform: none;
+		margin-bottom: 0;
+	}
+	.payment_box {
+		padding-left: 32px;
+		p {
+			font-size: 14px;
+			color: #79787f;	
+			margin: 0;
+			padding: 5px 0 0;
+		}
+	}
+}
+#place_order {
+	width: 100%;
+	justify-content: center;
+	height: 50px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+.form-row.wc-terms-and-conditions {
+	margin-bottom: 30px;
+	label {
+		display: inline;
+		text-transform: none;
+		font-weight: 400;
+		
+		span {
+			margin-left: 15px;	
+		}
+	}
+}
+.woocommerce-form-login {
+	label {
+		text-align: left;	
+	}
+	p {
+		font-size: 14px;	
+	}
+	.woocommerce-form__label {
+		margin: 0;
+		font-size: 14px;
+		text-transform: none;
+	}
+	.input-text {
+		margin-bottom: 15px;
+	}
+	.button {
+		width: 100%;
+		margin-top: 10px;
+		margin-bottom: 20px;
+	}
+	.last-row {
+		font-size: 14px;
+		padding-bottom: 20px;
+	}
+	.lost_password {
+		text-align: right;
+	}
+}

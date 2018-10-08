@@ -1,0 +1,29 @@
+/*
+	Theme Name: Notio Child Theme
+	Theme URI: https://themeforest.net/item/notio-deluxe-portfolio-theme/10049784
+	Description: <strong>Custom Child Theme for the Concept 360 Website</strong>
+	Version: 1.0.1
+	Author: Gabriel Bach
+	Author URI: www.inter-action.design
+	Template: notio-wp
+	Tags: two-columns, four-columns, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style
+	License: GNU General Public License v2.0
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+//
+// Main File for scss imports
+//
+
+// Base
+
+@import './_base/config';
+@import './_base/mixins';
+@import './_base/default';
+
+// Modules
+
+@import './_modules/home';
+@import './_modules/project';
+@import './_modules/project-overview';
+@import './_modules/solutions';

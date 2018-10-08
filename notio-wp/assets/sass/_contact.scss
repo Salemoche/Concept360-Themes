@@ -1,0 +1,51 @@
+/* Google Map */
+.contact_map_parent {
+	position: relative;
+	overflow: hidden;
+	.expand {
+		width: 46px;
+		height: 46px;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		z-index: 99;
+		display: none;
+		justify-content: center;
+		align-items: center;
+		background: rgba($color1, 0.6);
+		@extend .quick-transition;
+		@include min-break($break-medium) {
+			display: flex;
+		}
+		svg {
+			width: 20px;
+			height: 20px;	
+			g {
+				stroke: #fff;
+				stroke-width: 4;
+			}
+		}
+		
+		&:hover {
+			background: $color1;	
+		}
+	}
+	.contact_map {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		z-index: 10;
+	}
+	&.map_left {
+		.expand {
+			right: auto;
+			left: 20px;
+		}
+		.google_map {
+			right: auto;
+			left: 0;
+		}
+	}
+}

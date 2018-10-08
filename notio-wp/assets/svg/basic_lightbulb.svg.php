@@ -1,0 +1,2 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64"><g fill="none" stroke="#000" stroke-width="2" stroke-miterlimit="10"><path d="M21,40v5h22l0.001-5.107C49,36.195,53,29.564,53,22
+	c0-11.598-9.402-21-21-21s-21,9.402-21,21C11,29.565,14.998,36.304,21,40z"/><path d="m28 45l-3-20"/><path d="m36 45l3-20"/><path d="m25 26l4 3 3-3 3 3 4-3"/><path d="m21 45h22v6h-22z"/><path d="m23 51h18v6h-18z"/><path d="m25 57h14v6h-14z"/></g></svg>

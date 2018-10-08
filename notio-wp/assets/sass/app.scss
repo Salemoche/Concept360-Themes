@@ -1,0 +1,170 @@
+@import "compass/css3";
+@import 'compass/css3/filter';
+@import "compass/css3/user-interface";
+
+$break-small: 40.063em;
+$break-medium: 64.063em;
+$break-large: 75em;
+$break-xlarge: 90.063em;
+
+$color1: #151515; // black
+$color2: #1aa97f; // light-grey
+$color3: #1aa97f; // green
+$color4: #eaeaea; // light border
+$color5: rgba(#414141, 0.9);
+
+$transition: cubic-bezier(.165, .840, .440, 1);
+
+$social: (
+	facebook: #3b5998,
+	facebook-messenger: #0084ff,
+	google-plus: #dd4b39,
+	linkedin: #007bb6,
+	pinterest: #cb2027,
+	twitter: #00aced,
+	instagram: #3f729b,
+	vk: #45668e,
+	tumblr: #35465c,
+	xing: #cfdc00,
+	soundcloud: #f80,
+	dribbble: #ea4c89,
+	youtube: #e52d27,
+	spotify: #7ab800,
+	behance: #1769ff,
+	deviantart: #4e6252,
+	vimeo: #1ab7ea,
+	flickr: #0063dc,
+	rss: #f26522,
+	whatsapp: #25d366,
+	twitch: #6441a5,
+	fivehundred: #0099e5,
+	email: $color3,
+	bandcamp: #629aa9,
+	github: #4078c0,
+	codepen: #fcd000
+);
+
+@mixin input-placeholder {
+	&.placeholder { @content; }
+	&:-moz-placeholder { @content; }
+	&::-moz-placeholder { @content; }
+	&:-ms-input-placeholder { @content; }
+	&::-webkit-input-placeholder { @content; }
+}
+
+/*------------------------------------------------------------------
+Foundation
+*/
+@import "foundation.scss";
+
+/*------------------------------------------------------------------
+Re-usable Styles
+*/
+@import "utilities.scss";
+
+/*------------------------------------------------------------------
+Body
+*/
+@import "structure.scss";
+
+/*------------------------------------------------------------------
+Font Awesome
+*/
+@import "font-awesome.scss";
+
+/*------------------------------------------------------------------
+Typography
+*/
+@import "typography.scss";
+
+/*------------------------------------------------------------------
+Header
+*/
+@import "header.scss";
+
+/*------------------------------------------------------------------
+Footer
+*/
+@import "footer.scss";
+
+/*------------------------------------------------------------------
+Post Syling
+*/
+@import "posts.scss";
+
+/*------------------------------------------------------------------
+Sidebar & Widgets
+*/
+@import "sidebar.scss";
+
+/*------------------------------------------------------------------
+Pagination
+*/
+@import "pagination.scss";
+
+/*------------------------------------------------------------------
+Plugin - Carousel
+*/
+@import "plugin-slick.scss";
+
+/*------------------------------------------------------------------
+Plugin -  Photo Swipe
+*/
+@import "plugin-photoswipe.scss";
+@import "plugin-photoswipe-skin.scss";
+
+/*------------------------------------------------------------------
+Form Styling
+*/
+@import "forms.scss";
+
+
+/*------------------------------------------------------------------
+Contact Page
+*/
+@import "contact.scss";
+
+/*------------------------------------------------------------------
+404 Page
+*/
+@import "404.scss";
+
+/*------------------------------------------------------------------
+WP-Specific
+*/
+@import "wpspecific.scss";
+
+/*------------------------------------------------------------------
+Mobile Menu
+*/
+@import "mobilemenu.scss";
+
+/*------------------------------------------------------------------
+Authors
+*/
+@import "author.scss";
+
+/*------------------------------------------------------------------
+Comments
+*/
+@import "comments.scss";
+
+/*------------------------------------------------------------------
+Portfolio
+*/
+@import "portfolio.scss";
+@import "atvImg.scss";
+
+/*------------------------------------------------------------------
+Shop
+*/
+@import "woocommerce-sidecart.scss";
+@import "woocommerce-shop.scss";
+@import "woocommerce-product.scss";
+@import "woocommerce-cart.scss";
+@import "woocommerce-checkout.scss";
+@import "woocommerce-myaccount.scss";
+/*------------------------------------------------------------------
+Shortcodes
+*/
+@import "shortcodes.scss";

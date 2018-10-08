@@ -1,0 +1,303 @@
+body.home, body.page-template-landing {
+
+    .concept-header {
+
+        &__main {
+            background-color: rgba(40,40,40,0.9);;
+            background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+
+            &__logo {
+                background-image: url('./assets/logo_white.svg');
+                transition: $transition-time;
+                
+                &:hover {
+                    background-image: url('./assets/logo_red.svg');
+
+                }
+            }
+        }
+
+        &__project-category__container {
+            display: none;
+        }
+    }
+
+    .home, .landing {
+        &__landing {
+
+            // position: relative;
+            height: 100vh;
+            padding: 0;
+
+            &__video {
+
+                background: $anthrazit;
+                height: 100vh;
+                width: 100vw;
+
+                .wp-video {
+                    position: absolute;
+                    left: 0;
+
+                    .mejs-overlay, .mejs-controls, .ytp-watermark {
+                        display: none;
+                    }
+
+                }
+
+                video.video-stream {
+                    min-width: 100vw !important;
+                    min-height: 100vh !important;
+                    left: 0 !important;
+                    top: 0 !important;
+                    transform: scale(2) !important;
+                }
+
+                iframe {
+                    width: 100vw;
+                    height: 100vh;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    // z-index: -1;
+                    filter: brightness(0.3);
+                    // pointer-events: none;
+                }
+            }
+
+            &__text {
+
+                position: absolute;
+                height: 100vh;
+                width: 100vw;
+
+                &__title {
+                    margin-top: 25%;
+                    margin-bottom: 20%;
+                    z-index: 1;
+    
+                    h1 {
+                        font-size: 4rem;
+                        font-weight: $bold;
+                        width: 50%;
+                        color: white;
+                    }
+    
+                    h2 {
+                        
+                        font-size: 1rem;
+                        color: $red;
+                        text-transform: uppercase;
+                        width: 50%;
+    
+                    }
+                }
+    
+                &__project-category__container {
+    
+                    h3 {
+                        font-size: 1.2rem;
+                        color: white;
+                        margin-bottom: 5px;
+                    }
+    
+                    p {
+                        font-size: 1rem;
+                        color: white;
+                    }
+                }
+            }
+
+            
+        }
+
+        &__about__slider {
+            height: 50vh;
+            width: 100%;
+        }
+
+        &__ueber-uns {
+            min-height: calc(50vh - 200px);
+            background-color: $red;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px 60px;
+
+            &__text {
+                flex-basis: 30%;
+                min-width: calc(#{$breakpoint-medium} * 0.3);
+                flex-grow: 1;
+                padding: 30px;
+
+                h4 {
+                    color: white;
+                    margin-bottom: 5px;
+
+                }
+            }
+
+            &__info__container {
+                
+                flex-basis: 70%;
+                min-width: calc(#{$breakpoint-medium} * 0.7);
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0 20px;
+                flex-grow: 1;
+
+
+                .home__ueber-uns__info__item, .landing__ueber-uns__info__item {
+                    
+                    background-color: $anthrazit;
+                    padding: 20px;
+                    flex-basis: 33.3%;
+                    position: relative;
+                    // min-width: calc(#{$breakpoint-medium} * 0.3);
+
+                    h5 {
+                        color: white;
+                        font-size: 1rem;
+                        font-weight: $bold;
+                        margin-bottom: 5px;
+                    }
+
+                    p {
+                        color: white;
+                        font-size: 1rem;
+                        font-weight: $regular;
+                    }
+
+                    &:nth-of-type(even) {
+                        background: white;
+
+                        h5, p {
+                            color: $anthrazit;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        &__random-projects {
+            background: gray;
+            height: 200px;
+            margin-bottom: $spacing-bottom;
+        }
+
+        &__customers {
+
+            text-align: center;
+            filter: grayscale(1);
+
+            &__item {
+
+                height: 130px;
+                position: relative;
+                
+                img {
+
+                    width: 60%;
+                    @include center;
+                }
+            }
+        }
+    }
+
+
+}
+
+
+//
+// Landing Specific
+//
+
+body.page-template-landing {
+
+    .landing {
+
+        &__landing {
+            &__text {
+                top: 0;
+            }
+        }
+
+        &__info {
+
+            &__main {
+
+                padding: 0;
+                margin-bottom: $spacing-bottom;
+
+                p {
+                    margin-left: 40px;
+                }
+
+                &__carousel {
+                    margin-bottom: $spacing-bottom;
+                }
+            }
+
+            &__information {
+
+                color: $anthrazit;
+                font-size: 1.2rem;
+                margin-top: $spacing-bottom;
+
+                h1 {
+                    font-size: 2rem;
+                }
+
+                h2 {
+                    font-size: 1.5rem;
+                    margin-bottom: 0px;
+                }
+
+                p, b, span, em, strong {
+                    font-size: 1rem;
+                    color: $anthrazit;
+                }
+                
+            }
+        }
+
+        &__quote__container {
+
+            display: flex;
+            padding: 0;
+            min-height: calc(50vh - 200px);
+            flex-wrap: wrap;
+
+            .landing__quote {
+
+                background: $anthrazit;
+                color: white;
+                padding: 50px 40px;
+                flex-basis: 33.3%;
+                display: flex;
+                align-content: center;
+                flex-wrap: wrap;
+
+                h4 {
+                    color: white;
+                }
+
+                p {
+                    margin-bottom: 0;
+                    flex-basis: 100%;
+                }
+
+                &:nth-of-type(even) {
+
+                    background: white;
+                    color: $anthrazit;
+
+                    h4 {
+                        color: $anthrazit;
+                    }
+                }
+            }
+        }
+    }
+}

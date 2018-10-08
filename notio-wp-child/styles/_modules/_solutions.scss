@@ -1,0 +1,15 @@
+.solutions {
+
+    &__working-style {
+
+        &__graphic {
+
+            position: relative;
+
+            svg {
+                width: 75%;
+                @include center;
+            }
+        }
+    }
+}

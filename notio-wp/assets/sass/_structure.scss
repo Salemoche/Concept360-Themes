@@ -1,0 +1,84 @@
+html { 
+	overflow-y: scroll; 
+	
+	&.overflow-off {
+		overflow: hidden;
+		height: 100%;
+		
+		body,
+		#wrapper div[role="main"] {
+			height: 100%;	
+		}
+	}
+}
+body {
+	color: #636363;
+	line-height: 1.4;
+	background: #f9f9f9;
+}
+figure {
+	margin: 0;	
+}
+p {
+	font-style: normal;
+	font-size: 18px;
+	font-weight: 400;
+}
+a {
+	color: $color1;
+	outline: 0;
+	@extend .quick-transition;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	&:hover {
+		color: $color3;	
+	}
+	&:focus {
+		outline: none;	
+	}
+}
+h1, h2, h3, h4, h5, h6 {
+	color: $color1;
+}
+#wrapper {
+	height: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	scroll-behavior: smooth;
+	
+	[role="main"] {
+		z-index: 10;
+		padding: 0;
+		flex: 1;
+		overflow: hidden;
+		@extend .header-margin;
+		@include ie11 {
+			flex: none	;
+		}
+		.page-password-required & {
+			display: flex;
+		}
+	}
+	.footer_simple_fixed_on & {
+		@include min-break($break-small) {
+			padding-bottom: 60px;
+		}
+	}
+}
+.pace {
+	position: fixed;
+	z-index: 998;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #f9f9f9 url('../img/preloader.gif') center center no-repeat;	
+	@include background-size(55px 55px);
+	
+	@extend .admin-style;
+	@extend .header-margin;
+
+	.preloader_off & {
+		display: none;
+	}
+}

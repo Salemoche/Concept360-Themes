@@ -1,0 +1,274 @@
+#comments {
+	width: 100%;
+	background: rgba(#000, 0.02);
+	padding-top: 70px;
+	
+	.woocommerce-Reviews &{
+		background: transparent;
+		padding: 0;
+	}
+	#add_review_button,
+	#submit {
+		width: auto;
+		margin: 0;
+	}
+	.comment-notes {
+		margin-bottom: 20px;
+	}
+	
+	.commentlist {
+		list-style: none;
+		margin: 0 0 30px;
+		display: block;
+		padding: 0;
+		.comment {
+			margin: 0;
+			&:before {
+				display: none;
+			}
+			.comment-body,
+			.comment_container {
+				position: relative;
+				padding-left: 110px;
+				margin-bottom: 15px;
+				
+				@include min-break($break-small) {
+					margin-bottom: 30px;	
+				}
+			}
+			.comment-meta {
+				display: inline-block;
+				line-height: 1;
+				color: $color1;
+				font-weight: 400;
+				font-size: 12px;
+				margin: 0 0 10px;
+				a {
+					color: $color1;
+				}
+			}
+			.vcard {
+				display: inline-block;
+				border: 0;
+				padding: 0;
+				margin: 0 0 10px;
+				font-size: 14px;
+				.fn {
+					margin: 0;
+					font-weight: 600;
+					color: $color1;
+					font-style: normal;
+				}
+				.says {
+					display: none;
+				}
+				
+			}
+			.avatar {
+				width: 88px;
+				height: 88px;
+				float: left;
+				position: absolute;
+				top: 0;
+				left: 0;
+				border-radius: 2px;
+			}
+			.comment-awaiting-moderation {
+				font-size: 10px;
+			}
+			p {
+				font-size: 13px;
+				word-break: break-word;	
+				color: $color1;
+				margin: 0 0 15px;
+			}
+			.reply {
+				font-size: 12px;
+				text-transform: uppercase;
+				font-weight: 600;
+				color: $color3;
+				line-height: 1;
+				a {
+					color: $color3;
+				}
+			}
+			.comment-respond {
+				border-top: 0;
+			}
+			.children {
+				list-style: none;
+				margin: 0 0 30px;
+				
+				@include min-break($break-small) {
+					margin-left: 86px;	
+				}
+				.avatar {
+					width: 64px;
+					height: 64px;
+					left: 24px;
+				}
+				li {
+					&:last-child .comment-body,
+					&:last-child .comment_container {
+						margin: 0;
+					}	
+				}
+			}
+		}
+	}
+	.woocommerce-noreviews {
+		text-align: center;
+	}
+}
+.comments-title,
+.comment-reply-title {
+	display: block;
+	font-size: 24px;
+	font-weight: 600;
+	text-align: center;
+	line-height: 1;
+	margin: 0 0 10px;
+	
+	& + .text-center a{
+		display: block;
+		color: $color1;
+		font-size: 12px;
+		font-weight: 400;
+		text-decoration: underline;
+		margin-bottom: 60px;
+	}
+	small {
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 24px;
+		text-transform: uppercase;
+		margin-left: 10px;
+		@include min-break($break-small) {
+			float: right;
+		}
+	}
+}
+.comment-reply-title {
+	margin-bottom: 30px;
+}
+.comment-respond {
+	padding: 40px 0;
+	margin-top: 20px;
+	border-top: 1px solid rgba(#000,0.06);
+	
+	.no-border & {
+		margin-top: 0;
+		border-top: 0;
+	}
+	.form-submit {
+		margin: 0;
+		text-align: center;
+	}
+	.comment-form {
+		p {
+	    font-size: 13px;
+	    word-break: break-word;
+	    color: #151515;
+	    margin: 0 0 15px;
+	    
+	    &.meta {
+	    	margin-bottom: 10px;
+	    }
+		}
+		input[type="text"], textarea {
+			width: 100%;	
+			margin-bottom: 10px;
+		}
+		.form-submit {
+			margin-top: 20px;
+		}
+		.row {
+			margin: 0 -5px;
+			
+			.columns {
+				padding: 0 5px;
+			}
+		}
+	}
+}
+
+.comment-form-rating {
+	p.stars {
+		display: block;
+		position: relative;
+		height: 18px;
+		line-height: 18px;
+		width: 92px;
+		span {
+			top: 0;
+			left: 0;
+			position: absolute;
+			height: 18px;
+			line-height: 18px;
+			overflow: hidden;
+			width: 92px;
+			a {
+				display: block;
+				width: 18px;
+				height: 18px;
+				line-height: 18px;
+				float: left;
+				text-indent: -9999px;
+				position: relative;
+				background: url('../img/stars.png') no-repeat left top;
+				background-size: 92px 34px;
+				text-indent: -9999px;
+				
+				@include single-transition(none);
+				&.active{
+					background-position: left -18px;
+				}
+			}
+		}
+
+	}
+}
+.star-rating {
+	display: inline-block;
+	position: relative;
+	height: 14px;
+	line-height: 14px;
+	width: 70px;
+	background: url('../img/stars.png') no-repeat left top;
+	background-size: 70px 26px;
+	text-indent: -9999px;
+	span {
+		top: 0;
+		left: 0;
+		position: absolute;
+		height: 14px;
+		line-height: 14px;
+		width: 70px;
+		overflow: hidden;
+		background: url('../img/stars.png') no-repeat left -14px;
+		background-size: 70px 26px;
+	}
+	& + .write_first {
+		display: inline-block;
+		font-size: 13px;
+		color: $color1;
+		margin-left: 20px;
+		line-height: 18px;
+		vertical-align: text-top;
+	}
+	
+	#reviews & {
+		background-size: 46px 17px;
+		width: 46px;
+		height: 9px;
+		line-height: 9px;
+		float: right;
+		span {
+			width: 46px;
+			height: 9px;
+			line-height: 9px;
+			background-position: left -9px;
+			background-size: 46px 17px;
+		}
+	}
+}

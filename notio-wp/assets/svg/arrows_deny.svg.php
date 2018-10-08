@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64"><g fill="none" stroke="#000" stroke-width="2" stroke-miterlimit="10"><path d="m53.919 10.08c12.11 12.11 12.11 31.733 0 43.84-12.11 12.11-31.732 12.11-43.838 0-12.11-12.11-12.11-31.733 0-43.84 12.11-12.11 31.732-12.11 43.838 0z"/><path d="m10.08 10.08l43.84 43.84"/></g></svg>

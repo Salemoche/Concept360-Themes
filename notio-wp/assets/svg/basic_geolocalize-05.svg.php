@@ -1,0 +1,2 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64"><g fill="none" stroke="#000" stroke-width="2" stroke-miterlimit="10"><circle cx="32" cy="19" r="4"/><path d="M45,21.023C44.968,13.276,39.181,7,32,7
+		s-13,6.276-13,14.023C19,31.046,31.979,47,31.979,47S45.043,31.046,45,21.023z"/><path d="m21 37h-9l-11 20h31 31l-11-20h-9"/></g></svg>

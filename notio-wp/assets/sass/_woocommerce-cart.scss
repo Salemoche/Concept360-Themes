@@ -1,0 +1,263 @@
+.thb-shop-title {
+	margin: 5vh 0 10vh;
+	
+	.woocommerce-checkout & {
+		margin-bottom: 5vh;
+	}
+	@include min-break($break-large) {
+		font-size: 70px;	
+	}
+}
+.thb-box-title,
+.cart-collaterals h2,
+.woocommerce-checkout h2,
+#order_review_heading,
+#customer_details h3,
+.woocommerce-Address-title h3,
+.woocommerce-MyAccount-content h3,
+.woocommerce-MyAccount-content h2,
+.woocommerce-EditAccountForm legend,
+#customer_login h2 {
+	font-size: 20px;
+	text-transform: none;
+	color: $color1;
+	margin: 0 0 30px;
+}
+
+.cart-section,
+.woocommerce-billing-fields,
+.woocommerce-shipping-fields,
+.woocommerce-additional-fields {
+	@include min-break($break-small) {
+		padding-right: 5%;
+	}
+}
+.shop_table {
+	width: 100%;
+	margin-bottom: 30px;
+	color: $color1;
+	thead {
+		text-align: left;	
+		
+		tr {
+			border-bottom: 1px solid rgba(#000,0.07);
+			
+			th {
+				text-transform: uppercase;
+				color: #7f7e83;
+				font-size: 12px;
+				font-weight: 400;
+				padding: 0 5px 10px;	
+				
+				@include min-break($break-small) {
+					padding: 0 13px 10px;
+				}
+				&.product-thumbnail {
+					
+					@include max-break($break-medium) {
+						display: none;
+					}
+				}
+			}	
+		}
+	}
+	tbody {
+		tr {
+			border-bottom: 1px solid rgba(#000,0.07);
+			
+			th {
+				text-align: left;
+				color: $color1;
+				.woocommerce-checkout &,
+				.cart_totals & {
+					text-transform: uppercase;
+					font-size: 12px;
+				}
+			}
+			td {
+				padding: 10px 5px;	
+				
+				@include min-break($break-small) {
+					padding: 30px 13px;
+				}
+				.woocommerce-checkout &,
+				.cart_totals & {
+					padding-top: 15px;
+					padding-bottom: 15px;	
+				}
+			}
+		}	
+		.product-name {
+			width: 55%;
+			
+			.product-quantity {
+				font-size: 14px;
+				font-weight: 400;
+			}
+		}
+		.product-thumbnail {
+			img {
+				max-width: 100px;	
+			}
+			
+			@include max-break($break-medium) {
+				display: none;
+			}
+		}
+	}
+	.actions {
+		padding-left: 0;
+		padding-right: 0;
+		.footer_coupon {
+			display: flex;
+			justify-content: space-between;
+			
+			@include max-break($break-medium) {
+				flex-direction: column;
+				flex: 1;
+				
+				.coupon {
+					margin-bottom: 20px;
+					display: flex;
+					
+					.box {
+						flex: 1;
+						vertical-align: middle;
+					}
+				}
+			}
+			.button {
+				justify-content: center;
+				vertical-align: middle;
+			}
+		}
+	}
+	tfoot {
+		color: $color1;
+		tr {
+			text-align: left;
+			border-bottom: 1px solid rgba(#000,0.07);
+			&.order-total {
+				
+				td {
+					font-size: 22px;	
+				}
+			}
+		}
+		th {
+				text-transform: uppercase;
+				font-size: 12px;
+				padding-left: 25px;
+				font-weight: 600;
+		}
+		td {
+				padding: 15px 5px;	
+				
+				@include min-break($break-small) {
+					padding: 15px 13px;
+				}
+		}
+		&:last-child {
+			border: 0;	
+		}
+	}
+	&.order_details {
+		
+	}
+	&.cart {
+		tr: last-child {
+			border: 0;
+		}
+	}
+}
+.coupon {
+	label {
+		display: none;	
+	}
+	.box {
+		margin: 0;
+	}
+}
+#shipping_method {
+	list-style: none;
+	margin: 0;
+	
+	label {
+		font-size: 14px;
+		display: inline;
+		margin-left: 7px;
+		text-transform: none;
+	}
+}
+.cart-collaterals {
+	background: #f1f1f1;
+	padding: 15px;
+	margin-bottom: 30px;
+	@include min-break($break-small) {
+		padding: 35px;
+	}
+}
+.cart_totals {
+	h2 {
+		margin-bottom: 0;	
+	}
+	.shop_table {
+		margin: 0;
+		color: $color1;
+		tbody {
+			tr {
+				th {
+					text-transform: uppercase;
+					font-size: 12px;
+					
+					@include min-break($break-small) {
+						width: 100px;	
+					}
+				}
+				td {
+					font-size: 16px;
+					
+				}
+				&.order-total {
+					td {
+						font-size: 22px;	
+					}
+				}
+			}	
+		}
+	}
+	
+	.shipping-calculator-form {
+		.form-row {
+			margin-bottom: 10px;
+		}
+		.input-text {
+			width: 100%;
+			margin: 0;
+		}
+	}
+	
+	p {
+		margin: 0;
+	}
+	.shipping-calculator-button {
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 12px;
+	}
+	.button {
+		width: 100%;
+		&.checkout-button {
+			margin-top: 20px;
+			height: 50px;
+			line-height: 48px;
+			font-size: 14px;
+		}
+	}
+}
+.cart-empty {
+	svg {
+		max-width: 120px;	
+		margin-bottom: 30px;
+	}
+}
