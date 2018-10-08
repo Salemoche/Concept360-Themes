@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i" rel="stylesheet">
 	<?php wp_site_icon(); ?>
 	<?php
 		/* Always have wp_head() just before the closing </head>
@@ -66,5 +67,5 @@
 
 	
 
-	<div role="main">
+	<div role="main" class="main">
 

@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     font-size: 62.5%;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 h1 {
@@ -23,7 +24,7 @@ div[role=main] {
     margin-top: 0 !important;
 }
 
-.project__thumbnail {
+.project__thumbnail, .team-member {
 
     overflow: hidden;
     position: relative;
@@ -42,7 +43,7 @@ div[role=main] {
         }
     }
 
-    &.project__insight {
+    &.project__insight, &.team-member__insight {
 
         div {
             @include center;
@@ -63,7 +64,7 @@ div[role=main] {
     }
 }
 
-.project-hover-info {
+.project-hover-info, .team-member-hover-info {
 
     height: 100%;
     width: 100%;
@@ -93,6 +94,77 @@ div[role=main] {
 
     * {
         color: white;
+    }
+}
+
+.quote__container, .press__container {
+
+    display: flex;
+    padding: 0;
+    min-height: calc(50vh - 200px);
+    flex-wrap: wrap;
+
+    .quote, .press {
+
+        background: $anthrazit;
+        color: white;
+        padding: 50px 40px;
+        flex-basis: 33.3%;
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+
+        h4 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            transition: $transition-time;
+        }
+
+        p {
+            margin-bottom: 0;
+            flex-basis: 100%;
+        }
+
+        &__logo { 
+            width: 100%;
+            margin-bottom: 20px;
+            height: 80px;
+            position: relative; 
+
+            img {
+                @include center;
+            }
+        }
+
+        a:hover {
+            // box-shadow: inset 0px -7px 0px 0px rgba(227,27,35,75);
+
+
+            h4 {
+                box-shadow: inset 0px -7px 0px 0px rgba(227,27,35,75);
+            }
+        }
+
+        &:nth-of-type(even) {
+
+            background: white;
+            color: $anthrazit;
+
+            h4 {
+                color: $anthrazit;
+            }
+        }
+
+        &.press:nth-of-type(even) {
+
+            background: black;
+            color: white;
+
+            h4 {
+                color: white;
+            }
+        }
     }
 }
 

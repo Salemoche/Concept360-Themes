@@ -1,5 +1,5 @@
 .project {
-
+    
     margin-top: $spacing-top-submenu;
 
     &__content {
@@ -10,7 +10,7 @@
         &__image {
             width: 100%;
             margin-bottom: $spacing-bottom;
-            height: 400px;
+            height: $main-image-height;
             overflow: hidden;
             position: relative;
     
@@ -39,7 +39,8 @@
 
     &__info {
 
-        padding-left: 50px;
+        padding-left: $spacing-side;
+        padding-top: $spacing-side;
 
         &__tags {
 
@@ -96,7 +97,7 @@
 
         .project__image {
             
-            height: 200px;
+            height: $teaser-height;
             overflow: hidden;
             flex-basis: 33.3%;
             position: relative;
@@ -153,7 +154,7 @@
     
         > li {
             flex-basis: 33.3%;
-            height: 200px;
+            height: $teaser-height;
             background: $anthrazit;
             // padding-bottom: 0 !important;
 

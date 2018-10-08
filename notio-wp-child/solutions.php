@@ -5,13 +5,12 @@
 <?php while ( have_posts() ) : the_post(); ?>
 
   <div class="row solutions">
-    <div class="columns small-8 solutions__content">
+    <div class="columns small-12 medium-8 solutions__content">
       <div class="solutions__content__image">
         <img src="<?php echo wp_get_attachment_image_src( get_post_meta($post->ID, 'solutions_main-image', true) )[0]; ?>" alt="">
       </div>
-      <?php the_content(); ?>
     </div>
-    <div class="columns small-4">
+    <div class="columns small-12 medium-4">
       <h2><?php echo get_post_meta($post->ID, 'solutions_title', true) ?></h2>
       <p><?php echo get_post_meta($post->ID, 'solutions_main-text', true) ?></p>
     </div>
@@ -52,13 +51,38 @@
         </svg>
       </div>
     </div>
-    <div class="columns small-12 medium-4">
-      <h1>grafik</h1>
+    <div class="columns small-12 medium-4 row solutions__working-style">
+      <div class="columns small-6 solutions__working-style__graphic__text">
+        <h5>01</h5>
+        <h6><?php echo get_post_meta($post->ID, 'working-style_title-01', true) ?></h6>
+        <p><?php echo get_post_meta($post->ID, 'working-style_text-01', true) ?></p>
+      </div>
+      <div class="columns small-6 solutions__working-style__graphic__text">
+        <h5>02</h5>
+        <h6><?php echo get_post_meta($post->ID, 'working-style_title-02', true) ?></h6>
+        <p><?php echo get_post_meta($post->ID, 'working-style_text-02', true) ?></p>
+      </div>
+      <div class="columns small-6 solutions__working-style__graphic__text">
+        <h5>03</h5>
+        <h6><?php echo get_post_meta($post->ID, 'working-style_title-03', true) ?></h6>
+        <p><?php echo get_post_meta($post->ID, 'working-style_text-03', true) ?></p>
+      </div>
+      <div class="columns small-6 solutions__working-style__graphic__text">
+        <h5>04</h5>
+        <h6><?php echo get_post_meta($post->ID, 'working-style_title-04', true) ?></h6>
+        <p><?php echo get_post_meta($post->ID, 'working-style_text-04', true) ?></p>
+      </div>
+      <div class="columns small-6 solutions__working-style__graphic__text">
+        <h5>05</h5>
+        <h6><?php echo get_post_meta($post->ID, 'working-style_title-05', true) ?></h6>
+        <p><?php echo get_post_meta($post->ID, 'working-style_text-05', true) ?></p>
+      </div>
     </div>
   </div>
-  <div class="row services">
-    <div class="columns small-12 medium-8">
-      <h1>Interaktive Grafik</h1>
+  <div class="row solutions__services">
+    <div class="columns small-12 medium-8 solutions__services__graphic">
+      <!-- <h1>Interaktive Grafik</h1> -->
+      <img src="/wp-content/themes/notio-wp-child/assets/grafik2.png" alt="">
     </div>
     <div class="columns small-12 medium-4">
       <h2><?php echo get_post_meta($post->ID, 'service_title', true) ?></h2>

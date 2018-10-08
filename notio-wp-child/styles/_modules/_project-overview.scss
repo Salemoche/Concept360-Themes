@@ -1,6 +1,7 @@
 .projects {
 
     margin: 0 auto;
+    margin-top: $spacing-top-submenu;
 
     &__project-container {
 
@@ -12,7 +13,7 @@
             
             flex-basis: 33.3%;
             flex-grow: 1;
-            height: 200px;
+            height: $teaser-height;
             min-width: 33%;
             max-width: 34%;
             width: 33.3%;

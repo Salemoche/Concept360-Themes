@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="home__about__slider columns small-12">
-
+      <?php echo do_shortcode( '[rev_slider alias="home"]' ); ?>
     </div>
     <div class="home__ueber-uns columns small-12">
       <div class="home__ueber-uns__text">

@@ -24,11 +24,12 @@
     <div class="columns small-12 landing__info row">
       
       <div class="columns small-12 medium-8 landing__info__main">
+      <?php echo do_shortcode( '[rev_slider alias="landing"]' ); ?>
       <?php
         //Get the images ids from the post_metadata
         $images = acf_photo_gallery('landing_images', $post->ID);
         //Check if return array has anything in it
-        if( count($images) ):
+        if( count($images) && false==true ):
         //Cool, we got some data so now let's loop over it
         foreach($images as $image):
           $id = $image['id']; // The attachment id of the media
@@ -59,17 +60,25 @@
         <?php echo get_post_meta($post->ID, 'landing_information', true); ?>        
       </div>
     </div>
-    <div class="landing__quote__container columns small-12">
-      <div class="landing__quote">
-        <h4>"Grosses Kino! Einmaliges Video, Wahnsinn!"</h4>
-        <p>Sebastian Pfotenhauer</p>
-        <p>Rinier, Head of videoblick.ch</p>
-      </div>
-      <div class="landing__quote">
-        <h4>"Grosses Kino! Einmaliges Video, Wahnsinn!"</h4>
-        <p>Sebastian Pfotenhauer</p>
-        <p>Rinier, Head of videoblick.ch</p>
-      </div>
+    <div class="landing__quote__container columns small-12 quote__container">
+    <?php
+    if( have_rows('quotes', 482) ): 
+
+      while ( have_rows('quotes', 482) ) : the_row();
+    
+    ?>
+
+        <div class="landing__quote quote">
+          <h4><?php the_sub_field('quote_quote'); ?></h4>
+          <p><?php the_sub_field('quote_name'); ?></p>
+          <p><?php the_sub_field('quote_details'); ?></p>
+        </div>
+
+    <?php 
+
+      endwhile;
+    endif;
+    ?>
     </div>
     <div class="landing__ueber-uns columns small-12">
       <div class="landing__ueber-uns__text">

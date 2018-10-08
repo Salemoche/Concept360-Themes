@@ -1,14 +1,85 @@
-.solutions {
+body.page-template-solutions {
 
-    &__working-style {
+    .main .row {
+        margin-bottom: $spacing-bottom;
+        padding: 0 $spacing-side;
 
-        &__graphic {
+    
+    }
 
-            position: relative;
+    .main .solutions {
 
-            svg {
-                width: 75%;
-                @include center;
+        margin-top: $spacing-top-submenu;
+        padding-left: 0;
+
+        &__content {
+
+            padding: 0;
+
+            &__image {
+                width: 100%;
+                height: $main-image-height;
+                // height: calc(100vh - #{$spacing-top-submenu});
+                overflow: hidden;
+                position: relative;
+
+                img {
+                    width: 100%;
+
+                    @include center;
+                }
+            }
+        }
+
+
+        &__working-style {
+
+            &__graphic {
+
+                position: relative;
+
+                svg {
+                    width: 65%;
+                    @include center;
+
+                    .flag {
+
+                    }
+                }
+            }
+
+            &__graphic__text {
+
+                position: relative;
+
+                h5 {
+                    color: $red;
+                    margin-bottom: 0;
+                }
+
+                h6 {
+                    font-size: 1rem;
+                    font-weight: $regular;
+                }
+
+                p {
+                    
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    display: none;
+                }
+            }
+        }
+
+        &__services {
+
+            &__graphic {
+                background-image: url('./assets/grafik2.png');
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                height: 500px;
             }
         }
     }

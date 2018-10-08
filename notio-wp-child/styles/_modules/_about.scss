@@ -1,0 +1,61 @@
+body.page-template-about {
+
+    .main .row {
+        margin-bottom: $spacing-bottom-large;
+        padding: 0 $spacing-side;
+
+    
+    }
+
+    .main .about {
+
+        margin-top: $spacing-top-submenu;
+        padding-left: 0;
+
+        &__content {
+
+            padding: 0;
+
+            &__contact-info {
+
+                padding-left: $spacing-side;
+                padding-top: $spacing-side;
+
+                h2 {
+
+                }
+    
+                h3 {
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    margin-bottom: 0px;
+                }
+            }
+
+
+            &__image {
+                width: 100%;
+                height: $main-image-height;
+                // height: calc(100vh - #{$spacing-top-submenu});
+                overflow: hidden;
+                position: relative;
+                margin-bottom: $spacing-bottom;
+
+                img {
+                    width: 100%;
+
+                    @include center;
+                }
+            }
+        }   
+    }
+
+    .team-member__container {
+
+        .team-member {
+            height: $teaser-height;
+            padding: 0;
+        }
+    }
+}

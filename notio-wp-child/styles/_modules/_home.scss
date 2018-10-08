@@ -70,6 +70,8 @@ body.home, body.page-template-landing {
                 position: absolute;
                 height: 100vh;
                 width: 100vw;
+                top: 0;
+
 
                 &__title {
                     margin-top: 25%;
@@ -114,6 +116,8 @@ body.home, body.page-template-landing {
         &__about__slider {
             height: 50vh;
             width: 100%;
+            overflow: hidden;
+            padding: 0;
         }
 
         &__ueber-uns {
@@ -237,13 +241,18 @@ body.page-template-landing {
                 &__carousel {
                     margin-bottom: $spacing-bottom;
                 }
+
+                .rev_slider_wrapper {
+                    margin-bottom: $spacing-bottom !important;
+                }
             }
 
             &__information {
 
                 color: $anthrazit;
                 font-size: 1.2rem;
-                margin-top: $spacing-bottom;
+                padding-top: $spacing-bottom;
+                padding-left: $spacing-bottom;
 
                 h1 {
                     font-size: 2rem;
@@ -262,42 +271,5 @@ body.page-template-landing {
             }
         }
 
-        &__quote__container {
-
-            display: flex;
-            padding: 0;
-            min-height: calc(50vh - 200px);
-            flex-wrap: wrap;
-
-            .landing__quote {
-
-                background: $anthrazit;
-                color: white;
-                padding: 50px 40px;
-                flex-basis: 33.3%;
-                display: flex;
-                align-content: center;
-                flex-wrap: wrap;
-
-                h4 {
-                    color: white;
-                }
-
-                p {
-                    margin-bottom: 0;
-                    flex-basis: 100%;
-                }
-
-                &:nth-of-type(even) {
-
-                    background: white;
-                    color: $anthrazit;
-
-                    h4 {
-                        color: $anthrazit;
-                    }
-                }
-            }
-        }
     }
 }
