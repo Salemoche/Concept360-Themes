@@ -65,6 +65,7 @@
 		</nav>
 	</div>
 
+	<?php get_template_part( 'inc/templates/header/'.ot_get_option('header_style', 'style1') ); ?>
 	
 
 	<div role="main" class="main">

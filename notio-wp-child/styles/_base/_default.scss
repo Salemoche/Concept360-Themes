@@ -221,6 +221,7 @@ div[role=main] {
             width: 110px;
             position: absolute;
             right: 150px;
+            z-index: 102;
 
             @include center-vertically;
             
@@ -304,6 +305,61 @@ div[role=main] {
         }
     }
 
+}
+
+.mobile-toggle {
+
+    span {
+        background: white;
+    }
+    
+    div {
+        margin-top: 6px;
+    }
+}
+
+#mobile-menu {   
+    z-index: 100;
+    top: -49px !important;
+}
+
+.menu-holder {
+    pointer-events: all;
+}
+
+.header {
+    pointer-events: none;
+}
+
+.menu-container {
+    background: $anthrazit;
+
+    .panel-close {
+        display: none;
+    }
+
+    .mobile-menu {
+
+        padding: 20vh 100px;
+
+        li>a {
+            color: white;
+            font-size: 2rem;
+            padding-bottom: 0;
+            margin-bottom: 30px;
+    
+            &:hover {
+                box-shadow: inset 0px -7px 0px 0px rgba(227,27,35,75);        
+            }
+        }
+    
+        >li.current-menu-item>a {
+            color: white;
+            box-shadow: inset 0px -7px 0px 0px rgba(227,27,35,75);        
+        }
+    }
+
+    
 }
 
 

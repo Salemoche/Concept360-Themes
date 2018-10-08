@@ -158,6 +158,7 @@ div[role=main] {
       width: 110px;
       position: absolute;
       right: 150px;
+      z-index: 102;
       position: absolute;
       top: 50%;
       -webkit-transform: translateY(-50%);
@@ -202,6 +203,39 @@ div[role=main] {
           transition: 0.3s; }
         .concept-header__project-category__container ul li:hover a {
           color: #e31b23; }
+
+.mobile-toggle span {
+  background: white; }
+
+.mobile-toggle div {
+  margin-top: 6px; }
+
+#mobile-menu {
+  z-index: 100;
+  top: -49px !important; }
+
+.menu-holder {
+  pointer-events: all; }
+
+.header {
+  pointer-events: none; }
+
+.menu-container {
+  background: #282828; }
+  .menu-container .panel-close {
+    display: none; }
+  .menu-container .mobile-menu {
+    padding: 20vh 100px; }
+    .menu-container .mobile-menu li > a {
+      color: white;
+      font-size: 2rem;
+      padding-bottom: 0;
+      margin-bottom: 30px; }
+      .menu-container .mobile-menu li > a:hover {
+        box-shadow: inset 0px -7px 0px 0px #e31b23; }
+    .menu-container .mobile-menu > li.current-menu-item > a {
+      color: white;
+      box-shadow: inset 0px -7px 0px 0px #e31b23; }
 
 .concept-breadcrumbs {
   margin-bottom: 30px; }
@@ -630,6 +664,8 @@ body.page-template-insights .projects__project-container .projects__project {
 body.page-template-solutions .main .row {
   margin-bottom: 30px;
   padding: 0 40px; }
+  body.page-template-solutions .main .row .columns {
+    padding: 50px; }
 
 body.page-template-solutions .main .solutions {
   margin-top: calc(90px + 15px * 2 + 1rem + 10px);
@@ -657,6 +693,14 @@ body.page-template-solutions .main .solutions {
       top: 50%;
       -webkit-transform: translate(-50%, -50%);
               transform: translate(-50%, -50%); }
+      body.page-template-solutions .main .solutions__working-style__graphic svg .flag {
+        transition: 0.3s; }
+      body.page-template-solutions .main .solutions__working-style__graphic svg:hover .flag {
+        opacity: 0.5; }
+      body.page-template-solutions .main .solutions__working-style__graphic svg g {
+        cursor: pointer; }
+        body.page-template-solutions .main .solutions__working-style__graphic svg g:hover .flag {
+          opacity: 1; }
   body.page-template-solutions .main .solutions__working-style__graphic__text {
     position: relative; }
     body.page-template-solutions .main .solutions__working-style__graphic__text h5 {

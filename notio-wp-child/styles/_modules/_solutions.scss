@@ -4,7 +4,9 @@ body.page-template-solutions {
         margin-bottom: $spacing-bottom;
         padding: 0 $spacing-side;
 
-    
+        .columns {
+            padding: 50px;
+        }
     }
 
     .main .solutions {
@@ -44,6 +46,28 @@ body.page-template-solutions {
 
                     .flag {
 
+                        transition: $transition-time;
+
+                    }
+
+                    &:hover {
+
+                        .flag {
+                            opacity: 0.5;
+                        }
+
+                    }
+
+                    g {
+                        cursor: pointer;
+
+                        &:hover {
+
+                            .flag {
+                                opacity: 1;
+                            }
+
+                        }
                     }
                 }
             }
