@@ -4,8 +4,8 @@ body.page-template-solutions {
         margin-bottom: $spacing-bottom;
         padding: 0 $spacing-side;
 
-        .columns {
-            padding: 50px;
+        .solutions__text {
+            padding-left: $spacing-side;
         }
     }
 
@@ -31,6 +31,10 @@ body.page-template-solutions {
                     @include center;
                 }
             }
+        }
+
+        &__text {
+            padding-top: $spacing-side;
         }
 
 
@@ -72,6 +76,10 @@ body.page-template-solutions {
                 }
             }
 
+            &__container {
+                margin-top: $spacing-side;
+            }
+
             &__graphic__text {
 
                 position: relative;
@@ -97,6 +105,9 @@ body.page-template-solutions {
         }
 
         &__services {
+
+            background: $gray;
+            padding-top: $spacing-side;
 
             &__graphic {
                 background-image: url('./assets/grafik2.png');

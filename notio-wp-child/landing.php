@@ -135,38 +135,44 @@
       </div>
     </div>
     <div class="landing__random-projects columns small-12">
-      <?php 
-        function wpb_rand_posts() { 
-  
-          $args = array(
-              'post_type' => 'post',
-              'orderby'   => 'rand',
-              'posts_per_page' => 5, 
-              );
-          
-          $the_query = new WP_Query( $args );
-          
-          if ( $the_query->have_posts() ) {
-          
-          $string .= '<ul>';
-              while ( $the_query->have_posts() ) {
-                  $the_query->the_post();
-                  $string .= '<li><a href="'. get_permalink() .'">'. get_the_title() .'</a></li>';
-              }
-              $string .= '</ul>';
-              /* Restore original Post Data */
-              wp_reset_postdata();
-          } else {
-          
-          $string .= 'no posts found';
-          }
-          
-          return $string; 
-          } 
-          
-          add_shortcode('wpb-random-posts','wpb_rand_posts');
-          add_filter('widget_text', 'do_shortcode'); 
-      ?>
+    <?php 
+
+for ($i=0; $i < 3; $i++) { 
+  $randIndex = rand(0, count(get_posts())-1); 
+  $randPost = get_posts()[$randIndex];
+  // echo $post->ID;
+  // echo $post->title;
+  $image_id = get_post_meta($randPost->ID, 'project_image-main', true);
+  $image_url = wp_get_attachment_image_src( $image_id, 'large' )[0];
+  $post_description = get_post_meta($randPost->ID, 'project_description', true);
+  $post_description_length = strlen($post_description);
+  $post_description_short = $post_description_length > 80 ? substr($post_description, 0, 80) . "..." : $post_description; 
+?>
+<?php if(has_category(37)): ?>
+  <div class="projects__project project__insight project__thumbnail <?php echo get_post_meta($randPost->ID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
+    <a href="<?php the_permalink($randPost->ID) ?>">
+      <div class="projects__project__info__container">
+        <h3><?php get_the_title($randPost->ID); ?></h3>
+      </div>
+    </a>
+  </div>
+<?php else: ?>
+  <div class="projects__project project__thumbnail <?php echo get_post_meta($randPost->ID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
+    <a href="<?php the_permalink($randPost->ID) ?>">
+      <div class="projects__project__info__container">
+        <img src="<?php echo $image_url ?>" alt="">
+        <div class="projects__project__info project-hover-info">
+          <h3><?php echo get_the_title($randPost->ID); ?></h3>
+          <p><?php echo $post_description_short ?></p>
+        <?php echo has_category(37); ?>
+        </div>
+      </div>
+    </a>
+  </div>
+<?php endif; ?>
+<?php
+}
+?>
     </div>
     <div class="landing__customers columns small-12 row">
         <h3><?php echo get_post_meta($post->ID, 'landing_customers_title', true); ?></h3>

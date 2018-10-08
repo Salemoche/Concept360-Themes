@@ -5,7 +5,7 @@
 <?php if (have_posts()) :  while (have_posts()) : the_post(); ?>
 <?php 
   $image_id = get_post_meta($post->ID, 'project_image-main', true);
-  $image_url = wp_get_attachment_image_src( $image_id )[0];
+  $image_url = wp_get_attachment_image_src( $image_id, 'large'  )[0];
 ?>
   <div class="project row">
     <div class="project__content columns medium-8 small-12 collapse">

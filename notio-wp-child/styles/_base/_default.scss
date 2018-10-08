@@ -4,6 +4,10 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
+body {
+    background: white;
+}
+
 h1 {
 
 }
@@ -14,6 +18,10 @@ p {
 
 a {
     color: $red;
+
+    &:hover {
+        color: red;
+    }
 }
 
 .row {
@@ -31,7 +39,9 @@ div[role=main] {
 
     img {
         width: 100%;
-        transition: $transition-time;
+        transition: $transition-time;   
+        min-height: 100%;
+        min-width: 100%;
 
         @include center-vertically;
     }
@@ -296,7 +306,36 @@ div[role=main] {
 
                 &:hover {
                     a {
-                        color: $red;
+                        box-shadow: inset 0px -7px 0px 0px rgba(227,27,35,75);
+                    }
+                }
+
+                &.concept-header__project-category__search {
+                    
+                    border-bottom: 2px solid #888;
+                    margin-top: 6px;
+                    height: 33px;
+
+
+                    input {
+                        border-radius: 0;
+                        border: none;
+                        font-weight: $bold;
+                        text-transform: uppercase;
+                        background: none;
+                        // padding: 5px 0;
+                        margin-bottom: 0;
+                        padding: 0;
+                    }
+
+                    .concept-header__project-category__search__icon {
+                        width: 25px;
+                        height: 25px;
+                        background: $anthrazit;
+                        display: inline-block;
+                        margin-top: -13px;
+                        margin-left: 10px;
+                        vertical-align: -webkit-baseline-middle;
                     }
                 }
                 
@@ -459,7 +498,7 @@ div[role=main] {
             
             position: absolute;
             right: 50px;
-            top: 5px;
+            top: 7px;
 
    
             a {
@@ -468,6 +507,11 @@ div[role=main] {
                 font-weight: $light;
                 letter-spacing: 0.6px;
                 margin-left: 5px;
+                transition: $transition-time;
+
+                &:hover {
+                    color: $red;
+                }
             }
         }
     }

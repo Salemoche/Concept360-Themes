@@ -9,7 +9,7 @@
       <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
         <?php 
           $image_id = get_post_meta($post->ID, 'project_image-main', true);
-          $image_url = wp_get_attachment_image_src( $image_id )[0];
+          $image_url = wp_get_attachment_image_src( $image_id, 'large'  )[0];
           $post_description = get_post_meta($post->ID, 'project_description', true);
           $post_description_length = strlen($post_description);
           $post_description_short = $post_description_length > 80 ? substr($post_description, 0, 80) . "..." : $post_description; 

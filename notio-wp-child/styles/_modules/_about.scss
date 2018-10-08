@@ -21,6 +21,25 @@ body.page-template-about {
                 padding-left: $spacing-side;
                 padding-top: $spacing-side;
 
+                a {
+                    color: black;
+                    display: block;
+                    margin-bottom: 10px;
+
+                    p {
+                        display: inline;
+                        transition: $transition-time;
+                    }
+
+                    &:hover {
+
+                        p {
+
+                            box-shadow: inset 0px -7px 0px 0px rgba(227,27,35,75);
+                        }
+                    }
+                }
+
                 h2 {
 
                 }

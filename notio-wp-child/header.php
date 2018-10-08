@@ -60,7 +60,12 @@
 				<li><a href="<?php echo get_permalink(684) ?>"><?php echo get_the_title(684) ?></a></li>
 				<li><a href="<?php echo get_permalink(702) ?>"><?php echo get_the_title(702) ?></a></li>
 				<li><a href="<?php echo get_permalink(704) ?>"><?php echo get_the_title(704) ?></a></li>
-				<li>Suchfunktion</li>
+				<li class="concept-header__project-category__search">
+					<form action="POST">
+						<input type="text" placeholder="Suchbegriff hier eingeben">
+						<input class="concept-header__project-category__search__icon" type='submit'></input>
+					</form>
+				</li>
 			</ul>
 		</nav>
 	</div>

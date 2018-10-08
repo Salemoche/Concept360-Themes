@@ -94,48 +94,14 @@
       </div>
     </div>
     <div class="home__random-projects columns small-12">
-      <?php 
-        function wpb_rand_posts() { 
-  
-          $args = array(
-              'post_type' => 'post',
-              'orderby'   => 'rand',
-              'posts_per_page' => 5, 
-              );
-          
-          $the_query = new WP_Query( $args );
-          
-          if ( $the_query->have_posts() ) {
-          
-          $string .= '<ul>';
-              while ( $the_query->have_posts() ) {
-                  $the_query->the_post();
-                  $string .= '<li><a href="'. get_permalink() .'">'. get_the_title() .'</a></li>';
-              }
-              $string .= '</ul>';
-              /* Restore original Post Data */
-              wp_reset_postdata();
-          } else {
-          
-          $string .= 'no posts found';
-          }
-          
-          return $string; 
-          } 
-          
-          add_shortcode('wpb-random-posts','wpb_rand_posts');
-          add_filter('widget_text', 'do_shortcode'); 
-      ?>
 
       <?php 
 
         for ($i=0; $i < 3; $i++) { 
           $randIndex = rand(0, count(get_posts())-1); 
           $randPost = get_posts()[$randIndex];
-          // echo $post->ID;
-          // echo $post->title;
           $image_id = get_post_meta($randPost->ID, 'project_image-main', true);
-          $image_url = wp_get_attachment_image_src( $image_id )[0];
+          $image_url = wp_get_attachment_image_src( $image_id, 'large' )[0];
           $post_description = get_post_meta($randPost->ID, 'project_description', true);
           $post_description_length = strlen($post_description);
           $post_description_short = $post_description_length > 80 ? substr($post_description, 0, 80) . "..." : $post_description; 
