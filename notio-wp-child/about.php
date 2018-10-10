@@ -44,28 +44,29 @@
     endif;
     ?>
   </div>
-  
-  <div class="row team-member-freelance__container team-member__container">
-  <h2><?php echo get_post_meta($post->ID, 'about-team-freelance_subtitle', true); ?></h2>
-    <?php
-    if( have_rows('team-member-freelance') ): 
+  <div class="row">  
+    <h2><?php echo get_post_meta($post->ID, 'about-team-freelance_subtitle', true); ?></h2>
+    <div class="columns small-12 row team-member-freelance__container team-member__container">
+      <?php
+      if( have_rows('team-member-freelance') ): 
 
-      while ( have_rows('team-member-freelance') ) : the_row();
-    
-    ?>
-        <div class="columns small-4 team-member-freelancer team-member">
-          <img src=" <?php the_sub_field('team-member-freelance_foto'); ?>" alt="">
-          <div class="team-member-hover-info">
-            <h3><?php the_sub_field('team-member-freelance_name'); ?></h3>
-            <p><?php the_sub_field('team-member-freelance_position'); ?></p>
+        while ( have_rows('team-member-freelance') ) : the_row();
+      
+      ?>
+          <div class="columns small-4 team-member-freelancer team-member">
+            <img src=" <?php the_sub_field('team-member-freelance_foto'); ?>" alt="">
+            <div class="team-member-hover-info">
+              <h3><?php the_sub_field('team-member-freelance_name'); ?></h3>
+              <p><?php the_sub_field('team-member-freelance_position'); ?></p>
+            </div>
           </div>
-        </div>
 
-    <?php 
+      <?php 
 
-      endwhile;
-    endif;
-    ?>
+        endwhile;
+      endif;
+      ?>
+    </div>
   </div>
 
 <div class="row quotes">

@@ -761,6 +761,8 @@ body.page-template-solutions .main .solutions {
 body.page-template-about .main .row {
   margin-bottom: 50px;
   padding: 0 40px; }
+  body.page-template-about .main .row > h2 {
+    display: block; }
 
 body.page-template-about .main .about {
   margin-top: calc(90px + 15px * 2 + 1rem + 10px);

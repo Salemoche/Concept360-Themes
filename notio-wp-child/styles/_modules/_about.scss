@@ -4,7 +4,9 @@ body.page-template-about {
         margin-bottom: $spacing-bottom-large;
         padding: 0 $spacing-side;
 
-    
+        > h2 {
+            display: block;
+        }
     }
 
     .main .about {
