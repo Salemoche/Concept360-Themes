@@ -55,18 +55,40 @@
 			</div>
 		</div>
 		<nav class="concept-header__project-category__container">
-			<ul>
-				<li><a href="<?php echo get_permalink(686) ?>"><?php echo get_the_title(686) ?></a></li>
-				<li><a href="<?php echo get_permalink(684) ?>"><?php echo get_the_title(684) ?></a></li>
-				<li><a href="<?php echo get_permalink(702) ?>"><?php echo get_the_title(702) ?></a></li>
-				<li><a href="<?php echo get_permalink(704) ?>"><?php echo get_the_title(704) ?></a></li>
-				<li class="concept-header__project-category__search">
+			<?php $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>
+			
+			<ul <?php  echo strpos($url, '?s=') ? 'class="concept-header__project-category__list--search"' : ''; ?>>
+
+				<?php if (!strpos($url, '?s=')) : ?>
+
+				<li><a href="<?php echo get_permalink(686) ?>" <?php  echo strpos($url, 'highlights') ? 'class="menu-active"' : ''; ?>><?php echo get_the_title(686) ?></a></li>
+				<li><a href="<?php echo get_permalink(684) ?>" <?php  echo strpos($url, 'corporate') ? 'class="menu-active"' : ''; ?>><?php echo get_the_title(684) ?></a></li>
+				<li><a href="<?php echo get_permalink(702) ?>" <?php  echo strpos($url, 'journalismus') ? 'class="menu-active"' : ''; ?>><?php echo get_the_title(702) ?></a></li>
+				<li><a href="<?php echo get_permalink(704) ?>" <?php  echo strpos($url, 'insights') ? 'class="menu-active"' : ''; ?>><?php echo get_the_title(704) ?></a></li>
+				<!-- <li class="concept-header__project-category__search">
 					<form action="POST">
 						<input type="text" placeholder="Suchbegriff hier eingeben">
 						<input class="concept-header__project-category__search__icon" type='submit'></input>
 					</form>
-				</li>
+				</li> -->
+
+				<?php else: ?>
+				<a href="javascript:history.go(-1)"><li class="concept-header__project-category__back"></li></a>
+				<?php
+
+					$searchQuery = str_word_count(get_search_query(),1) ;
+
+					foreach ($searchQuery as $tag) {
+						
+						echo '<li class="tag">' . $tag . ' </li>';
+					}
+				
+				//endif;
+				?>
+				<?php endif; ?>
+				<li><?php get_search_query(); ?></li>
 			</ul>
+			<div class="concept-header__project-category__search-form"><?php get_search_form(); ?></div>
 		</nav>
 	</div>
 

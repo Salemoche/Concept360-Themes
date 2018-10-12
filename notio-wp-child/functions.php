@@ -18,10 +18,11 @@
     register_nav_menus(
       array(
         'header-menu' => __( 'main' )
-       )
-     );
-   }
-   add_action( 'init', 'register_my_menus' );
+      )
+    );
+  }
+  
+  add_action( 'init', 'register_my_menus' );
 
 
   //
@@ -123,4 +124,12 @@
 
       }
     }
-  ?>
+
+
+
+//
+// Theme Support
+//
+
+  add_theme_support('html5', array('search-form'));
+?>

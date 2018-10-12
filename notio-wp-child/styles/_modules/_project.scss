@@ -20,6 +20,10 @@
             }
         }
 
+        &__video {
+            pointer-events: none;
+        }
+
         p {
             margin-left: 40px;
         }
@@ -49,25 +53,25 @@
             margin-bottom: $spacing-bottom;
 
             &__tag {
-                font-size: 0.8rem;
-                font-weight: $bold;
-                background: $gray;
-                padding: 10px 15px;
-                margin: 2px;
-                text-transform: uppercase;
-                cursor: pointer;
-                transition: $transition-time;
+                // font-size: 0.8rem;
+                // font-weight: $bold;
+                // background: $gray;
+                // padding: 10px 15px;
+                // margin: 2px;
+                // text-transform: uppercase;
+                // cursor: pointer;
+                // transition: $transition-time;
 
-                &--active {
-                    background: $red;
-                    color: white;
-                }
+                // &--active {
+                //     background: $red;
+                //     color: white;
+                // }
                 
-                &:hover {
-                    transform: scale(1.05);
-                    background: $red;
-                    color: white;
-                }
+                // &:hover {
+                //     transform: scale(1.05);
+                //     background: $red;
+                //     color: white;
+                // }
             }
         }
 
@@ -107,7 +111,7 @@
             float: left;
 
             &:first-of-type {
-                height: 400px;
+                height: calc(#{$teaser-height}*2);
                 width: 66.6%;
             }
             

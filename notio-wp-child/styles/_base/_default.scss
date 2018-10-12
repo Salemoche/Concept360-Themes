@@ -24,6 +24,10 @@ a {
     }
 }
 
+img {
+    max-width: unset;
+}
+
 .row {
     max-width: $breakpoint-large;
 }
@@ -36,6 +40,7 @@ div[role=main] {
 
     overflow: hidden;
     position: relative;
+    min-height: $teaser-height;
 
     img {
         width: 100%;
@@ -283,6 +288,7 @@ div[role=main] {
         
         width: 100%;
         background: $white;
+        position: relative;
 
         ul {
 
@@ -290,6 +296,8 @@ div[role=main] {
             display: flex;
             justify-content: space-around;
             margin-bottom: 0;
+            width: calc(100vw - 300px);
+            padding-left: $spacing-side-large;
 
             li {
                 text-transform: uppercase;
@@ -301,6 +309,10 @@ div[role=main] {
                     color: black;
                     transition: $transition-time;
 
+                    &.menu-active {
+                        font-weight: 600
+                    }
+
                     
                 }
 
@@ -310,37 +322,81 @@ div[role=main] {
                     }
                 }
 
-                &.concept-header__project-category__search {
-                    
-                    border-bottom: 2px solid #888;
-                    margin-top: 6px;
-                    height: 33px;
-
-
-                    input {
-                        border-radius: 0;
-                        border: none;
-                        font-weight: $bold;
-                        text-transform: uppercase;
-                        background: none;
-                        // padding: 5px 0;
-                        margin-bottom: 0;
-                        padding: 0;
-                    }
-
-                    .concept-header__project-category__search__icon {
-                        width: 25px;
-                        height: 25px;
-                        background: $anthrazit;
-                        display: inline-block;
-                        margin-top: -13px;
-                        margin-left: 10px;
-                        vertical-align: -webkit-baseline-middle;
-                    }
-                }
+                
                 
                 
             }
+
+            
+        }
+
+        .concept-header__project-category__list--search {
+
+            justify-content: left;
+
+            .tag {
+                margin-left: 5px;
+                cursor: default;
+                padding: 7px 10px;
+                margin: 10px 0;
+            }
+        }
+
+        .concept-header__project-category__back {
+            
+            height: 20px;
+            width: 20px;
+            margin: 20px 20px 20px 0px;
+
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('./assets/icon-back.svg');
+
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    .concept-header__project-category__search-form {
+                    
+        border-bottom: 2px solid #888;
+        margin-top: 6px;
+        height: 33px;
+        position: absolute;
+        right: 80px;
+        top: 0px;
+        
+
+
+        input {
+            border-radius: 0;
+            border: none;
+            font-weight: $bold;
+            text-transform: uppercase;
+            background: none;
+            // padding: 5px 0;
+            margin-bottom: 0;
+            padding: 0;
+        }
+
+        .concept-header__project-category__search__icon {
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            margin-top: -13px;
+            margin-left: 0px;
+            vertical-align: -webkit-baseline-middle;
+
+            
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('./assets/icon-search.svg');
+            color: rgba(1,1,1,0);
         }
     }
 
@@ -401,6 +457,27 @@ div[role=main] {
     
 }
 
+.tag {
+    font-size: 0.8rem;
+    font-weight: $bold;
+    background: $gray;
+    padding: 10px 15px;
+    margin: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: $transition-time;
+
+    &--active {
+        background: $red;
+        color: white;
+    }
+    
+    &.hover:hover {
+        transform: scale(1.05);
+        background: $red;
+        color: white;
+    }
+}
 
 
 .concept-breadcrumbs {
@@ -569,4 +646,12 @@ div[role=main] {
     &-form-control {
 
     }
+}
+
+//
+// Lightbox
+//
+
+.lg-backdrop {
+    background-color: rgba(0,0,0,0.8) !important;
 }

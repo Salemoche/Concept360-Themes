@@ -10,7 +10,45 @@
   <div class="project row">
     <div class="project__content columns medium-8 small-12 collapse">
       <div class="project__content__image">
-        <img src="<?php if($image_url) echo $image_url ?>" alt="" srcset="">
+        <img src="<?php if(get_post_meta($post->ID, 'project_video-main_copy', true)) echo get_post_meta($post->ID, 'project_video-main_copy', true) ?>/1.jpg" alt="" srcset="">
+        <a href="<?php if(get_post_meta($post->ID, 'project_video-main_copy', true)) echo get_post_meta($post->ID, 'project_video-main_copy', true) ?>" >Open iFrame</a>
+        <?php //the_content(); // the_field('home_video'); ?>
+        <div class="project__content__video">
+          <?php
+
+          // get iframe HTML
+          $iframe = get_field('project_video-main');
+
+
+          // use preg_match to find iframe src
+          preg_match('/src="(.+?)"/', $iframe, $matches);
+          $src = $matches[1];
+
+
+          // add extra params to iframe src
+          $params = array(
+              'controls'    => 0,
+              'hd'        => 3,
+              'autohide'    => 1,
+              'autoplay' => 1,
+              'mute' => 1
+          );
+
+          $new_src = add_query_arg($params, $src);
+
+          $iframe = str_replace($src, $new_src, $iframe);
+
+
+          // add extra attributes to iframe html
+          $attributes = 'frameborder="2"';
+
+          $iframe = str_replace('></iframe>', ' ' . $attributes . ' ></iframe>', $iframe);
+
+
+          // echo $iframe
+          echo $iframe;
+        ?>
+        </div>
       </div>
       <?php the_content(); ?>
     </div>
@@ -28,7 +66,7 @@
         <?php
           if ($posttags) {
             foreach($posttags as $tag) {
-              echo '<div class="project__info__tags__tag">' . $tag->name . '</div>';
+              echo '<a href="' . get_home_url() . '/?s='. $tag->name . '" ><div class="project__info__tags__tag tag hover">' . $tag->name . '</div></a>';
             }
           }
         ?>
@@ -69,16 +107,64 @@
       ?>
       <div class="project__image">
         <?php if( !empty($url) ){ ?><a href="<?php echo $full_image_url; ?>" <?php echo ($target == 'true' )? 'target="_blank"': ''; ?>><?php } ?>
-        <a href="<?php echo $full_image_url; ?>" class="foobox" rel="concept-gallery">
+        <a href="<?php echo $full_image_url; ?>" rel="concept-gallery">
           <img src="<?php echo $full_image_url; ?>" alt="<?php echo $title; ?>">
         </a>
           <?php if( !empty($url) ){ ?></a><?php } ?>
       </div>
     <?php endforeach; endif; ?>
     </div>
-    <!-- <div class="project__related-projects columns small-12">
+    <div class="project__related-projects row columns small-12">
       <h4>Ähnliche Projekte</h4>
-    </div> -->
+      <?php
+      $tags = wp_get_post_terms( get_queried_object_id(), 'post_tag', ['fields' => 'ids'] );
+      // $args = [
+      //     'post__not_in'        => array( get_queried_object_id() ),
+      //     'posts_per_page'      => 5,
+      //     'ignore_sticky_posts' => 1,
+      //     'orderby'             => 'rand',
+      //     'tax_query' => [
+      //         [
+      //             'taxonomy' => 'post_tag',
+      //             'terms'    => $tags
+      //         ]
+      //     ]
+      // ];
+
+      $args = [
+          'orderby'             => 'rand',
+          'posts_per_page'      => 3,
+          'tax_query' => [
+              [
+                  'taxonomy' => 'post_tag',
+                  'terms'    => $tags
+              ]
+          ]
+      ];
+
+      $my_query = new wp_query( $args );
+      if( $my_query->have_posts() ) {
+              while( $my_query->have_posts() ) {
+                $my_query->the_post(); ?>
+                  <div class="columns small-12 medium-4 projects__project project__thumbnail <?php echo get_post_meta($randPost->ID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
+                    <a href="<?php the_permalink() ?>">
+                      <div class="projects__project__info__container">
+                        <img src="<?php echo get_field('project_image-main'); ?>" alt="">
+                        <div class="projects__project__info project-hover-info">
+                          <h3><?php echo the_title(); ?></h3>
+                          <p><?php //echo $post_description_short ?></p>
+                        <?php echo has_category(37); ?>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+              <?php }
+              wp_reset_postdata();
+      } else {
+        echo '<p>Nothing found</p>';
+      }
+      ?> 
+    </div>
   </div>
 <?php endwhile; else : endif; ?>
 <?php get_footer(); ?>
