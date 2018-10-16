@@ -10,45 +10,34 @@
   <div class="project row">
     <div class="project__content columns medium-8 small-12 collapse">
       <div class="project__content__image">
-        <img src="<?php if(get_post_meta($post->ID, 'project_video-main_copy', true)) echo get_post_meta($post->ID, 'project_video-main_copy', true) ?>/1.jpg" alt="" srcset="">
-        <a href="<?php if(get_post_meta($post->ID, 'project_video-main_copy', true)) echo get_post_meta($post->ID, 'project_video-main_copy', true) ?>" >Open iFrame</a>
+        <?php if(get_field('project_video-main-flix')): ?>
+          <a href="https://cms.360flix.com/player/?cms&lc=<?php echo get_field('project_video-main-flix')?>&details&instructions=true&next&langshow&showlogo=true&logofade=true&lang=de" class="foobox" rel="concept-gallery">
+            <?php if(get_field('project_image-main')): ?>
+              <img src="<?php echo get_field('project_image-main') ?> "alt="" srcset="">
+            <?php else: ?>
+              <h2>Bitte Bild hinzufügen!</h2>
+            <?php endif; ?>
+            <div class="project__content__image__play-button"></div>
+          </a>
+          
+        <?php elseif(get_field('project_video-main-vimeo') && !get_field('project_video-main-flix')): ?>
+          <?php 
+            ini_set("allow_url_fopen", 1);
+            $json = file_get_contents('http://vimeo.com/api/oembed.json?url=http%3A//vimeo.com/' . get_field('project_video-main-vimeo'));
+            $obj = json_decode($json);
+            $thumbnail_url =  $obj->thumbnail_url;
+          ?>
+          <a href="https://player.vimeo.com/video/<?php echo get_field('project_video-main-vimeo')?>" class="foobox" rel="concept-gallery">
+            <img src="<?php echo $thumbnail_url ?> "alt="" srcset="">
+            <div class="project__content__image__play-button"></div>
+          </a>
+        <?php elseif(get_field('project_video-main-youtube') && !get_field('project_video-main-vimeo') && !get_field('project_video-main-flix')): ?>
+          <a href="https://www.youtube.com/embed/<?php echo get_field('project_video-main-youtube')?>"  class="foobox" rel="concept-gallery" >
+            <img src="https://img.youtube.com/v1/<?php echo get_field('project_video-main-youtube')?>/3.jpg"alt="" srcset="">
+            <div class="project__content__image__play-button"></div>
+          </a>
+        <?php endif; ?>
         <?php //the_content(); // the_field('home_video'); ?>
-        <div class="project__content__video">
-          <?php
-
-          // get iframe HTML
-          $iframe = get_field('project_video-main');
-
-
-          // use preg_match to find iframe src
-          preg_match('/src="(.+?)"/', $iframe, $matches);
-          $src = $matches[1];
-
-
-          // add extra params to iframe src
-          $params = array(
-              'controls'    => 0,
-              'hd'        => 3,
-              'autohide'    => 1,
-              'autoplay' => 1,
-              'mute' => 1
-          );
-
-          $new_src = add_query_arg($params, $src);
-
-          $iframe = str_replace($src, $new_src, $iframe);
-
-
-          // add extra attributes to iframe html
-          $attributes = 'frameborder="2"';
-
-          $iframe = str_replace('></iframe>', ' ' . $attributes . ' ></iframe>', $iframe);
-
-
-          // echo $iframe
-          echo $iframe;
-        ?>
-        </div>
       </div>
       <?php the_content(); ?>
     </div>

@@ -30,6 +30,25 @@
             }
 
         }
+    }  
+      
+    @media screen and (max-width: $breakpoint-medium) {
+
+        &__project-container {
+
+            .projects__project {
+
+                height: $teaser-height--medium;
+                width: 50%;
+                max-width: unset;
+                min-width: unset;
+
+                &__highlight {
+                    height: calc(#{$teaser-height--medium} * 2);
+                    width: 100%;
+                }
+            }
+        }
     }
 }
 
@@ -61,4 +80,6 @@ body.page-template-insights {
             }
         }
     }
+
+
 }

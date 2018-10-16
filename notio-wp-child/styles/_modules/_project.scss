@@ -18,6 +18,19 @@
                 width: 100%;
                 @include center-vertically;
             }
+
+            &__play-button {
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                background: rgba(255,255,255,0.3);
+                transition: $transition-time;
+                @include center;
+
+                &:hover {
+                    transform: translate(-50%, -50%) scale(1.05);
+                }
+            }
         }
 
         &__video {
@@ -127,6 +140,32 @@
                 img {
                     transform: translateY(-50%) scale(1.03);
                 }
+            }
+        }
+    }
+
+    @media screen and (max-width: $breakpoint-medium) {
+        .project__image {
+            width: 50%;
+            height: $teaser-height;
+            display: none;   
+            
+            &:first-of-type, &:nth-of-type(2) {
+                width: 50%;
+                height: $teaser-height; 
+                display: inherit; 
+            }
+        }
+
+        .projects__project {
+            width: 50%;
+            height: $teaser-height;
+            display: none;   
+            
+            &:first-of-type, &:nth-of-type(2) {
+                width: 50%;
+                height: $teaser-height; 
+                display: inherit; 
             }
         }
     }

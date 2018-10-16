@@ -5,22 +5,25 @@
 <?php while ( have_posts() ) : the_post(); ?>
 
   <div class="row solutions">
-    <div class="columns small-12 medium-8 solutions__content">
+    <div class="columns small-6 medium-12 medium-8 solutions__content">
       <div class="solutions__content__image">
         <img src="<?php echo wp_get_attachment_image_src( get_post_meta($post->ID, 'solutions_main-image', true), 'large' )[0]; ?>" alt="">
       </div>
     </div>
-    <div class="columns small-12 medium-4 solutions__text">
+    <div class="columns small-6 medium-4 solutions__text">
+      <div class="project__info__breadcrumbs concept-breadcrumbs">
+        <?php if (function_exists('nav_breadcrumb')) nav_breadcrumb(); ?>
+      </div>
       <h2><?php echo get_post_meta($post->ID, 'solutions_title', true) ?></h2>
       <p><?php echo get_post_meta($post->ID, 'solutions_main-text', true) ?></p>
     </div>
   </div>
   <div class="row solutions__working-style">
-    <div class="columns small-12 medium-4 solutions__text"> 
+    <div class="columns small-6 medium-4 solutions__text"> 
       <h2><?php echo get_post_meta($post->ID, 'working-style_title', true) ?></h2>
         <p><?php echo get_post_meta($post->ID, 'working-style_main-text', true) ?></p>
       </div>
-    <div class="columns small-12 medium-4 solutions__working-style__graphic">
+    <div class="columns small-6 medium-4 solutions__working-style__graphic">
       <div class="svg">
       <svg id="Graphic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198.8 198.8">
         <g id="conception_1_">
@@ -51,7 +54,7 @@
         </svg>
       </div>
     </div>
-    <div class="columns small-12 medium-4 row solutions__working-style__container">
+    <div class="columns small-6 medium-4 row solutions__working-style__container">
       <div class="columns small-6 solutions__working-style__graphic__text">
         <h5>01</h5>
         <h6><?php echo get_post_meta($post->ID, 'working-style_title-01', true) ?></h6>
@@ -80,11 +83,11 @@
     </div>
   </div>
   <div class="row solutions__services">
-    <div class="columns small-12 medium-8 solutions__services__graphic">
+    <div class="columns small-6 medium-8 solutions__services__graphic">
       <!-- <h1>Interaktive Grafik</h1> -->
       <img src="/wp-content/themes/notio-wp-child/assets/grafik2.png" alt="">
     </div>
-    <div class="columns small-12 medium-4 solutions__text">
+    <div class="columns small-6 medium-4 solutions__text">
       <h2><?php echo get_post_meta($post->ID, 'service_title', true) ?></h2>
         <p><?php echo get_post_meta($post->ID, 'service_main-text', true) ?></p>
       </div>

@@ -53,6 +53,10 @@
           <p><?php echo get_post_meta($post->ID, 'landing_showcase_text', true); ?></p>
           </div>
         </div>
+        <div class="landing__landing__scroll">
+          <?php echo get_field('landing_scroll'); ?>
+          <div class="landing__landing__scroll__icon"></div>
+        </div>
       </div>
     </div>
     <div class="columns small-12 landing__info row">

@@ -5,7 +5,7 @@
 <?php while ( have_posts() ) : the_post(); ?>
 
   <div class="row about">
-    <div class="columns small-8 about__content">
+    <div class="columns small-12 medium-8 about__content">
       <div class="about__content__image">
         <img src="<?php echo wp_get_attachment_image_src( get_post_meta($post->ID, 'about_main-image', true), 'large' )[0]; ?>" alt="">
       </div>
@@ -30,7 +30,7 @@
       while ( have_rows('team-member') ) : the_row();
     
     ?>
-        <div class="columns small-4 team-member">
+        <div class="columns small-6 medium-4 team-member">
           <img src=" <?php the_sub_field('team-member_foto'); ?>" alt="">
           <div class="team-member-hover-info">
             <h3><?php the_sub_field('team-member_name'); ?></h3>
@@ -53,7 +53,7 @@
         while ( have_rows('team-member-freelance') ) : the_row();
       
       ?>
-          <div class="columns small-4 team-member-freelancer team-member">
+          <div class="columns  small-6 medium-4 team-member-freelancer team-member">
             <img src=" <?php the_sub_field('team-member-freelance_foto'); ?>" alt="">
             <div class="team-member-hover-info">
               <h3><?php the_sub_field('team-member-freelance_name'); ?></h3>

@@ -1,6 +1,6 @@
 body.page-template-about {
 
-    .main .row {
+    .main > .row {
         margin-bottom: $spacing-bottom-large;
         padding: 0 $spacing-side;
 
@@ -78,5 +78,54 @@ body.page-template-about {
             height: $teaser-height;
             padding: 0;
         }
+    }
+
+    @media screen and (max-width: $breakpoint-medium) {
+
+        .main .row {
+            padding: 0;
+
+            > h2 {
+                margin: 0 $spacing-side;
+                margin-bottom: 10px;
+
+            }
+        }
+
+        .about {
+            &__content {
+
+                &__image {
+                    height: calc(#{$teaser-height}*2)
+                }
+            }
+        }
+
+        .team-member__container {
+
+            .team-member {
+                width: 50%;
+                height: $teaser-height--medium;
+                
+            }
+        }
+
+        .quotes {
+            .quote{
+                width: 50%;
+                height: $teaser-height--medium;
+                flex-basis: unset;
+            }
+        }
+
+        .press {
+            .press{
+                width: 50%;
+                height: $teaser-height--medium;
+                flex-basis: unset;
+            }
+        }
+
+        
     }
 }

@@ -117,5 +117,20 @@ body.page-template-solutions {
                 height: 500px;
             }
         }
+
+        
+    }
+
+    @media screen and (max-width: $breakpoint-medium){
+
+        .solutions__content__image {
+            height: $teaser-height !important;
+        }
+            
+        .solutions__working-style {
+            .solutions__text {
+                padding-left: 0 !important;
+            }
+        }
     }
 }

@@ -68,6 +68,10 @@
             </a>
           </div>
         </div>
+        <div class="home__landing__scroll">
+          <?php echo get_field('home_scroll'); ?>
+          <div class="home__landing__scroll__icon"></div>
+        </div>
       </div>
     </div>
     <div class="home__about__slider columns small-12">
@@ -105,6 +109,8 @@
           $post_description = get_post_meta($randPost->ID, 'project_description', true);
           $post_description_length = strlen($post_description);
           $post_description_short = $post_description_length > 80 ? substr($post_description, 0, 80) . "..." : $post_description; 
+        
+          $project_id = get_post_meta($randPost->ID, 'project_image-main', true);
         ?>
         <?php if(has_category(37)): ?>
           <div class="projects__project project__insight project__thumbnail <?php echo get_post_meta($randPost->ID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
@@ -153,7 +159,7 @@
           $alt = get_field('photo_gallery_alt', $id); //Get the alt which is a extra field (See below how to add extra fields)
           $class = get_field('photo_gallery_class', $id); //Get the class which is a extra field (See below how to add extra fields)
       ?>
-          <div class="home__customers__item columns small-6 medium-2">
+          <div class="home__customers__item columns small-3">
             <div class="thumbnail">
               <?php if( !empty($url) ){ ?><a href="<?php echo $url; ?>" <?php echo ($target == 'true' )? 'target="_blank"': ''; ?>><?php } ?>
                 <img src="<?php echo $full_image_url; ?>" alt="<?php echo $title; ?>" title="<?php echo $title; ?>">
