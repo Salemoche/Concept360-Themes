@@ -8,8 +8,8 @@
     <div class="projects__project-container">
       <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
         <?php 
-          $image_id = get_post_meta($post->ID, 'project_image-main', true);
-          $image_url = wp_get_attachment_image_src( $image_id, 'large'  )[0];
+          // $image_id = get_post_thumbnail_id($post->ID);
+          // $image_url = get_post_thumbnail_url( $post->ID);
           $post_description = get_post_meta($post->ID, 'project_description', true);
           $post_description_length = strlen($post_description);
           $post_description_short = $post_description_length > 80 ? substr($post_description, 0, 80) . "..." : $post_description; 
@@ -26,7 +26,7 @@
           <div class="projects__project project__thumbnail <?php echo get_post_meta($post->ID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
             <a href="<?php the_permalink() ?>">
               <div>
-                <img src="<?php echo $image_url ?>" alt="">
+                <?php echo the_post_thumbnail($post->ID) ? the_post_thumbnail($post->ID) : '<p>Bitte Bild hinzufügen</p>'; ?>
                 <div class="projects__project__info project-hover-info">
                   <h3><?php echo the_title(); ?></h3>
                   <p><?php echo $post_description_short ?></p>

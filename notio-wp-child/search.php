@@ -29,7 +29,7 @@
         <h5><?php echo $image_url ?></h5>
         <a href="<?php the_permalink() ?>">
             <div>
-                <img src="<?php echo $image_url ?>" alt="">
+                <?php echo the_post_thumbnail($post->ID) ? the_post_thumbnail($post->ID) : '<p>Bitte Bild hinzufügen</p>'; ?>
                 <div class="search-results__project__info project-hover-info">
                     <h3><?php echo the_title(); ?></h3>
                     <p><?php echo $post_description_short ?></p>

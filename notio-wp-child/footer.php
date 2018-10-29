@@ -1,8 +1,8 @@
 	</div><!-- End role["main"] -->
 	<div class="footer row">
-		<div class="footer__call-to-action columns small-12">
+		<a href="#contact-form"class="footer__call-to-action columns small-12">
         	<p><?php echo get_post_meta(779, 'footer_call-to-action', true); ?></p>
-		</div>
+		</a>
 		<div class="footer__info columns small-12 row">
 			<div class="footer__info__bail columns small-4 medium-4">
 				<h4><?php echo get_post_meta(779, 'footer_call_mail', true); ?></h4>
@@ -17,7 +17,7 @@
 				<a href="https://www.google.ch/maps/dir//Regensbergstrasse+126,+8050+Z%C3%BCrich/@47.4077905,8.5416099,17z/data=!3m1!4b1!4m17!1m7!3m6!1s0x47900a8707c34b13:0xbaae1f04d467f11f!2sRegensbergstrasse+126,+8050+Z%C3%BCrich!3b1!8m2!3d47.4077905!4d8.5437986!4m8!1m0!1m5!1m1!1s0x47900a8707c34b13:0xbaae1f04d467f11f!2m2!1d8.5437986!2d47.4077905!3e1" target="_blank"><p><?php echo get_post_meta(779, 'settings_address', true); ?></p></a>
 			</div>
 		</div>
-		<div class="footer__contact-form columns small-12">
+		<div id="contact-form" class="footer__contact-form columns small-12">
 			<h4><?php echo get_post_meta(779, 'footer_call_mail', true); ?></h4>
 			<?php echo do_shortcode( '[contact-form-7 id="676" title="Contact Form"]' ); ?>
 		</div>

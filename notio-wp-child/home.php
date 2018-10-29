@@ -124,7 +124,8 @@
           <div class="projects__project project__thumbnail <?php echo get_post_meta($randPost->ID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
             <a href="<?php the_permalink($randPost->ID) ?>">
               <div class="projects__project__info__container">
-                <img src="<?php echo $image_url ?>" alt="">
+                <!-- <img src="<?php //echo $image_url ?>" alt=""> -->
+                <?php echo get_the_post_thumbnail( $randPost->ID, 'medium_large' ); ?>
                 <div class="projects__project__info project-hover-info">
                   <h3><?php echo get_the_title($randPost->ID); ?></h3>
                   <p><?php echo $post_description_short ?></p>
@@ -159,7 +160,7 @@
           $alt = get_field('photo_gallery_alt', $id); //Get the alt which is a extra field (See below how to add extra fields)
           $class = get_field('photo_gallery_class', $id); //Get the class which is a extra field (See below how to add extra fields)
       ?>
-          <div class="home__customers__item columns small-3">
+          <div class="home__customers__item columns small-3 medium-2">
             <div class="thumbnail">
               <?php if( !empty($url) ){ ?><a href="<?php echo $url; ?>" <?php echo ($target == 'true' )? 'target="_blank"': ''; ?>><?php } ?>
                 <img src="<?php echo $full_image_url; ?>" alt="<?php echo $title; ?>" title="<?php echo $title; ?>">

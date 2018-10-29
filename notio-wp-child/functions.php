@@ -10,6 +10,20 @@
       wp_enqueue_style( 'parent-style', get_template_directory_uri().'/assets/css/app.css' );
     }
 
+
+  //
+  // Add Script
+  //
+
+    function addScript() {
+
+      wp_enqueue_script( 'myscript', '/wp-content/themes/notio-wp-child/js/script.js');
+    
+    }
+    
+    add_action('wp_enqueue_scripts','addScript');
+
+
   //
   //menu
   //
@@ -31,7 +45,7 @@
 
     function nav_breadcrumb() {
 
-    $delimiter = '	&frasl;';
+    $delimiter = '<span>&frasl;<span>';
     $home = 'Home';
     $before = '<span class="current-page">';
     $after = '</span>';
@@ -42,7 +56,7 @@
 
         global $post;
         $homeLink = get_bloginfo('url');
-        echo '<a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
+        echo '<a href="' . $homeLink . '">' . $home . ' </a> ' . ' ' . $delimiter . ' ' . ' ';
 
         if ( is_category()) {
           global $wp_query;
@@ -54,7 +68,7 @@
           // echo $before . single_cat_title('', false) . $after;
 
         } elseif ( is_day() ) {
-          echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
+          echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . ' </a> ' .  ' ' . $delimiter . ' ' . ' ';
           echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a>  ';
           // echo $before . get_the_time('d') . $after;
 
@@ -143,7 +157,7 @@
   $phone = '<a href="tel:' . get_post_meta(779, 'settings_telephone-number', true) . '">' .  get_post_meta(779, 'settings_telephone-number', true) . '</a>';
   $mail = '<a href="mailto:' . get_post_meta(779, 'settings_email', true) . '">' . get_post_meta(779, 'settings_email', true) . '</a>';
 
-  $languages = do_action('wpml_add_language_selector');
+  //$languages = do_action('wpml_add_language_selector');
 
 
   $items .= 

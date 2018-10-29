@@ -6,6 +6,10 @@ body.page-template-solutions {
 
         .solutions__text {
             padding-left: $spacing-side;
+
+            .concept-breadcrumbs span:last-of-type {
+                display: none;
+            }
         }
     }
 
@@ -44,6 +48,10 @@ body.page-template-solutions {
 
                 position: relative;
 
+                .svg {
+                    min-height: 210px;
+                }
+
                 svg {
                     width: 65%;
                     @include center;
@@ -52,6 +60,10 @@ body.page-template-solutions {
 
                         transition: $transition-time;
 
+                    }
+
+                    circle {
+                        pointer-events: none;
                     }
 
                     &:hover {
@@ -99,6 +111,7 @@ body.page-template-solutions {
                     position: absolute;
                     width: 100%;
                     left: 0;
+                    padding: 0 1rem;
                     display: none;
                 }
             }
@@ -132,5 +145,55 @@ body.page-template-solutions {
                 padding-left: 0 !important;
             }
         }
+    }
+
+    @media screen and (max-width: $breakpoint-small){
+
+        
+        .columns {
+            width: 100%;
+            max-width: unset;
+            flex-basis: unset;
+        }
+
+        .main .solutions{
+            padding-right: 0;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .main .solutions__working-style {
+            padding: 0 $spacing-side-small;
+
+        }
+
+        .solutions__services {
+            padding: 0 !important;
+
+            &__graphic {
+                background-size: 150% !important;
+                
+    height: 80vw;
+            }
+        }
+
+        
+        .solutions__working-style__graphic {
+            height: 75vw;
+        }
+
+        .solutions__working-style__graphic__text {
+            width: 50%;
+        }
+
+        .solutions__working-style__container {
+            margin-top: 0;
+        }
+
+
+        .solutions__text {
+            padding: 40px $spacing-side-small 0 $spacing-side-small !important;
+        }
+
     }
 }

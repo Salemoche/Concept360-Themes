@@ -2,10 +2,15 @@ body.page-template-about {
 
     .main > .row {
         margin-bottom: $spacing-bottom-large;
-        padding: 0 $spacing-side;
+        // padding: 0 $spacing-side;
 
         > h2 {
             display: block;
+            font-size: 1.6rem;
+        }
+
+        &.press {
+            margin-bottom: 0;
         }
     }
 
@@ -20,17 +25,22 @@ body.page-template-about {
 
             &__contact-info {
 
-                padding-left: $spacing-side;
+                padding-left: $spacing-side-large;
                 padding-top: $spacing-side;
+
+                h2 {
+                    font-size: 1.8rem;
+                }
 
                 a {
                     color: black;
                     display: block;
-                    margin-bottom: 10px;
+                    margin-bottom: 20px;
 
                     p {
                         display: inline;
                         transition: $transition-time;
+                        font-size: 1rem !important;
                     }
 
                     &:hover {
@@ -42,8 +52,20 @@ body.page-template-about {
                     }
                 }
 
-                h2 {
+                .concept-breadcrumbs {
+                    span:last-of-type {
+                        display: none;
+                    }
 
+                        a {
+                        display: inline;
+                        color: $red;
+                    }
+    
+                }
+
+                h2 {
+                    text-transform: uppercase;
                 }
     
                 h3 {
@@ -52,6 +74,8 @@ body.page-template-about {
                     font-weight: 600;
                     margin-bottom: 0px;
                 }
+
+                
             }
 
 
@@ -69,16 +93,67 @@ body.page-template-about {
                     @include center;
                 }
             }
+
+            
+            &__text {
+                p, h1, h2, h3 {
+                    margin-left: $spacing-side-large;
+                    font-size: 1rem;
+                }
+            }
         }   
+
+
+        &__press__container {
+
+            a {
+                width: calc(100% / 3);
+            }
+            
+            p, a {
+                color: white;
+            }
+
+            .press:hover {
+
+                h4 {
+
+                    box-shadow: inset 0px -7px 0px 0px rgba(227,27,35,75);
+                }
+            }
+        }
     }
 
     .team-member__container {
 
+        padding: 0 !important;
+
+        h2 {
+            margin: 0 $spacing-side-large 20px $spacing-side-large;
+            padding: 0
+        }
+
         .team-member {
-            height: $teaser-height;
+            height: $teaser-height-33;
+            max-height: $teaser-max-height-33;
             padding: 0;
         }
     }
+
+    .about__content__contact-info {
+        &--medium {
+            display: none;
+        }
+    }
+
+    .quotes, .press {
+        h2 {
+            margin: 0 $spacing-side-large 20px $spacing-side-large;
+
+        }
+    }
+
+
 
     @media screen and (max-width: $breakpoint-medium) {
 
@@ -86,7 +161,7 @@ body.page-template-about {
             padding: 0;
 
             > h2 {
-                margin: 0 $spacing-side;
+                margin: 0 $spacing-side-large;
                 margin-bottom: 10px;
 
             }
@@ -95,8 +170,105 @@ body.page-template-about {
         .about {
             &__content {
 
+                &__text {
+                    
+                    .row {
+                        margin-left: 0;
+                        margin-right: 0;    
+                    }
+                }
+
                 &__image {
                     height: calc(#{$teaser-height}*2)
+                }
+
+                .columns {
+                    padding: 0;
+                }
+            }
+        }
+
+        .team-member__container {
+
+            flex-wrap: wrap;
+
+            .team-member {
+                width: 50%;
+                height: $teaser-height-50;
+                
+            }
+        }
+
+        .quote__container, .press__container {
+            min-height: unset;
+        }
+
+        .quotes {
+            .quote{
+                width: 50%;
+                height: $teaser-height-50;
+                flex-basis: unset;
+            }
+        }
+
+        .about__press__container {
+            a {
+                width: 50% !important;
+            }
+        }
+
+        .press {
+
+            
+
+
+            .press{
+                width: 100%;
+                height: $teaser-height--medium;
+                flex-basis: unset;
+            }
+        }
+
+        .about__content__contact-info {
+
+            &__title {
+                padding-left: $spacing-side-small !important;
+            }
+
+            &--medium {
+                display: inherit;
+                margin-bottom: $spacing-bottom;
+            }
+            
+            &--large {
+                display: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: $breakpoint-small) {
+
+        .main .row {
+
+            > h2 {
+
+            }
+        }
+
+        .about {
+            &__content {
+
+                &__contact-info > h2 {
+                    margin-left: 0 !important;
+                }
+
+                
+                p, h1, h2, h3 {
+                    margin-left: $spacing-side-large;
+                    font-size: 1rem;
+                }
+
+                &__image {
                 }
             }
         }
@@ -104,25 +276,26 @@ body.page-template-about {
         .team-member__container {
 
             .team-member {
-                width: 50%;
-                height: $teaser-height--medium;
-                
+                width: 100%;
+                max-width: unset;
+                flex-basis: unset;
+                height: $teaser-height;
             }
         }
 
         .quotes {
             .quote{
-                width: 50%;
-                height: $teaser-height--medium;
-                flex-basis: unset;
+                width: 100%;
+                max-width: unset;
+                height: $teaser-height;
             }
         }
 
         .press {
-            .press{
-                width: 50%;
-                height: $teaser-height--medium;
-                flex-basis: unset;
+            .press, a{
+                width: 100vw !important;
+                max-width: unset;
+                height: $teaser-height;
             }
         }
 

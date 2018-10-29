@@ -27,6 +27,7 @@
 						<span></span><span></span><span></span>
 					</div>
 				</a>
+				<div class="burger-menu"></div>
 				<?php } ?>
 			</div>
 		</div>

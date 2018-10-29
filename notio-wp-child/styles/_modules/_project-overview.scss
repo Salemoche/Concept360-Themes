@@ -2,6 +2,7 @@
 
     margin: 0 auto;
     margin-top: $spacing-top-submenu;
+    transition: $transition-time;
 
     &__project-container {
 
@@ -11,12 +12,13 @@
 
         .projects__project {
             
-            flex-basis: 33.3%;
+            flex-basis: calc(100% / 3);
             flex-grow: 1;
-            height: $teaser-height;
+            height: $teaser-height-33;
+            max-height: $teaser-max-height-33;
             min-width: 33%;
             max-width: 34%;
-            width: 33.3%;
+            width: calc(100% / 3);
 
             float: left;
 
@@ -24,7 +26,8 @@
                 flex-basis: 66.6%;
                 flex-grow: 2;
                 flex-shrink: 2;
-                height: calc(#{$teaser-height} * 2);
+                height: calc(#{$teaser-height-33} * 2);
+                max-height: calc(#{$teaser-max-height-33} * 2);
                 max-width: unset;
                 width: 66.6%;
             }
@@ -38,15 +41,29 @@
 
             .projects__project {
 
-                height: $teaser-height--medium;
+                height: $teaser-height-50;
                 width: 50%;
                 max-width: unset;
                 min-width: unset;
 
                 &__highlight {
-                    height: calc(#{$teaser-height--medium} * 2);
+                    height: $teaser-height;
                     width: 100%;
                 }
+            }
+        }
+    }
+
+    
+    @media screen and (max-width: $breakpoint-small) {
+
+        &__project-container {
+
+            .projects__project {
+
+                height: $teaser-height;
+                width: 100% !important;
+
             }
         }
     }
