@@ -75,13 +75,13 @@ $(document).ready( function () {
         console.log('resize');
     });
 
-    // $('div.landing__ueber-uns__info__item').css('height', $('div.landing__ueber-uns__info__item').width() / 1.7);
-    // $('div.home__ueber-uns__info__item').css('height', $('div.home__ueber-uns__info__item').width() / 1.7);
+    $('div.landing__ueber-uns__info__item').css('height', $('div.landing__ueber-uns__info__item').outerWidth() / 1.77777);
+    $('div.home__ueber-uns__info__item').css('height', $('div.home__ueber-uns__info__item').outerWidth() / 1.77777);
 
-    // $(window).resize( function () {
-    //     $('div.landing__ueber-uns__info__item').css('height', $('div.landing__ueber-uns__info__item').width() / 1.7);
-    // $('div.home__ueber-uns__info__item').css('height', $('div.home__ueber-uns__info__item').width() / 1.7);
-    // })
+    $(window).resize( function () {
+        $('div.landing__ueber-uns__info__item').css('height', $('div.landing__ueber-uns__info__item').outerWidth() / 1.77777);
+    $('div.home__ueber-uns__info__item').css('height', $('div.home__ueber-uns__info__item').outerWidth() / 1.77777);
+    })
 
     //
     // Search Form

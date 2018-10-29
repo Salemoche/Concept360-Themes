@@ -20,6 +20,12 @@
             position: relative;
             padding: 0;
 
+            &:hover {
+                img {
+                    transform: scale(1.05) translateY(-50%);
+                }
+            }
+
     
             img {
                 width: 100%;
@@ -27,9 +33,7 @@
                 transition: $transition-time;
                 transform-origin: center;
                 
-                &:hover {
-                    transform: scale(1.05) translateY(-50%);
-                }
+                
                 
             }
 
@@ -37,6 +41,7 @@
                 height: 7vw;
                 width: 7vw;
                 min-width: 70px;
+                max-width: 110px;
                 border-radius: 50%;
                 background-size: contain;
                 background-repeat: no-repeat;
@@ -58,7 +63,7 @@
 
         &__content {
             padding: 0;
-            padding-right: $spacing-side-large;
+            // padding-right: $spacing-side-large;
 
             p, h1, h2, h3 {
                 margin-left: $spacing-side-large;
@@ -67,6 +72,24 @@
 
             span {
                 font-size: 1rem;
+            }
+
+            > .row > .wpb_column:last-of-type{
+                padding-left: 0;
+                margin-bottom: $spacing-bottom;
+
+                p, b, span, h1, h2, h3, h4 {
+                    margin-left: calc(4vw - 5px);
+
+                }
+
+            }
+
+            @media screen and (min-width: $breakpoint-medium-large) {
+
+                p, b, span, h1, h2, h3, h4 {
+                    font-size: 1.2rem;
+                }
             }
 
         }
@@ -246,15 +269,16 @@
     @media screen and (max-width: $breakpoint-medium) {
         .project__image {
             width: 50%;
-            height: $teaser-height-33;
-            max-height: $teaser-max-height-33;
+            height: $teaser-height-50;
+            max-height: unset;
             //display: none;   
             
             &:first-of-type, &:nth-of-type(2) {
                 width: 50%;
-                height: $teaser-height-33; 
-                max-height: $teaser-max-height-33;
+                height: $teaser-height-50; 
                 display: inherit; 
+                max-height: unset;
+
             }
         }
 
@@ -269,9 +293,17 @@
                     max-width: 50%;
                 }
 
-                .wpb_column:last-of-type {
+                > .row > .wpb_column:last-of-type{
+                    padding-left: 0;
                     order: -1;
                     max-width: unset;
+                    margin-left: 9px;
+    
+                    p, b, span, h1, h2, h3, h4 {
+                        margin-left: $spacing-side-large;
+    
+                    }
+    
                 }
             }
         }
@@ -303,14 +335,16 @@
 
         .projects__project {
             width: 50%;
-            height: $teaser-height-33;
-            max-height: $teaser-max-height-33;
+            height: $teaser-height-50;
+            // max-height: $teaser-max-height-33;
+            max-height: unset;
             display: none;   
             
             &:first-of-type, &:nth-of-type(2) {
                 width: 50%;
-                height: $teaser-height-33; 
-                max-height: $teaser-max-height-33;
+                height: $teaser-height-50; 
+                // max-height: $teaser-max-height-33;
+                max-height: unset;
                 display: inherit; 
             }
         }

@@ -39,6 +39,11 @@ body.page-template-solutions {
 
         &__text {
             padding-top: $spacing-side;
+            margin-bottom: $spacing-bottom;
+
+            p {
+                margin-bottom: 0;
+            }
         }
 
 
@@ -47,13 +52,14 @@ body.page-template-solutions {
             &__graphic {
 
                 position: relative;
+                min-height: 25vw;
 
                 .svg {
                     min-height: 210px;
                 }
 
                 svg {
-                    width: 65%;
+                    width: 25vw;
                     @include center;
 
                     .flag {
@@ -121,13 +127,22 @@ body.page-template-solutions {
 
             background: $gray;
             padding-top: $spacing-side;
+            position: relative;
 
             &__graphic {
-                background-image: url('./assets/grafik2.png');
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-                height: 500px;
+                // background-image: url('./assets/grafik2.png');
+                // background-position: center;
+                // background-size: cover;
+                // background-repeat: no-repeat;
+                // height: 500px;
+                position: relative;
+                overflow: hidden;
+                height: calc(66.6666vw / 1.777777);
+
+                img {
+                    @include center;
+                    width: 100%;
+                }
             }
         }
 

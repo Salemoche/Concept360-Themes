@@ -125,7 +125,7 @@
             <a href="<?php the_permalink($randPost->ID) ?>">
               <div class="projects__project__info__container">
                 <!-- <img src="<?php //echo $image_url ?>" alt=""> -->
-                <?php echo get_the_post_thumbnail( $randPost->ID, 'medium_large' ); ?>
+                <?php echo get_the_post_thumbnail( $randPost->ID, 'large' ); ?>
                 <div class="projects__project__info project-hover-info">
                   <h3><?php echo get_the_title($randPost->ID); ?></h3>
                   <p><?php echo $post_description_short ?></p>

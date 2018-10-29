@@ -153,6 +153,12 @@ div[role=main] {
     * {
         color: white;
     }
+
+    @media screen and (max-width: $breakpoint-medium) {
+        h3 {
+            font-size: 0.8rem;
+        }
+    }
 }
 
 .ytp-title, .ytp-button, .ytp-watermark, .yt-uix-sessionlink {
@@ -751,7 +757,7 @@ div[role=main] {
             font-size: 2rem;
             padding-bottom: 0;
             margin-bottom: 30px;
-            font-weight: $regular;
+            font-weight: 400;
     
             &:hover {
                 box-shadow: inset 0px -7px 0px 0px rgba(227,27,35,75);        
@@ -782,7 +788,7 @@ div[role=main] {
                 a {
                     text-transform: none;
                     font-size: 1rem;
-                    font-weight: 300;
+                    font-weight: 400;
                 }
 
                 a:hover {
@@ -795,22 +801,30 @@ div[role=main] {
     }
 
     .wpml-ls-menu-item {
-        position: absolute;
-        bottom: 70px;
-        @include center-horizontally;
+        // position: absolute;
+        // bottom: 70px;
+        // @include center-horizontally;
 
-        &#menu-item-wpml-ls-3-de {
-            left: 40%;
-        }
+        // &#menu-item-wpml-ls-3-de {
+        //     left: 40%;
+
+        float: left;
+        margin-right: 20px;
+        margin-bottom: 20px;
+
+        // }
 
         &#menu-item-wpml-ls-3-en {
-            left: 60%;
         }
 
         span {
             font-size: .8rem !important;
 
         }
+    }
+
+    .language-select {
+        display: none;
     }
 
     // .language-select {
@@ -932,6 +946,7 @@ div[role=main] {
 
     margin-bottom: 2vh;
 
+
     a, > .breadcrumb {
 
         font-size: 0.8rem;
@@ -940,9 +955,10 @@ div[role=main] {
         text-transform: uppercase;
         margin: 0 3px;
 
-        .breadcrumb > a {
-            margin-left: 0;
-        }
+    }
+    
+    .breadcrumb > a {
+        margin-left: 0;
     }
 
     span {
@@ -1040,6 +1056,12 @@ div[role=main] {
             color: white;
         }
 
+        @media screen and (max-width: 1200px)  and (min-width: 840px) {
+
+            .wpcf7-form-control-wrap iframe {
+                transform: scale(0.7);
+            }
+        }
 
     }
 
@@ -1052,7 +1074,7 @@ div[role=main] {
 
         p {
             position: absolute;
-            left: 50px;
+            left: $spacing-side-large;
             top: 5px;
             font-size: 0.6rem !important;
             font-weight: $light;
@@ -1063,7 +1085,7 @@ div[role=main] {
         &__links {
             
             position: absolute;
-            right: 50px;
+            right: $spacing-side-large;
             top: 7px;
 
    
@@ -1165,7 +1187,7 @@ div[role=main] {
         flex-wrap: wrap;
         justify-content: flex-start;
         margin: 0px auto 30px auto;
-        padding: $spacing-side;
+        padding: $spacing-side-large;
         position: relative;
         // max-width: 800px;
         // width: 100%;
@@ -1183,15 +1205,20 @@ div[role=main] {
         }
 
         &:nth-of-type(1) {
-            //  width: 100%;
-            // flex-basis: 66%;
-            // flex-shrink: 2;
-            // flex-grow: 2;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        
+        &:nth-of-type(3) {
+            margin-right: 0;
+            padding-right: 0;
         }
 
         &:nth-of-type(4) {
             // flex-grow: 2;
             width: calc(100% / 3 * 2);
+            margin-left: 0;
+            padding-left: 0;
 
         }
 
@@ -1269,7 +1296,7 @@ div[role=main] {
         width: 100vw;
     }
 
-    @media screen and (min-width: $breakpoint-medium-large) {
+    @media screen and (min-width: $breakpoint-small) {
         
         form > div, p:last-of-type {
             width: 28%;
@@ -1360,6 +1387,22 @@ div[role=main] {
         width: 80vw !important;
         height: calc(80vw / 1.7777777) !important;
     }
+}
+
+.fbx-caption {
+    position: absolute;
+    top: 0;
+    bottom: unset;
+    text-align: left;
+    transition: none;
+    
+    .fbx-close-caption {
+        display: none;
+    }
+}
+
+.lg-backdrop, .lg-outer {
+    display: none;
 }
 
 .fbx-credit {

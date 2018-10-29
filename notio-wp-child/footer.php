@@ -25,7 +25,7 @@
 
 			<p>©2018 CONCEPT360</p>
 			<div class="footer__copyright__links">
-				<a href="<?php echo get_permalink(609) ?>"><?php echo get_the_title(609) ?></a>
+				<!-- <a href="<?php //echo get_permalink(609) ?>"><?php// echo get_the_title(609) ?></a> -->
 				<a href="<?php echo get_permalink(17) ?>"><?php echo get_the_title(17) ?></a>
 			</div>
 

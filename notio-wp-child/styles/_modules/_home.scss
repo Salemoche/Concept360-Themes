@@ -198,7 +198,8 @@ body.home, body.page-template-landing {
 
                     p {
                         font-size: 1rem !important;
-                        line-height: 1rem !important;
+                        line-height: 1.2rem !important;
+                        margin-bottom: 30px !important;
                     }
 
                     h1 {
@@ -208,23 +209,37 @@ body.home, body.page-template-landing {
                     }
 
                     h2 {
-                        font-size: 1.2rem !important;
-                        font-weight: 400;
+                        font-size: 1rem !important;
+                        font-weight: 600;
+                        line-height: 1rem !important;
+                    }
+
+                    .circle-nav {
+                        width: 9px;
+                        height: 9px;
+                        border: 1px solid black !important;
+                        float: left;
+                        margin-right: 10px;
+                        border-radius: 50%;
+
+                        &.active {
+                            background: black;
+                        }
                     }
 
                     
-                    p::after {
-                        content: '';
-                        font-size: 1rem;
-                        position: absolute;
-                        left: 0;
-                        bottom: -40px;
-                        width: 10px;
-                        height: 10px;
-                        border: 1px solid $anthrazit;
-                        border-radius: 50%;
+                    // p::after {
+                    //     content: '';
+                    //     font-size: 1rem;
+                    //     position: absolute;
+                    //     left: 0;
+                    //     bottom: -40px;
+                    //     width: 10px;
+                    //     height: 10px;
+                    //     border: 1px solid $anthrazit;
+                    //     border-radius: 50%;
 
-                    }
+                    // }
                 }
 
                 
@@ -275,14 +290,13 @@ body.home, body.page-template-landing {
             // background-color: $red;
             color: white;
             display: flex;
-            flex-wrap: wrap;
             padding: 40px $spacing-side-large;
             align-items: center;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             background-image: url('./assets/background_mountain.png');
-    
+            flex-wrap: wrap;
 
             &__text {
                 flex-basis: 30%;
@@ -304,10 +318,11 @@ body.home, body.page-template-landing {
 
                 p, b {
                     font-size: 0.8rem;
+                    font-size: calc(100vw / 100 + 1rem);
                     
-                    @media screen and (min-width: $breakpoint-medium-large) {
-                        font-size: 1.2rem !important; 
-                    }
+                    // @media screen and (min-width: $breakpoint-medium-large) {
+                    //     font-size: 1.2rem !important; 
+                    // }
                 }
 
                
@@ -318,10 +333,8 @@ body.home, body.page-template-landing {
                 flex-basis: 70%;
                 min-width: calc(#{$breakpoint-medium} * 0.7);
                 display: flex;
-                flex-wrap: wrap;
                 flex-grow: 1;
                 box-shadow: 0px 13px 34px -5px rgba(0,0,0,0.3);
-
 
 
                 .home__ueber-uns__info__item, .landing__ueber-uns__info__item {
@@ -330,17 +343,23 @@ body.home, body.page-template-landing {
                     padding: 20px 30px;
                     flex-basis: calc(100% / 3);
                     position: relative;
+                    display: flex;
+                    align-items: flex-start;
+                    align-content: flex-start;
+                    flex-wrap: wrap;
                     // min-width: calc(#{$breakpoint-medium} * 0.3);
 
                     // width:  calc(100% / 3);
-                            height: auto !important;
-                            height: calc(100%/ 1.77777777);
+                            // height: auto !important;
+                            // height: calc(100%/ 1.77777777);
 
                     h5 {
                         color: white;
                         font-size: 1rem;
                         font-weight: $bold;
                         margin-bottom: 10px;
+                        width: 100%;
+                        display: block;
 
                         
                         @media screen and (min-width: $breakpoint-medium-large) {
@@ -368,6 +387,54 @@ body.home, body.page-template-landing {
                         }
                     }
 
+                }
+            }
+
+            .home__ueber-uns__info__item p, .home__ueber-uns__text p, .home__ueber-uns__text b {
+                
+                @media screen and (min-width: 1600px) {
+                    font-size: 1rem !important; 
+                }
+
+                @media screen and (max-width: 1600px) {
+                    font-size: 0.8rem !important; 
+                }
+
+                @media screen and (max-width: 1400px) {
+                    font-size: 0.6rem !important; 
+                }
+
+                
+                @media screen and (max-width: 1100px) {
+                    font-size: 0.5rem !important; 
+                }
+
+                @media screen and (max-width: 938px) {
+                    font-size: 0.7rem !important; 
+                }
+            }
+
+            .home__ueber-uns__info__item h5 {
+                
+                @media screen and (min-width: 1600px) {
+                    font-size: 1.2rem !important; 
+                }
+
+                @media screen and (max-width: 1600px) {
+                    font-size: 1rem !important; 
+                }
+
+                @media screen and (max-width: 1400px) {
+                    font-size: 0.8rem !important; 
+                }
+
+                
+                @media screen and (max-width: 1100px) {
+                    font-size: 0.7rem !important; 
+                }
+
+                @media screen and (max-width: 938px) {
+                    font-size: 0.9rem !important; 
                 }
             }
         }
@@ -490,7 +557,7 @@ body.home, body.page-template-landing {
 
             &__about__slider {
 
-                height: 75vh;
+                height: calc(100vw / 1.77777 * 2);;
 
                 &__wrapper {
 
@@ -498,6 +565,7 @@ body.home, body.page-template-landing {
                     &__text {
                         width: calc( 100vw - #{$spacing-side-large} * 2) !important;
                         left: calc( #{$spacing-side-large}) !important;
+                        height: calc(100vw / 1.7);;
                     
                         p, h1, h2 {
                             min-width: calc( 100vw - #{$spacing-side-large} * 2) !important;
@@ -511,8 +579,7 @@ body.home, body.page-template-landing {
                         top: calc(100vw / 1.777777) !important;
 
                         img {
-                            // width: 100% !important;
-
+                            width: 100vw !important;
                         }
                     }
                 }
@@ -619,6 +686,7 @@ body.home, body.page-template-landing {
                     
                         img {
                             height: auto !important;
+                            width: 100vw !important;
                             min-height: 100% !important;
                             min-width: 100vw !important;
                         }
@@ -656,11 +724,13 @@ body.home, body.page-template-landing {
 
                 flex-wrap: wrap;
                 height: auto;
+                max-height: unset;
                 
                 .projects__project {
 
                     width: 100%;
                     height: $teaser-height;
+                    max-height: unset;
                     
 
                     &:last-of-type {

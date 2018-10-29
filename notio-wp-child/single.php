@@ -135,7 +135,7 @@
                   <div class="columns small-12 medium-4 projects__project project__thumbnail <?php echo get_post_meta($randPost->ID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
                     <a href="<?php the_permalink() ?>">
                       <div class="projects__project__info__container">
-                      <?php echo the_post_thumbnail( 'medium' ); ?>
+                      <?php echo the_post_thumbnail( 'large' ); ?>
                         <div class="projects__project__info project-hover-info">
                           <h3><?php echo the_title(); ?></h3>
                           <p><?php //echo $post_description_short ?></p>
