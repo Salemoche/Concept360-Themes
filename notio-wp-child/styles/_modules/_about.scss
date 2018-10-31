@@ -98,6 +98,7 @@ body.page-template-about {
             &__text {
                 p, h1, h2, h3 {
                     margin-left: $spacing-side-large;
+                    margin-right: $spacing-side-large;
                     font-size: 1rem;
                 }
             }
@@ -195,6 +196,7 @@ body.page-template-about {
             .team-member {
                 width: 50%;
                 height: $teaser-height-50;
+                max-height: unset;
                 
             }
         }
@@ -208,6 +210,7 @@ body.page-template-about {
                 width: 50%;
                 height: $teaser-height-50;
                 flex-basis: unset;
+                max-height: unset;
             }
         }
 
@@ -226,6 +229,7 @@ body.page-template-about {
                 width: 100%;
                 height: $teaser-height--medium;
                 flex-basis: unset;
+                max-height: unset;
             }
         }
 
@@ -251,7 +255,12 @@ body.page-template-about {
         .main .row {
 
             > h2 {
+                font-size: 1rem;
+                text-transform: uppercase;
 
+                &:first-of-type {
+                    text-transform: unset;
+                }
             }
         }
 
@@ -288,17 +297,40 @@ body.page-template-about {
                 width: 100%;
                 max-width: unset;
                 height: $teaser-height;
+                padding: 50px 10vw;
             }
         }
 
         .press {
+
+            &__logo {
+                // left: 10vw;
+                height: 40px;
+                position: relative;
+
+                img {
+                    // position: relative;
+                    transform: translate(0);
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                }
+            }
+
             .press, a{
                 width: 100vw !important;
                 max-width: unset;
                 height: $teaser-height;
             }
+
+            .press {
+                padding: 50px 10vw;
+            }
         }
 
+        .press p, .quotes p {
+            font-size: .8rem;
+        }
         
     }
 }

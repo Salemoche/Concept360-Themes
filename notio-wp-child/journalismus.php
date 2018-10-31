@@ -4,7 +4,7 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
   <div class="journalismus projects projects__journalismus row">
-    <?php $catquery = new WP_Query( 'type=post&cat=42' ); ?>
+    <?php $catquery = new WP_Query( 'type=post&cat=42&posts_per_page=-1' ); ?>
     <div class="projects__project-container">
       <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
         <?php 

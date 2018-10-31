@@ -75,13 +75,23 @@ $(document).ready( function () {
         console.log('resize');
     });
 
-    $('div.landing__ueber-uns__info__item').css('height', $('div.landing__ueber-uns__info__item').outerWidth() / 1.77777);
-    $('div.home__ueber-uns__info__item').css('height', $('div.home__ueber-uns__info__item').outerWidth() / 1.77777);
-
-    $(window).resize( function () {
+    if(window.innerWidth > 768) {
         $('div.landing__ueber-uns__info__item').css('height', $('div.landing__ueber-uns__info__item').outerWidth() / 1.77777);
-    $('div.home__ueber-uns__info__item').css('height', $('div.home__ueber-uns__info__item').outerWidth() / 1.77777);
+        $('div.home__ueber-uns__info__item').css('height', $('div.home__ueber-uns__info__item').outerWidth() / 1.77777);
+    
+    }
+
+    
+    $(window).resize( function () {
+
+        if(window.innerWidth > 768) {
+
+            $('div.landing__ueber-uns__info__item').css('height', $('div.landing__ueber-uns__info__item').outerWidth() / 1.77777);
+            $('div.home__ueber-uns__info__item').css('height', $('div.home__ueber-uns__info__item').outerWidth() / 1.77777);
+        }
     })
+
+    
 
     //
     // Search Form
@@ -136,8 +146,9 @@ $(document).ready( function () {
         $('.burger-menu').toggleClass('open');
     });
 
-
     
+    $('#menu-item-wpml-ls-3-de').wrap( "<li class='menu-language-select'></li>" );
+    $('.menu-language-select').append($('#menu-item-wpml-ls-3-en'));
 
     
     //
@@ -176,4 +187,20 @@ $(document).ready( function () {
     console.log($('.tp-revslider-mainul'));
 
 
+    //
+    // Footer
+    //
+
+    // $('.wpcf7 div.wpcf7-form-control-wrap, .wpcf7 p:last-of-type').wrap( "<div class='new'></div>" );;
+    // $('.wpcf7 div.wpcf7-form-control-wrap, .wpcf7 p:last-of-type').wrap( "<div class='new'></div>" );;
+
+    $('.wpcf7 p:last-of-type').addClass('send-button');
+    $('.wpcf7 div.wpcf7-form-control-wrap').wrap( "<div class='send-container'></div>" );
+    $('.send-container').append($('.send-button'));
+
+    setTimeout( function () {  
+        $('.wpcf7 p:last-of-type').css('opacity', '1');
+        $('.send-container').css('opacity', '1');
+    }, 500);
+    
 })

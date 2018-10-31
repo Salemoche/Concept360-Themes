@@ -118,6 +118,7 @@
       // ];
 
       $args = [
+          'post__not_in'        => array($post->ID),
           'orderby'             => 'rand',
           'posts_per_page'      => 3,
           'tax_query' => [

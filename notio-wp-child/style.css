@@ -116,7 +116,7 @@ div[role=main] {
     margin-bottom: 0; }
     @media screen and (min-width: 1080px) {
       .project-hover-info p, .team-member-hover-info p {
-        font-size: 1.2rem !important; } }
+        font-size: 1.2rem; } }
   .project-hover-info:hover, .team-member-hover-info:hover {
     opacity: 1; }
   .project-hover-info *, .team-member-hover-info * {
@@ -417,7 +417,8 @@ div[role=main] {
       padding-left: 20px;
       width: calc(100vw - 130px); }
       .concept-header .concept-header__project-category__container ul li {
-        margin-right: 5px; }
+        margin-right: 7px;
+        margin-top: 13px; }
         .concept-header .concept-header__project-category__container ul li.tag {
           margin: 0;
           margin-top: 10px; }
@@ -475,6 +476,8 @@ div[role=main] {
   .menu-container .mobile-menu {
     padding: 20vh 100px 0 100px;
     height: 100vh; }
+    .menu-container .mobile-menu ul {
+      margin-right: calc(-5vw - 0.6vw); }
     .menu-container .mobile-menu li > a {
       color: white;
       font-size: 2rem;
@@ -503,10 +506,16 @@ div[role=main] {
           font-weight: 400; }
         .menu-container .mobile-menu .address-item li a:hover {
           box-shadow: inset 0px -7px 0px 0px #e31b23; }
+  .menu-container .menu-language-select {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; }
   .menu-container .wpml-ls-menu-item {
     float: left;
     margin-right: 20px;
     margin-bottom: 20px; }
+    .menu-container .wpml-ls-menu-item#menu-item-wpml-ls-3-en {
+      margin-right: 0; }
     .menu-container .wpml-ls-menu-item span {
       font-size: .8rem !important; }
   .menu-container .language-select {
@@ -514,10 +523,12 @@ div[role=main] {
   @media screen and (max-width: 768px) {
     .menu-container .mobile-menu {
       padding: 20vh 100px 0 100px;
-      text-align: center; } }
+      text-align: center; }
+    .menu-container .menu-language-select {
+      justify-content: center; } }
   @media screen and (max-width: 375px) {
     .menu-container .mobile-menu {
-      padding: 33vh 70px 0 70px; }
+      padding: 23vh 70px 0 70px; }
       .menu-container .mobile-menu li a {
         font-size: 1.4rem;
         margin-bottom: 10px; }
@@ -619,10 +630,6 @@ div[role=main] {
       margin-top: 30px; }
     .footer__contact-form label {
       color: white; }
-    @media screen and (max-width: 1200px) and (min-width: 840px) {
-      .footer__contact-form .wpcf7-form-control-wrap iframe {
-        -webkit-transform: scale(0.7);
-                transform: scale(0.7); } }
   .footer__copyright {
     color: white;
     background: #282828;
@@ -710,9 +717,13 @@ div[role=main] {
     .wpcf7 p:nth-of-type(4) {
       width: calc(100% / 3 * 2);
       margin-left: 0;
-      padding-left: 0; }
+      padding-left: 0;
+      display: flex;
+      align-items: flex-end; }
+      .wpcf7 p:nth-of-type(4) textarea {
+        margin-bottom: 14px; }
     .wpcf7 p:last-of-type {
-      margin: 0 auto; }
+      opacity: 0; }
   .wpcf7-response-output {
     font-size: 1rem; }
   .wpcf7 label {
@@ -743,35 +754,36 @@ div[role=main] {
     width: 100%;
     min-height: 0;
     height: 43px; }
-  .wpcf7 input[type=submit] {
-    border-bottom: none;
-    background: none;
-    border: 1px solid white;
-    color: #f9f9f9; }
-    .wpcf7 input[type=submit]:hover {
-      border-color: #e31b23; }
-  .wpcf7 form > div, .wpcf7 p:last-of-type {
-    display: inline-block;
-    width: auto;
-    right: 5vw;
-    bottom: 85px; }
-  .wpcf7 form > div {
-    width: 100%; }
-  .wpcf7 .wpcf7-recaptcha div {
-    margin: 0 auto;
-    margin-bottom: 20px; }
-  .wpcf7 .wpcf7-response-output {
-    display: block;
-    width: 100vw; }
-  @media screen and (min-width: 375px) {
-    .wpcf7 form > div, .wpcf7 p:last-of-type {
-      width: 28%;
-      padding: 0;
-      position: absolute; }
-    .wpcf7 form > div {
-      bottom: 130px; }
-    .wpcf7 p:nth-of-type(4) {
-      margin-top: 80px; } }
+  .wpcf7 .send-container {
+    opacity: 0;
+    transition: 0.3s;
+    width: calc(100% / 3);
+    padding-left: 2vw;
+    padding-bottom: 20px; }
+    .wpcf7 .send-container .send-button {
+      width: 100%;
+      padding: 0; }
+    .wpcf7 .send-container input[type=submit] {
+      border-bottom: none;
+      background: none;
+      border: 1px solid white;
+      color: #f9f9f9; }
+      .wpcf7 .send-container input[type=submit]:hover {
+        border-color: #e31b23; }
+    .wpcf7 .send-container .wpcf7-recaptcha div {
+      margin: 0 auto;
+      margin-bottom: 6px; }
+    .wpcf7 .send-container .wpcf7-response-output {
+      display: block;
+      width: 100vw; }
+    .wpcf7 .send-container .wpcf7-form-control-wrap > div {
+      min-height: 90px;
+      position: relative; }
+    .wpcf7 .send-container .wpcf7-form-control-wrap iframe {
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%); }
   @media screen and (max-width: 768px) {
     .wpcf7 form {
       justify-content: center; }
@@ -779,21 +791,36 @@ div[role=main] {
       width: 75%; }
       .wpcf7 p:first-of-type {
         width: 75%; }
-    .wpcf7 textarea {
-      width: 75%; } }
+    .wpcf7 p:nth-of-type(4) {
+      margin-top: 80px;
+      width: calc(100% / 3 * 2); } }
   @media screen and (max-width: 375px) {
     .wpcf7 {
       justify-content: center; }
       .wpcf7 form {
         padding-top: 0 !important; }
       .wpcf7 p {
-        width: 100%; }
+        width: 100%;
+        padding: 0; }
         .wpcf7 p:first-of-type, .wpcf7 p:last-of-type {
           width: 100%; }
         .wpcf7 p:nth-of-type(4) {
-          width: 100%; }
+          width: 100%;
+          margin-top: 0; }
           .wpcf7 p:nth-of-type(4) textarea {
-            width: 100%; } }
+            width: 100%; }
+      .wpcf7 .send-container {
+        width: 100%;
+        padding: 0 2vw; }
+      .wpcf7 .wpcf7-form-control-wrap iframe {
+        -webkit-transform: translateX(-50%) scale(0.7);
+                transform: translateX(-50%) scale(0.7); }
+      .wpcf7 .wpcf7-form-control > div {
+        width: 100% !important; } }
+  @media screen and (max-width: 1200px) and (min-width: 840px) {
+    .wpcf7 .wpcf7-form-control-wrap iframe {
+      -webkit-transform: scale(0.7);
+              transform: scale(0.7); } }
 
 .lg-backdrop {
   background-color: rgba(0, 0, 0, 0.8) !important; }
@@ -840,7 +867,7 @@ div[role=main] {
   h2 {
     font-size: 1.4rem !important; }
   p, p span {
-    font-size: 1.2rem !important; }
+    font-size: 1.2rem; }
   h1 {
     font-size: 4.5rem; } }
 
@@ -1015,34 +1042,34 @@ body.home .home__ueber-uns, body.home .landing__ueber-uns, body.page-template-la
   flex-wrap: wrap; }
   body.home .home__ueber-uns__text, body.home .landing__ueber-uns__text, body.page-template-landing .home__ueber-uns__text, body.page-template-landing .landing__ueber-uns__text {
     flex-basis: 30%;
-    min-width: calc(768px * 0.3);
+    min-width: 300px;
     flex-grow: 1;
     padding-right: 5vw; }
     body.home .home__ueber-uns__text h4, body.home .landing__ueber-uns__text h4, body.page-template-landing .home__ueber-uns__text h4, body.page-template-landing .landing__ueber-uns__text h4 {
       color: white;
       margin-bottom: 10px;
       font-size: 1.6rem; }
-      @media screen and (min-width: 1080px) {
-        body.home .home__ueber-uns__text h4, body.home .landing__ueber-uns__text h4, body.page-template-landing .home__ueber-uns__text h4, body.page-template-landing .landing__ueber-uns__text h4 {
-          font-size: 1.8rem; } }
     body.home .home__ueber-uns__text p, body.home .home__ueber-uns__text b, body.home .landing__ueber-uns__text p, body.home .landing__ueber-uns__text b, body.page-template-landing .home__ueber-uns__text p, body.page-template-landing .home__ueber-uns__text b, body.page-template-landing .landing__ueber-uns__text p, body.page-template-landing .landing__ueber-uns__text b {
-      font-size: 0.8rem;
-      font-size: calc(100vw / 100 + 1rem); }
+      font-size: 0.8rem; }
   body.home .home__ueber-uns__info__container, body.home .landing__ueber-uns__info__container, body.page-template-landing .home__ueber-uns__info__container, body.page-template-landing .landing__ueber-uns__info__container {
     flex-basis: 70%;
     min-width: calc(768px * 0.7);
     display: flex;
+    flex-wrap: wrap;
     flex-grow: 1;
     box-shadow: 0px 13px 34px -5px rgba(0, 0, 0, 0.3); }
     body.home .home__ueber-uns__info__container .home__ueber-uns__info__item, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item {
       background-color: #282828;
-      padding: 20px 30px;
-      flex-basis: calc(100% / 3);
+      padding: 1vw 1.5vw;
+      width: calc(100% / 3);
       position: relative;
       display: flex;
       align-items: flex-start;
       align-content: flex-start;
       flex-wrap: wrap; }
+      @media screen and (max-width: 768px) {
+        body.home .home__ueber-uns__info__container .home__ueber-uns__info__item, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item {
+          width: 100%; } }
       body.home .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5 {
         color: white;
         font-size: 1rem;
@@ -1062,36 +1089,33 @@ body.home .home__ueber-uns, body.home .landing__ueber-uns, body.page-template-la
         background: white; }
         body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p {
           color: #282828; }
-  @media screen and (min-width: 1600px) {
+  @media screen and (min-width: 1650px) {
     body.home .home__ueber-uns .home__ueber-uns__info__item p, body.home .home__ueber-uns .home__ueber-uns__text p, body.home .home__ueber-uns .home__ueber-uns__text b, body.home .landing__ueber-uns .home__ueber-uns__info__item p, body.home .landing__ueber-uns .home__ueber-uns__text p, body.home .landing__ueber-uns .home__ueber-uns__text b, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text b, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text b {
+      font-size: 1.2rem; } }
+  @media screen and (man-width: 1650px) {
+    body.home .home__ueber-uns .home__ueber-uns__info__item p, body.home .home__ueber-uns .home__ueber-uns__text p, body.home .home__ueber-uns .home__ueber-uns__text b, body.home .landing__ueber-uns .home__ueber-uns__info__item p, body.home .landing__ueber-uns .home__ueber-uns__text p, body.home .landing__ueber-uns .home__ueber-uns__text b, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text b, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text b {
+      font-size: 1rem; } }
+  @media screen and (min-width: 1650px) {
+    body.home .home__ueber-uns .home__ueber-uns__info__item h5, body.home .home__ueber-uns .home__ueber-uns__info__item h4, body.home .landing__ueber-uns .home__ueber-uns__info__item h5, body.home .landing__ueber-uns .home__ueber-uns__info__item h4, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h4, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h4 {
+      font-size: 1.4rem !important; } }
+  @media screen and (max-width: 1650px) {
+    body.home .home__ueber-uns .home__ueber-uns__info__item h5, body.home .home__ueber-uns .home__ueber-uns__info__item h4, body.home .landing__ueber-uns .home__ueber-uns__info__item h5, body.home .landing__ueber-uns .home__ueber-uns__info__item h4, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h4, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h4 {
+      font-size: 1rem; } }
+  @media screen and (min-width: 1600px) {
+    body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
       font-size: 1rem !important; } }
   @media screen and (max-width: 1600px) {
-    body.home .home__ueber-uns .home__ueber-uns__info__item p, body.home .home__ueber-uns .home__ueber-uns__text p, body.home .home__ueber-uns .home__ueber-uns__text b, body.home .landing__ueber-uns .home__ueber-uns__info__item p, body.home .landing__ueber-uns .home__ueber-uns__text p, body.home .landing__ueber-uns .home__ueber-uns__text b, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text b, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text b {
+    body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
       font-size: 0.8rem !important; } }
   @media screen and (max-width: 1400px) {
-    body.home .home__ueber-uns .home__ueber-uns__info__item p, body.home .home__ueber-uns .home__ueber-uns__text p, body.home .home__ueber-uns .home__ueber-uns__text b, body.home .landing__ueber-uns .home__ueber-uns__info__item p, body.home .landing__ueber-uns .home__ueber-uns__text p, body.home .landing__ueber-uns .home__ueber-uns__text b, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text b, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text b {
+    body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
       font-size: 0.6rem !important; } }
   @media screen and (max-width: 1100px) {
-    body.home .home__ueber-uns .home__ueber-uns__info__item p, body.home .home__ueber-uns .home__ueber-uns__text p, body.home .home__ueber-uns .home__ueber-uns__text b, body.home .landing__ueber-uns .home__ueber-uns__info__item p, body.home .landing__ueber-uns .home__ueber-uns__text p, body.home .landing__ueber-uns .home__ueber-uns__text b, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text b, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text b {
+    body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
       font-size: 0.5rem !important; } }
   @media screen and (max-width: 938px) {
-    body.home .home__ueber-uns .home__ueber-uns__info__item p, body.home .home__ueber-uns .home__ueber-uns__text p, body.home .home__ueber-uns .home__ueber-uns__text b, body.home .landing__ueber-uns .home__ueber-uns__info__item p, body.home .landing__ueber-uns .home__ueber-uns__text p, body.home .landing__ueber-uns .home__ueber-uns__text b, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text b, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text b {
+    body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
       font-size: 0.7rem !important; } }
-  @media screen and (min-width: 1600px) {
-    body.home .home__ueber-uns .home__ueber-uns__info__item h5, body.home .landing__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h5 {
-      font-size: 1.2rem !important; } }
-  @media screen and (max-width: 1600px) {
-    body.home .home__ueber-uns .home__ueber-uns__info__item h5, body.home .landing__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h5 {
-      font-size: 1rem !important; } }
-  @media screen and (max-width: 1400px) {
-    body.home .home__ueber-uns .home__ueber-uns__info__item h5, body.home .landing__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h5 {
-      font-size: 0.8rem !important; } }
-  @media screen and (max-width: 1100px) {
-    body.home .home__ueber-uns .home__ueber-uns__info__item h5, body.home .landing__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h5 {
-      font-size: 0.7rem !important; } }
-  @media screen and (max-width: 938px) {
-    body.home .home__ueber-uns .home__ueber-uns__info__item h5, body.home .landing__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h5 {
-      font-size: 0.9rem !important; } }
 
 body.home .home__random-projects, body.home .landing__random-projects, body.page-template-landing .home__random-projects, body.page-template-landing .landing__random-projects {
   height: 18.75vw;
@@ -1171,6 +1195,7 @@ body.home .home__customers, body.home .landing__customers, body.page-template-la
     body.home .home__random-projects .projects__project, body.home .landing__random-projects .projects__project, body.page-template-landing .home__random-projects .projects__project, body.page-template-landing .landing__random-projects .projects__project {
       min-width: unset;
       max-width: unset;
+      max-height: unset;
       width: 50%;
       height: 28.125vw; }
       body.home .home__random-projects .projects__project:last-of-type, body.home .landing__random-projects .projects__project:last-of-type, body.page-template-landing .home__random-projects .projects__project:last-of-type, body.page-template-landing .landing__random-projects .projects__project:last-of-type {
@@ -1201,18 +1226,20 @@ body.home .home__customers, body.home .landing__customers, body.page-template-la
       font-size: 0.8rem; }
   body.home .home__landing__text .home__landing__scroll, body.home .home__landing__text .landing__landing__scroll, body.home .landing__landing__text .home__landing__scroll, body.home .landing__landing__text .landing__landing__scroll, body.page-template-landing .home__landing__text .home__landing__scroll, body.page-template-landing .home__landing__text .landing__landing__scroll, body.page-template-landing .landing__landing__text .home__landing__scroll, body.page-template-landing .landing__landing__text .landing__landing__scroll {
     display: none; }
-  body.home .home__about__slider__wrapper__text, body.home .landing__about__slider__wrapper__text, body.page-template-landing .home__about__slider__wrapper__text, body.page-template-landing .landing__about__slider__wrapper__text {
-    top: calc(100vw / 1.777777 + 30px) !important; }
-    body.home .home__about__slider__wrapper__text h2, body.home .landing__about__slider__wrapper__text h2, body.page-template-landing .home__about__slider__wrapper__text h2, body.page-template-landing .landing__about__slider__wrapper__text h2 {
-      line-height: 1rem !important; }
-  body.home .home__about__slider__wrapper__foto, body.home .landing__about__slider__wrapper__foto, body.page-template-landing .home__about__slider__wrapper__foto, body.page-template-landing .landing__about__slider__wrapper__foto {
-    top: 0 !important;
-    height: calc(100vw / 1.777777) !important; }
-    body.home .home__about__slider__wrapper__foto img, body.home .landing__about__slider__wrapper__foto img, body.page-template-landing .home__about__slider__wrapper__foto img, body.page-template-landing .landing__about__slider__wrapper__foto img {
-      height: auto !important;
-      width: 100vw !important;
-      min-height: 100% !important;
-      min-width: 100vw !important; }
+  body.home .home__about__slider, body.home .landing__about__slider, body.page-template-landing .home__about__slider, body.page-template-landing .landing__about__slider {
+    height: calc(100vw / 1.77777 * 3); }
+    body.home .home__about__slider__wrapper__text, body.home .landing__about__slider__wrapper__text, body.page-template-landing .home__about__slider__wrapper__text, body.page-template-landing .landing__about__slider__wrapper__text {
+      top: calc(100vw / 1.777777 + 30px) !important; }
+      body.home .home__about__slider__wrapper__text h2, body.home .landing__about__slider__wrapper__text h2, body.page-template-landing .home__about__slider__wrapper__text h2, body.page-template-landing .landing__about__slider__wrapper__text h2 {
+        line-height: 1rem !important; }
+    body.home .home__about__slider__wrapper__foto, body.home .landing__about__slider__wrapper__foto, body.page-template-landing .home__about__slider__wrapper__foto, body.page-template-landing .landing__about__slider__wrapper__foto {
+      top: 0 !important;
+      height: calc(100vw / 1.777777) !important; }
+      body.home .home__about__slider__wrapper__foto img, body.home .landing__about__slider__wrapper__foto img, body.page-template-landing .home__about__slider__wrapper__foto img, body.page-template-landing .landing__about__slider__wrapper__foto img {
+        height: auto !important;
+        width: 100vw !important;
+        min-height: 100% !important;
+        min-width: 100vw !important; }
   body.home .home__ueber-uns, body.home .landing__ueber-uns, body.page-template-landing .home__ueber-uns, body.page-template-landing .landing__ueber-uns {
     padding: 20px 20px;
     padding-bottom: 40px;
@@ -1223,7 +1250,8 @@ body.home .home__customers, body.home .landing__customers, body.page-template-la
       margin: 0 20px; }
       body.home .home__ueber-uns__info__container .home__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item {
         flex-basis: unset;
-        width: calc(100vw - 2*40px); }
+        width: calc(100vw - 2*40px);
+        padding: 4vw 6vw; }
   body.home .home__random-projects, body.home .landing__random-projects, body.page-template-landing .home__random-projects, body.page-template-landing .landing__random-projects {
     flex-wrap: wrap;
     height: auto;
@@ -1325,6 +1353,8 @@ body.page-template-landing .landing__info__information {
       .project__content__content p, .project__content__content h1, .project__content__content h2, .project__content__content h3 {
         margin-left: 5vw;
         font-size: 1rem; }
+      .project__content__content h1, .project__content__content h2, .project__content__content h3 {
+        margin-bottom: 0; }
       .project__content__content span {
         font-size: 1rem; }
       .project__content__content > .row > .wpb_column:last-of-type {
@@ -1436,7 +1466,8 @@ body.page-template-landing .landing__info__information {
         display: inherit;
         max-height: unset; }
     .project .project__content__image {
-      height: 50vw; }
+      height: 50vw;
+      max-height: unset; }
     .project .project__content__content .wpb_column {
       max-width: 50%; }
     .project .project__content__content > .row > .wpb_column:last-of-type {
@@ -1475,6 +1506,8 @@ body.page-template-landing .landing__info__information {
   @media screen and (max-width: 375px) {
     .project .project__content__content .wpb_column {
       max-width: unset; }
+    .project .project__content__content p, .project .project__content__content h1, .project .project__content__content h2, .project .project__content__content h3 {
+      margin-right: 5vw; }
     .project .project__images .project__image {
       width: 100%;
       height: calc(100vw/1.77777);
@@ -1554,7 +1587,8 @@ body.page-template-landing .landing__info__information {
       height: 28.125vw;
       width: 50%;
       max-width: unset;
-      min-width: unset; }
+      min-width: unset;
+      max-height: unset; }
       .projects__project-container .projects__project__highlight {
         height: calc(100vw/1.77777);
         width: 100%; } }
@@ -1744,6 +1778,7 @@ body.page-template-about .main .about {
                 transform: translate(-50%, -50%); }
     body.page-template-about .main .about__content__text p, body.page-template-about .main .about__content__text h1, body.page-template-about .main .about__content__text h2, body.page-template-about .main .about__content__text h3 {
       margin-left: 5vw;
+      margin-right: 5vw;
       font-size: 1rem; }
   body.page-template-about .main .about__press__container a {
     width: calc(100% / 3); }
@@ -1785,19 +1820,22 @@ body.page-template-about .quotes h2, body.page-template-about .press h2 {
     flex-wrap: wrap; }
     body.page-template-about .team-member__container .team-member {
       width: 50%;
-      height: 28.125vw; }
+      height: 28.125vw;
+      max-height: unset; }
   body.page-template-about .quote__container, body.page-template-about .press__container {
     min-height: unset; }
   body.page-template-about .quotes .quote {
     width: 50%;
     height: 28.125vw;
-    flex-basis: unset; }
+    flex-basis: unset;
+    max-height: unset; }
   body.page-template-about .about__press__container a {
     width: 50% !important; }
   body.page-template-about .press .press {
     width: 100%;
     height: 200px;
-    flex-basis: unset; }
+    flex-basis: unset;
+    max-height: unset; }
   body.page-template-about .about__content__contact-info__title {
     padding-left: 20px !important; }
   body.page-template-about .about__content__contact-info--medium {
@@ -1807,6 +1845,11 @@ body.page-template-about .quotes h2, body.page-template-about .press h2 {
     display: none; } }
 
 @media screen and (max-width: 375px) {
+  body.page-template-about .main .row > h2 {
+    font-size: 1rem;
+    text-transform: uppercase; }
+    body.page-template-about .main .row > h2:first-of-type {
+      text-transform: unset; }
   body.page-template-about .about__content__contact-info > h2 {
     margin-left: 0 !important; }
   body.page-template-about .about__content p, body.page-template-about .about__content h1, body.page-template-about .about__content h2, body.page-template-about .about__content h3 {
@@ -1820,11 +1863,25 @@ body.page-template-about .quotes h2, body.page-template-about .press h2 {
   body.page-template-about .quotes .quote {
     width: 100%;
     max-width: unset;
-    height: calc(100vw/1.77777); }
+    height: calc(100vw/1.77777);
+    padding: 50px 10vw; }
+  body.page-template-about .press__logo {
+    height: 40px;
+    position: relative; }
+    body.page-template-about .press__logo img {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+      height: 100%;
+      top: 0;
+      left: 0; }
   body.page-template-about .press .press, body.page-template-about .press a {
     width: 100vw !important;
     max-width: unset;
-    height: calc(100vw/1.77777); } }
+    height: calc(100vw/1.77777); }
+  body.page-template-about .press .press {
+    padding: 50px 10vw; }
+  body.page-template-about .press p, body.page-template-about .quotes p {
+    font-size: .8rem; } }
 
 body.search .main .search-results {
   margin-top: calc(8vh + 15px * 2 + 1rem + 10px);

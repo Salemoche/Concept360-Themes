@@ -99,9 +99,12 @@
     </div>
     <div class="home__random-projects columns small-12">
 
-      <?php 
+      <?php
 
-        for ($i=0; $i < 3; $i++) { 
+        $i=0;
+        $allPosts = array();
+
+        while ($i < 3) { 
           $randIndex = rand(0, count(get_posts())-1); 
           $randPost = get_posts()[$randIndex];
           $image_id = get_post_meta($randPost->ID, 'project_image-main', true);
@@ -112,30 +115,41 @@
         
           $project_id = get_post_meta($randPost->ID, 'project_image-main', true);
         ?>
-        <?php if(has_category(37)): ?>
-          <div class="projects__project project__insight project__thumbnail <?php echo get_post_meta($randPost->ID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
-            <a href="<?php the_permalink($randPost->ID) ?>">
-              <div class="projects__project__info__container">
-                <h3><?php get_the_title($randPost->ID); ?></h3>
-              </div>
-            </a>
-          </div>
-        <?php else: ?>
-          <div class="projects__project project__thumbnail <?php echo get_post_meta($randPost->ID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
-            <a href="<?php the_permalink($randPost->ID) ?>">
-              <div class="projects__project__info__container">
-                <!-- <img src="<?php //echo $image_url ?>" alt=""> -->
-                <?php echo get_the_post_thumbnail( $randPost->ID, 'large' ); ?>
-                <div class="projects__project__info project-hover-info">
-                  <h3><?php echo get_the_title($randPost->ID); ?></h3>
-                  <p><?php echo $post_description_short ?></p>
-                <?php echo has_category(37); ?>
+
+        
+        <?php 
+        if(in_array($randPost->ID, $allPosts)) {
+        } else {      
+          if(has_category(37)): ?>
+            <div class="projects__project project__insight project__thumbnail <?php echo get_post_meta($randPost->ID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
+              <a href="<?php the_permalink($randPost->ID) ?>">
+                <div class="projects__project__info__container">
+                  <h3><?php get_the_title($randPost->ID); ?></h3>
                 </div>
-              </div>
-            </a>
-          </div>
-        <?php endif; ?>
-      <?php
+              </a>
+            </div>
+          <?php else: ?>
+            <div class="projects__project project__thumbnail <?php echo get_post_meta($randPost->ID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
+              <a href="<?php the_permalink($randPost->ID) ?>">
+                <div class="projects__project__info__container">
+                  <!-- <img src="<?php //echo $image_url ?>" alt=""> -->
+                  <?php echo get_the_post_thumbnail( $randPost->ID, 'large' ); ?>
+                  <div class="projects__project__info project-hover-info">
+                    <h3><?php echo get_the_title($randPost->ID); ?></h3>
+                    <p><?php echo $post_description_short ?></p>
+                  <?php echo has_category(37); ?>
+                  </div>
+                </div>
+              </a>
+            </div>
+          <?php endif; 
+          
+          $i = $i + 1;
+
+        }
+
+        array_push($allPosts, $randPost->ID);
+
         }
       ?>
     </div>

@@ -70,6 +70,10 @@
                 font-size: 1rem;
             }
 
+            h1, h2, h3 {
+                margin-bottom: 0;
+            }
+
             span {
                 font-size: 1rem;
             }
@@ -285,6 +289,7 @@
         .project__content {
             &__image {
                 height: 50vw;
+                max-height: unset;
             }
 
             &__content {
@@ -366,6 +371,10 @@
                 
                 .wpb_column {
                     max-width: unset;
+                }
+
+                p, h1, h2, h3 {
+                    margin-right: $spacing-side-large;
                 }
             }
         }

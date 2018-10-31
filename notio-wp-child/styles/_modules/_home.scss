@@ -300,7 +300,7 @@ body.home, body.page-template-landing {
 
             &__text {
                 flex-basis: 30%;
-                min-width: calc(#{$breakpoint-medium} * 0.3);
+                min-width: 300px;
                 flex-grow: 1;
                 // padding: 30px;
                 padding-right: $spacing-side-large;
@@ -310,15 +310,14 @@ body.home, body.page-template-landing {
                     margin-bottom: 10px;
                     font-size: 1.6rem;
 
-                    @media screen and (min-width: $breakpoint-medium-large) {
-                        font-size: 1.8rem; 
-                    }
+                    // @media screen and (min-width: $breakpoint-medium-large) {
+                    //     font-size: 1.8rem; 
+                    // }
 
                 }
 
                 p, b {
                     font-size: 0.8rem;
-                    font-size: calc(100vw / 100 + 1rem);
                     
                     // @media screen and (min-width: $breakpoint-medium-large) {
                     //     font-size: 1.2rem !important; 
@@ -333,6 +332,7 @@ body.home, body.page-template-landing {
                 flex-basis: 70%;
                 min-width: calc(#{$breakpoint-medium} * 0.7);
                 display: flex;
+                flex-wrap: wrap;
                 flex-grow: 1;
                 box-shadow: 0px 13px 34px -5px rgba(0,0,0,0.3);
 
@@ -340,18 +340,24 @@ body.home, body.page-template-landing {
                 .home__ueber-uns__info__item, .landing__ueber-uns__info__item {
                     
                     background-color: $anthrazit;
-                    padding: 20px 30px;
-                    flex-basis: calc(100% / 3);
+                    padding: 1vw 1.5vw;
+                    width: calc(100% / 3);
                     position: relative;
                     display: flex;
                     align-items: flex-start;
                     align-content: flex-start;
                     flex-wrap: wrap;
+                    // min-width: 220px;
                     // min-width: calc(#{$breakpoint-medium} * 0.3);
 
                     // width:  calc(100% / 3);
                             // height: auto !important;
                             // height: calc(100%/ 1.77777777);
+
+                    
+                        @media screen and (max-width: $breakpoint-medium) {
+                            width: 100%;
+                        }
 
                     h5 {
                         color: white;
@@ -392,6 +398,64 @@ body.home, body.page-template-landing {
 
             .home__ueber-uns__info__item p, .home__ueber-uns__text p, .home__ueber-uns__text b {
                 
+                @media screen and (min-width: 1650px) {
+                    font-size: 1.2rem; 
+                }
+
+                @media screen and (man-width: 1650px) {
+                    font-size: 1rem; 
+                }
+
+                // @media screen and (max-width: 1200px) {
+                //     font-size: 0.7rem; 
+                // }
+
+            //     @media screen and (max-width: 1400px) {
+            //         font-size: 0.6rem !important; 
+            //     }
+
+                
+            //     @media screen and (max-width: 1100px) {
+            //         font-size: 0.5rem !important; 
+            //     }
+
+            //     @media screen and (max-width: 938px) {
+            //         font-size: 0.7rem !important; 
+            //     }
+            }
+
+            
+            .home__ueber-uns__info__item h5, .home__ueber-uns__info__item h4 {
+                
+                @media screen and (min-width: 1650px) {
+                    font-size: 1.4rem !important; 
+                }
+
+                @media screen and (max-width: 1650px) {
+                    font-size: 1rem; 
+                }
+
+                // @media screen and (max-width: 1600px) {
+                //     font-size: 1rem !important; 
+                // }
+
+                // @media screen and (max-width: 1400px) {
+                //     font-size: 0.8rem !important; 
+                // }
+
+                
+                // @media screen and (max-width: 1100px) {
+                //     font-size: 0.7rem !important; 
+                // }
+
+                // @media screen and (max-width: 938px) {
+                //     font-size: 0.9rem !important; 
+                // }
+            }
+
+            
+            .home__ueber-uns__info__item {
+                
                 @media screen and (min-width: 1600px) {
                     font-size: 1rem !important; 
                 }
@@ -414,29 +478,6 @@ body.home, body.page-template-landing {
                 }
             }
 
-            .home__ueber-uns__info__item h5 {
-                
-                @media screen and (min-width: 1600px) {
-                    font-size: 1.2rem !important; 
-                }
-
-                @media screen and (max-width: 1600px) {
-                    font-size: 1rem !important; 
-                }
-
-                @media screen and (max-width: 1400px) {
-                    font-size: 0.8rem !important; 
-                }
-
-                
-                @media screen and (max-width: 1100px) {
-                    font-size: 0.7rem !important; 
-                }
-
-                @media screen and (max-width: 938px) {
-                    font-size: 0.9rem !important; 
-                }
-            }
         }
 
         &__random-projects {
@@ -593,6 +634,7 @@ body.home, body.page-template-landing {
                     
                     min-width: unset;
                     max-width: unset;
+                    max-height: unset;
                     width: 50%;
                     height: $teaser-height-50;
 
@@ -661,7 +703,7 @@ body.home, body.page-template-landing {
 
             &__about__slider {
 
-                // height: 100vh;
+                height: calc(100vw / 1.77777 * 3);
 
                 &__wrapper {
                     
@@ -716,6 +758,7 @@ body.home, body.page-template-landing {
                     .home__ueber-uns__info__item {
                         flex-basis: unset;
                         width: calc(100vw - 2*40px);
+                        padding: 4vw 6vw;
                     }
                 }
             }
