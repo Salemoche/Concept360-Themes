@@ -1701,8 +1701,16 @@ body.page-template-solutions .main .solutions {
         width: 100%; }
 
 @media screen and (max-width: 768px) {
+  body.page-template-solutions .main .row {
+    padding: 0; }
   body.page-template-solutions .solutions__content__image {
     height: calc(100vw/1.77777) !important; }
+  body.page-template-solutions .solutions__text {
+    padding-right: 5vw; }
+  body.page-template-solutions .solutions__bakery p, body.page-template-solutions .solutions__bakery h1, body.page-template-solutions .solutions__bakery h2, body.page-template-solutions .solutions__bakery h3, body.page-template-solutions .solutions__bakery h4 {
+    margin: 0 5vw; }
+  body.page-template-solutions .solutions__bakery .wpb_content_element {
+    margin-bottom: 4vh !important; }
   body.page-template-solutions .solutions__working-style .solutions__text {
     padding-left: 0 !important; } }
 

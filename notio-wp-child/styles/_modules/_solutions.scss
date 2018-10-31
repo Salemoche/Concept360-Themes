@@ -151,9 +151,29 @@ body.page-template-solutions {
 
     @media screen and (max-width: $breakpoint-medium){
 
+        .main .row {
+            padding: 0; 
+        }
+
         .solutions__content__image {
             height: $teaser-height !important;
         }
+
+        .solutions__text {
+            padding-right: $spacing-side-large;
+        }
+
+        .solutions__bakery {
+
+            p, h1, h2, h3, h4 {
+                margin: 0 $spacing-side-large;
+            }
+
+            .wpb_content_element {
+                margin-bottom: $spacing-bottom !important;
+            }
+        }
+
             
         .solutions__working-style {
             .solutions__text {
