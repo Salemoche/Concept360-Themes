@@ -275,8 +275,6 @@ div[role=main] {
           background-image: url("./assets/instagram.svg"); }
           .concept-header__main__social-media__container .concept-header__main__social-media--instagram:hover {
             background-image: url("./assets/instagram--red.svg"); }
-			
-			
   .concept-header__project-category__container {
     width: 100%;
     background: #f9f9f9;
