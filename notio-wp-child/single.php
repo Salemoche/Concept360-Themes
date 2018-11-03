@@ -101,7 +101,7 @@
       <?php endforeach; endif; ?>
     </div>
     <div class="project__related-projects row columns small-12">
-      <h4>Ähnliche Projekte</h4>
+      <h4><?php esc_html_e("Weitere Projekte"); ?></h4>
       <?php
       $tags = wp_get_post_terms( get_queried_object_id(), 'post_tag', ['fields' => 'ids'] );
       // $args = [

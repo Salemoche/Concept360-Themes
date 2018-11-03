@@ -4,6 +4,7 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
   <div class="corporate projects projects__corporate row">
+  
     <?php $catquery = new WP_Query( 'type=post&cat=35&posts_per_page=-1' ); ?>
     <div class="projects__project-container">
       <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
@@ -28,7 +29,7 @@
               <div>
                 <?php echo the_post_thumbnail($post->ID) ? the_post_thumbnail($post->ID) : '<p>Bitte Bild hinzufügen</p>'; ?>
                 <div class="projects__project__info project-hover-info">
-                  <h3><?php echo the_title(); ?></h3>
+                  <h3><?php echo esc_html_e(the_title()); ?></h3>
                   <p><?php echo $post_description_short ?></p>
                 <?php echo has_category(37); ?>
                 </div>
