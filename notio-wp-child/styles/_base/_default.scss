@@ -101,6 +101,18 @@ div[role=main] {
         } 
     }
 
+    &.project__insight {
+        transition: $transition-time;
+
+        &:hover {
+            background: $anthrazit;
+
+            h3 {
+                color: $white;
+            }
+        }
+    }
+
     @media screen and (max-width: $breakpoint-medium) {
         min-height: unset;
     }
@@ -290,6 +302,10 @@ div[role=main] {
     cursor: pointer;
 }
 
+.header > .row {
+    position: unset;
+}
+
 .concept-header {
 
     width: 100vw;
@@ -468,6 +484,7 @@ div[role=main] {
             top: 0;
             display: none;
             transition: opacity .5s;
+            max-width: 66%;
 
 
             a {
@@ -727,7 +744,6 @@ div[role=main] {
 
 .menu-holder {
     pointer-events: all;
-    position: absolute;
     right: calc(#{$spacing-side-large} + 0.6vw);
     top: -27px;
 
@@ -735,6 +751,8 @@ div[role=main] {
         display: none;
     }
 }
+
+
 
 .header {
     pointer-events: none;
@@ -920,10 +938,10 @@ div[role=main] {
 
 .icon-holder.menu-holder {
 
+    position: absolute;
+    top: 13px;
+    right: 5vw;
 
-    @media screen and (max-width: $breakpoint-medium) {
-        margin-top: 15px !important;
-    }
 }
 
 .tag {

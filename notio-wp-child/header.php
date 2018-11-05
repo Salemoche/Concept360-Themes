@@ -63,9 +63,9 @@
 				<?php if (!strpos($url, '?s=')) : ?>
 
 					<li class="concept-header__list-item"><a href="<?php echo get_permalink(686) ?>" <?php  echo strpos($url, 'highlights') ? 'class="menu-active"' : ''; ?>><?php echo get_the_title(686) ?></a></li>
-					<li class="concept-header__list-item"><a href="<?php echo get_permalink(684) ?>" <?php  echo strpos($url, 'corporate') ? 'class="menu-active"' : ''; ?>><?php echo get_the_title(684) ?></a></li>
-					<li class="concept-header__list-item"><a href="<?php echo get_permalink(702) ?>" <?php  echo strpos($url, 'journalismus') ? 'class="menu-active"' : ''; ?>><?php echo get_the_title(702) ?></a></li>
-					<li class="concept-header__list-item"><a href="<?php echo get_permalink(704) ?>" <?php  echo strpos($url, 'insights') ? 'class="menu-active"' : ''; ?>><?php echo get_the_title(704) ?></a></li>
+					<li class="concept-header__list-item"><a href="<?php echo get_permalink(684) ?>" <?php  if (strpos($url, 'corporate') || has_category('Corporate')) { echo 'class="menu-active"'; }?>><?php echo get_the_title(684) ?></a></li>
+					<li class="concept-header__list-item"><a href="<?php echo get_permalink(702) ?>" <?php  if (strpos($url, 'journalismus') || has_category('Journalismus')) { echo 'class="menu-active"'; }?>><?php echo get_the_title(702) ?></a></li>
+					<li class="concept-header__list-item"><a href="<?php echo get_permalink(704) ?>" <?php  if (strpos($url, 'insights') || has_category('Insight')) { echo 'class="menu-active"'; }?>><?php echo get_the_title(704) ?></a></li>
 					<!-- <li class="concept-header__project-category__search">
 						<form action="POST">
 							<input type="text" placeholder="Suchbegriff hier eingeben">
@@ -96,7 +96,10 @@
 
 					foreach ($allTags as $tag) {
 											
-						echo '<a href="' . get_home_url() . '/?s='. $tag->name . '" ><li class="tag">' . $tag->name . ' </li></a>';
+						if (tag_description($tag)) {
+							echo '<a href="' . get_home_url() . '/?s='. $tag->name . '" ><li class="tag">' . $tag->name . ' </li></a>';					
+						}
+					
 					}
 				?>
 			</ul>

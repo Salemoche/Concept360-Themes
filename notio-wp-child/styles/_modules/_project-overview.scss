@@ -81,20 +81,32 @@ body.page-template-insights {
                 
                 background: white;
                 color: $anthrazit;
+                transition: $transition-time;
+                cursor: pointer;
     
                 h3 {
                     color: $anthrazit;
+                    transition: $transition-time;
                 }
-                
-                &:nth-of-type(even) {
 
+                &:hover {
                     background: $anthrazit;
-                    color: white;
-        
+
                     h3 {
                         color: white;
                     }
                 }
+                
+                // &:nth-of-type(even) {
+
+                //     background: $anthrazit;
+                //     color: white;
+        
+                //     h3 {
+                //         color: white;
+                //     }
+                // }
+
             }
         }
     }

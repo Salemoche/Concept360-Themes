@@ -142,8 +142,25 @@ $(document).ready( function () {
     // Menu
     //
 
+    var menuOpen = false;
+
     $('.icon-holder div, div.spacer').click(function () {
+
+        var headerTop = $('html').css('margin-top');
+
         $('.burger-menu').toggleClass('open');
+
+        menuOpen = !menuOpen;
+
+        if (menuOpen) {
+            $('.concept-header__main').clone().addClass('menu-open-header').appendTo($('#mobile-menu'));
+            $('.menu-open-header').css('position', 'absolute');
+            $('.menu-open-header').css('top', headerTop);
+        } else {
+            setTimeout( function () {
+                $('.menu-open-header').remove();
+            }, 1200)
+        }
     });
 
     

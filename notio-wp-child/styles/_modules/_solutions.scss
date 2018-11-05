@@ -126,8 +126,11 @@ body.page-template-solutions {
         &__services {
 
             background: $gray;
-            padding-top: $spacing-side;
+            padding-top: $spacing-bottom;
             position: relative;
+            width: 100vw;
+            margin-left: 0;
+            padding-bottom: $spacing-bottom;
 
             &__graphic {
                 // background-image: url('./assets/grafik2.png');
@@ -141,6 +144,10 @@ body.page-template-solutions {
 
                 img {
                     @include center;
+                    width: 100%;
+                }
+
+                .wpb_wrapper {
                     width: 100%;
                 }
             }
@@ -227,7 +234,7 @@ body.page-template-solutions {
 
 
         .solutions__text {
-            padding: 40px $spacing-side-small 0 $spacing-side-small !important;
+            padding: 40px $spacing-side-large 0 $spacing-side-large !important;
         }
 
     }

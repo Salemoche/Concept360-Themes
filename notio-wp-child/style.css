@@ -84,6 +84,12 @@ div[role=main] {
       font-weight: 1.2rem; }
   .project__thumbnail.project__insight:hover h3, .project__thumbnail.team-member__insight:hover h3, .team-member.project__insight:hover h3, .team-member.team-member__insight:hover h3 {
     box-shadow: inset 0px -12px 0px 0px #e31b23; }
+  .project__thumbnail.project__insight, .team-member.project__insight {
+    transition: 0.3s; }
+    .project__thumbnail.project__insight:hover, .team-member.project__insight:hover {
+      background: #282828; }
+      .project__thumbnail.project__insight:hover h3, .team-member.project__insight:hover h3 {
+        color: #f9f9f9; }
   @media screen and (max-width: 768px) {
     .project__thumbnail, .team-member {
       min-height: unset; } }
@@ -207,6 +213,9 @@ div[role=main] {
 .spacer {
   cursor: pointer; }
 
+.header > .row {
+  position: unset; }
+
 .concept-header {
   width: 100vw;
   padding: 0;
@@ -317,7 +326,8 @@ div[role=main] {
       position: absolute;
       top: 0;
       display: none;
-      transition: opacity .5s; }
+      transition: opacity .5s;
+      max-width: 66%; }
       .concept-header__project-category__container .concept-header__all-tags a {
         margin-left: 5px; }
       .concept-header__project-category__container .concept-header__all-tags .tag {
@@ -459,7 +469,6 @@ div[role=main] {
 
 .menu-holder {
   pointer-events: all;
-  position: absolute;
   right: calc(5vw + 0.6vw);
   top: -27px; }
   .menu-holder > .wpml-ls-statics-shortcode_actions {
@@ -539,9 +548,10 @@ div[role=main] {
     .menu-container .language-select {
       bottom: 20px; } }
 
-@media screen and (max-width: 768px) {
-  .icon-holder.menu-holder {
-    margin-top: 15px !important; } }
+.icon-holder.menu-holder {
+  position: absolute;
+  top: 13px;
+  right: 5vw; }
 
 .tag {
   font-size: 0.8rem;
@@ -1368,7 +1378,7 @@ body.page-template-landing .landing__info__information {
       .project__content__content > .row > .wpb_column:last-of-type {
         padding-left: 0;
         margin-bottom: 4vh; }
-        .project__content__content > .row > .wpb_column:last-of-type p, .project__content__content > .row > .wpb_column:last-of-type b, .project__content__content > .row > .wpb_column:last-of-type span, .project__content__content > .row > .wpb_column:last-of-type h1, .project__content__content > .row > .wpb_column:last-of-type h2, .project__content__content > .row > .wpb_column:last-of-type h3, .project__content__content > .row > .wpb_column:last-of-type h4 {
+        .project__content__content > .row > .wpb_column:last-of-type p, .project__content__content > .row > .wpb_column:last-of-type b, .project__content__content > .row > .wpb_column:last-of-type h1, .project__content__content > .row > .wpb_column:last-of-type h2, .project__content__content > .row > .wpb_column:last-of-type h3, .project__content__content > .row > .wpb_column:last-of-type h4 {
           margin-left: calc(4vw - 5px); }
       @media screen and (min-width: 1080px) {
         .project__content__content p, .project__content__content b, .project__content__content span, .project__content__content h1, .project__content__content h2, .project__content__content h3, .project__content__content h4 {
@@ -1483,7 +1493,7 @@ body.page-template-landing .landing__info__information {
       order: -1;
       max-width: unset;
       margin-left: 9px; }
-      .project .project__content__content > .row > .wpb_column:last-of-type p, .project .project__content__content > .row > .wpb_column:last-of-type b, .project .project__content__content > .row > .wpb_column:last-of-type span, .project .project__content__content > .row > .wpb_column:last-of-type h1, .project .project__content__content > .row > .wpb_column:last-of-type h2, .project .project__content__content > .row > .wpb_column:last-of-type h3, .project .project__content__content > .row > .wpb_column:last-of-type h4 {
+      .project .project__content__content > .row > .wpb_column:last-of-type p, .project .project__content__content > .row > .wpb_column:last-of-type b, .project .project__content__content > .row > .wpb_column:last-of-type h1, .project .project__content__content > .row > .wpb_column:last-of-type h2, .project .project__content__content > .row > .wpb_column:last-of-type h3, .project .project__content__content > .row > .wpb_column:last-of-type h4 {
         margin-left: 5vw; }
     .project .project__info {
       padding: 0 5vw;
@@ -1607,13 +1617,15 @@ body.page-template-landing .landing__info__information {
 
 body.page-template-insights .projects__project-container .projects__project {
   background: white;
-  color: #282828; }
+  color: #282828;
+  transition: 0.3s;
+  cursor: pointer; }
   body.page-template-insights .projects__project-container .projects__project h3 {
-    color: #282828; }
-  body.page-template-insights .projects__project-container .projects__project:nth-of-type(even) {
-    background: #282828;
-    color: white; }
-    body.page-template-insights .projects__project-container .projects__project:nth-of-type(even) h3 {
+    color: #282828;
+    transition: 0.3s; }
+  body.page-template-insights .projects__project-container .projects__project:hover {
+    background: #282828; }
+    body.page-template-insights .projects__project-container .projects__project:hover h3 {
       color: white; }
 
 body.page-template-solutions .main .row {
@@ -1686,8 +1698,11 @@ body.page-template-solutions .main .solutions {
       display: none; }
   body.page-template-solutions .main .solutions__services {
     background: #f2f2f2;
-    padding-top: 40px;
-    position: relative; }
+    padding-top: 4vh;
+    position: relative;
+    width: 100vw;
+    margin-left: 0;
+    padding-bottom: 4vh; }
     body.page-template-solutions .main .solutions__services__graphic {
       position: relative;
       overflow: hidden;
@@ -1698,6 +1713,8 @@ body.page-template-solutions .main .solutions {
         top: 50%;
         -webkit-transform: translate(-50%, -50%);
                 transform: translate(-50%, -50%);
+        width: 100%; }
+      body.page-template-solutions .main .solutions__services__graphic .wpb_wrapper {
         width: 100%; }
 
 @media screen and (max-width: 768px) {
@@ -1737,7 +1754,7 @@ body.page-template-solutions .main .solutions {
   body.page-template-solutions .solutions__working-style__container {
     margin-top: 0; }
   body.page-template-solutions .solutions__text {
-    padding: 40px 20px 0 20px !important; } }
+    padding: 40px 5vw 0 5vw !important; } }
 
 body.page-template-about .main > .row {
   margin-bottom: 50px; }

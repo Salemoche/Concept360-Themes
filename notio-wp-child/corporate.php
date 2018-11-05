@@ -13,7 +13,7 @@
           // $image_url = get_post_thumbnail_url( $post->ID);
           $post_description = get_post_meta($post->ID, 'project_description', true);
           $post_description_length = strlen($post_description);
-          $post_description_short = $post_description_length > 80 ? substr($post_description, 0, 80) . "..." : $post_description; 
+          $post_description_short = get_post_meta($post->ID, 'project_teaser', true); 
         ?>
         <?php if(has_category(37)): ?>
           <div class="projects__project project__insight project__thumbnail <?php echo get_post_meta($post->ID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
