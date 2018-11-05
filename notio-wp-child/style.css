@@ -227,7 +227,9 @@ div[role=main] {
     height: 3vw;
     width: 100%;
     background: #282828;
-    position: relative; }
+    position: relative;
+    opacity: 1 !important;
+    z-index: 1000; }
     .concept-header__main__logo {
       width: 170px;
       min-width: 170px;
@@ -251,8 +253,10 @@ div[role=main] {
       min-width: 120px;
       width: 5.5vw;
       position: absolute;
-      right: calc(5vw * 2 + 20px);
+      right: calc(5vw + 100px);
       z-index: 102;
+      align-content: center;
+      align-items: center;
       position: absolute;
       top: 50%;
       -webkit-transform: translateY(-50%);
@@ -290,7 +294,9 @@ div[role=main] {
     position: relative;
     min-height: 55px;
     transition: min-height 0.3s;
-    overflow: hidden; }
+    overflow: hidden;
+    position: absolute;
+    top: 71px; }
     .concept-header__project-category__container ul {
       list-style: none;
       display: flex;
@@ -548,10 +554,12 @@ div[role=main] {
     .menu-container .language-select {
       bottom: 20px; } }
 
-.icon-holder.menu-holder {
+.icon-holder {
   position: absolute;
-  top: 13px;
-  right: 5vw; }
+  top: -10px;
+  right: -100px;
+  opacity: 0;
+  transition: 0.3s; }
 
 .tag {
   font-size: 0.8rem;

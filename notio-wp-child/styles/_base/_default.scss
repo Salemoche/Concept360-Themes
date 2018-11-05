@@ -321,6 +321,8 @@ div[role=main] {
     	width: 100%;
         background: $anthrazit;
         position: relative;
+        opacity: 1 !important;
+        z-index: 1000;
 
         &__logo {
 
@@ -356,8 +358,11 @@ div[role=main] {
             min-width: 120px;
             width: 5.5vw;
             position: absolute;
-            right: calc(#{$spacing-side-large} * 2 + 20px);
+            // right: calc(#{$spacing-side-large} * 2 + 20px + 50px);
+            right: calc(#{$spacing-side-large} + 100px);
             z-index: 102;
+            align-content: center;
+            align-items: center;
 
             @include center-vertically;
             
@@ -420,6 +425,8 @@ div[role=main] {
         min-height: 55px;
         transition: min-height $transition-time;
         overflow: hidden;
+        position: absolute;
+        top: 71px;
 
         ul {
 
@@ -936,11 +943,13 @@ div[role=main] {
     
 }
 
-.icon-holder.menu-holder {
+.icon-holder {
 
     position: absolute;
-    top: 13px;
-    right: 5vw;
+    top: -10px;
+    right: -100px;
+    opacity: 0;
+    transition: $transition-time;
 
 }
 

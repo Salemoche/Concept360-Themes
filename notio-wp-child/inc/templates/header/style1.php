@@ -11,7 +11,7 @@
 		<div class="small-12 columns">
 			<?php if ($mobile_menu_position === 'left') { ?>
 			<a href="#" data-target="open-menu" class="mobile-toggle">
-				<div>
+				<div class="menu-div">
 					<span></span><span></span><span></span>
 				</div>
 			</a>
@@ -23,7 +23,7 @@
 				<?php if ($header_cart != 'off') { do_action( 'thb_quick_cart' ); } ?>
 				<?php if ($mobile_menu_position === 'right') { ?>
 				<a href="#" data-target="open-menu" class="mobile-toggle">
-					<div>
+					<div class="menu-div">
 						<span></span><span></span><span></span>
 					</div>
 				</a>
