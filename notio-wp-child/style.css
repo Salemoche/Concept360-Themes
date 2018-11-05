@@ -229,7 +229,9 @@ div[role=main] {
     background: #282828;
     position: relative;
     opacity: 1 !important;
-    z-index: 1000; }
+    z-index: 1000;
+    transition: 0.3s;
+    border: none !important; }
     .concept-header__main__logo {
       width: 170px;
       min-width: 170px;
@@ -296,7 +298,7 @@ div[role=main] {
     transition: min-height 0.3s;
     overflow: hidden;
     position: absolute;
-    top: 71px; }
+    top: 3vw; }
     .concept-header__project-category__container ul {
       list-style: none;
       display: flex;
@@ -556,7 +558,9 @@ div[role=main] {
 
 .icon-holder {
   position: absolute;
-  top: -10px;
+  top: 50%;
+  -webkit-transform: translateY(-63%);
+          transform: translateY(-63%);
   right: -100px;
   opacity: 0;
   transition: 0.3s; }
