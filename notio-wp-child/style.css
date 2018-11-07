@@ -1967,7 +1967,11 @@ body.search .main .search-results {
         width: calc(100% / 2 * 2); } }
 
 		
+<<<<<<< HEAD
 /* Tiles - 181106/mt */
+=======
+/* Tiles - mt/181106 */
+>>>>>>> origin
 .project-wrapper {
 	flex-basis: calc(100% / 3);
 	min-width: 33%;
@@ -1977,6 +1981,7 @@ body.search .main .search-results {
 .project-wrapper .projects__project {
 	flex-basis: 100%;
 	min-width: 100%;
+<<<<<<< HEAD
 }
 
 /* Contact icons - 181107/mt */
@@ -2001,3 +2006,6 @@ body.search .main .search-results {
 .footer__info .icon-mail {
   background-image: url("./assets/mail.svg"); }
 
+=======
+}
+>>>>>>> origin
