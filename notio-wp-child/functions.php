@@ -192,4 +192,240 @@
 //
 
   add_theme_support('html5', array('search-form'));
+  
+
+	function debug_to_console( $data ) {
+		$output = $data;
+		if ( is_array( $output ) )
+			$output = implode( ',', $output);
+		echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
+	}
+
+	if(!function_exists('array_swap_assoc')) {
+		function array_swap_assoc($key1, $key2, $array) {
+			$newArray = array ();
+			foreach ($array as $key => $value) {
+				if ($key == $key1) {
+					$newArray[$key2] = $array[$key2];
+				} elseif ($key == $key2) {
+					$newArray[$key1] = $array[$key1];
+				} else {
+					$newArray[$key] = $value;
+				}
+			}
+			return $newArray;
+		}
+	}
+
+	/*
+	 *	Rearrange posts
+	 */
+
+	function c360_rearrange_posts($posts)
+	{
+		// Set to 3 columns
+		$NMB_COLS = 3;
+		
+		/*
+		 *	Fetch row layouts
+		 */
+		 
+		$rowLayouts = [];
+		
+		// Traverse posts
+		for($postInd=0; $postInd<=sizeof($posts); $postInd++)
+		{
+			// Check for row start
+			if( ($tileInd % $NMB_COLS) == 0 )
+			{
+				$rowLayout = "";
+								
+				// Traverse current row
+				for($i=0; $i<$NMB_COLS; $i++)
+				{
+					$post = $posts[$postInd+$i];
+				
+					// Check if current post is featured
+					$rowLayout .= get_post_meta($post->ID, 'highlight', true) ? "X" : "x";
+				}
+					
+				// Add column to rows array
+				$rowLayouts[] = $rowLayout;
+			}
+			
+			$postInd += $NMB_COLS-1;
+		}
+		
+		//debug_to_console( $rowLayouts );
+		
+		
+		/*
+		 *	Rearrange rows if needed
+		 */
+		 
+		$rowInd = 0;
+		$LAST_FEATURE_LEFT = -1;
+		$LAST_FEATURE_RIGHT = 1;
+		$lastFeature = -1;
+		
+		// Traverse posts
+		for($postInd=0; $postInd<=sizeof($posts); $postInd++)
+		{
+			// Check for row start
+			if( ($postInd % $NMB_COLS) == 0 )
+			{
+				// Init wrapper flag
+				$wrapper = 0;
+				
+				// Fetch current row layout
+				$currentRow = $rowLayouts[$rowInd];
+				
+				//debug_to_console(" BEFORE " . $rowInd . " - " . $postInd . " - " . $rowLayouts[$rowInd] . " / " . $lastFeature);
+				
+				if($currentRow == "xxx") {
+					// Do nothing, evtl. reset $lastFeature
+				}
+				
+				else if ($currentRow == "Xxx")
+				{					
+					// Move element #1 > #3, if $LAST_FEATURE_LEFT to RIGHT
+					if($lastFeature == $LAST_FEATURE_LEFT)
+					{
+						// Set feature override for two others
+						if($postInd+2 < sizeof($posts))
+						{
+							// Add wrapper, as comment_count
+							$posts[$postInd+1]->comment_count = 1;
+							$posts[$postInd+2]->comment_count = 1;
+							
+							// Swap #0 <> #2
+							$posts = array_swap_assoc($postInd, $postInd+2, $posts);
+						}
+						
+						// Update lastFeature = RIGHT	xxX
+						$rowLayouts[$rowInd] = "xxX";
+						$lastFeature = $LAST_FEATURE_RIGHT;	
+					}
+					else
+					{										
+						// Update lastFeature = LEFT	Xxx
+						$lastFeature = $LAST_FEATURE_LEFT;
+					}
+				}
+				
+				else if ($currentRow == "xXx")
+				{					
+					// Move element #2 > 3, if $LAST_FEATURE_LEFT TO RIGHT
+					if($lastFeature == $LAST_FEATURE_LEFT)
+					{
+						// Set feature override for two others
+						if($postInd+2 < sizeof($posts))
+						{
+							// Add wrapper, as comment_count
+							$posts[$postInd]->comment_count = 1;
+							$posts[$postInd+2]->comment_count = 1;
+							
+							// Swap #1 <> #2
+							$posts = array_swap_assoc($postInd+1, $postInd+2, $posts);
+						}	
+						
+						// Update lastFeature = RIGHT 	xxX
+						$rowLayouts[$rowInd] = "xxX";
+						$lastFeature = $LAST_FEATURE_RIGHT;
+					} 					
+					
+					// Move element #2 > 1, if $LAST_FEATURE_RIGHT TO LEFT
+					else if($lastFeature == $LAST_FEATURE_RIGHT)
+					{
+						// No wrapper
+						
+						// Swap #0 <> #1
+						$posts = array_swap_assoc($postInd, $postInd+1, $posts);
+						
+						// Update lastFeature = LEFT	Xxx
+						$rowLayouts[$rowInd] = "Xxx";
+						$lastFeature = $LAST_FEATURE_LEFT;
+					}
+				}
+				
+				else if ($currentRow == "xxX")
+				{
+					// Move element #3 to #1, if $LAST_FEATURE_RIGHT TO LEFT
+					if($lastFeature == $LAST_FEATURE_RIGHT)
+					{
+						// No wrapper
+						
+						// Swap #0 <> #2
+						$posts = array_swap_assoc($postInd, $postInd+2, $posts);
+						
+						// Update lastFeature = LEFT	Xxx
+						$rowLayouts[$rowInd] = "Xxx";
+						$lastFeature = $LAST_FEATURE_LEFT;
+						
+					}
+					else
+					{		
+						// Add wrapper, as comment_count
+						$posts[$postInd]->comment_count = 1;
+						$posts[$postInd+1]->comment_count = 1;
+					
+						$lastFeature = $LAST_FEATURE_RIGHT;
+					}
+				}
+				
+				else if($currentRow == "XXx" || $currentRow == "xXX"  || $currentRow == "XXX" ) {
+					// Resize tiles, feature #1, others small
+					
+					// Feature left Story, if last one was right
+					if($lastFeature == $LAST_FEATURE_RIGHT && ($currentRow == "XXx" || $currentRow == "XXX"))
+					{
+						// No wrapper
+						
+						// Set feature override for two others
+						if($postInd+2 < sizeof($posts))
+						{
+							$posts[$postInd+1]->comment_status = 1;
+							$posts[$postInd+2]->comment_status = 1;
+						}
+						
+						// Update lastFeature = LEFT	Xxx
+						$rowLayouts[$rowInd] = "Xxx";
+						$lastFeature = $LAST_FEATURE_LEFT;
+						
+					// Feature right story
+					} else {
+						
+						
+						// Set feature override for two others
+						if($postInd+1 < sizeof($posts))
+						{
+						// Add wrapper, as comment_count
+						$posts[$postInd]->comment_count = 1;
+						$posts[$postInd+1]->comment_count = 1;
+						
+						// Set feature override for two others
+						$posts[$postInd]->comment_status = 1;
+						$posts[$postInd+1]->comment_status = 1;
+						}
+						
+						// Update lastFeature = RIGHT 	xxX
+						$rowLayouts[$rowInd] = "xxX";
+						$lastFeature = $LAST_FEATURE_RIGHT;
+					}
+				}
+				
+				//debug_to_console(" AFTER: " . $rowInd . " - " . $postInd . " - " . $rowLayouts[$rowInd] . " / " . $lastFeature);
+				
+				//debug_to_console("---");
+				
+				$rowInd++;
+			}
+		}
+		
+
+		return $posts;
+	}
+  
+  
+  //function c360_
 ?>

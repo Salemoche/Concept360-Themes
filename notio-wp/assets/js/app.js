@@ -43,7 +43,6 @@
 			} else {
 				start_init();
 			}
-			
 		},
 		reverseAnimations: {
 			start: function(container) {
@@ -1651,6 +1650,9 @@
 			}
 		}
 	};
+	
+	
+	// Custom tiles - end
 	
 	$doc.ready(function() {
 		if ($('#vc_inline-anchor').length) {

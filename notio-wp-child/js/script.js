@@ -98,6 +98,9 @@ $(document).ready( function () {
     //
 
     var searchOpen = false;
+	
+	// Disable search auto-complete - 181107/mt
+	$(".concept-header__project-category__search-form input").attr("autocomplete", "off");
 
     $('.concept-header__project-category__search__ghost').click(function() {
 
@@ -247,4 +250,5 @@ $(document).ready( function () {
             $('.concept-header__main').css('background', '#282828')
         }
     });
-})
+	
+});
