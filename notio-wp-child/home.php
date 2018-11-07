@@ -55,12 +55,12 @@
               <p><?php echo get_post_meta($post->ID, 'landing_projects_text', true); ?></p>
             </a>
           </div>
-          <div class="home__landing__text__project-category home__landing_project-category--insights columns small-4">
+          <!--<div class="home__landing__text__project-category home__landing_project-category--insights columns small-4">
             <a href="<?php echo get_permalink(704)?>">
               <h3>Insights</h3>
               <p><?php echo get_post_meta($post->ID, 'landing_insights_text', true); ?></p>
             </a>
-            </div>
+            </div>-->
           <div class="home__landing__text__project-category home__landing_project-category--showcase columns small-4">
             <a href="<?php echo get_permalink(686)?>">
               <h3>Showcase</h3>
@@ -84,15 +84,15 @@
       </div>
       <div class="home__ueber-uns__info__container">
         <div class="home__ueber-uns__info__item">
-          <h5><?php echo get_post_meta($post->ID, 'home_conception_title', true); ?></h5>
+          <h5><a href="<?php the_permalink(500) ?>"><?php echo get_post_meta($post->ID, 'home_conception_title', true); ?></a></h5>
           <p><?php echo get_post_meta($post->ID, 'home_conception_text', true); ?></p>
         </div>
         <div class="home__ueber-uns__info__item">
-          <h5><?php echo get_post_meta($post->ID, 'home_production_title', true); ?></h5>
+          <h5><a href="<?php the_permalink(500) ?>"><?php echo get_post_meta($post->ID, 'home_production_title', true); ?></a></h5>
           <p><?php echo get_post_meta($post->ID, 'home_production_text', true); ?></p>
         </div>
         <div class="home__ueber-uns__info__item">
-          <h5><?php echo get_post_meta($post->ID, 'home_trainings_title', true); ?></h5>
+          <h5><a href="<?php the_permalink(500) ?>"><?php echo get_post_meta($post->ID, 'home_trainings_title', true); ?></a></h5>
           <p><?php echo get_post_meta($post->ID, 'home_trainings_text', true); ?></p>
         </div>
       </div>

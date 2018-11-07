@@ -2,7 +2,6 @@
 <?php
   $posttags = get_the_tags();
 ?>
-<?php if (have_posts()) :  while (have_posts()) : the_post(); ?>
 <?php 
   $image_id = get_post_meta($post->ID, 'project_image-main', true);
   $image_url = wp_get_attachment_image_src( $image_id, 'large'  )[0];
@@ -139,7 +138,7 @@
                       <?php echo the_post_thumbnail( 'large' ); ?>
                         <div class="projects__project__info project-hover-info">
                           <h3><?php echo the_title(); ?></h3>
-                          <p><?php //echo $post_description_short ?></p>
+                          <p><?php echo $post_description_short ?></p>
                         <?php echo has_category(37); ?>
                         </div>
                       </div>
@@ -154,5 +153,5 @@
     </div>
   </div>
   <div class="footer-spacer"></div>
-<?php endwhile; else : endif; ?>
+<?php //endwhile; else : endif; ?>
 <?php get_footer(); ?>

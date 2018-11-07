@@ -425,7 +425,4 @@
 
 		return $posts;
 	}
-  
-  
-  //function c360_
 ?>

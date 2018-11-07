@@ -90,7 +90,7 @@ if ( ! empty( $el_id ) ) {
 $output .= '<div ' . implode( ' ', $wrapper_attributes ) . '>';
 $output .= '<div class="vc_column-inner ' . esc_attr( trim( vc_shortcode_custom_css_class( $css ) ) ) . '">';
 if($wk_link_href !== ""){
-	$output .= '<a href="'.$wk_link_href.'" class="wk-columnLink">';
+	//$output .= '<a href="'.$wk_link_href.'" class="wk-columnLink">';
 }
 $output .= '<div class="wpb_wrapper">';
 $output .= wpb_js_remove_wpautop( $content );
