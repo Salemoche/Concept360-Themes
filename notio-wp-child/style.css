@@ -26,6 +26,9 @@ a {
   a:hover {
     color: red; }
 
+.underline-link:hover:after, .products .product .product_after_title .button:hover:after, .wpb_text_column a:hover:after {
+  display: none; }
+
 img {
   max-width: unset; }
 
@@ -73,11 +76,12 @@ div[role=main] {
             transform: translate(-50%, -50%) scale(1.05); }
   .project__thumbnail.project__insight div, .project__thumbnail.team-member__insight div, .team-member.project__insight div, .team-member.team-member__insight div {
     position: absolute;
-    left: 50%;
     top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    width: 80%; }
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 80%;
+    left: 5vw;
+    right: 5vw; }
     .project__thumbnail.project__insight div h3, .project__thumbnail.team-member__insight div h3, .team-member.project__insight div h3, .team-member.team-member__insight div h3 {
       transition: 0.3s;
       display: inline;
@@ -144,6 +148,8 @@ div[role=main] {
   padding: 0;
   min-height: calc(50vh - 200px);
   flex-wrap: wrap; }
+  .quote__container a, .press__container a {
+    height: 18.75vw; }
   .quote__container .quote, .quote__container .press, .press__container .quote, .press__container .press {
     background: #282828;
     color: white;
@@ -172,7 +178,8 @@ div[role=main] {
         left: 50%;
         top: 50%;
         -webkit-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%); }
+                transform: translate(-50%, -50%);
+        width: 100%; }
     .quote__container .quote a:hover h4, .quote__container .press a:hover h4, .press__container .quote a:hover h4, .press__container .press a:hover h4 {
       box-shadow: inset 0px -7px 0px 0px #e31b23; }
     .quote__container .quote:nth-of-type(even), .quote__container .press:nth-of-type(even), .press__container .quote:nth-of-type(even), .press__container .press:nth-of-type(even) {
@@ -189,7 +196,15 @@ div[role=main] {
       .quote__container .quote, .quote__container .press, .press__container .quote, .press__container .press {
         width: 50%;
         height: 28.125vw;
-        flex-basis: unset; } }
+        flex-basis: unset; }
+        .quote__container .quote a, .quote__container .press a, .press__container .quote a, .press__container .press a {
+          height: 28.125vw; } }
+    @media screen and (max-width: 768px) {
+      .quote__container .quote, .quote__container .press, .press__container .quote, .press__container .press {
+        width: 100%;
+        height: calc(100vw/1.77777); }
+        .quote__container .quote a, .quote__container .press a, .press__container .quote a, .press__container .press a {
+          height: calc(100vw/1.77777); } }
   .quote__container a:nth-of-type(even) .press, .press__container a:nth-of-type(even) .press {
     background: black; }
 
@@ -255,7 +270,7 @@ div[role=main] {
       min-width: 120px;
       width: 5.5vw;
       position: absolute;
-      right: calc(5vw + 100px);
+      right: calc(5vw + 47px);
       z-index: 102;
       align-content: center;
       align-items: center;
@@ -367,7 +382,7 @@ div[role=main] {
     margin-top: 6px;
     height: 33px;
     position: absolute;
-    right: calc(5vw + 13px);
+    right: calc(5vw + 6px);
     top: 0px;
     border-bottom: none;
     transition: 0.3s; }
@@ -405,8 +420,8 @@ div[role=main] {
   .concept-header .concept-header__project-category__search-form.open {
     border-bottom: 2px solid #888; }
     .concept-header .concept-header__project-category__search-form.open input[type=search] {
-      max-width: calc(100vw / 3 - 5vw + 13px);
-      width: calc(100vw / 3 - 5vw - 28px); }
+      max-width: calc(100vw / 3 - 5vw + 6px);
+      width: calc(100vw / 3 - 5vw - 22px); }
   @media screen and (max-width: 768px) {
     .concept-header .concept-header__project-category__container ul {
       padding-left: 5vw;
@@ -526,7 +541,8 @@ div[role=main] {
   .menu-container .menu-language-select {
     width: 100%;
     display: flex;
-    justify-content: flex-start; }
+    justify-content: flex-start;
+    transition-delay: 3s; }
   .menu-container .wpml-ls-menu-item {
     float: left;
     margin-right: 20px;
@@ -561,7 +577,7 @@ div[role=main] {
   top: 50%;
   -webkit-transform: translateY(-63%);
           transform: translateY(-63%);
-  right: -100px;
+  right: -45px;
   opacity: 0;
   transition: 0.3s; }
 
@@ -592,8 +608,7 @@ div[role=main] {
     font-size: 0.8rem;
     font-weight: 600;
     color: #e31b23;
-    text-transform: uppercase;
-    margin: 0 3px; }
+    text-transform: uppercase; }
   .concept-breadcrumbs .breadcrumb > a {
     margin-left: 0; }
   .concept-breadcrumbs span {
@@ -637,13 +652,13 @@ div[role=main] {
       color: white;
       margin-bottom: 10px; }
     .footer__info p {
-      font-size: 0.8rem;
+      font-size: 1rem;
       margin-bottom: 0;
       margin: 0 auto;
       display: inline;
       transition: 0.3s; }
   .footer__contact-form {
-    background: black;
+    background: black !important;
     color: white;
     text-align: center;
     padding: 50px 0; }
@@ -924,7 +939,10 @@ div[role=main] {
   background-size: contain;
   transition: 0.3s;
   background-repeat: no-repeat;
-  display: block; }
+  display: inline-block;
+  -webkit-transform: translateY(20%);
+          transform: translateY(20%);
+  margin-right: 10px; }
 
 .footer__info .icon-phone {
   background-image: url("./assets/phone.svg"); }
@@ -1134,7 +1152,7 @@ body.home .home__ueber-uns, body.home .landing__ueber-uns, body.page-template-la
       @media screen and (max-width: 768px) {
         body.home .home__ueber-uns__info__container .home__ueber-uns__info__item, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item {
           width: 100%; } }
-      body.home .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5 {
+      body.home .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item a {
         color: white;
         font-size: 1rem;
         font-weight: 600;
@@ -1142,7 +1160,7 @@ body.home .home__ueber-uns, body.home .landing__ueber-uns, body.page-template-la
         width: 100%;
         display: block; }
         @media screen and (min-width: 1080px) {
-          body.home .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5 {
+          body.home .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item a {
             font-size: 1.2rem; } }
       body.home .home__ueber-uns__info__container .home__ueber-uns__info__item p, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item p, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item p, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item p {
         color: white;
@@ -1151,7 +1169,7 @@ body.home .home__ueber-uns, body.home .landing__ueber-uns, body.page-template-la
         margin-bottom: 0; }
       body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even), body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even), body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even), body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even), body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even), body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even), body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even), body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) {
         background: white; }
-        body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p {
+        body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) a, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) a, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) a, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) a, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) a, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) a, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) a, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) a {
           color: #282828; }
   @media screen and (min-width: 1650px) {
     body.home .home__ueber-uns .home__ueber-uns__info__item p, body.home .home__ueber-uns .home__ueber-uns__text p, body.home .home__ueber-uns .home__ueber-uns__text b, body.home .landing__ueber-uns .home__ueber-uns__info__item p, body.home .landing__ueber-uns .home__ueber-uns__text p, body.home .landing__ueber-uns .home__ueber-uns__text b, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text b, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text b {
@@ -1369,8 +1387,10 @@ body.page-template-landing .landing__info__information {
   .project__content {
     padding-left: 0;
     padding-right: 0; }
-    .project__content p, .project__content span {
+    .project__content p, .project__content span, .project__content em, .project__content i, .project__content b, .project__content strong {
       font-size: 1rem; }
+    .project__content h1, .project__content h2, .project__content h3, .project__content h4, .project__content h5 {
+      margin-top: 10px; }
     .project__content__image {
       width: 100%;
       margin-bottom: 4vh;
@@ -1414,11 +1434,32 @@ body.page-template-landing .landing__info__information {
       pointer-events: none; }
     .project__content__content {
       padding: 0; }
-      .project__content__content p, .project__content__content h1, .project__content__content h2, .project__content__content h3 {
+      .project__content__content .vc_sep_line {
+        margin: 0 5vw 2vw 5vw;
+        width: 83% !important; }
+      .project__content__content .wpb_column:nth-of-type(3) {
+        padding-right: 6.5vw !important; }
+        .project__content__content .wpb_column:nth-of-type(3) p, .project__content__content .wpb_column:nth-of-type(3) strong {
+          text-align: left !important; }
+      .project__content__content .wpb_column:nth-of-type(2) {
+        padding-left: 0;
+        padding-right: 0; }
+      .project__content__content .wpb_column:nth-of-type(1) {
+        padding-right: 0; }
+      .project__content__content p, .project__content__content strong {
         margin-left: 5vw;
         font-size: 1rem; }
       .project__content__content h1, .project__content__content h2, .project__content__content h3 {
+        margin-left: 5vw;
+        font-size: 0.9rem; }
+      .project__content__content h1, .project__content__content h2, .project__content__content h3 {
         margin-bottom: 0; }
+      .project__content__content a {
+        font-size: 1rem;
+        color: #282828; }
+      .project__content__content i {
+        -webkit-transform: translate(-20%, 10%);
+                transform: translate(-20%, 10%); }
       .project__content__content span {
         font-size: 1rem; }
       .project__content__content > .row > .wpb_column:last-of-type {
@@ -1426,9 +1467,13 @@ body.page-template-landing .landing__info__information {
         margin-bottom: 4vh; }
         .project__content__content > .row > .wpb_column:last-of-type p, .project__content__content > .row > .wpb_column:last-of-type b, .project__content__content > .row > .wpb_column:last-of-type h1, .project__content__content > .row > .wpb_column:last-of-type h2, .project__content__content > .row > .wpb_column:last-of-type h3, .project__content__content > .row > .wpb_column:last-of-type h4 {
           margin-left: calc(4vw - 5px); }
+        .project__content__content > .row > .wpb_column:last-of-type h1, .project__content__content > .row > .wpb_column:last-of-type h2, .project__content__content > .row > .wpb_column:last-of-type h3, .project__content__content > .row > .wpb_column:last-of-type h4 {
+          text-transform: uppercase; }
       @media screen and (min-width: 1080px) {
-        .project__content__content p, .project__content__content b, .project__content__content span, .project__content__content h1, .project__content__content h2, .project__content__content h3, .project__content__content h4 {
-          font-size: 1.2rem; } }
+        .project__content__content p, .project__content__content b, .project__content__content span, .project__content__content h1, .project__content__content h2, .project__content__content h3, .project__content__content h4, .project__content__content a, .project__content__content strong, .project__content__content em {
+          font-size: 1.2rem; }
+        .project__content__content h1, .project__content__content h2, .project__content__content h3, .project__content__content h4 {
+          font-size: 1rem; } }
     .project__content .wpb_singcle_image, .project__content .wpb_single_image figure, .project__content .wpb_single_image .vc_single_image-wrapper, .project__content .wpb_single_image img {
       width: 100%; }
   .project__image {
@@ -1456,14 +1501,17 @@ body.page-template-landing .landing__info__information {
   .project .project__info {
     padding-left: 4vw;
     padding-right: 5vw;
-    padding-top: 40px; }
+    padding-top: 40px;
+    overflow: hidden;
+    max-height: calc(18.75vw*2); }
     .project .project__info__title h2 {
-      font-size: 1.6rem;
+      font-size: 1.8rem !important;
       margin-bottom: 4vh; }
     .project .project__info__spacer {
       min-height: 40vh; }
-    .project .project__info__description p {
-      margin-bottom: 50px; }
+    .project .project__info__description p, .project .project__info__description strong {
+      margin-bottom: 50px;
+      font-weight: 600; }
     .project .project__info__tags {
       display: flex;
       flex-wrap: wrap;
@@ -1491,7 +1539,7 @@ body.page-template-landing .landing__info__information {
     margin-bottom: 4vh; }
   .project__images {
     font-size: 1rem;
-    margin: 0 0 4vh 0;
+    margin: 0 0 6vh 0;
     padding-left: 0 !important;
     padding-right: 0 !important; }
     .project__images .project__image {
@@ -1588,6 +1636,12 @@ body.page-template-landing .landing__info__information {
         width: 100%;
         height: calc(100vw/1.77777);
         display: inherit; } }
+  .project.project__insight .project__content__content p, .project.project__insight .project__content__content strong {
+    text-align: justify; }
+  .project.project__insight .project__content__content .wpb_content_element {
+    margin-bottom: 2vw !important; }
+  .project.project__insight .project__content__content .wpb_row {
+    margin-bottom: 2vw; }
 
 .rp4wp-related-posts {
   width: 100vw;
@@ -1625,7 +1679,8 @@ body.page-template-landing .landing__info__information {
 .projects {
   margin: 0 auto;
   margin-top: calc(8vh + 15px * 2 + 1rem + 10px);
-  transition: 0.3s; }
+  transition: 0.3s;
+  background: #f9f9f9; }
   .projects__project-container {
     flex-wrap: wrap;
     width: 100%; }
@@ -1646,6 +1701,10 @@ body.page-template-landing .landing__info__information {
         max-height: calc(calc(100vw / 3 / 1.7) * 2);
         max-width: unset;
         width: 66.6%; }
+        .projects__project-container .projects__project__highlight h3 {
+          font-size: 1.6rem; }
+        .projects__project-container .projects__project__highlight p {
+          font-size: 1.2rem !important; }
   @media screen and (max-width: 768px) {
     .projects__project-container .projects__project {
       height: 28.125vw;
@@ -1803,7 +1862,7 @@ body.page-template-solutions .main .solutions {
     padding: 40px 5vw 0 5vw !important; } }
 
 body.page-template-about .main > .row {
-  margin-bottom: 50px; }
+  margin-bottom: 6vh; }
   body.page-template-about .main > .row > h2 {
     display: block;
     font-size: 1.6rem; }

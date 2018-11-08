@@ -359,7 +359,7 @@ body.home, body.page-template-landing {
                             width: 100%;
                         }
 
-                    h5 {
+                    h5, a {
                         color: white;
                         font-size: 1rem;
                         font-weight: $bold;
@@ -388,7 +388,7 @@ body.home, body.page-template-landing {
                     &:nth-of-type(even) {
                         background: white;
 
-                        h5, p {
+                        h5, p, a {
                             color: $anthrazit;
                         }
                     }

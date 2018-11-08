@@ -24,6 +24,10 @@ a {
     }
 }
 
+.underline-link:hover:after, .products .product .product_after_title .button:hover:after, .wpb_text_column a:hover:after {
+    display: none;
+}
+
 img {
     max-width: unset;
 }
@@ -83,8 +87,10 @@ div[role=main] {
     &.project__insight, &.team-member__insight {
 
         div {
-            @include center;
+            @include center-vertically;
             width: 80%;
+            left: $spacing-side-large;
+            right: $spacing-side-large;
 
             h3 {
                 transition: $transition-time;
@@ -194,6 +200,10 @@ div[role=main] {
     min-height: calc(50vh - 200px);
     flex-wrap: wrap;
 
+    a {
+        height: $teaser-height-33;
+    }
+
     .quote, .press {
 
         background: $anthrazit;
@@ -218,6 +228,7 @@ div[role=main] {
             flex-basis: 100%;
         }
 
+
         &__logo { 
             width: 100%;
             margin-bottom: 20px;
@@ -226,6 +237,8 @@ div[role=main] {
 
             img {
                 @include center;
+                width: 100%;
+
             }
         }
 
@@ -263,6 +276,20 @@ div[role=main] {
             height: $teaser-height-50;
             flex-basis: unset;
             //height: $teaser-height--medium;
+
+            a {
+                height: $teaser-height-50;
+            }
+        }
+
+
+        @media screen and (max-width: $breakpoint-medium){
+            width: 100%;
+            height: $teaser-height;
+
+            a {
+                height: $teaser-height;
+            }
         }
     }
 
@@ -361,7 +388,7 @@ div[role=main] {
             width: 5.5vw;
             position: absolute;
             // right: calc(#{$spacing-side-large} * 2 + 20px + 50px);
-            right: calc(#{$spacing-side-large} + 100px);
+            right: calc(#{$spacing-side-large} + 47px);
             z-index: 102;
             align-content: center;
             align-items: center;
@@ -545,7 +572,7 @@ div[role=main] {
         margin-top: 6px;
         height: 33px;
         position: absolute;
-        right: calc(#{$spacing-side-large} + 13px);
+        right: calc(#{$spacing-side-large} + 6px);
         top: 0px;
 
         border-bottom: none;
@@ -605,8 +632,8 @@ div[role=main] {
             border-bottom: 2px solid #888;
 
             input[type=search] {
-                max-width: calc(100vw / 3 - 5vw + 13px);
-                width: calc(100vw / 3 - 5vw - 28px);
+                max-width: calc(100vw / 3 - 5vw + 6px);
+                width: calc(100vw / 3 - 5vw - 22px);
             }
         }
     }
@@ -837,6 +864,8 @@ div[role=main] {
         width: 100%;
         display: flex;
         justify-content: flex-start;
+        // transform: translateY(240px);
+        transition-delay: 3s;
     }
 
     .wpml-ls-menu-item {
@@ -950,7 +979,7 @@ div[role=main] {
     position: absolute;
     top: 50%;
     transform: translateY(-63%);
-    right: -100px;
+    right: -45px;
     opacity: 0;
     transition: $transition-time;
 
@@ -993,7 +1022,7 @@ div[role=main] {
         font-weight: $bold;
         color: $red;
         text-transform: uppercase;
-        margin: 0 3px;
+        // margin: 0 3px;
 
     }
     
@@ -1071,7 +1100,7 @@ div[role=main] {
         }
 
         p {
-            font-size: 0.8rem;
+            font-size: 1rem;
             margin-bottom: 0;
             margin: 0 auto;
             display: inline;
@@ -1082,7 +1111,7 @@ div[role=main] {
 
     &__contact-form {
         
-        background: black;
+        background: black !important;
         color: white;
         text-align: center;
         padding: 50px 0;
@@ -1542,7 +1571,9 @@ div[role=main] {
         background-size: contain;
         transition: 0.3s;
         background-repeat: no-repeat; 
-        display: block;
+        display: inline-block;
+        transform: translateY(20%);
+        margin-right: 10px;
 }
 .footer__info .icon-phone {
   background-image: url("./assets/phone.svg"); }

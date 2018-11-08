@@ -3,6 +3,7 @@
     margin: 0 auto;
     margin-top: $spacing-top-submenu;
     transition: $transition-time;
+    background: $white;
 
     &__project-container {
 
@@ -30,6 +31,14 @@
                 max-height: calc(#{$teaser-max-height-33} * 2);
                 max-width: unset;
                 width: 66.6%;
+
+                h3 {
+                    font-size: 1.6rem;
+                }
+
+                p {
+                    font-size: 1.2rem !important;
+                }
             }
 
         }

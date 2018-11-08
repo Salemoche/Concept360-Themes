@@ -7,8 +7,12 @@
         padding-left: 0;
         padding-right: 0;
 
-        p, span {
+        p, span, em, i, b, strong {
             font-size: 1rem;
+        }
+
+        h1, h2, h3, h4, h5 {
+            margin-top: 10px;
         }
 
         &__image {
@@ -65,14 +69,51 @@
             padding: 0;
             // padding-right: $spacing-side-large;
 
-            p, h1, h2, h3 {
+            .vc_sep_line {
+                margin: 0 $spacing-side-large 2vw $spacing-side-large;
+                width: 83% !important;
+            }
+
+            .wpb_column:nth-of-type(3) {
+                padding-right: 6.5vw !important;
+
+                p, strong {
+                    text-align: left !important;
+                }
+            }
+
+            .wpb_column:nth-of-type(2) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .wpb_column:nth-of-type(1) {
+                padding-right: 0;
+            }
+
+            p, strong {
                 margin-left: $spacing-side-large;
                 font-size: 1rem;
             }
 
             h1, h2, h3 {
+                margin-left: $spacing-side-large;
+                font-size: 0.9rem;
+            }
+
+            h1, h2, h3 {
                 margin-bottom: 0;
             }
+
+            a {
+                font-size: 1rem;
+                color: $anthrazit;
+            }
+
+            i {
+                transform: translate(-20%, 10%);
+            }
+
 
             span {
                 font-size: 1rem;
@@ -84,15 +125,23 @@
 
                 p, b, h1, h2, h3, h4 {
                     margin-left: calc(4vw - 5px);
-
                 }
+
+                h1, h2, h3, h4 {
+                    text-transform: uppercase;
+                }
+
 
             }
 
             @media screen and (min-width: $breakpoint-medium-large) {
 
-                p, b, span, h1, h2, h3, h4 {
+                p, b, span, h1, h2, h3, h4, a, strong, em {
                     font-size: 1.2rem;
+                }
+
+                h1, h2, h3, h4 {
+                    font-size: 1rem;
                 }
             }
 
@@ -138,9 +187,11 @@
         padding-left: 4vw;
         padding-right: $spacing-side-large;
         padding-top: $spacing-side;
+        overflow: hidden;
+        max-height: calc(#{$teaser-height-33}*2);
 
         &__title h2 {
-            font-size: 1.6rem;
+            font-size: 1.8rem !important;
             margin-bottom: $spacing-bottom;
         }
 
@@ -149,8 +200,10 @@
         }
 
         &__description {
-            p {
+            p, strong {
                 margin-bottom: 50px;
+                font-weight: 600;
+                
             }
         }
 
@@ -224,7 +277,7 @@
     &__images {
         // display: flex;
         font-size: 1rem;
-        margin: 0 0 $spacing-bottom 0;
+        margin: 0 0 $spacing-bottom-large 0;
         padding-left: 0 !important;
         padding-right: 0 !important;
 
@@ -401,6 +454,24 @@
                 width: 100%;
                 height: $teaser-height; 
                 display: inherit; 
+            }
+        }
+    }
+
+    &.project__insight {
+
+        .project__content__content {
+
+            p, strong {
+                text-align: justify;
+            }
+
+            .wpb_content_element {
+                margin-bottom: 2vw !important;
+            }
+
+            .wpb_row {
+                margin-bottom: 2vw;
             }
         }
     }

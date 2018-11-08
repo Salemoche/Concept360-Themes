@@ -6,7 +6,7 @@
   $image_id = get_post_meta($post->ID, 'project_image-main', true);
   $image_url = wp_get_attachment_image_src( $image_id, 'large'  )[0];
 ?>
-  <div class="project row">
+  <div class="project row <?php echo has_category(37) ? 'project__insight' : '';?>">
     <!-- <div class="project__content columns medium-8 small-12 collapse"> -->
       <div class="project__content__image columns medium-8 small-12 360-main-image">
         <div id="iframe0"  style="display: none;">
@@ -138,7 +138,7 @@
                       <?php echo the_post_thumbnail( 'large' ); ?>
                         <div class="projects__project__info project-hover-info">
                           <h3><?php echo the_title(); ?></h3>
-                          <p><?php echo $post_description_short ?></p>
+                          <p><?php echo get_field('project_teaser') ?></p>
                         <?php echo has_category(37); ?>
                         </div>
                       </div>

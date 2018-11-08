@@ -176,9 +176,9 @@ $(document).ready( function () {
         }
     });
 
-    
     $('#menu-item-wpml-ls-3-de').wrap( "<li class='menu-language-select'></li>" );
     $('.menu-language-select').append($('#menu-item-wpml-ls-3-en'));
+    $('.menu-language-select').appendTo($('ul.mobile-menu'));
 
     
     //
