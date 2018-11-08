@@ -76,7 +76,7 @@
       endif;
       $images = acf_photo_gallery('project_images', $post->ID) ? acf_photo_gallery('project_images', $post->ID) : '';
       //Check if return array has anything in it
-      if( count($images) ):
+      if( $images && count($images) ):
           //Cool, we got some data so now let's loop over it
           foreach($images as $image):
               $id = $image['id']; // The attachment id of the media
