@@ -15,6 +15,10 @@
             margin-top: 10px;
         }
 
+        // blockquote {
+        //     padding: 0;
+        // }
+
         &__image {
             width: 100%;
             margin-bottom: $spacing-bottom;
@@ -71,7 +75,7 @@
 
             .vc_sep_line {
                 margin: 0 $spacing-side-large 2vw $spacing-side-large;
-                width: 83% !important;
+                width: 85% !important;
             }
 
             .wpb_column:nth-of-type(3) {
@@ -85,6 +89,10 @@
             .wpb_column:nth-of-type(2) {
                 padding-left: 0;
                 padding-right: 0;
+
+                p, strong, h1, h2, h3, h4 {
+                    margin-left: 4vw;
+                }
             }
 
             .wpb_column:nth-of-type(1) {

@@ -43,9 +43,9 @@ div[role=main] {
     margin-top: 0 !important;
 }
 
-::-webkit-scrollbar { 
-    display: none; 
-}
+// ::-webkit-scrollbar { 
+//     display: none; 
+// }
 
 .btn {
     border: none;
@@ -1313,6 +1313,7 @@ div[role=main] {
         border-radius: 0;
         transition: $transition-time;
         color: white;
+        background: $anthrazit;
 
         &:hover {
             border-bottom: 1px solid $red;
@@ -1324,7 +1325,7 @@ div[role=main] {
     textarea {
         width: 100%;
         min-height: 0;
-        height: 43px;
+        height: 143px;
     }
 
     &-form-control {
@@ -1343,6 +1344,7 @@ div[role=main] {
             width: 100%;
             padding: 0;
         }
+
 
         input[type=submit] {
             border-bottom: none;
