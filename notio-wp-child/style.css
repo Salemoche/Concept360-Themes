@@ -1706,15 +1706,12 @@ body.page-template-landing .landing__info__information {
         .projects__project-container .projects__project__highlight p {
           font-size: 1.2rem !important; }
   @media screen and (max-width: 768px) {
-    .projects__project-container .projects__project {
+    .projects__project-container .projects__project, .projects__project-container .projects__project__highlight {
       height: 28.125vw;
       width: 50%;
       max-width: unset;
       min-width: unset;
-      max-height: unset; }
-      .projects__project-container .projects__project__highlight {
-        height: calc(100vw/1.77777);
-        width: 100%; } }
+      max-height: unset; } }
   @media screen and (max-width: 375px) {
     .projects__project-container .projects__project {
       height: calc(100vw/1.77777);

@@ -156,7 +156,7 @@ $(document).ready( function () {
 
         if ($('body').hasClass('logged-in')) {
             console.log('logged in');
-            headerTop = window.innerWidth > 785 ? 32 : 64;
+            headerTop = window.innerWidth > 785 ? 32 : 46;
         }
 
         var subHeaderTop = headerTop + window.innerWidth * 0.3;

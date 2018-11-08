@@ -48,7 +48,7 @@
 
         &__project-container {
 
-            .projects__project {
+            .projects__project, .projects__project__highlight {
 
                 height: $teaser-height-50;
                 width: 50%;
@@ -56,10 +56,6 @@
                 min-width: unset;
                 max-height: unset;
 
-                &__highlight {
-                    height: $teaser-height;
-                    width: 100%;
-                }
             }
         }
     }
