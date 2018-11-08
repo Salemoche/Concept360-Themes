@@ -1509,3 +1509,45 @@ div[role=main] {
         font-size: 4.5rem;
     }
 }
+
+//
+// Matthias Changes
+//
+
+
+
+        
+/* Tiles - 181106/mt */
+.project-wrapper {
+    flex-basis: calc(100% / 3);
+    min-width: 33%;
+    max-width: 34%;
+    width: calc(100% / 3);
+}
+.project-wrapper .projects__project {
+    flex-basis: 100%;
+    min-width: 100%;
+}
+
+/* Contact icons - 181107/mt */
+
+.footer__info .icons {
+        width: 20px;
+        height: 20px;
+        min-height: 20px;
+        min-width: 20px;
+        width: 1vw;
+        height: 1vw;
+        background-position: center;
+        background-size: contain;
+        transition: 0.3s;
+        background-repeat: no-repeat; 
+        display: block;
+}
+.footer__info .icon-phone {
+  background-image: url("./assets/phone.svg"); }
+.footer__info .icon-address {
+  background-image: url("./assets/map-pin.svg"); }
+.footer__info .icon-mail {
+  background-image: url("./assets/mail.svg"); }
+
