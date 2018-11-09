@@ -1,12 +1,13 @@
 body.page-template-about {
 
     .main > .row {
-        margin-bottom: $spacing-bottom-large;
+        margin-bottom: $spacing-bottom;
         // padding: 0 $spacing-side;
 
         > h2 {
             display: block;
             font-size: 1.6rem;
+            max-width: 90vw;
         }
 
         &.press {
@@ -96,11 +97,33 @@ body.page-template-about {
 
             
             &__text {
-                p, h1, h2, h3 {
-                    margin-left: $spacing-side-large;
-                    margin-right: $spacing-side-large;
-                    font-size: 1rem;
+                // p, h1, h2, h3 {
+                //     margin-left: $spacing-side-large;
+                //     margin-right: $spacing-side-large;
+                //     font-size: 1rem;
+                // }
+
+                .wpb_column {
+                    max-width: 50%;
+                    padding: 0;
+
+                    p, h1, h2, h3, h4, h5, h6 {
+                        margin-left: $spacing-side-large;
+                    }
                 }
+
+                // > .row > .wpb_column:last-of-type{
+                //     padding-left: 0;
+                //     order: -1;
+                //     max-width: unset;
+                //     margin-left: 9px;
+    
+                //     p, b, h1, h2, h3, h4 {
+                //         margin-left: $spacing-side-large;
+    
+                //     }
+    
+                // }
             }
         }   
 
@@ -159,12 +182,7 @@ body.page-template-about {
             div {
                 transition: $transition-time;
             }
-    
-            &:hover {
-                div {
-                    transform: scale(1.05);
-                }
-            } 
+
         }
     }
 

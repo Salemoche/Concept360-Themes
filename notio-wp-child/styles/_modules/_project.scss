@@ -91,7 +91,7 @@
                 max-width: 32.33333%;
 
                 p, strong, h1, h2, h3, h4 {
-                    margin-left: 4vw;
+                    margin-left: 5vw;
                 }
             }
 
@@ -143,7 +143,7 @@
                 margin-bottom: $spacing-bottom;
 
                 p, b, h1, h2, h3, h4 {
-                    margin-left: calc(4vw - 5px);
+                    margin-left: calc(5vw - 5px);
                 }
 
                 h1, h2, h3, h4 {
@@ -203,7 +203,7 @@
 
     .project__info {
 
-        padding-left: 4vw;
+        padding-left: 5vw;
         padding-right: $spacing-side-large;
         padding-top: $spacing-side;
         overflow: hidden;
@@ -296,7 +296,7 @@
     &__images {
         // display: flex;
         font-size: 1rem;
-        margin: 0 0 $spacing-bottom-large 0;
+        margin: 0 0 $spacing-bottom 0;
         padding-left: 0 !important;
         padding-right: 0 !important;
 

@@ -104,8 +104,8 @@
         
         <a href="<?php the_sub_field('press_link'); ?>">
           <div class="about__press press">
-            <div class="about__press__logo press__logo">
-              <img src=" <?php the_sub_field('press_logo'); ?>" alt="">
+            <div class="about__press__logo press__logo" style="background-image: url( <?php the_sub_field('press_logo'); ?>);">
+              <!-- <img src="" alt=""> -->
             </div>
             <h4><?php the_sub_field('press_article'); ?></h4>
             <p><?php the_sub_field('press_details'); ?></p>

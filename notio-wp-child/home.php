@@ -24,7 +24,8 @@
             'hd'        => 3,
             'autohide'    => 1,
             'autoplay' => 1,
-            'mute' => 1
+            'mute' => 1,
+            'loop' => 1
         );
 
         $new_src = add_query_arg($params, $src);

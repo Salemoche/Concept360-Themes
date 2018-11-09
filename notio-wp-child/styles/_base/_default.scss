@@ -214,7 +214,7 @@ div[role=main] {
 
     display: flex;
     padding: 0;
-    min-height: calc(50vh - 200px);
+    // min-height: calc(50vh - 200px);
     flex-wrap: wrap;
 
     h3, h4 {
@@ -249,6 +249,7 @@ div[role=main] {
         align-content: center;
         align-items: center;
         flex-wrap: wrap;
+        transition: $transition-time;
 
         h4 {
             color: white;
@@ -270,12 +271,15 @@ div[role=main] {
             height: 5vw;
             max-height: 100px;
             position: relative; 
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
 
-            img {
-                @include center;
-                height: 100%;
+            // img {
+            //     @include center;
+            //     height: 100%;
 
-            }
+            // }
         }
 
         a:hover {
@@ -295,6 +299,35 @@ div[role=main] {
             h4 {
                 color: $anthrazit;
             }
+
+
+        }
+
+        &.quote:nth-of-type(odd) {
+            
+            &:hover {
+
+                background: white;
+
+                
+                h4, p {
+                    color: black;;
+                }
+            }
+        }
+
+        &.quote:nth-of-type(even) {
+            
+            
+            &:hover {
+                
+                background: $anthrazit;
+
+                
+                h4, p {
+                    color: white;
+                }
+            }
         }
 
         &.press:nth-of-type(even) {
@@ -305,6 +338,8 @@ div[role=main] {
             h4 {
                 color: white;
             }
+
+
         }
 
         @media screen and (max-width: $breakpoint-medium){
@@ -1215,6 +1250,7 @@ div[role=main] {
             font-size: 0.6rem !important;
             font-weight: $light;
             letter-spacing: 0.6px;
+            margin-bottom: 0;
         }
      
         

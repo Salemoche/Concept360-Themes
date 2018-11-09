@@ -36,6 +36,15 @@ body.home, body.page-template-landing {
                     top: 80vh;
                 width: 100vw;
 
+                .vp-player-layout {
+                    
+                    min-height: 100% !important;
+                    top: 0 !important;
+                    min-width: 100% !important;
+                    left: 50% !important;
+                    transform: translateX(-50%);
+                }
+
                 .wp-video {
                     position: absolute;
                     left: 0;

@@ -4,6 +4,14 @@ body.page-template-solutions {
         font-size: 1.4rem !important;
     }
 
+    h6 {
+        font-weight: 700;
+    }
+
+    p {
+        font-weight: 500;
+    }
+
     .main .row {
         margin-bottom: $spacing-bottom;
         padding: 0 $spacing-side;
@@ -53,6 +61,23 @@ body.page-template-solutions {
 
         &__working-style {
 
+            .row, .wpb_column {
+                padding: 0;
+                max-width: 1920px;
+            }
+
+            .wpb_column {
+                
+                &:first-of-type {
+                    padding-left: $spacing-side-large;
+                }
+
+                &:last-of-type {
+                    padding-right: $spacing-side-large;
+                    padding-left: 8px;
+                }
+            }
+
             &__graphic {
 
                 position: relative;
@@ -64,6 +89,7 @@ body.page-template-solutions {
 
                 svg {
                     width: 25vw;
+                    max-width: 420px;
                     @include center;
 
                     .flag {
@@ -105,6 +131,7 @@ body.page-template-solutions {
             &__graphic__text {
 
                 position: relative;
+                padding: 0;
 
                 h5 {
                     color: $red;
@@ -113,7 +140,7 @@ body.page-template-solutions {
 
                 h6 {
                     font-size: 1rem;
-                    font-weight: $regular;
+                    font-weight: 600;
                 }
 
                 p {
@@ -130,11 +157,10 @@ body.page-template-solutions {
         &__services {
 
             background: $gray;
-            padding-top: $spacing-bottom;
             position: relative;
             width: 100vw;
             margin-left: 0;
-            padding-bottom: $spacing-bottom;
+            padding: $spacing-bottom $spacing-side-large !important;
 
             &__graphic {
                 // background-image: url('./assets/grafik2.png');
