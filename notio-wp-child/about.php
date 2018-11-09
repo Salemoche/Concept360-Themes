@@ -74,12 +74,13 @@
       while ( have_rows('quotes') ) : the_row();
     
     ?>
-
-        <div class="about__quote quote">
+      <a href="<?php the_sub_field('quote_link'); ?>" class="about__quote quote">
+        <div >
           <h4><?php the_sub_field('quote_quote'); ?></h4>
           <p><?php the_sub_field('quote_name'); ?></p>
           <p><?php the_sub_field('quote_details'); ?></p>
         </div>
+      </a>
 
     <?php 
 

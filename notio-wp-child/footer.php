@@ -19,7 +19,7 @@
 		</div>
 		<div id="contact-form" class="footer__contact-form columns small-12" style="background: rgb(40,40,40);">
 			<p><?php echo __('Gerne stehen wir Ihnen für weitere Informationen zur Verfügung.<br />Wir freuen uns von Ihnen zu hören.', 'c360'); ?></p>
-			<?php echo do_shortcode( '[contact-form-7 id="676" title="Contact Form"]' ); ?>
+			<?php echo do_shortcode( '[contact-form-7 id="2520" title="Contact Form"]' ); ?>
 		</div>
 		<div class="footer__copyright columns small-12">
 

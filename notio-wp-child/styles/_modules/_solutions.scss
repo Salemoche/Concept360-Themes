@@ -1,5 +1,9 @@
 body.page-template-solutions {
 
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1.4rem !important;
+    }
+
     .main .row {
         margin-bottom: $spacing-bottom;
         padding: 0 $spacing-side;

@@ -45,6 +45,7 @@ img {
 
 div[role=main] {
     margin: 0 auto !important;
+    width: 100%;
     max-width: $breakpoint-large;
 
     // @media screen (min-width: $breakpoint-large) {
@@ -77,6 +78,7 @@ div[role=main] {
     position: relative;
     height: $teaser-height-33;
     max-height: $teaser-max-height-33;
+    background-color: white;
 
     img {
         width: 100%;
@@ -144,7 +146,7 @@ div[role=main] {
     left: 0;
     background-color: rgba($color: #000000, $alpha: 0.7);
     transition: $transition-time;
-    padding: 50px;
+    padding: 50px $spacing-side-large;
     display: flex;
     align-items: center;
     align-content: center;
@@ -212,6 +214,18 @@ div[role=main] {
 
     a {
         height: $teaser-height-33;
+        max-height: $teaser-max-height-33;
+
+        @media screen and (max-width: $breakpoint-medium) {
+            height: $teaser-height-50;
+            
+        }
+
+        @media screen and (max-width: $breakpoint-small) {
+            height: $teaser-height;
+            
+        }
+        
     }
 
     .quote, .press {
@@ -224,11 +238,12 @@ div[role=main] {
         max-height: $teaser-max-height-33;
         display: flex;
         align-content: center;
+        align-items: center;
         flex-wrap: wrap;
 
         h4 {
             color: white;
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-bottom: 5px;
             transition: $transition-time;
         }
@@ -236,18 +251,20 @@ div[role=main] {
         p {
             margin-bottom: 0;
             flex-basis: 100%;
+            font-size: .8rem;
         }
 
 
         &__logo { 
             width: 100%;
             margin-bottom: 20px;
-            height: 80px;
+            height: 5vw;
+            max-height: 100px;
             position: relative; 
 
             img {
                 @include center;
-                width: 100%;
+                height: 100%;
 
             }
         }
@@ -290,15 +307,25 @@ div[role=main] {
             a {
                 height: $teaser-height-50;
             }
-        }
 
-
-        @media screen and (max-width: $breakpoint-medium){
+            
             width: 100%;
             height: $teaser-height;
 
             a {
                 height: $teaser-height;
+            }
+        }
+
+
+        @media screen and (min-width: 1440px){
+
+            h4 {
+                font-size: 1.4rem;
+            }
+
+            p {
+                font-size: 1.2rem;
             }
         }
     }
@@ -1117,7 +1144,7 @@ div[role=main] {
             margin: 0 auto;
             display: inline;
             transition: $transition-time;
-
+            padding-left: 30px;
         }
     }
 
@@ -1568,6 +1595,22 @@ div[role=main] {
     min-width: 33%;
     max-width: 34%;
     width: calc(100% / 3);
+
+    @media screen and (max-width: $breakpoint-medium) {
+        
+        flex-basis: calc(100% / 2);
+        width: calc(100% / 2);
+        min-width: 50%;
+        max-width: 50%;
+    }
+
+    @media screen and (max-width: $breakpoint-small) {
+        
+        flex-basis: calc(100%);
+        width: calc(100%);
+        min-width: 190%;
+        max-width: 10%;
+    }
 }
 .project-wrapper .projects__project {
     flex-basis: 100% !important;
@@ -1591,7 +1634,7 @@ div[role=main] {
         display: inline-block;
         transform: translateY(20%);
         position:absolute;
-        left: -30px;
+        left: 0px;
         top: -14px;
 }
 .footer__info .icon-phone {

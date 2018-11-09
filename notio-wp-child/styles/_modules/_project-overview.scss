@@ -56,6 +56,18 @@
                 min-width: unset;
                 max-height: unset;
 
+                &__highlight {
+                    
+
+                    h3 {
+                        font-size: 0.8rem;
+                    }
+
+                    p {
+                        font-size: 0.8rem !important;
+                    }
+                }
+
             }
         }
     }
