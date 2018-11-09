@@ -174,9 +174,11 @@ div[role=main] {
     align-content: center;
     align-items: center;
     flex-wrap: wrap;
-    transition: 0.3s; }
+    transition: 0.3s;
+    background: white;
+    color: #282828; }
     .quote__container .quote h4, .quote__container .press h4, .press__container .quote h4, .press__container .press h4 {
-      color: white;
+      color: #282828;
       font-size: 1rem;
       margin-bottom: 5px;
       transition: 0.3s; }
@@ -195,23 +197,9 @@ div[role=main] {
       background-position: center; }
     .quote__container .quote a:hover h4, .quote__container .press a:hover h4, .press__container .quote a:hover h4, .press__container .press a:hover h4 {
       box-shadow: inset 0px -7px 0px 0px #e31b23; }
-    .quote__container .quote:nth-of-type(even), .quote__container .press:nth-of-type(even), .press__container .quote:nth-of-type(even), .press__container .press:nth-of-type(even) {
-      background: white;
-      color: #282828; }
-      .quote__container .quote:nth-of-type(even) h4, .quote__container .press:nth-of-type(even) h4, .press__container .quote:nth-of-type(even) h4, .press__container .press:nth-of-type(even) h4 {
-        color: #282828; }
-    .quote__container .quote.quote:nth-of-type(odd):hover, .quote__container .press.quote:nth-of-type(odd):hover, .press__container .quote.quote:nth-of-type(odd):hover, .press__container .press.quote:nth-of-type(odd):hover {
-      background: white; }
-      .quote__container .quote.quote:nth-of-type(odd):hover h4, .quote__container .quote.quote:nth-of-type(odd):hover p, .quote__container .press.quote:nth-of-type(odd):hover h4, .quote__container .press.quote:nth-of-type(odd):hover p, .press__container .quote.quote:nth-of-type(odd):hover h4, .press__container .quote.quote:nth-of-type(odd):hover p, .press__container .press.quote:nth-of-type(odd):hover h4, .press__container .press.quote:nth-of-type(odd):hover p {
-        color: black; }
-    .quote__container .quote.quote:nth-of-type(even):hover, .quote__container .press.quote:nth-of-type(even):hover, .press__container .quote.quote:nth-of-type(even):hover, .press__container .press.quote:nth-of-type(even):hover {
+    .quote__container .quote:hover, .quote__container .press:hover, .press__container .quote:hover, .press__container .press:hover {
       background: #282828; }
-      .quote__container .quote.quote:nth-of-type(even):hover h4, .quote__container .quote.quote:nth-of-type(even):hover p, .quote__container .press.quote:nth-of-type(even):hover h4, .quote__container .press.quote:nth-of-type(even):hover p, .press__container .quote.quote:nth-of-type(even):hover h4, .press__container .quote.quote:nth-of-type(even):hover p, .press__container .press.quote:nth-of-type(even):hover h4, .press__container .press.quote:nth-of-type(even):hover p {
-        color: white; }
-    .quote__container .quote.press:nth-of-type(even), .quote__container .press.press:nth-of-type(even), .press__container .quote.press:nth-of-type(even), .press__container .press.press:nth-of-type(even) {
-      background: black;
-      color: white; }
-      .quote__container .quote.press:nth-of-type(even) h4, .quote__container .press.press:nth-of-type(even) h4, .press__container .quote.press:nth-of-type(even) h4, .press__container .press.press:nth-of-type(even) h4 {
+      .quote__container .quote:hover h4, .quote__container .quote:hover p, .quote__container .press:hover h4, .quote__container .press:hover p, .press__container .quote:hover h4, .press__container .quote:hover p, .press__container .press:hover h4, .press__container .press:hover p {
         color: white; }
     @media screen and (max-width: 768px) {
       .quote__container .quote, .quote__container .press, .press__container .quote, .press__container .press {
@@ -229,8 +217,6 @@ div[role=main] {
         font-size: 1.4rem; }
       .quote__container .quote p, .quote__container .press p, .press__container .quote p, .press__container .press p {
         font-size: 1.2rem; } }
-  .quote__container a:nth-of-type(even) .press, .press__container a:nth-of-type(even) .press {
-    background: black; }
 
 .burger-menu {
   width: 40px;
@@ -588,13 +574,13 @@ div[role=main] {
     display: none; }
   @media screen and (max-width: 768px) {
     .menu-container .mobile-menu {
-      padding: 20vh 100px 0 100px;
-      text-align: center; }
-    .menu-container .menu-language-select {
-      justify-content: center; } }
+      padding: 20vh 100px 0 100px; } }
   @media screen and (max-width: 375px) {
     .menu-container .mobile-menu {
-      padding: 23vh 70px 0 70px; }
+      padding: 23vh 70px 0 70px;
+      text-align: center; }
+      .menu-container .mobile-menu .menu-language-select {
+        justify-content: center; }
       .menu-container .mobile-menu li a {
         font-size: 1.4rem;
         margin-bottom: 10px; }
@@ -1222,7 +1208,7 @@ body.home .home__ueber-uns, body.home .landing__ueber-uns, body.page-template-la
       flex-wrap: wrap; }
       @media screen and (max-width: 768px) {
         body.home .home__ueber-uns__info__container .home__ueber-uns__info__item, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item {
-          width: 100%; } }
+          height: auto !important; } }
       body.home .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item a {
         color: white;
         font-size: 1rem;
@@ -1344,9 +1330,15 @@ body.home .home__customers, body.home .landing__customers, body.page-template-la
         min-width: calc( 100vw - 5vw * 2) !important; }
     body.home .home__about__slider__wrapper__foto, body.home .landing__about__slider__wrapper__foto, body.page-template-landing .home__about__slider__wrapper__foto, body.page-template-landing .landing__about__slider__wrapper__foto {
       width: 100vw !important;
-      top: calc(100vw / 1.777777) !important; }
+      top: calc(100vw / 1.777777) !important;
+      max-width: calc( 1920px / 2); }
       body.home .home__about__slider__wrapper__foto img, body.home .landing__about__slider__wrapper__foto img, body.page-template-landing .home__about__slider__wrapper__foto img, body.page-template-landing .landing__about__slider__wrapper__foto img {
-        width: 100vw !important; }
+        width: 100vw !important; } }
+  @media screen and (max-width: 768px) and (min-width: 1920px) {
+    body.home .home__about__slider__wrapper .home__slider__wrapper__text, body.home .landing__about__slider__wrapper .home__slider__wrapper__text, body.page-template-landing .home__about__slider__wrapper .home__slider__wrapper__text, body.page-template-landing .landing__about__slider__wrapper .home__slider__wrapper__text {
+      left: calc( 1920px / 2) !important; } }
+
+@media screen and (max-width: 768px) {
   body.home .home__random-projects, body.home .landing__random-projects, body.page-template-landing .home__random-projects, body.page-template-landing .landing__random-projects {
     height: 28.125vw; }
     body.home .home__random-projects .projects__project, body.home .landing__random-projects .projects__project, body.page-template-landing .home__random-projects .projects__project, body.page-template-landing .landing__random-projects .projects__project {
@@ -1664,7 +1656,11 @@ body.page-template-landing .landing__info__information {
       height: 50vw;
       max-height: unset; }
     .project .project__content__content .wpb_column {
-      max-width: 50%; }
+      max-width: 50%;
+      flex-basis: 47.5%; }
+      .project .project__content__content .wpb_column:nth-of-type(3) {
+        flex-basis: 100%;
+        max-width: unset; }
     .project .project__content__content > .row > .wpb_column:last-of-type {
       padding-left: 0;
       order: -1;
@@ -1674,7 +1670,8 @@ body.page-template-landing .landing__info__information {
         margin-left: 5vw; }
     .project .project__info {
       padding: 0 5vw;
-      color: #282828; }
+      color: #282828;
+      max-height: unset; }
       .project .project__info__spacer {
         min-height: 0; }
       .project .project__info__description p {
@@ -1699,8 +1696,17 @@ body.page-template-landing .landing__info__information {
       .project .project__images .project__image {
         height: 28.125vw; } }
   @media screen and (max-width: 375px) {
+    .project .project__content__content .row {
+      margin-left: 0;
+      margin-right: 0;
+      max-width: 100%; }
     .project .project__content__content .wpb_column {
-      max-width: unset; }
+      max-width: unset;
+      flex-basis: 100%;
+      padding: 0;
+      margin-left: 0 !important; }
+    .project .project__content__content .wpb_wrapper {
+      margin-bottom: 10px; }
     .project .project__content__content p, .project .project__content__content h1, .project .project__content__content h2, .project .project__content__content h3 {
       margin-right: 5vw; }
     .project .project__images .project__image {
@@ -1820,8 +1826,8 @@ body.page-template-insights .projects__project-container .projects__project {
     body.page-template-insights .projects__project-container .projects__project:hover h3 {
       color: white; }
 
-body.page-template-solutions h1, body.page-template-solutions h2, body.page-template-solutions h3, body.page-template-solutions h4, body.page-template-solutions h5, body.page-template-solutions h6 {
-  font-size: 1.4rem !important; }
+body.page-template-solutions h1, body.page-template-solutions h2, body.page-template-solutions h3, body.page-template-solutions h4, body.page-template-solutions h5 {
+  font-size: 1.8rem !important; }
 
 body.page-template-solutions h6 {
   font-weight: 700; }
@@ -1836,6 +1842,9 @@ body.page-template-solutions .main .row {
     padding-left: 40px; }
     body.page-template-solutions .main .row .solutions__text .concept-breadcrumbs span:last-of-type {
       display: none; }
+
+body.page-template-solutions .main > .row {
+  margin-bottom: 0; }
 
 body.page-template-solutions .main .solutions {
   margin-top: calc(8vh + 15px * 2 + 1rem + 10px);
@@ -1899,20 +1908,22 @@ body.page-template-solutions .main .solutions {
       color: #e31b23;
       margin-bottom: 0; }
     body.page-template-solutions .main .solutions__working-style__graphic__text h6 {
-      font-size: 1rem;
+      font-size: 1.4rem;
       font-weight: 600; }
     body.page-template-solutions .main .solutions__working-style__graphic__text p {
       position: absolute;
       width: 100%;
       left: 0;
       padding: 0 1rem;
-      display: none; }
+      display: none;
+      padding: 0; }
   body.page-template-solutions .main .solutions__services {
     background: #f2f2f2;
     position: relative;
     width: 100vw;
     margin-left: 0;
-    padding: 4vh 5vw !important; }
+    padding: 4vh 5vw !important;
+    margin-bottom: 0; }
     body.page-template-solutions .main .solutions__services__graphic {
       position: relative;
       overflow: hidden;
@@ -1929,17 +1940,36 @@ body.page-template-solutions .main .solutions {
 
 @media screen and (max-width: 768px) {
   body.page-template-solutions .main .row {
+    padding: 0;
+    margin: 0; }
+  body.page-template-solutions .vc_section {
+    margin: 0;
     padding: 0; }
+  body.page-template-solutions .wpb_column {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%; }
+    body.page-template-solutions .wpb_column .columns {
+      padding-left: 5vw;
+      padding-right: 5vw; }
+      body.page-template-solutions .wpb_column .columns:last-of-type {
+        margin-bottom: 4vh; }
+  body.page-template-solutions .solutions__bakery {
+    width: 100%;
+    margin: 0; }
   body.page-template-solutions .solutions__content__image {
     height: calc(100vw/1.77777) !important; }
   body.page-template-solutions .solutions__text {
     padding-right: 5vw; }
   body.page-template-solutions .solutions__bakery p, body.page-template-solutions .solutions__bakery h1, body.page-template-solutions .solutions__bakery h2, body.page-template-solutions .solutions__bakery h3, body.page-template-solutions .solutions__bakery h4 {
-    margin: 0 5vw; }
+    margin: 0 5vw 20px 5vw; }
   body.page-template-solutions .solutions__bakery .wpb_content_element {
     margin-bottom: 4vh !important; }
   body.page-template-solutions .solutions__working-style .solutions__text {
-    padding-left: 0 !important; } }
+    padding-left: 0 !important; }
+  body.page-template-solutions .solutions__services h3, body.page-template-solutions .solutions__services p {
+    margin-left: 0;
+    margin-right: 0; } }
 
 @media screen and (max-width: 375px) {
   body.page-template-solutions .columns {
@@ -1950,8 +1980,6 @@ body.page-template-solutions .main .solutions {
     padding-right: 0;
     padding-left: 0;
     margin-bottom: 0; }
-  body.page-template-solutions .main .solutions__working-style {
-    padding: 0 20px; }
   body.page-template-solutions .solutions__services {
     padding: 0 !important; }
     body.page-template-solutions .solutions__services__graphic {

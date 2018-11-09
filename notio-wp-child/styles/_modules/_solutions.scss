@@ -1,10 +1,16 @@
 body.page-template-solutions {
 
-    h1, h2, h3, h4, h5, h6 {
-        font-size: 1.4rem !important;
+    h1, h2, h3, h4, h5 {
+        font-size: 1.8rem !important;
+    }
+
+    h2 {
+        // margin-bottom: 20px;
     }
 
     h6 {
+
+        // font-size: 1.4rem !important;
         font-weight: 700;
     }
 
@@ -23,6 +29,12 @@ body.page-template-solutions {
                 display: none;
             }
         }
+
+        
+    }
+
+    .main > .row {
+        margin-bottom: 0;
     }
 
     .main .solutions {
@@ -139,7 +151,7 @@ body.page-template-solutions {
                 }
 
                 h6 {
-                    font-size: 1rem;
+                    font-size: 1.4rem;
                     font-weight: 600;
                 }
 
@@ -150,6 +162,7 @@ body.page-template-solutions {
                     left: 0;
                     padding: 0 1rem;
                     display: none;
+                    padding: 0;
                 }
             }
         }
@@ -161,6 +174,7 @@ body.page-template-solutions {
             width: 100vw;
             margin-left: 0;
             padding: $spacing-bottom $spacing-side-large !important;
+            margin-bottom: 0;
 
             &__graphic {
                 // background-image: url('./assets/grafik2.png');
@@ -190,6 +204,32 @@ body.page-template-solutions {
 
         .main .row {
             padding: 0; 
+            margin: 0;
+        }
+
+        .vc_section {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wpb_column {
+            padding: 0 !important;
+            margin: 0 !important;
+            width: 100%;
+
+            .columns {
+                padding-left: $spacing-side-large;
+                padding-right: $spacing-side-large;
+
+                &:last-of-type {
+                    margin-bottom: $spacing-bottom;
+                }
+            }
+        }
+
+        .solutions__bakery {
+            width: 100%;
+            margin: 0;
         }
 
         .solutions__content__image {
@@ -203,7 +243,7 @@ body.page-template-solutions {
         .solutions__bakery {
 
             p, h1, h2, h3, h4 {
-                margin: 0 $spacing-side-large;
+                margin: 0 $spacing-side-large 20px $spacing-side-large;
             }
 
             .wpb_content_element {
@@ -215,6 +255,13 @@ body.page-template-solutions {
         .solutions__working-style {
             .solutions__text {
                 padding-left: 0 !important;
+            }
+        }
+
+        .solutions__services {
+            h3, p {
+                margin-left: 0;
+                margin-right: 0;
             }
         }
     }
@@ -235,7 +282,7 @@ body.page-template-solutions {
         }
 
         .main .solutions__working-style {
-            padding: 0 $spacing-side-small;
+            // padding: 0 $spacing-side-small;
 
         }
 

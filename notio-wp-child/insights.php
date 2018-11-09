@@ -15,13 +15,13 @@
           $post_description_short = get_post_meta($post->ID, 'project_teaser', true); 
         ?>
         <?php if(has_category(37)): ?>
-          <a href="<?php the_permalink() ?>">
+          <!-- <a href="< ?php the_permalink() ?>"> -->
             <div class="projects__project project__insight project__thumbnail <?php echo get_post_meta($post->ID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
                 <div>
                   <h3><?php the_title(); ?></h3>
                 </div>
             </div>
-          </a>
+          <!-- </a> -->
         <?php else: ?>
           <a href="<?php the_permalink() ?>">
             <div class="projects__project project__thumbnail <?php echo get_post_meta($post->ID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">

@@ -251,8 +251,11 @@ div[role=main] {
         flex-wrap: wrap;
         transition: $transition-time;
 
+        background: white;
+        color: $anthrazit;
+
         h4 {
-            color: white;
+            color: $anthrazit;
             font-size: 1rem;
             margin-bottom: 5px;
             transition: $transition-time;
@@ -291,56 +294,66 @@ div[role=main] {
             }
         }
 
-        &:nth-of-type(even) {
-
-            background: white;
-            color: $anthrazit;
-
-            h4 {
-                color: $anthrazit;
-            }
-
-
-        }
-
-        &.quote:nth-of-type(odd) {
-            
-            &:hover {
-
-                background: white;
-
+        &:hover {
                 
-                h4, p {
-                    color: black;;
-                }
-            }
-        }
+            background: $anthrazit;
 
-        &.quote:nth-of-type(even) {
             
-            
-            &:hover {
-                
-                background: $anthrazit;
-
-                
-                h4, p {
-                    color: white;
-                }
-            }
-        }
-
-        &.press:nth-of-type(even) {
-
-            background: black;
-            color: white;
-
-            h4 {
+            h4, p {
                 color: white;
             }
-
-
         }
+
+        // &:nth-of-type(even) {
+
+        //     background: white;
+        //     color: $anthrazit;
+
+        //     h4 {
+        //         color: $anthrazit;
+        //     }
+
+
+        // }
+
+        // &.quote:nth-of-type(odd) {
+            
+        //     &:hover {
+
+        //         background: white;
+
+                
+        //         h4, p {
+        //             color: black;;
+        //         }
+        //     }
+        // }
+
+        // &.quote:nth-of-type(even) {
+            
+            
+        //     &:hover {
+                
+        //         background: $anthrazit;
+
+                
+        //         h4, p {
+        //             color: white;
+        //         }
+        //     }
+        // }
+
+        // &.press:nth-of-type(even) {
+
+        //     background: black;
+        //     color: white;
+
+        //     h4 {
+        //         color: white;
+        //     }
+
+
+        // }
 
         @media screen and (max-width: $breakpoint-medium){
             width: 50%;
@@ -374,13 +387,13 @@ div[role=main] {
         }
     }
 
-    a:nth-of-type(even) {
+    // a:nth-of-type(even) {
 
-        .press {
-            background: black;
+    //     .press {
+    //         background: black;
 
-        }
-    }
+    //     }
+    // }
 }
 
 .burger-menu {
@@ -1026,7 +1039,6 @@ div[role=main] {
 
         .mobile-menu {
             padding: 20vh 100px 0 100px;
-            text-align: center;
 
             li {
                 a {
@@ -1035,9 +1047,6 @@ div[role=main] {
         }
 
         
-        .menu-language-select {
-            justify-content: center;
-        }
 
 
     }
@@ -1046,6 +1055,12 @@ div[role=main] {
 
         .mobile-menu {
             padding: 23vh 70px 0 70px;
+            text-align: center;
+
+            
+            .menu-language-select {
+                justify-content: center;
+            }
 
             li {
                 a {

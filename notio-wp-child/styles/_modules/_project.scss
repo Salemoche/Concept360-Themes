@@ -368,6 +368,12 @@
                 
                 .wpb_column {
                     max-width: 50%;
+                    flex-basis: 47.5%;
+
+                    &:nth-of-type(3) {
+                        flex-basis: 100%;
+                        max-width: unset;
+                    }
                 }
 
                 > .row > .wpb_column:last-of-type{
@@ -389,6 +395,7 @@
             //display: none;
             padding: 0 $spacing-side-large;
             color: $anthrazit;
+            max-height: unset;
 
             &__spacer {
                 min-height: 0;
@@ -440,9 +447,22 @@
         .project__content {
 
             &__content {
+
+                .row {
+                    margin-left: 0;
+                    margin-right: 0;
+                    max-width: 100%;
+                }
                 
                 .wpb_column {
                     max-width: unset;
+                    flex-basis: 100%;
+                    padding: 0;
+                    margin-left: 0 !important;
+                }
+
+                .wpb_wrapper {
+                    margin-bottom: 10px;;
                 }
 
                 p, h1, h2, h3 {

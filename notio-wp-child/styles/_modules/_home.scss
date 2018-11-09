@@ -366,7 +366,7 @@ body.home, body.page-template-landing {
 
                     
                         @media screen and (max-width: $breakpoint-medium) {
-                            width: 100%;
+                            height: auto !important;
                         }
 
                     h5, a {
@@ -637,9 +637,17 @@ body.home, body.page-template-landing {
                         width: 100vw !important;
                             // height: auto !important;
                         top: calc(100vw / 1.777777) !important;
+                        max-width: calc( #{$breakpoint-large} / 2);
 
                         img {
                             width: 100vw !important;
+                        }
+                    }
+
+                    @media screen and (min-width: $breakpoint-large) {
+                        
+                        .home__slider__wrapper__text {
+                            left: calc( #{$breakpoint-large} / 2) !important;
                         }
                     }
                 }
