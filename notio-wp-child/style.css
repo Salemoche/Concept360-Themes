@@ -460,7 +460,7 @@ div[role=main] {
       .concept-header .concept-header__main__logo {
         width: 150px;
         left: 20px; }
-      .concept-header .concept-header__main__social-media__container {
+      .concept-header .concept-header__main__social-media__container > a {
         display: none; }
     .concept-header .concept-header__project-category__container ul {
       padding-left: 20px;
@@ -675,7 +675,7 @@ div[role=main] {
       color: white;
       margin-bottom: 10px; }
     .footer__info p {
-      font-size: 1.2rem;
+      font-size: 1rem;
       margin-bottom: 0;
       margin: 0 auto;
       display: inline;
@@ -691,6 +691,8 @@ div[role=main] {
       margin-top: 30px; }
     .footer__contact-form label {
       color: white; }
+    .footer__contact-form p {
+      padding: 5vw; }
   .footer__copyright {
     color: white;
     background: #282828;
@@ -754,7 +756,9 @@ div[role=main] {
     .footer h4 {
       font-size: 1.6rem; }
     .footer .footer__call-to-action p, .footer .footer__call-to-action b, .footer .footer__call-to-action i, .footer .footer__call-to-action em, .footer .footer__call-to-action a {
-      font-size: 1.4rem !important; } }
+      font-size: 1.4rem !important; }
+    .footer .footer__info p {
+      font-size: 1.2rem; } }
   @media screen and (min-width: 1920px) {
     .footer .footer__info, .footer .footer__call-to-action, .footer .wpcf7 {
       max-width: 1920px;

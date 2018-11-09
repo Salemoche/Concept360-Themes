@@ -793,7 +793,7 @@ div[role=main] {
                     left: $spacing-side-small;
                 }
 
-                &__social-media__container {
+                &__social-media__container > a {
                     display: none;
                 }
             }
@@ -1223,7 +1223,7 @@ div[role=main] {
         }
 
         p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-bottom: 0;
             margin: 0 auto;
             display: inline;
@@ -1246,6 +1246,10 @@ div[role=main] {
 
         label {
             color: white;
+        }
+
+        p {
+            padding: $spacing-side-large;
         }
 
 
@@ -1318,6 +1322,7 @@ div[role=main] {
                 max-width: unset;
                 margin: 20px 0;
             }
+            
         }
 
         .footer__copyright {
@@ -1354,6 +1359,12 @@ div[role=main] {
             
             p, b, i, em, a {
                 font-size: 1.4rem !important;
+            }
+        }
+
+        .footer__info {
+            p {
+                font-size: 1.2rem;
             }
         }
 
