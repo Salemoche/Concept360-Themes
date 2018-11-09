@@ -692,7 +692,7 @@ div[role=main] {
     .footer__contact-form label {
       color: white; }
     .footer__contact-form p {
-      padding: 5vw; }
+      padding: 0 5vw 10px 0; }
   .footer__copyright {
     color: white;
     background: #282828;
@@ -749,9 +749,7 @@ div[role=main] {
         display: block;
         top: 36px; }
       .footer .footer__copyright div {
-        top: 15px; }
-    .footer__contact-form {
-      padding-top: 0; } }
+        top: 15px; } }
   @media screen and (min-width: 1080px) {
     .footer h4 {
       font-size: 1.6rem; }
@@ -1133,7 +1131,7 @@ body.home .home__about__slider, body.home .landing__about__slider, body.page-tem
         max-width: calc(50vw - 5vw * 2) !important;
         width: calc(50vw - 5vw * 2) !important;
         overflow: hidden; }
-      body.home .home__about__slider__wrapper__text p, body.home .landing__about__slider__wrapper__text p, body.page-template-landing .home__about__slider__wrapper__text p, body.page-template-landing .landing__about__slider__wrapper__text p {
+      body.home .home__about__slider__wrapper__text p:last-of-type, body.home .landing__about__slider__wrapper__text p:last-of-type, body.page-template-landing .home__about__slider__wrapper__text p:last-of-type, body.page-template-landing .landing__about__slider__wrapper__text p:last-of-type {
         font-size: 1rem !important;
         line-height: 1.2rem !important;
         margin-bottom: 30px !important; }
@@ -1284,7 +1282,7 @@ body.home .home__customers, body.home .landing__customers, body.page-template-la
   text-align: center;
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
-  padding: 40px 2vw !important; }
+  padding: 0 2vw 4vh 2vw !important; }
   body.home .home__customers h3, body.home .landing__customers h3, body.page-template-landing .home__customers h3, body.page-template-landing .landing__customers h3 {
     font-size: 1.8rem;
     margin-bottom: 0; }

@@ -206,7 +206,7 @@ body.home, body.page-template-landing {
                         // width: auto !important;
                     }
 
-                    p {
+                    p:last-of-type {
                         font-size: 1rem !important;
                         line-height: 1.2rem !important;
                         margin-bottom: 30px !important;
@@ -533,7 +533,7 @@ body.home, body.page-template-landing {
             text-align: center;
             filter: grayscale(1);
             // padding: 40px calc(#{$spacing-side-large} - 1rem) !important;
-            padding: 40px 2vw !important;
+            padding: 0 2vw $spacing-bottom 2vw !important;
 
             h3 {
                 font-size: 1.8rem;
