@@ -71,6 +71,7 @@ body.home, body.page-template-landing {
                 position: absolute;
                 height: 100vh;
                 width: 100vw;
+                // width: calc(100vw - 34px);
                 top: 0;
 
 
@@ -365,12 +366,17 @@ body.home, body.page-template-landing {
                         font-weight: $bold;
                         margin-bottom: 10px;
                         width: 100%;
-                        display: block;
+                        display: inline;
+
 
                         
                         @media screen and (min-width: $breakpoint-medium-large) {
                             font-size: 1.2rem; 
                         }
+                    }
+
+                    a:hover {
+                        box-shadow: inset 0px -7px 0px 0px rgba(227,27,35,75);
                     }
 
                     p {
@@ -523,6 +529,10 @@ body.home, body.page-template-landing {
             h3 {
                 font-size: 1.8rem;
                 margin-bottom: 0;
+            }
+
+            p {
+                margin-bottom: 40px;
             }
 
             &__item {

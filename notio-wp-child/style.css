@@ -15,6 +15,9 @@
   font-size: 62.5%;
   font-family: 'Ubuntu', sans-serif; }
 
+html {
+  overflow-x: hidden; }
+
 body {
   background: white; }
 
@@ -37,7 +40,8 @@ img {
   transition: opacity 0.3s; }
 
 div[role=main] {
-  margin-top: 0 !important; }
+  margin: 0 auto !important;
+  max-width: 1920px; }
 
 .btn {
   border: none;
@@ -229,7 +233,7 @@ div[role=main] {
   position: unset; }
 
 .concept-header {
-  width: 100vw;
+  width: 100%;
   padding: 0;
   display: block;
   position: fixed;
@@ -267,7 +271,7 @@ div[role=main] {
       min-width: 120px;
       width: 5.5vw;
       position: absolute;
-      right: calc(5vw + 47px);
+      right: calc(5vw + 50px);
       z-index: 102;
       align-content: center;
       align-items: center;
@@ -574,7 +578,7 @@ div[role=main] {
   top: 50%;
   -webkit-transform: translateY(-63%);
           transform: translateY(-63%);
-  right: -45px;
+  right: -49px;
   opacity: 0;
   transition: 0.3s; }
 
@@ -621,7 +625,8 @@ div[role=main] {
   width: 100vw;
   max-width: unset; }
   .footer a {
-    color: #f9f9f9; }
+    color: #f9f9f9;
+    position: relative; }
     .footer a:hover {
       box-shadow: inset 0px -7px 0px 0px #e31b23; }
   .footer__call-to-action {
@@ -736,7 +741,9 @@ div[role=main] {
     justify-content: flex-start;
     margin: 0px auto 30px auto;
     padding: 5vw;
-    position: relative; }
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: 0; }
   .wpcf7 p {
     width: calc(100% / 3);
     padding: 0 2vw; }
@@ -941,7 +948,9 @@ div[role=main] {
   display: inline-block;
   -webkit-transform: translateY(20%);
           transform: translateY(20%);
-  margin-right: 10px; }
+  position: absolute;
+  left: -30px;
+  top: -14px; }
 
 .footer__info .icon-phone {
   background-image: url("./assets/phone.svg"); }
@@ -950,7 +959,7 @@ div[role=main] {
   background-image: url("./assets/map-pin.svg"); }
 
 .footer__info .icon-mail {
-  background-image: url("./assets/mail.svg"); }
+  background-image: url("./assets/email.svg"); }
 
 body.home .concept-header__main, body.page-template-landing .concept-header__main {
   background-color: rgba(40, 40, 40, 0.9);
@@ -1157,10 +1166,12 @@ body.home .home__ueber-uns, body.home .landing__ueber-uns, body.page-template-la
         font-weight: 600;
         margin-bottom: 10px;
         width: 100%;
-        display: block; }
+        display: inline; }
         @media screen and (min-width: 1080px) {
           body.home .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item a {
             font-size: 1.2rem; } }
+      body.home .home__ueber-uns__info__container .home__ueber-uns__info__item a:hover, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item a:hover, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item a:hover, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item a:hover, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item a:hover, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item a:hover, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item a:hover, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item a:hover {
+        box-shadow: inset 0px -7px 0px 0px #e31b23; }
       body.home .home__ueber-uns__info__container .home__ueber-uns__info__item p, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item p, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item p, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item p {
         color: white;
         font-size: 0.8rem;
@@ -1224,6 +1235,8 @@ body.home .home__customers, body.home .landing__customers, body.page-template-la
   body.home .home__customers h3, body.home .landing__customers h3, body.page-template-landing .home__customers h3, body.page-template-landing .landing__customers h3 {
     font-size: 1.8rem;
     margin-bottom: 0; }
+  body.home .home__customers p, body.home .landing__customers p, body.page-template-landing .home__customers p, body.page-template-landing .landing__customers p {
+    margin-bottom: 40px; }
   body.home .home__customers__item, body.home .landing__customers__item, body.page-template-landing .home__customers__item, body.page-template-landing .landing__customers__item {
     height: 130px;
     position: relative;
@@ -1507,7 +1520,7 @@ body.page-template-landing .landing__info__information {
     max-height: calc(18.75vw*2); }
     .project .project__info__title h2 {
       font-size: 1.8rem !important;
-      margin-bottom: 4vh; }
+      margin-bottom: 2vh; }
     .project .project__info__spacer {
       min-height: 40vh; }
     .project .project__info__description p, .project .project__info__description strong {
