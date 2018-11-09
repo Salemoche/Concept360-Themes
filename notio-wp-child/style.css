@@ -76,7 +76,7 @@ div[role=main] {
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    width: 80%;
+    width: 69%;
     left: 5vw;
     right: 5vw; }
     .project__thumbnail.project__insight div h3, .project__thumbnail.team-member__insight div h3, .team-member.project__insight div h3, .team-member.team-member__insight div h3 {
@@ -922,8 +922,9 @@ div[role=main] {
   width: calc(100% / 3); }
 
 .project-wrapper .projects__project {
-  flex-basis: 100%;
-  min-width: 100%; }
+  flex-basis: 100% !important;
+  min-width: 100% !important;
+  max-width: unset !important; }
 
 /* Contact icons - 181107/mt */
 .footer__info .icons {

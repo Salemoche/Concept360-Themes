@@ -88,7 +88,7 @@ div[role=main] {
 
         div {
             @include center-vertically;
-            width: 80%;
+            width: 69%;
             left: $spacing-side-large;
             right: $spacing-side-large;
 
@@ -1556,8 +1556,9 @@ div[role=main] {
     width: calc(100% / 3);
 }
 .project-wrapper .projects__project {
-    flex-basis: 100%;
-    min-width: 100%;
+    flex-basis: 100% !important;
+    min-width: 100% !important;
+    max-width: unset !important;
 }
 
 /* Contact icons - 181107/mt */
