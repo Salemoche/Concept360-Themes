@@ -89,6 +89,11 @@ div[role=main] {
         @include center;
     }
 
+    
+    h3, h4 {
+        display: inline;        
+    }
+
     &:hover {
 
         img {
@@ -162,7 +167,7 @@ div[role=main] {
         font-size: 1.2rem;
         margin-bottom: 5px;
         box-shadow: inset 0px -7px 0px 0px rgba(227,27,35,75);
-        display: block;
+        display: inline;
     }
 
     p {
@@ -211,6 +216,10 @@ div[role=main] {
     padding: 0;
     min-height: calc(50vh - 200px);
     flex-wrap: wrap;
+
+    h3, h4 {
+        display: inline;        
+    }
 
     a {
         height: $teaser-height-33;
@@ -494,6 +503,7 @@ div[role=main] {
         overflow: hidden;
         position: absolute;
         top: 3vw;
+        
 
         ul {
 
@@ -502,6 +512,7 @@ div[role=main] {
             justify-content: space-between;
             margin-bottom: 0;
             width: calc(100vw - 40px);
+            max-width: calc(#{$breakpoint-large} - 40px);
             padding-left: $spacing-side-large;
 
             li {
@@ -600,6 +611,14 @@ div[role=main] {
 
             &:hover {
                 transform: scale(1.05);
+            }
+        }
+
+        @media screen and (min-width: $breakpoint-large){
+            padding: 0 calc((100vw - #{$breakpoint-large}) / 2 - 10px);
+
+            ul {
+                padding: 0;
             }
         }
     }
@@ -767,6 +786,14 @@ div[role=main] {
             &__project-category__search-form {
                 right: $spacing-side-small;
             }
+        }
+
+    }
+
+    
+    @media screen and (min-width: $breakpoint-large){
+        .concept-header__project-category__search-form {
+            right: calc((100vw - #{$breakpoint-large}) / 2);
         }
 
     }
@@ -1082,12 +1109,11 @@ div[role=main] {
 .footer {
 
     margin: 0;
-    width: 100vw;
+    width: 100%;
     max-width: unset;
 
     a {
         color: $white;
-        position: relative;
         
         &:hover {
             box-shadow: inset 0px -7px 0px 0px rgba(227,27,35,75);            
@@ -1128,6 +1154,14 @@ div[role=main] {
         text-align: center;
         padding: 40px $spacing-side-large !important;
 
+        > div {
+            position: relative;
+        }
+
+        a {
+            position: relative;
+        }
+
         // columns {
         //     padding: 0;
         // }
@@ -1139,7 +1173,7 @@ div[role=main] {
         }
 
         p {
-            font-size: 1rem;
+            font-size: 1.2rem;
             margin-bottom: 0;
             margin: 0 auto;
             display: inline;
@@ -1269,6 +1303,21 @@ div[role=main] {
             
             p, b, i, em, a {
                 font-size: 1.4rem !important;
+            }
+        }
+
+    }
+
+        
+    @media screen and (min-width: $breakpoint-large ){
+        
+        .footer__info, .footer__call-to-action, .wpcf7 {
+            max-width: $breakpoint-large;
+            margin: 0 auto !important;
+
+            form {
+                padding-left: 0;
+                padding-right: 0;
             }
         }
 

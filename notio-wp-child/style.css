@@ -74,6 +74,8 @@ div[role=main] {
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
+  .project__thumbnail h3, .project__thumbnail h4, .team-member h3, .team-member h4 {
+    display: inline; }
   .project__thumbnail:hover img, .team-member:hover img {
     -webkit-transform: translate(-50%, -50%) scale(1.05);
             transform: translate(-50%, -50%) scale(1.05); }
@@ -122,7 +124,7 @@ div[role=main] {
     font-size: 1.2rem;
     margin-bottom: 5px;
     box-shadow: inset 0px -7px 0px 0px #e31b23;
-    display: block; }
+    display: inline; }
   .project-hover-info p, .team-member-hover-info p {
     font-size: .8rem !important;
     width: 100%;
@@ -151,6 +153,8 @@ div[role=main] {
   padding: 0;
   min-height: calc(50vh - 200px);
   flex-wrap: wrap; }
+  .quote__container h3, .quote__container h4, .press__container h3, .press__container h4 {
+    display: inline; }
   .quote__container a, .press__container a {
     height: 18.75vw;
     max-height: calc(1920px / 3 / 1.7); }
@@ -336,6 +340,7 @@ div[role=main] {
       justify-content: space-between;
       margin-bottom: 0;
       width: calc(100vw - 40px);
+      max-width: calc(1920px - 40px);
       padding-left: 5vw; }
       .concept-header__project-category__container ul li {
         text-transform: uppercase;
@@ -393,6 +398,11 @@ div[role=main] {
       .concept-header__project-category__container .concept-header__project-category__back:hover, .concept-header__project-category__container .concept-header__all-tags__back:hover {
         -webkit-transform: scale(1.05);
                 transform: scale(1.05); }
+    @media screen and (min-width: 1920px) {
+      .concept-header__project-category__container {
+        padding: 0 calc((100vw - 1920px) / 2 - 10px); }
+        .concept-header__project-category__container ul {
+          padding: 0; } }
   .concept-header .concept-header__project-category__search-form {
     border-bottom: 2px solid #888;
     margin-top: 6px;
@@ -478,6 +488,9 @@ div[role=main] {
           font-size: .60rem; }
     .concept-header .concept-header__project-category__search-form {
       right: 20px; } }
+  @media screen and (min-width: 1920px) {
+    .concept-header .concept-header__project-category__search-form {
+      right: calc((100vw - 1920px) / 2); } }
 
 .mobile-toggle span {
   background: white; }
@@ -637,11 +650,10 @@ div[role=main] {
 
 .footer {
   margin: 0;
-  width: 100vw;
+  width: 100%;
   max-width: unset; }
   .footer a {
-    color: #f9f9f9;
-    position: relative; }
+    color: #f9f9f9; }
     .footer a:hover {
       box-shadow: inset 0px -7px 0px 0px #e31b23; }
   .footer__call-to-action {
@@ -664,12 +676,16 @@ div[role=main] {
     color: white;
     text-align: center;
     padding: 40px 5vw !important; }
+    .footer__info > div {
+      position: relative; }
+    .footer__info a {
+      position: relative; }
     .footer__info h4 {
       font-size: 1.2rem;
       color: white;
       margin-bottom: 10px; }
     .footer__info p {
-      font-size: 1rem;
+      font-size: 1.2rem;
       margin-bottom: 0;
       margin: 0 auto;
       display: inline;
@@ -748,6 +764,13 @@ div[role=main] {
       font-size: 1.6rem; }
     .footer .footer__call-to-action p, .footer .footer__call-to-action b, .footer .footer__call-to-action i, .footer .footer__call-to-action em, .footer .footer__call-to-action a {
       font-size: 1.4rem !important; } }
+  @media screen and (min-width: 1920px) {
+    .footer .footer__info, .footer .footer__call-to-action, .footer .wpcf7 {
+      max-width: 1920px;
+      margin: 0 auto !important; }
+      .footer .footer__info form, .footer .footer__call-to-action form, .footer .wpcf7 form {
+        padding-left: 0;
+        padding-right: 0; } }
 
 .wpcf7 {
   width: 100%; }
@@ -1723,6 +1746,9 @@ body.page-template-landing .landing__info__information {
           top: 50%;
           -webkit-transform: translateY(-50%);
                   transform: translateY(-50%); }
+
+body.page-template-highlights #wrapper, body.page-template-journalismus #wrapper, body.page-template-corporate #wrapper, body.page-template-insights #wrapper {
+  background: #282828; }
 
 .projects {
   margin: 0 auto;

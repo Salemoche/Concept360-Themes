@@ -1,9 +1,17 @@
+body.page-template-highlights, body.page-template-journalismus, body.page-template-corporate, body.page-template-insights {
+    
+    #wrapper {
+        background: $anthrazit;
+    }
+}
+
 .projects {
 
     margin: 0 auto;
     margin-top: $spacing-top-submenu;
     transition: $transition-time;
     background: $white;
+
 
     &__project-container {
 
