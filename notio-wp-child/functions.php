@@ -373,7 +373,7 @@
 					}
 				}
 				
-				else if($currentRow == "XXx" || $currentRow == "xXX"  || $currentRow == "XXX" ) {
+				else if($currentRow == "XXx" || $currentRow == "xXX" || $currentRow == "XxX" || $currentRow == "XXX" ) {
 					// Resize tiles, feature #1, others small
 					
 					// Feature left Story, if last one was right
