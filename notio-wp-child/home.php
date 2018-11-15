@@ -17,15 +17,22 @@
         preg_match('/src="(.+?)"/', $iframe, $matches);
         $src = $matches[1];
 
+		// Change width: height
+        $iframe = preg_replace('/(width="\d+" height="\d+")/', 'width="auto" height="100%"', $iframe);
+		
+		
 
         // add extra params to iframe src
         $params = array(
             'controls'    => 0,
+			'disablekb' => 1,
+			'modestbranding' => 1,
             'hd'        => 3,
             'autohide'    => 1,
             'autoplay' => 1,
             'mute' => 1,
-            'loop' => 1
+            'loop' => 1,
+			'playlist' => '65N0noy0aEI',
         );
 
         $new_src = add_query_arg($params, $src);
@@ -58,17 +65,17 @@
             </a>
           </div>
           <!--<div class="home__landing__text__project-category home__landing_project-category--insights columns small-4">
-            <a href="<?php echo get_permalink(704)?>">
+            <a href="https://showcase.concept360.ch/" target="_blank">
               <h3>Insights</h3>
               <p><?php echo get_post_meta($post->ID, 'landing_insights_text', true); ?></p>
             </a>
             </div>-->
-          <div class="home__landing__text__project-category home__landing_project-category--showcase columns small-4">
+          <!--<div class="home__landing__text__project-category home__landing_project-category--showcase columns small-4">
             <a href="<?php echo get_permalink(686)?>">
               <h3>Showcase</h3>
               <p><?php echo get_post_meta($post->ID, 'landing_showcase_text', true); ?></p>
             </a>
-          </div>
+          </div>-->
         </div>
         <div class="home__landing__scroll">
           <?php echo get_field('home_scroll'); ?>

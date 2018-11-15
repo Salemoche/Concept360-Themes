@@ -65,7 +65,7 @@
 					<li class="concept-header__list-item"><a href="<?php echo get_permalink(686) ?>" <?php  echo strpos($url, 'highlights') ? 'class="menu-active"' : ''; ?>><?php echo get_the_title(686) ?></a></li>
 					<li class="concept-header__list-item"><a href="<?php echo get_permalink(684) ?>" <?php  if (strpos($url, 'corporate') || has_category('Corporate')) { echo 'class="menu-active"'; }?>><?php echo get_the_title(684) ?></a></li>
 					<li class="concept-header__list-item"><a href="<?php echo get_permalink(702) ?>" <?php  if (strpos($url, 'journalismus') || has_category('Journalismus')) { echo 'class="menu-active"'; }?>><?php echo get_the_title(702) ?></a></li>
-					<li class="concept-header__list-item"><a href="<?php echo get_permalink(704) ?>" <?php  if (strpos($url, 'insights') || has_category('Insight')) { echo 'class="menu-active"'; }?>><?php echo get_the_title(704) ?></a></li>
+					<li class="concept-header__list-item">Insights<!--<a href="<?php //echo get_permalink(704) ?>" --><?php  if (strpos($url, 'insights') || has_category('Insight')) { echo 'class="menu-active"'; }?>><?php echo get_the_title(704) ?><!--</a>--></li>
 					<!-- <li class="concept-header__project-category__search">
 						<form action="POST">
 							<input type="text" placeholder="Suchbegriff hier eingeben">
