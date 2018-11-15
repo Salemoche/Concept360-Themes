@@ -73,6 +73,10 @@
             padding: 0;
             // padding-right: $spacing-side-large;
 
+            a {
+                display: inline !important;
+            }
+
             .vc_sep_line {
                 margin: 0 $spacing-side-large 2vw $spacing-side-large;
                 width: 85% !important;

@@ -1,14 +1,25 @@
   <?php
+	
+  //
+  // Load Own Style
+  //
+
+	// add_action( 'wp_enqueue_scripts', 'enqueue_style' );
+
+	function enqueue_style() {
+		wp_enqueue_style( 'style', '/wp-content/themes/notio-wp-child/style.css');
+	}
 
   //
   // Load Parent Styles
   //
 
-    add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
+	add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
 
-    function enqueue_parent_styles() {
-      wp_enqueue_style( 'parent-style', get_template_directory_uri().'/assets/css/app.css' );
-    }
+	function enqueue_parent_styles() {
+		wp_enqueue_style( 'parent-style', get_template_directory_uri().'/assets/css/app.css' );
+	}
+
 
 
   //

@@ -246,7 +246,7 @@ $(document).ready( function () {
     });
 
     $(window).scroll( function() {
-        if ($(window).scrollTop()> 0) {
+        if ($(window).scrollTop()> window.innerWidth) {
             $('.concept-header__main').css('background', '#282828')
         }
     });

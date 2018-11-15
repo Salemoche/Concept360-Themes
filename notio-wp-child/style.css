@@ -21,6 +21,9 @@ html {
 body {
   background: white; }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif; }
+
 p {
   font-size: 1rem; }
 
@@ -1503,6 +1506,8 @@ body.page-template-landing .landing__info__information {
       pointer-events: none; }
     .project__content__content {
       padding: 0; }
+      .project__content__content a {
+        display: inline !important; }
       .project__content__content .vc_sep_line {
         margin: 0 5vw 2vw 5vw;
         width: 85% !important; }

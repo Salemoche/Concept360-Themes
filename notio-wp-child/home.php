@@ -40,9 +40,10 @@
 
 
         // echo $iframe
-        echo $iframe;
 
       ?>
+      
+      <?php echo get_field('iframe'); ?>
       </div>
       <div class="home__landing__text">
         <div class="home__landing__text__title">
@@ -139,8 +140,10 @@
                   <!-- <img src="<?php //echo $image_url ?>" alt=""> -->
                   <?php echo get_the_post_thumbnail( $randPost->ID, 'large' ); ?>
                   <div class="projects__project__info project-hover-info">
-                    <h3><?php echo get_the_title($randPost->ID); ?></h3>
-                    <p><?php echo $post_description_short ?></p>
+                    <div class="project-hover-info__aligner">
+                      <h3><?php echo get_the_title($randPost->ID); ?></h3>
+                      <p><?php echo $post_description_short ?></p>
+                    </div>
                   <?php echo has_category(37); ?>
                   </div>
                 </div>

@@ -137,8 +137,10 @@
                       <div class="projects__project__info__container">
                       <?php echo the_post_thumbnail( 'large' ); ?>
                         <div class="projects__project__info project-hover-info">
-                          <h3><?php echo the_title(); ?></h3>
-                          <p><?php echo get_field('project_teaser') ?></p>
+                          <div class="project-hover-info__aligner">
+                            <h3><?php echo the_title(); ?></h3>
+                            <p><?php echo get_field('project_teaser') ?></p>
+                          </div>
                         <?php echo has_category(37); ?>
                         </div>
                       </div>
