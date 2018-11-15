@@ -1,13 +1,18 @@
 body.page-template-about {
 
+    .concept-header__project-category__container {
+        display: none;
+    }
+
     .main > .row {
         margin-bottom: $spacing-bottom;
         // padding: 0 $spacing-side;
 
-        > h2 {
+        > h3 {
             display: block;
-            font-size: 1.6rem;
+            // font-size: 1.6rem;
             max-width: 90vw;
+            margin-left: $spacing-side-large;
         }
 
         &.press {
@@ -17,7 +22,7 @@ body.page-template-about {
 
     .main .about {
 
-        margin-top: $spacing-top-submenu;
+        margin-top: $menu-height;
         padding-left: 0;
 
         &__content {
@@ -30,7 +35,7 @@ body.page-template-about {
                 padding-top: $spacing-side;
 
                 h2 {
-                    font-size: 1.8rem;
+                    // font-size: 1.8rem;
                 }
 
                 a {
@@ -41,7 +46,7 @@ body.page-template-about {
                     p {
                         display: inline;
                         transition: $transition-time;
-                        font-size: 1rem !important;
+                        // font-size: 1rem !important;
                     }
 
                     &:hover {
@@ -66,7 +71,7 @@ body.page-template-about {
     
                 }
 
-                h2 {
+                h2h2 {
                     text-transform: uppercase;
                 }
     
@@ -88,6 +93,7 @@ body.page-template-about {
                 overflow: hidden;
                 position: relative;
                 margin-bottom: $spacing-bottom;
+                margin-top: -1px;
 
                 img {
                     width: 100%;
@@ -131,13 +137,12 @@ body.page-template-about {
 
         &__press__container {
 
+            overflow: hidden;
+
             a {
                 width: calc(100% / 3);
             }
             
-            p, a {
-                color: white;
-            }
 
             .press:hover {
 
@@ -145,6 +150,15 @@ body.page-template-about {
 
                     box-shadow: inset 0px -7px 0px 0px rgba(227,27,35,75);
                 }
+                
+                p, a {
+                    color: white;
+                }
+            }
+
+            .press {
+                padding-top: 80px;
+                display: inline-block;
             }
         }
     }
@@ -153,15 +167,23 @@ body.page-template-about {
 
         padding: 0 !important;
 
-        h2 {
-            margin: 0 $spacing-side-large 20px $spacing-side-large;
-            padding: 0
+        // h3 {
+        //     margin: 0 $spacing-side-large 20px $spacing-side-large;
+        //     padding: 0
+        // }
+
+        .columns {
+            padding: 0;
         }
 
         .team-member {
             height: $teaser-height-33;
             max-height: $teaser-max-height-33;
             padding: 0;
+
+            // &-hover-info {
+            //     display: inline-block;
+            // }
         }
     }
 
@@ -194,14 +216,14 @@ body.page-template-about {
         .main .row {
             padding: 0;
 
-            > h2 {
+            > h3 {
                 margin: 0 $spacing-side-large;
                 margin-bottom: 10px;
 
             }
         }
 
-        .about {
+        .main .about {
             &__content {
 
                 &__text {
@@ -219,12 +241,21 @@ body.page-template-about {
                 .columns {
                     padding: 0;
                 }
+
+                &__contact-info--medium {
+                    padding-left: 0 !important;
+
+                    > * {
+                        margin-left: $spacing-side-large;
+                        margin-right: $spacing-side-large;
+                    }
+                }
             }
         }
 
         .team-member__container {
 
-            flex-wrap: wrap;
+            // flex-wrap: wrap;
 
             .team-member {
                 width: 50%;
@@ -288,7 +319,7 @@ body.page-template-about {
 
         .main .row {
 
-            > h2 {
+            > h3 {
                 font-size: 1rem;
                 text-transform: uppercase;
 
@@ -340,7 +371,7 @@ body.page-template-about {
             &__logo {
                 // left: 10vw;
                 height: 40px;
-                position: relative;
+                
 
                 img {
                     // position: relative;

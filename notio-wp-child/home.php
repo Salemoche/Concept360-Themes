@@ -6,7 +6,10 @@
   <div class="home row">
     <div class="home__landing columns small-12">
       <div class="home__landing__video">
+        <?php if(wp_is_mobile()) : ?>
+        <div class="home__landing__video__fallback" style="background-image:url('<?php echo get_field('home_video_fallback'); ?>');"></div>
         <?php //the_content(); // the_field('home_video'); ?>
+        <?php else : ?>
         <?php
 
         // get iframe HTML
@@ -51,6 +54,7 @@
       ?>
       
       <?php echo get_field('iframe'); ?>
+      <?php endif; ?>
       </div>
       <div class="home__landing__text">
         <div class="home__landing__text__title">

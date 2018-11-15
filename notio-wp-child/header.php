@@ -6,6 +6,7 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i,900" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:800,900" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<?php wp_site_icon(); ?>
 	<?php
@@ -65,7 +66,7 @@
 					<li class="concept-header__list-item"><a href="<?php echo get_permalink(686) ?>" <?php  echo strpos($url, 'highlights') ? 'class="menu-active"' : ''; ?>><?php echo get_the_title(686) ?></a></li>
 					<li class="concept-header__list-item"><a href="<?php echo get_permalink(684) ?>" <?php  if (strpos($url, 'corporate') || has_category('Corporate')) { echo 'class="menu-active"'; }?>><?php echo get_the_title(684) ?></a></li>
 					<li class="concept-header__list-item"><a href="<?php echo get_permalink(702) ?>" <?php  if (strpos($url, 'journalismus') || has_category('Journalismus')) { echo 'class="menu-active"'; }?>><?php echo get_the_title(702) ?></a></li>
-					<li class="concept-header__list-item">Insights<!--<a href="<?php //echo get_permalink(704) ?>" --><?php  if (strpos($url, 'insights') || has_category('Insight')) { echo 'class="menu-active"'; }?>><?php echo get_the_title(704) ?><!--</a>--></li>
+					<li class="concept-header__list-item"><a href="<?php echo get_permalink(704) ?>" <?php  if (strpos($url, 'insights') || has_category('Insight')) { echo 'class="menu-active"'; }?>><?php echo get_the_title(704) ?></a></li>
 					<!-- <li class="concept-header__project-category__search">
 						<form action="POST">
 							<input type="text" placeholder="Suchbegriff hier eingeben">

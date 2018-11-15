@@ -2,14 +2,48 @@
     
     margin-top: $spacing-top-submenu;
 
+    
+    p, a, span, b, i, strong, em, pre {
+    
+        @media screen and (max-width: $breakpoint-small) {
+            font-size: .8rem;
+        }
+        @media screen and (max-width: $breakpoint-medium) {
+            font-size: 1rem;
+        }
+        @media screen and (max-width: $breakpoint-medium-large-project) {
+            font-size: 1rem;
+        }
+        @media screen and (min-width: $breakpoint-medium-large-project) {
+            font-size: 1.2rem;
+        }
+    }
+
+    .fett * {
+        font-weight: 600;
+    }
+
+    // p, a, span, b, i, strong, em {
+    
+    //     @media screen and (max-width: $breakpoint-small) {
+    //         font-size: .8rem;
+    //     }
+    //     @media screen and (max-width: $breakpoint-medium) {
+    //         font-size: 1rem;
+    //     }
+    //     @media screen and (max-width: $breakpoint-medium-large-project) {
+    //         font-size: 1rem;
+    //     }
+    //     @media screen and (min-width: $breakpoint-medium-large-project) {
+    //         font-size: 1.2rem;
+    //     }
+    // }
+
     &__content {
 
         padding-left: 0;
         padding-right: 0;
 
-        p, span, em, i, b, strong {
-            font-size: 1rem;
-        }
 
         h1, h2, h3, h4, h5 {
             margin-top: 10px;
@@ -48,8 +82,10 @@
             &__play-button {
                 height: 7vw;
                 width: 7vw;
-                min-width: 70px;
+                min-width: 50px;
+                min-height: 50px;
                 max-width: 110px;
+                max-height: 110px;
                 border-radius: 50%;
                 background-size: contain;
                 background-repeat: no-repeat;
@@ -107,11 +143,16 @@
                 }
             }
 
+            .wpel-icon-right i.wpel-icon {
+                margin-left: 0.3em;
+                transform: translate(3px, 1px);
+            }
+
 
 
             p, strong {
                 margin-left: $spacing-side-large;
-                font-size: 1rem;
+                // font-size: 1rem;
             }
 
             h1, h2, h3 {
@@ -139,14 +180,14 @@
 
 
             span {
-                font-size: 1rem;
+                // font-size: 1rem;
             }
 
             > .row > .wpb_column:last-of-type{
                 padding-left: 0;
                 margin-bottom: $spacing-bottom;
 
-                p, b, h1, h2, h3, h4 {
+                p, b, h1, h2, h3, h4, pre {
                     margin-left: calc(5vw - 5px);
                 }
 
@@ -157,9 +198,9 @@
 
             }
 
-            @media screen and (min-width: $breakpoint-medium-large) {
+            @media screen and (min-width: $breakpoint-medium-large-project) {
 
-                p, b, span, h1, h2, h3, h4, a, strong, em {
+                p, b, span, h1, h2, h3, h4, a, strong, em, pre {
                     font-size: 1.2rem;
                 }
 
@@ -189,7 +230,8 @@
         &__play-button {
             height: 7vw;
             width: 7vw;
-            min-width: 70px;
+            min-width: 50px;
+            min-height: 50px;
             border-radius: 50%;
             background-size: contain;
             background-repeat: no-repeat;
@@ -214,7 +256,7 @@
         max-height: calc(#{$teaser-height-33}*2);
 
         &__title h2 {
-            font-size: 1.8rem !important;
+            // font-size: 1.8rem !important;
             margin-bottom: 2vh;
         }
 
@@ -223,7 +265,7 @@
         }
 
         &__description {
-            p, strong {
+            p, strong, pre {
                 margin-bottom: 2vh;
                 font-weight: 600;
                 
@@ -283,7 +325,7 @@
                 }
             }
 
-            p, p span, span, a {
+            p, p span, pre, a {
                 font-size: 1rem;
             }
         }
@@ -386,7 +428,7 @@
                     max-width: unset;
                     margin-left: 9px;
     
-                    p, b, h1, h2, h3, h4 {
+                    p, b, h1, h2, h3, h4, pre {
                         margin-left: $spacing-side-large;
     
                     }
@@ -469,7 +511,7 @@
                     margin-bottom: 10px;;
                 }
 
-                p, h1, h2, h3 {
+                p, h1, h2, h3, pre {
                     margin-right: $spacing-side-large;
                 }
             }
@@ -505,7 +547,7 @@
 
         .project__content__content {
 
-            p, strong {
+            p, strong, pre {
                 text-align: justify;
             }
 
@@ -516,6 +558,20 @@
             .wpb_row {
                 margin-bottom: 2vw;
             }
+        }
+    }
+
+    
+    @media screen and (min-width: $breakpoint-medium-large-project) {
+
+        .project {
+            &__info {
+                &__title {
+
+                }
+            }
+
+            
         }
     }
 }

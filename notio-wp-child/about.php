@@ -13,7 +13,7 @@
         <div class="about__content__breadcrumbs concept-breadcrumbs">
           <?php if (function_exists('nav_breadcrumb')) nav_breadcrumb(); ?>
         </div>
-        <h2><?php the_title(); ?></h2>
+        <h3><?php the_title(); ?></h3>
       </div>
       <div class="columns small-12 medium-6 about__content__contact-info about__content__contact-info--medium">
         <h3><?php echo get_post_meta(779, 'footer_call_mail', true); ?></h3>
@@ -31,7 +31,7 @@
       <div class="about__content__breadcrumbs concept-breadcrumbs">
         <?php if (function_exists('nav_breadcrumb')) nav_breadcrumb(); ?>
       </div>
-      <h2><?php the_title(); ?></h2>
+      <h3><?php the_title(); ?></h3>
       <h3><?php echo get_post_meta(779, 'footer_call_mail', true); ?></h3>
       <a href="mailto:<?php echo get_post_meta(779, 'settings_email', true); ?>"><p><?php echo get_post_meta(779, 'settings_email', true); ?></p></a>
       <h3><?php echo get_post_meta(779, 'footer_call_phone', true); ?></h3>
@@ -41,20 +41,28 @@
     </div>
   </div>
   <div class="row team-member__container">
-  <h2 class="columns small-12"><?php echo get_post_meta($post->ID, 'about-team_subtitle', true); ?></h2>
+  <h3 class="columns small-12"><?php echo get_post_meta($post->ID, 'about-team_subtitle', true); ?></h3>
     <?php
     if( have_rows('team-member') ): 
 
       while ( have_rows('team-member') ) : the_row();
     
     ?>
+        <?php if(the_sub_field('team-member_link')) :?>
+        <a class="columns small-6 medium-4 team-member" href="<?php the_sub_field('team-member_link'); ?>">
+          <div>
+        <?php else : ?>
         <div class="columns small-6 medium-4 team-member">
-          <img src=" <?php the_sub_field('team-member_foto'); ?>" alt="">
-          <div class="team-member-hover-info">
-            <h3><?php the_sub_field('team-member_name'); ?></h3>
-            <p><?php the_sub_field('team-member_position'); ?></p>
+        <?php endif; ?>
+            <img src=" <?php the_sub_field('team-member_foto'); ?>" alt="">
+            <div class="team-member-hover-info">
+              <div class="team-member-hover-info__aligner">
+                <h3><?php the_sub_field('team-member_name'); ?></h3>
+                <p><?php the_sub_field('team-member_position'); ?></p>
+              </div>
+            </div>
           </div>
-        </div>
+        <?php echo the_sub_field('team-member_link') ? '</a>' : ''; ?>
 
     <?php 
 
@@ -64,7 +72,7 @@
   </div>
 
 <div class="row quotes">
-  <h2><?php echo get_post_meta($post->ID, 'quotes_subtitle', true); ?></h2>
+  <h3><?php echo get_post_meta($post->ID, 'quotes_subtitle', true); ?></h3>
   
   <div class="about__quote__container columns small-12 quote__container">
 
@@ -91,7 +99,7 @@
 </div>
 
 <div class="row press">
-  <h2><?php echo get_post_meta($post->ID, 'press_subtitle', true); ?></h2>
+  <h3><?php echo get_post_meta($post->ID, 'press_subtitle', true); ?></h3>
   
   <div class="about__press__container columns small-12 press__container">
 
@@ -104,12 +112,13 @@
         
         <a href="<?php the_sub_field('press_link'); ?>">
           <div class="about__press press">
-            <div class="about__press__logo press__logo" style="background-image: url( <?php the_sub_field('press_logo'); ?>);">
+            <div class="about__press__logo press__logo  press__logo--regular" style="background-image: url( <?php the_sub_field('press_logo'); ?>);"></div>
+            <div class="about__press__logo press__logo press__logo--hover" style="background-image: url( <?php the_sub_field('press_logo-hover'); ?>);"></div> 
+
               <!-- <img src="" alt=""> -->
-            </div>
             <h4><?php the_sub_field('press_article'); ?></h4>
             <p><?php the_sub_field('press_details'); ?></p>
-         </div>
+          </div>
         </a>
 
     <?php 

@@ -17,6 +17,7 @@ $gray-dark: #636363;
 $breakpoint-small: 375px;
 $breakpoint-medium: 768px;
 $breakpoint-medium-large: 1080px;
+$breakpoint-medium-large-project: 1440px;
 $breakpoint-large: 1920px;
 
 
@@ -32,13 +33,13 @@ $spacing-side-small: 20px;
 $menu-height: 8vh;
 $submenu-margin: 15px;
 $submenu-font-size: 1rem;
-$spacing-top-submenu: calc(#{$menu-height} + #{$submenu-margin} * 2 + #{$submenu-font-size} + 10px);
+$spacing-top-submenu: calc(#{$menu-height} + #{$submenu-margin} * 2 + #{$submenu-font-size} + 9px);
 $main-image-height: 50vh;
 $teaser-height: calc(100vw/1.77777);
 $teaser-height--medium: 200px;
 $teaser-height-33: 18.75vw;
 // $teaser-max-height-33: calc(1920px / 3 / 1.7);
-$teaser-max-height-33: calc(#{$breakpoint-large} / 3 / 1.7);
+$teaser-max-height-33: calc(#{$breakpoint-large} / 3 / 1.777777);
 $teaser-height-33-medium: calc(#{$teaser-height-33} * 2);
 $teaser-height-50: 28.125vw;
 $teaser-height-50-medium: calc(#{$teaser-height-50} * 2);

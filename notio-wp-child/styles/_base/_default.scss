@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'Gotham-Black';
+    src: url('assets/Gotham-Black.otf');
+    font-weight: 'black';
+}
+
+@font-face {
+    font-family: 'Gotham-Bold';
+    src: url('assets/GothamBold.ttf');
+    font-weight: 'bold';
+}
+
+
 * {
     box-sizing: border-box;
     font-size: 62.5%;
@@ -6,15 +19,18 @@
 
 html {
     overflow-x: hidden;
+    width: 100vw;
 }
 
 body {
     background: white;
+    width: 100vw;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Gotham-Black', sans-serif;
 }
+
 
 p {
     font-size: 1rem;
@@ -27,6 +43,105 @@ a {
         color: red;
     }
 }
+
+p, a, span, b, i, strong, pre {
+    
+    @media screen and (max-width: $breakpoint-small) {
+        font-size: .8rem;
+    }
+    @media screen and (max-width: $breakpoint-medium) {
+        font-size: 1rem;
+    }
+    @media screen and (max-width: $breakpoint-medium-large) {
+        font-size: 1rem;
+    }
+    @media screen and (min-width: $breakpoint-medium-large) {
+        font-size: 1.2rem;
+    }
+}
+
+
+h1  {
+    
+    @media screen and (max-width: $breakpoint-small) {
+        font-size: 1.8rem;
+    }
+    @media screen and (max-width: $breakpoint-medium) {
+        font-size: 2.4rem;
+    }
+    @media screen and (max-width: $breakpoint-medium-large) {
+        font-size: 3rem;
+    }
+    @media screen and (min-width: $breakpoint-medium-large) {
+        font-size: 4.8rem;
+    }
+}
+
+
+h2  {
+    
+    @media screen and (max-width: $breakpoint-small) {
+        font-size: 1.4rem;
+    }
+    @media screen and (max-width: $breakpoint-medium) {
+        font-size: 1.8rem;
+    }
+    @media screen and (max-width: $breakpoint-medium-large) {
+        font-size: 2.4rem;
+    }
+    @media screen and (min-width: $breakpoint-medium-large) {
+        font-size: 3rem;
+    }
+}
+
+h3  {
+    
+    @media screen and (max-width: $breakpoint-small) {
+        font-size: 1.2rem;
+    }
+    @media screen and (max-width: $breakpoint-medium) {
+        font-size: 1.4rem;
+    }
+    @media screen and (max-width: $breakpoint-medium-large) {
+        font-size: 1.8rem;
+    }
+    @media screen and (min-width: $breakpoint-medium-large) {
+        font-size: 2.4rem;
+    }
+}
+
+h4  {
+    
+    @media screen and (max-width: $breakpoint-small) {
+        font-size: 1rem;
+    }
+    @media screen and (max-width: $breakpoint-medium) {
+        font-size: 1.2rem;
+    }
+    @media screen and (max-width: $breakpoint-medium-large) {
+        font-size: 1.4rem;
+    }
+    @media screen and (min-width: $breakpoint-medium-large) {
+        font-size: 1.8rem;
+    }
+}
+
+h6  {
+    
+    @media screen and (max-width: $breakpoint-small) {
+        font-size: 1rem;
+    }
+    @media screen and (max-width: $breakpoint-medium) {
+        font-size: 1rem;
+    }
+    @media screen and (max-width: $breakpoint-medium-large) {
+        font-size: 1.2rem;
+    }
+    @media screen and (min-width: $breakpoint-medium-large) {
+        font-size: 1.4rem;
+    }
+}
+
 
 .underline-link:hover:after, .products .product .product_after_title .button:hover:after, .wpb_text_column a:hover:after {
     display: none;
@@ -54,9 +169,9 @@ div[role=main] {
     // }
 }
 
-// ::-webkit-scrollbar { 
-//     display: none; 
-// }
+::-webkit-scrollbar { 
+    display: none; 
+}
 
 .btn {
     border: none;
@@ -94,10 +209,14 @@ div[role=main] {
         display: inline;        
     }
 
-    &:hover {
+    &:hover, &.hovered {
 
         img {
             transform: translate(-50%, -50%) scale(1.05);
+        }
+
+        .project-hover-info {
+            opacity: 1;
         }
     }
 
@@ -112,11 +231,11 @@ div[role=main] {
             h3 {
                 transition: $transition-time;
                 display: inline;
-                font-weight: 1.2rem;
+                font-size: 1.2rem;
             }
         }
 
-        &:hover {
+        &:hover &.hovered {
 
             h3 {
                 box-shadow: inset 0px -12px 0px 0px rgba(227,27,35,75);
@@ -127,11 +246,12 @@ div[role=main] {
     &.project__insight {
         transition: $transition-time;
 
-        &:hover {
+        &:hover, &.hovered {
             background: $anthrazit;
 
             h3 {
                 color: $white;
+                box-shadow: inset 0px -12px 0px 0px rgba(227,27,35,75);
             }
         }
     }
@@ -250,6 +370,7 @@ div[role=main] {
         align-items: center;
         flex-wrap: wrap;
         transition: $transition-time;
+        position: relative;
 
         background: white;
         color: $anthrazit;
@@ -278,6 +399,14 @@ div[role=main] {
             background-repeat: no-repeat;
             background-position: center;
 
+            @include center-horizontally;
+            top: 20px;
+
+            &--hover {
+                opacity: 0;
+                transition: $transition-time;
+            }
+
             // img {
             //     @include center;
             //     height: 100%;
@@ -292,6 +421,7 @@ div[role=main] {
             h4 {
                 box-shadow: inset 0px -7px 0px 0px rgba(227,27,35,75);
             }
+
         }
 
         &:hover {
@@ -301,6 +431,11 @@ div[role=main] {
             
             h4, p {
                 color: white;
+            }
+
+            
+            .press__logo--hover {
+                opacity: 1;
             }
         }
 
@@ -560,7 +695,7 @@ div[role=main] {
             justify-content: space-between;
             margin-bottom: 0;
             width: calc(100vw - 40px);
-            max-width: calc(#{$breakpoint-large} - 40px);
+            max-width: calc(#{$breakpoint-large} - 40px - 95px - 95px);
             padding-left: $spacing-side-large;
 
             li {
@@ -663,7 +798,7 @@ div[role=main] {
         }
 
         @media screen and (min-width: $breakpoint-large){
-            padding: 0 calc((100vw - #{$breakpoint-large}) / 2 - 10px);
+            padding: 0 calc((100vw - #{$breakpoint-large}) / 2 - 10px + 95px);
 
             ul {
                 padding: 0;
@@ -841,7 +976,7 @@ div[role=main] {
     
     @media screen and (min-width: $breakpoint-large){
         .concept-header__project-category__search-form {
-            right: calc((100vw - #{$breakpoint-large}) / 2);
+            right: calc((100vw - #{$breakpoint-large}) / 2 + 95px);
         }
 
     }
@@ -889,6 +1024,36 @@ div[role=main] {
 #mobile-menu {   
     z-index: 101;
     top: -49px !important;
+
+    
+    @media screen and (max-height: 600px) {
+
+        .menu-container {
+            width: 100% !important;
+
+        }
+
+        .address-item {
+            float: right;
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            margin-top: 0;
+        }
+
+        #menu-main {
+            padding-top: 50px;
+        }
+
+        .menu-holder > ul > li {
+            width: 50%;
+
+            a {
+
+                margin-bottom: 4vh;
+            }
+        }
+    }
 }
 
 .menu-holder {
@@ -968,6 +1133,7 @@ div[role=main] {
                 }
             }
         }
+        
 
        
     }
@@ -989,6 +1155,7 @@ div[role=main] {
 
         &#menu-item-wpml-ls-3-en {
             margin-right: 0;
+            display: none; //REMEMBER: remove
         }
 
         span {
@@ -1055,7 +1222,6 @@ div[role=main] {
 
         .mobile-menu {
             padding: 23vh 70px 0 70px;
-            text-align: center;
 
             
             .menu-language-select {
@@ -1105,9 +1271,9 @@ div[role=main] {
     font-weight: $bold;
     background: $gray;
     padding: 8px 14px;
-    margin: 3px;
     margin-left: 0;
     margin-right: 3px;
+    margin-bottom: 3px;
     text-transform: uppercase;
     cursor: pointer;
     transition: $transition-time;
@@ -1129,6 +1295,10 @@ div[role=main] {
 .concept-breadcrumbs {
 
     margin-bottom: 2vh;
+
+    * {
+        margin-right: 2px;
+    }
 
 
     a, > .breadcrumb {
@@ -1175,7 +1345,7 @@ div[role=main] {
         // background-color: $red;
         color: white;
         text-align: center;
-        padding: 30px 25%;
+        padding: 30px 24%;
         
         background-size: cover;
         background-repeat: no-repeat;
@@ -1228,7 +1398,8 @@ div[role=main] {
             margin: 0 auto;
             display: inline;
             transition: $transition-time;
-            padding-left: 30px;
+            // transform: translateX(15px);
+            // padding-left: 30px;
         }
     }
 
@@ -1237,7 +1408,7 @@ div[role=main] {
         background: black !important;
         color: white;
         text-align: center;
-        padding: 50px 0;
+        padding: 50px 0 0 0;
 
         h4 {
             color: white;
@@ -1250,6 +1421,10 @@ div[role=main] {
 
         p {
             padding: 0 $spacing-side-large 10px 0;
+
+            &:first-of-type {
+                padding-right: 0;
+            }
         }
 
 
@@ -1316,11 +1491,22 @@ div[role=main] {
 
         .footer__info {
             flex-wrap: wrap;
+            // padding: 40px 5vw 40px 7vw !important;
 
             > div {
                 width: 100%;
                 max-width: unset;
                 margin: 20px 0;
+                
+                p {
+                    padding-left: 10px;
+                }
+
+                div {
+                    position: relative;
+                    left: unset;
+                    top: unset;
+                }
             }
             
         }
@@ -1373,8 +1559,8 @@ div[role=main] {
         
     @media screen and (min-width: $breakpoint-large ){
         
-        .footer__info, .footer__call-to-action, .wpcf7 {
-            max-width: $breakpoint-large;
+        .wpcf7 {
+            max-width: calc(#{$breakpoint-large} - 95px * 2);
             margin: 0 auto !important;
 
             form {
@@ -1399,8 +1585,8 @@ div[role=main] {
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
-        margin: 0px auto 30px auto;
-        padding: $spacing-side-large;
+        margin: 0px auto 0px auto;
+        padding: 0 $spacing-side-large $spacing-side-large $spacing-side-large;
         position: relative;
         // max-width: 800px;
         // width: 100%;
@@ -1482,6 +1668,11 @@ div[role=main] {
 
     &-form-control {
 
+    }
+
+    .wpcf7-response-output {
+        text-align: center;
+        width: 100%;
     }
 
     .send-container {
@@ -1633,8 +1824,8 @@ div[role=main] {
 }
 
 .fbx-inner {
-    width: 80vw !important;
-    height: calc(80vw / 1.7777777) !important;
+    width: 90vw !important;
+    height: calc(90vw / 1.7777777) !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
     margin-top: 0 !important;
@@ -1642,8 +1833,8 @@ div[role=main] {
     @include center;
 
     iframe {
-        width: 80vw !important;
-        height: calc(80vw / 1.7777777) !important;
+        width: 90vw !important;
+        height: calc(90vw / 1.7777777) !important;
     }
 }
 
@@ -1659,30 +1850,25 @@ div[role=main] {
     }
 }
 
-.lg-backdrop, .lg-outer {
-    display: none;
+.lg-backdrop, .lg-outer, .fbx-fullscreen-toggle, .fbx-credit, .pagination-space, .fbx-play {
+    display: none !important;
 }
 
-.fbx-credit {
-    display: none;
+.fbx-next, .fbx-prev {
+    
+    &:hover {
+        .fbx-next::before, .fbx-prev::before {
+            color: $red !important;
+        }
+    }
 }
 
-.pagination-space {
-    display: none;
-}
 
 //
 // Breakpoints
 //
 
 @media screen and (min-width: $breakpoint-medium-large) {
-    h1 {
-        font-size: 4.5rem !important;
-    }
-    
-    h2 {
-        font-size: 1.4rem !important;
-    }
     
     p, p span {
         font-size: 1.2rem;
@@ -1744,9 +1930,9 @@ div[role=main] {
         background-repeat: no-repeat; 
         display: inline-block;
         transform: translateY(20%);
-        position:absolute;
-        left: 0px;
-        top: -14px;
+        position: absolute;
+        left: -30px;
+        top: -4px;
 }
 .footer__info .icon-phone {
   background-image: url("./assets/phone.svg"); }

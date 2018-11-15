@@ -11,6 +11,7 @@ body.page-template-highlights, body.page-template-journalismus, body.page-templa
     margin-top: $spacing-top-submenu;
     transition: $transition-time;
     background: $white;
+    width: 100.1%;
 
 
     &__project-container {
@@ -88,7 +89,8 @@ body.page-template-highlights, body.page-template-journalismus, body.page-templa
             .projects__project {
 
                 height: $teaser-height;
-                width: 100% !important;
+                width: 100vw !important;
+                min-width: unset !important;
 
             }
         }

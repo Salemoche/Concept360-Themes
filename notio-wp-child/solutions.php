@@ -12,7 +12,7 @@
     </div>
     <div class="columns small-6 medium-4 solutions__text">
       <div class="project__info__breadcrumbs concept-breadcrumbs">
-        <?php if (function_exists('nav_breadcrumb')) nav_breadcrumb(); ?> ?>
+        <?php if (function_exists('nav_breadcrumb')) nav_breadcrumb(); ?>
       </div>
       <h2><?php echo get_post_meta($post->ID, 'solutions_title', true) ?></h2>
       <p><?php echo get_post_meta($post->ID, 'solutions_main-text', true) ?></p>
