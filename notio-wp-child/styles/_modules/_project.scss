@@ -131,7 +131,11 @@
                 max-width: 32.33333%;
 
                 p, strong, h1, h2, h3, h4 {
-                    margin-left: 5vw;
+                    margin-left: $spacing-side-large;
+                }
+
+                a p {
+                    margin-left: 0;
                 }
             }
 
@@ -513,6 +517,10 @@
 
                 p, h1, h2, h3, pre {
                     margin-right: $spacing-side-large;
+                }
+
+                a p {
+                    margin-left: $spacing-side-large;
                 }
             }
         }

@@ -21,7 +21,18 @@
       
       <div class="project__info project__info columns small-12 medium-4 ">
         <div class="project__info__breadcrumbs concept-breadcrumbs">
-          <?php if (function_exists('nav_breadcrumb')) nav_breadcrumb(); ?>
+          <nav class="breadcrumb">
+            <a href="<?php echo get_permalink(686);?>">Projekte</a>
+            <span>/</span>
+            <?php if(has_category(35)) : ?>
+              <a href="<?php echo get_permalink(684);?>"><?php echo get_cat_name(35); ?></a>
+            <?php elseif(has_category(37)) : ?>
+              <a href="<?php echo get_permalink(704);?>"><?php echo get_cat_name(37); ?></a>
+            <?php elseif(has_category(42)) : ?>
+              <a href="<?php echo get_permalink(702);?>"><?php echo get_cat_name(42); ?></a>
+            <?php endif; ?>
+            <!-- <a href="< ?php get_permalink();?>"><?php the_title();?></a> -->
+          </nav>
         </div>
         <div class="project__info__spacer">
           <div class="project__info__title">

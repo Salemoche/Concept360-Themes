@@ -37,9 +37,9 @@ body.page-template-solutions {
         .solutions__text {
             padding-left: $spacing-side;
 
-            .concept-breadcrumbs span:last-of-type {
-                display: none;
-            }
+            // .concept-breadcrumbs span:last-of-type {
+            //     display: none;
+            // }
         }
 
         
@@ -108,6 +108,8 @@ body.page-template-solutions {
                 }
             }
 
+
+
             &__graphic {
 
                 position: relative;
@@ -170,6 +172,11 @@ body.page-template-solutions {
 
             &__container {
                 margin-top: $spacing-side;
+
+                .wpb_wrapper {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
             }
 
             &__graphic__text {
@@ -195,6 +202,27 @@ body.page-template-solutions {
                     padding: 0 1rem;
                     display: none;
                     padding: 0;
+                }
+
+                &.flag_1_ {
+                    order: 1;
+                }
+
+                
+                &.flag_2_ {
+                    order: 3;
+                }
+                
+                &.flag_3_ {
+                    order: 5;
+                }
+
+                &.flag_4_ {
+                    order: 2;
+                }
+                
+                &.flag_5_ {
+                    order: 4;
                 }
             }
         }

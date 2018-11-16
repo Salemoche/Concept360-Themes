@@ -33,7 +33,7 @@ $spacing-side-small: 20px;
 $menu-height: 8vh;
 $submenu-margin: 15px;
 $submenu-font-size: 1rem;
-$spacing-top-submenu: calc(#{$menu-height} + #{$submenu-margin} * 2 + #{$submenu-font-size} + 9px);
+$spacing-top-submenu: calc(60px + #{$submenu-margin} * 2 + #{$submenu-font-size} + 9px);
 $main-image-height: 50vh;
 $teaser-height: calc(100vw/1.77777);
 $teaser-height--medium: 200px;

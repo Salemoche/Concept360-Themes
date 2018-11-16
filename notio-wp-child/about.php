@@ -11,7 +11,11 @@
       </div>
       <div class="columns small-6 about__content__contact-info about__content__contact-info__title about__content__contact-info--medium">
         <div class="about__content__breadcrumbs concept-breadcrumbs">
-          <?php if (function_exists('nav_breadcrumb')) nav_breadcrumb(); ?>
+          <nav class="breadcrumb">
+            <!-- <a href="< ?php get_home_url();?>">Home</a>
+            <span>/</span> -->
+            <a href="<?php get_permalink();?>"><?php the_title();?></a>
+          </nav>
         </div>
         <h3><?php the_title(); ?></h3>
       </div>
@@ -29,7 +33,11 @@
     </div>
     <div class="columns small-4 about__content__contact-info about__content__contact-info--large">
       <div class="about__content__breadcrumbs concept-breadcrumbs">
-        <?php if (function_exists('nav_breadcrumb')) nav_breadcrumb(); ?>
+          <nav class="breadcrumb">
+            <a href="<?php get_home_url();?>">Home</a>
+            <span>/</span>
+            <a href="<?php get_permalink();?>"><?php the_title();?></a>
+          </nav>
       </div>
       <h3><?php the_title(); ?></h3>
       <h3><?php echo get_post_meta(779, 'footer_call_mail', true); ?></h3>
@@ -112,9 +120,10 @@
         
         <a href="<?php the_sub_field('press_link'); ?>">
           <div class="about__press press">
-            <div class="about__press__logo press__logo  press__logo--regular" style="background-image: url( <?php the_sub_field('press_logo'); ?>);"></div>
-            <div class="about__press__logo press__logo press__logo--hover" style="background-image: url( <?php the_sub_field('press_logo-hover'); ?>);"></div> 
-
+            <div class="press__logo__container">
+              <div class="about__press__logo press__logo  press__logo--regular" style="background-image: url( <?php the_sub_field('press_logo'); ?>);"></div>
+              <div class="about__press__logo press__logo press__logo--hover" style="background-image: url( <?php the_sub_field('press_logo-hover'); ?>);"></div> 
+            </div>
               <!-- <img src="" alt=""> -->
             <h4><?php the_sub_field('press_article'); ?></h4>
             <p><?php the_sub_field('press_details'); ?></p>
