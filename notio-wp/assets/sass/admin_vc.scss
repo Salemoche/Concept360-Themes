@@ -14,7 +14,7 @@ $color1: #23282d;
   padding: 1px 0 1px 12px;
   font-size: 13px;
   line-height: 20px;
-  
+
   p {
     padding: 2px;
     margin: 7px 0;
@@ -29,8 +29,8 @@ $color1: #23282d;
   padding: 18px;
   background: #fff;
   ul {
-  	margin: 0;	
-  	
+  	margin: 0;
+
   	li {
   		display: flex;
   		justify-content: space-between;
@@ -38,10 +38,10 @@ $color1: #23282d;
   		margin-bottom: 10px;
   		line-height: 20px;
   		cursor: pointer;
-  		
+
   		&:not(.active):hover {
   			color: $color1;
-  			
+
   			span {
   				color: $color1;
   			}
@@ -57,14 +57,14 @@ $color1: #23282d;
   			padding: 0 5px;
   			border-radius: 5px;
   			color: #777;
-  		}	
+  		}
   		&.active {
   			color: #0473aa;
-  			
+
   			span {
   				border-color: #0473aa;
   				background-color: #0473aa;
-  				color: #fff;	
+  				color: #fff;
   			}
   		}
   	}
@@ -73,16 +73,16 @@ $color1: #23282d;
 .thb_templates_container {
 	flex: 1;
 	padding: 18px;
-	
+
 	.theme-browser {
 		width: calc(100% + 15px);
-		
+
 		.thb_template.theme {
 			margin: 0 15px 15px 0;
 			width: calc(33.3% - 15px);
 		}
 	}
-	
+
 	.thb_template.theme {
 
 		.theme-name {
@@ -92,6 +92,63 @@ $color1: #23282d;
 			top: auto;
 			transform: translateY(0);
 			bottom: 0;
+		}
+	}
+}
+
+/* Label */
+.thb-row-heading {
+	color: #999;
+  display: block;
+  line-height: 20px;
+  margin-top: 8px;
+  clear: both;
+  font-weight: 400;
+}
+.vc_edit_form_elements .vc_column[data-vc-shortcode-param-name="column_2_align"],
+.vc_edit_form_elements .vc_column[data-vc-shortcode-param-name="column_3_align"],
+.vc_edit_form_elements .vc_column[data-vc-shortcode-param-name="column_4_align"] {
+	margin-top: 18px;
+}
+
+/* Small VC fixes */
+.wpb_thb_slidetype {
+	.vc_admin_label {
+		display: block;
+		max-width: 100%;
+		overflow: hidden;
+	}
+}
+/* Element Styles */
+.vc_wrapper-param-type-thb_radio_image {
+	.thb-radio-images-list {
+		display: block;
+
+		li {
+			width: 137px;
+			display: inline-block;
+			margin: 0 10px 10px 0px;
+
+			.thb_radio_image_val {
+				display: none;
+			}
+			.thb_radio_image {
+				background: #fff;
+		    border: 1px solid #ccc;
+		    cursor: pointer;
+		    opacity: 0.8;
+		    padding: 5px;
+		    border-radius: 2px;
+		    line-height: 1;
+		    img {
+		    	max-width: 100%;
+		    }
+			}
+			.thb_radio_image_val:checked + .thb_radio_image {
+				border-color: #464646;
+		    opacity: 1;
+		    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+			}
 		}
 	}
 }

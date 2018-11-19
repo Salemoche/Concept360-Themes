@@ -11,8 +11,8 @@
 	padding: 0 15px;
 	@include translateZ(0);
 	@extend .admin-style;
-	
-	
+
+
 	@include min-break($break-medium) {
 		padding: 20px 15px;
 		min-height: 80px;
@@ -33,11 +33,11 @@
   .transparent_header_on.light-header & {
     @extend .white-header;
   }
-  
+
   &>.row {
 		flex: 1;
 		position: relative;
-		
+
 		@include ie11 {
 			flex: none	;
 			width: 100%;
@@ -45,13 +45,13 @@
 	}
 	.logolink {
 		display: inline-flex;
-		vertical-align: middle;	
+		vertical-align: middle;
 		position: relative;
 	}
 	.logoimg {
 		display: block;
 		max-height: 21px;
-		
+
 		&.logo_light {
       position: absolute;
       top: 0;
@@ -62,11 +62,11 @@
 	.icon-holder {
 		text-align: right;
 		&>a {
-			vertical-align: middle;	
+			vertical-align: middle;
 		}
 	}
 	&.style1 {
-		
+
 		&>.row>.columns {
 			display: flex;
 			justify-content: space-between;
@@ -80,8 +80,8 @@
 		}
 	}
 	&.style2 {
-		
-		
+
+
 		&>.row>.columns {
 			display: flex;
 			justify-content: space-between;
@@ -108,7 +108,7 @@
 			align-items: center;
 			margin-left: 15px;
 		}
-		
+
 	}
 	.quick_cart {
 		position: relative;
@@ -122,7 +122,7 @@
 		svg {
 			overflow: visible;
 			position: relative;
-			top: -1px;	
+			top: -1px;
 		}
 		.float_count {
 			display: block;
@@ -138,11 +138,11 @@
 		}
 		&:hover,
 		&:focus {
-			color: $color1;	
+			color: $color1;
 		}
 		@include max-break($break-large) {
 			&:after {
-				display: none;	
+				display: none;
 			}
 		}
 	}
@@ -152,7 +152,7 @@
 .white-header {
   .logoimg {
     opacity: 0;
-    
+
     &.logo_light {
       opacity: 1;
     }
@@ -194,7 +194,7 @@
 	font-weight: 400;
 	@extend .admin-style;
 
-	
+
 	@include min-break($break-medium) {
 		display: block;
 	}
@@ -210,7 +210,7 @@
 		text-align: center;
 		@include transform(rotate(-90deg));
 		@include transform-origin(0,0);
-		
+
 		&.right-side {
 			left: auto;
 			right: 34px;
@@ -221,8 +221,8 @@
 	&.left-side {
 		.thb-quick-portfolio {
 			right: auto;
-			left: 100%;	
-			
+			left: 100%;
+
 			.thb-quick-inner {
 				.quick-portfolio {
 					flex-direction: row-reverse;
@@ -244,9 +244,9 @@
 		text-align: left;
 		visibility: hidden;
 		width: 300px;
-		
+
 		@include min-break($break-medium) {
-			width: 400px;	
+			width: 400px;
 		}
 		.thb-quick-inner {
 			flex: 1;
@@ -260,25 +260,30 @@
 				justify-content: flex-start;
 				@extend .quick-transition;
 				@include translateX(100%);
-				
+
 				&.light-title {
 					&:hover {
 						h5,
 						.thb-categories {
 							color: #fff;
-						}		
+						}
 					}
 				}
 				.figure {
 					display: block;
-					width: 100px;
 					flex: 2;
 					flex-shrink: 0;
-					background-size: cover;
-					background-position: center;
+
 					transform-origin: right center;
 					@include rotateY(90deg);
 					@extend .transition;
+
+					img {
+						display: block;
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
 				}
 				.qp-content {
 					flex: 4;
@@ -289,7 +294,7 @@
 					justify-content: center;
 					white-space: pre-wrap;
 					@extend .transition;
-					
+
 					@include min-break($break-medium) {
 						padding: 25px;
 					}
@@ -316,7 +321,7 @@
 				&:hover {
 					.figure {
 						@include rotateY(0deg);
-					}	
+					}
 				}
 			} /* Quick Portfolio */
 		}
@@ -332,7 +337,7 @@
 #full-menu {
 	display: none;
 	vertical-align: middle;
-	
+
 	@include min-break($break-large) {
 		display: inline-flex;
 	}
@@ -347,7 +352,7 @@
 			text-transform: uppercase;
 			font-size: 14px;
 			white-space: nowrap;
-			
+
 		}
 		i {
 			margin-right: 10px;
@@ -361,20 +366,20 @@
 		&>li {
 			display: inline-block;
 			position: relative;
-			
-			
+
+
 			& + li {
         margin-left: 20px;
       }
-      
+
       @include max-break($break-large) {
 				display: block;
 			}
 			&.current-menu-item>a,
 			&.sfHover>a {
 				color: $color3;
-			} 
-			
+			}
+
 			&>a {
 				display: block;
 				font-size: 13px;
@@ -382,8 +387,8 @@
 				font-weight: 400;
 				color: $color1;
 				padding: 10px 0;
-				
-				
+
+
 				&:hover {
 					color: $color3;
 				}
@@ -415,16 +420,16 @@
 		opacity: 0;
 		visibility: hidden;
 		@extend .reset;
-		
+
 		.header_full_menu_submenu_color_style2 & {
 			background: $color1;
-			
+
 			a {
 				color: #fff;
-				
+
 				&:hover {
 					color: $color3;
-				}	
+				}
 			}
 		}
 		.rtl & {
@@ -446,9 +451,9 @@
 				font-size: 12px;
 				color: #909090;
 				font-weight: 400;
-				
+
 				&:hover {
-					color: $color3;	
+					color: $color3;
 				}
 			}
 			.sub-menu {
@@ -485,7 +490,7 @@
 		color: #fff;
 		font-weight: 600;
 		font-size: 12px;
-		text-align: center;	
+		text-align: center;
 		margin-bottom: 10px;
 	}
 	input {
@@ -500,7 +505,7 @@
 		max-width: 100%;
 		border: 0;
 		font-weight: 600;
-		
+
 		@include input-placeholder {
 			color: #636363;
 		}

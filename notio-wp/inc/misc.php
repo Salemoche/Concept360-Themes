@@ -2,6 +2,7 @@
 /* Adds custom classes to the array of body classes. */
 function thb_body_classes( $classes ) {
   $thb_id = get_queried_object_id();
+  $preloader = ot_get_option('thb_preload_type', 'preloader') === 'preloader' ? 'on' : 'off';
   $transparent_header = get_post_meta($thb_id, 'transparent_header', TRUE);
 	$classes[] = 'mobile_menu_position_'. ot_get_option('mobile_menu_position', 'right');
 	$classes[] = 'mobile_menu_style_'. ot_get_option('mobile_menu_style', 'style1');
@@ -9,17 +10,17 @@ function thb_body_classes( $classes ) {
 	$classes[] = 'header_full_menu_'. ot_get_option('header_full_menu', 'on');
 	$classes[] = 'footer_style_'. ot_get_option('footer_style', 'style1');
 	$classes[] = 'site_bars_'.ot_get_option('site_bars', 'on');
-	$classes[] = 'preloader_'.ot_get_option('preloader', 'on');
+	$classes[] = 'preloader_'.$preloader;
 	$classes[] = 'header_full_menu_submenu_color_'. ot_get_option('header_full_menu_submenu_color', 'style1');
 	$classes[] = 'footer_simple_fixed_'.ot_get_option('footer_simple_fixed', 'off');
-	
+
 	$classes[] = 'transparent_header_'.$transparent_header;
 	if ($transparent_header === 'on') {
 	$classes[] = get_post_meta($thb_id, 'header_color', TRUE);
 	}
 	$classes[] = post_password_required() ? 'page-password-required' : '';
-	
-	
+
+
 	return $classes;
 }
 add_filter( 'body_class', 'thb_body_classes' );
@@ -772,7 +773,7 @@ function thb_getSvgIconArray($empty = true){
 		'Weather Windgust' => 'weather_windgust.svg'
 	);
 	if ($empty) {
-		$icons = array('Empty'=>'') + $icons;	
+		$icons = array('Empty'=>'') + $icons;
 	}
 	return $icons;
 }
@@ -793,7 +794,7 @@ function thb_remove_youtube_controls($code){
   }
   return $return;
 }
- 
+
 add_filter('embed_handler_html', 'thb_remove_youtube_controls');
 add_filter('embed_oembed_html', 'thb_remove_youtube_controls');
 /* Social Sharing */
@@ -803,7 +804,7 @@ function thb_social_article_detail($btn = true) {
 	$title = the_title_attribute(array('echo' => 0, 'post' => $id) );
 	$image_id = get_post_thumbnail_id($id);
 	$image = wp_get_attachment_image_src($image_id,'full');
-	
+
 	if (is_singular('post')) {
 		$sharing_type = ot_get_option('sharing_buttons',array('facebook', 'twitter', 'pinterest', 'google-plus'));
 	} else if (is_singular('portfolio')) {
@@ -873,7 +874,7 @@ function thb_quick_search() {
 				c0-3.292,2.703-5.97,6.025-5.97s6.026,2.678,6.026,5.97c0,3.292-2.704,5.969-6.026,5.969S2.079,11.364,2.079,8.072z"/>
 	</svg></a>
 <?php
-	function thb_add_searchform() { 
+	function thb_add_searchform() {
 		?>
 		<aside id="searchpopup">
 			<div class="spacer"></div>
@@ -890,9 +891,9 @@ add_action( 'thb_quick_search', 'thb_quick_search',3 );
 
 /* Thb Tweets */
 function thb_gettweets($count = 5) {
-	
+
 	$cache = get_transient( 'thb_twitter_'. ot_get_option('twitter_bar_accesstoken') .'_'.$count);
-	
+
 	switch (ot_get_option('twitter_cache', '1')) {
 		case '1h':
 			$cache_time = 3600;
@@ -907,7 +908,7 @@ function thb_gettweets($count = 5) {
 			$cache_time = DAY_IN_SECONDS * 30;
 			break;
 	}
-	
+
 	if ( '' == ot_get_option('twitter_bar_accesstoken')
 	     || '' == ot_get_option('twitter_bar_accesstokensecret')
 	     || '' == ot_get_option('twitter_bar_consumerkey')
@@ -922,28 +923,28 @@ function thb_gettweets($count = 5) {
 			'consumer_key' => ot_get_option('twitter_bar_consumerkey'),
 			'consumer_secret' => ot_get_option('twitter_bar_consumersecret')
 		);
-		
+
 		$connection = new thb_TwitterAPIExchange($settings);
 		$url            = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
 		$getfield       = '?screen_name='.ot_get_option('twitter_bar_username').'&count='.$count;
 		$request_method = 'GET';
-		
+
 		$response = $connection
 			->set_get_field( $getfield )
 			->build_oauth( $url, $request_method )
 			->process_request();
-		
+
 		$response = json_decode( $response, true );
 
 		if( isset($response['errors']) ) {
 			foreach($response['errors'] as $error) {
-				echo $error['message'];	
+				echo $error['message'];
 			}
 			 set_transient( 'thb_twitter_'. ot_get_option('twitter_bar_accesstoken') .'_'.$count, '', 0 );
 			return;
 		} else {
-	    foreach($response as $tweet) { 
-	    	$tweets[] =  array( 
+	    foreach($response as $tweet) {
+	    	$tweets[] =  array(
 	    		'tweet' => $connection->getHelper()->thb_getTweetText($tweet),
 	    		'url' => $connection->getHelper()->thb_getTweetURL($tweet),
 	    		'time' => $connection->getHelper()->thb_getTweetTime($tweet)
@@ -951,11 +952,23 @@ function thb_gettweets($count = 5) {
 	    }
 	    set_transient( 'thb_twitter_'. ot_get_option('twitter_bar_accesstoken') .'_'.$count, $tweets, $cache_time );
 	    return $tweets;
-	  }	
+	  }
 	} else {
 		return $cache;
 	}
 }
+/* Preloader */
+function thb_preloader() {
+	if ('preloader' === ot_get_option('thb_preload_type', 'preloader')) {
+	?>
+  <!-- Start Loader -->
+  <div class="pace"></div>
+  <!-- End Loader -->
+	<?php
+	}
+}
+add_action( 'thb_before_wrapper', 'thb_preloader' );
+
 /* Post Categories Array */
 function thb_blogCategories(){
 	$blog_categories = get_categories();
@@ -1004,28 +1017,28 @@ function thb_site_bars() {
 	$site_bars_portfolio_list = ot_get_option('site_bars_portfolio_list');
 	$site_bars_portfolio_position = ot_get_option('site_bars_portfolio_position', 'left');
 	$out = '';
-	if($site_bars != 'off') { 
+	if($site_bars != 'off') {
 		if ($site_bars_portfolio == 'on') {
-			ob_start();	
+			ob_start();
 			?>
 				<div class="thb-quick-portfolio">
 					<div class="thb-quick-inner">
-						<?php 
-							foreach ($site_bars_portfolio_list as $portfolio) { 
+						<?php
+							foreach ($site_bars_portfolio_list as $portfolio) {
 								$id = $portfolio['portfolio'];
 								$image_id = get_post_thumbnail_id($id);
 								$image_url = wp_get_attachment_image_src($image_id,'medium');
 								$main_color_title = get_post_meta($id, 'main_color_title', true);
-								
-								$categories = get_the_term_list( $id, 'project-category', '', ', ', '' ); 
-								
+
+								$categories = get_the_term_list( $id, 'project-category', '', ', ', '' );
+
 								$thb_categories = '';
 								if ($categories !== '' && !empty($categories)) {
 									$thb_categories = strip_tags($categories);
 								}
 						?>
 							<a class="quick-portfolio <?php echo esc_attr($main_color_title); ?>" id="qp-portfolio-<?php echo esc_attr($id); ?>" href="<?php echo get_the_permalink($portfolio['portfolio']); ?>">
-								<div class="figure" style="background-image: url(<?php echo esc_url($image_url[0]); ?>);"></div>
+								<div class="figure"><?php echo get_the_post_thumbnail($id, 'notio-square' ); ?></div>
 								<div class="qp-content">
 									<h5><?php echo get_the_title($portfolio['portfolio']); ?></h5>
 									<?php if ($thb_categories) { ?>
@@ -1046,7 +1059,7 @@ function thb_site_bars() {
 			<?php echo ($site_bars_portfolio_position == 'left' ? $out : ''); ?>
 		</aside>
 		<!-- End Left Bar -->
-		
+
 		<!-- Start Right Bar -->
 		<aside id="bar-right" class="bar-side right-side site_bars_portfolio-<?php echo esc_attr($site_bars_portfolio); ?> <?php if ($site_bars_portfolio_position == 'right') { echo 'active'; } ?>">
 			<div class="abs right-side"><?php echo wp_kses_post($right_bar); ?></div>
@@ -1075,7 +1088,7 @@ add_action( 'thb_social_links', 'thb_social', 3 , 2 );
 /* Blog Pagination */
 function thb_blog_pagination() {
 	$blog_pagination_style = ot_get_option('blog_pagination_style', 'style1');
-	
+
 	if ($blog_pagination_style == 'style1' || is_archive()) {
 	?>
 		<div class="row align-center">
@@ -1107,11 +1120,11 @@ function thb_blog_pagination() {
 		<?php if ( get_next_posts_link() || get_previous_posts_link()) { ?>
 		<div class="blog_nav row expanded">
 			<?php if ( get_next_posts_link() ) : ?>
-				<a href="<?php echo next_posts(); ?>" class="blog-link next small-12 medium-6 columns"><?php _e( 'Older', 'notio' ); ?></a>
+				<a href="<?php echo next_posts(); ?>" class="blog-link next small-12 medium-6 columns"><?php esc_html_e( 'Older', 'notio' ); ?></a>
 			<?php endif; ?>
-		
+
 			<?php if ( get_previous_posts_link() ) : ?>
-				<a href="<?php echo previous_posts(); ?>" class="blog-link prev small-12 medium-6 columns"><?php _e( 'Newer', 'notio' ); ?></a>
+				<a href="<?php echo previous_posts(); ?>" class="blog-link prev small-12 medium-6 columns"><?php esc_html_e( 'Newer', 'notio' ); ?></a>
 			<?php endif; ?>
 		</div>
 		<?php } ?>
@@ -1124,7 +1137,7 @@ add_action( 'thb_blog_pagination', 'thb_blog_pagination',3 );
 function thb_PostMeta() {
 	if (ot_get_option('thb_logo')) { $logo = ot_get_option('thb_logo'); } else { $logo = Thb_Theme_Admin::$thb_theme_directory_uri . 'assets/img/logo.png'; }
 	$post_meta = ot_get_option('post_meta') ? ot_get_option('post_meta') : array();
-	
+
 	$image_id = get_post_thumbnail_id();
 	$image_link = wp_get_attachment_image_src($image_id,'full');
 	?>
@@ -1197,7 +1210,7 @@ function thb_related_posts() {
 	    'no_found_rows' => true,
 	  );
 		$related_posts = new WP_Query( $args );
-		
+
 		?>
 		<?php if ($related_posts->have_posts()) : ?>
 		<aside class="related-posts cf hide-on-print">
@@ -1206,12 +1219,12 @@ function thb_related_posts() {
 		  	<?php while ($related_posts->have_posts()) : $related_posts->the_post(); get_template_part( 'inc/templates/postbits/related' ); endwhile; ?>
 		  </div>
 		</aside>
-		<?php endif; 
-		wp_reset_postdata(); 
+		<?php endif;
+		wp_reset_postdata();
 	}
 	?>
 	<?php
-	
+
 }
 add_action( 'thb_related', 'thb_related_posts', 3 );
 
@@ -1232,10 +1245,10 @@ function thb_portfolio_nav() {
 	if (is_singular('portfolio')) {
 		$in_same_term = $portfolio_nav_cat == 'on' ? true : false;
 		$prev = get_adjacent_post( $in_same_term, false, true, 'project-category' );
-		$next = get_adjacent_post( $in_same_term, false, false, 'project-category' );	
+		$next = get_adjacent_post( $in_same_term, false, false, 'project-category' );
 	}
 	if (
-		(is_singular('portfolio') && 'on' === ot_get_option('portfolio_nav', 'on')) || 
+		(is_singular('portfolio') && 'on' === ot_get_option('portfolio_nav', 'on')) ||
 		(is_singular('post') && 'on' === ot_get_option('blog_nav', 'on')) ||
 		(is_singular('product') && 'on' === ot_get_option('product_nav', 'on'))
 	) {
@@ -1251,7 +1264,7 @@ function thb_portfolio_nav() {
 							<?php echo get_the_post_thumbnail($prev->ID, array(50,50)); ?>
 							<?php get_template_part('assets/svg/arrows_left.svg'); ?>
 						</figure>
-						
+
 						<strong>
 							<?php if (is_singular('portfolio')) { ?>
 								<?php if ($keyboard_nav === 'on') { esc_html_e('Previous Project (p)', 'notio'); } else { esc_html_e('Previous Project', 'notio'); }?>
@@ -1275,12 +1288,12 @@ function thb_portfolio_nav() {
 				if ($next) {
 				?>
 					<a href="<?php echo get_permalink($next->ID); ?>" class="post_nav_link next">
-						
+
 						<strong>
 							<?php if (is_singular('portfolio')) { ?>
 								<?php if ($keyboard_nav === 'on') { esc_html_e('Next Project (n)', 'notio'); } else { esc_html_e('Next Project', 'notio'); } ?>
 							<?php } else if (is_singular('product')) { ?>
-								<?php if ($keyboard_nav === 'on') { esc_html_e('Next Product (p)', 'notio'); } else { esc_html_e('Next Product', 'notio');} ?>
+								<?php if ($keyboard_nav === 'on') { esc_html_e('Next Product (n)', 'notio'); } else { esc_html_e('Next Product', 'notio');} ?>
 							<?php } else { ?>
 								<?php if ($keyboard_nav === 'on') { esc_html_e('Next Post (n)', 'notio'); } else { esc_html_e('Next Post', 'notio'); } ?>
 							<?php } ?>
@@ -1308,21 +1321,26 @@ function thb_add_short( $name, $call ) {
 
   $func = 'add' . '_shortcode';
   return $func( $name, $call );
-  
+
 }
 /* Encoding */
 function thb_encode( $value ) {
 
   $func = 'base64' . '_encode';
   return $func( $value );
-  
+
 }
 function thb_decode( $value ) {
 
   $func = 'base64' . '_decode';
   return $func( $value );
-  
+
 }
+/* Cookie Bar */
+function thb_add_cookiebar() {
+	get_template_part('inc/templates/header/cookie-bar');
+}
+add_action( 'wp_footer', 'thb_add_cookiebar', 10 );
 
 /* WooCommerce Check */
 function thb_wc_supported() {
@@ -1330,45 +1348,85 @@ function thb_wc_supported() {
 }
 function thb_is_woocommerce() {
 	if (!thb_wc_supported()) {
-		return false;	
+		return false;
 	}
 	return (is_woocommerce() || is_cart() || is_checkout() || is_account_page());
 }
+
+/* Remove VC-added P tags */
+function thb_remove_vc_added_p($content) {
+	if (substr( $content, 0, 4 ) === "</p>") {
+		$content = substr($content, 4);
+	}
+	if (substr( $content, -3 ) === "<p>") {
+		$content = substr($content, 0, -3);
+	}
+	return $content;
+}
+
+/* Remove Empty P tags */
+function thb_remove_p($content){
+	$to_remove = array(
+	  '<p>[' => '[',
+	  ']</p>' => ']',
+	  ']<br />' => ']'
+	);
+
+	$content = strtr($content, $to_remove);
+	return $content;
+}
+
+add_filter('the_content', 'thb_remove_p');
+
+/* P tag fix for certain shortcodes */
+
+function shortcode_empty_paragraph_fix( $content ) {
+  $block = join( '|', array( 'thb_slidetype', 'thb_fadetype' ) );
+
+  // opening tag
+  $rep = preg_replace( "/(<p>)?(\n|\r)?\[($block)(\s[^\]]+)?\](<\/p>|<br \/>)?/", '[$3$4]', $content );
+
+  // closing tag
+  $rep = preg_replace( "/(<p>)?(\n|\r)?\[\/($block)](<\/p>|<br \/>)?/", '[/$3]', $rep );
+
+  return $rep;
+}
+add_filter( 'the_content',  'shortcode_empty_paragraph_fix' );
 
 /* Custom Background Support */
 function thb_change_custom_background_cb() {
     $background = get_background_image();
     $color = get_background_color();
- 
+
     if ( ! $background && ! $color )
         return;
- 
+
     $style = $color ? "background-color: #$color;" : '';
- 
+
     if ( $background ) {
         $image = " background-image: url('$background');";
- 
+
         $repeat = get_theme_mod( 'background_repeat', 'repeat' );
- 
+
         if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
             $repeat = 'repeat';
- 
+
         $repeat = " background-repeat: $repeat;";
- 
+
         $position = get_theme_mod( 'background_position_x', 'left' );
- 
+
         if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) )
             $position = 'left';
- 
+
         $position = " background-position: top $position;";
- 
+
         $attachment = get_theme_mod( 'background_attachment', 'scroll' );
- 
+
         if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) )
             $attachment = 'scroll';
- 
+
         $attachment = " background-attachment: $attachment;";
- 
+
         $style .= $image . $repeat . $position . $attachment;
     }
 ?>
@@ -1377,7 +1435,17 @@ body.custom-background #wrapper div[role="main"] { <?php echo trim( $style ); ?>
 </style>
 <?php
 }
+/* Gradient Generation */
+function thb_css_gradient( $color_start, $color_end, $angle = -32, $full = true ) {
 
+	$return = 'linear-gradient( ' . str_replace( 'deg', '', $angle ) . 'deg,' . esc_attr( $color_end ) . ',' . esc_attr( $color_start ) . ' )';
+
+	if ( $full == true ) {
+		return 'background:' . $color_start . ';background:' . $return . ';';
+	}
+
+	return $return;
+}
 // DNS Prefetching
 function thb_dns_prefetch() {
 	echo '<meta http-equiv="x-dns-prefetch-control" content="on">
@@ -1390,14 +1458,14 @@ function thb_dns_prefetch() {
 add_action('wp_head', 'thb_dns_prefetch', 0);
 
 
-/*--------------------------------------------------------------------*/         							
-/*  FOOTER TYPE EDIT									 					
 /*--------------------------------------------------------------------*/
-function thb_footer_admin() {  
+/*  FOOTER TYPE EDIT
+/*--------------------------------------------------------------------*/
+function thb_footer_admin() {
   echo sprintf(
   	__( 'Thank you for choosing %1$sFuel Themes%2$s', 'notio' ),
   	'<a href="http://fuelthemes.net/?ref=wp_footer" target="blank">',
   	'</a>'
   );
 }
-add_filter('admin_footer_text', 'thb_footer_admin'); 
+add_filter('admin_footer_text', 'thb_footer_admin');

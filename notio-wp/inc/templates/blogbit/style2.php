@@ -2,7 +2,7 @@
 <article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('small-12 medium-6 large-4 post columns blog-style2'); ?> id="post-<?php the_ID(); ?>">
 	<?php if ( has_post_thumbnail() ) { ?>
 	<figure class="post-gallery">
-		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('notio-masonry'); ?></a>
+		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('notio-masonry-x2'); ?></a>
 	</figure>
 	<?php } ?>
 	<header class="post-title">

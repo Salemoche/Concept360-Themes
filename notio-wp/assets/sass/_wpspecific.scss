@@ -58,7 +58,7 @@ img.full {
 		background: #fff;
 		color: $color1;
 		padding: 13px 15px;
-		
+
 		.rtl & {
 			left: auto;
 			right: 20px;
@@ -89,13 +89,13 @@ img.full {
 		padding: 0 1px 1px 0;
 		margin: 0;
 		@include single-transition(opacity, 0.2s, $transition);
-		
+
 		&:hover {
 			@include opacity(0.8);
 		}
 		img {
 			width: 100%;
-			max-width: 100%;	
+			max-width: 100%;
 		}
 		a {
 			line-height: 0;

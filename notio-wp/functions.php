@@ -27,15 +27,18 @@ require get_theme_file_path('/inc/ajax.php');
 require get_theme_file_path('/inc/wp3menu.php');
 
 // Enable Sidebars
-//require get_theme_file_path('/inc/sidebar.php');
+require get_theme_file_path('/inc/sidebar.php');
 
 // Related Posts
-//require get_theme_file_path('/inc/related.php');
+require get_theme_file_path('/inc/related.php');
 
 // Post Types
-//require get_theme_file_path('/inc/posttypes.php');
+require get_theme_file_path('/inc/posttypes.php');
 
-// Misc 
+// Lazy Loading
+require get_theme_file_path('/inc/framework/thb-lazyload.php');
+
+// Misc
 require get_theme_file_path('/inc/misc.php');
 
 // Widgets
@@ -45,7 +48,7 @@ require get_theme_file_path('/inc/widgets.php');
 require get_theme_file_path('/inc/script-calls.php');
 
 // Portfolio Related
-// require get_theme_file_path('/inc/portfolio-related.php');
+require get_theme_file_path('/inc/portfolio-related.php');
 
 // CSS Output of Theme Options
 require get_theme_file_path('/inc/selection.php');
@@ -57,8 +60,8 @@ require get_theme_file_path('/inc/wpml.php');
 require get_theme_file_path('/inc/framework/visualcomposer/visualcomposer.php');
 
 // Twitter oAuth
-// require get_theme_file_path('/inc/framework/thb-twitter-api.php');
-// require get_theme_file_path('/inc/framework/thb-twitter-helper.php');
+require get_theme_file_path('/inc/framework/thb-twitter-api.php');
+require get_theme_file_path('/inc/framework/thb-twitter-helper.php');
 
 // WooCommerce Settings specific for theme
-// require get_theme_file_path('/inc/woocommerce.php');
+require get_theme_file_path('/inc/woocommerce.php');

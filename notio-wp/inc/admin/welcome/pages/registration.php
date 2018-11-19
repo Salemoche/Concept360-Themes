@@ -7,9 +7,8 @@
 			<?php
 				$key = Thb_Theme_Admin::$thb_product_key;
 				$expired = Thb_Theme_Admin::$thb_product_key_expired;
-				$thb_envato_hosted = Thb_Theme_Admin::$thb_envato_hosted;
-				
-			if ($key != '' && $expired != 1 && !$thb_envato_hosted) {
+
+			if ($key != '' && $expired != 1) {
 			?>
 			<div class="steps2">
 				<div class="thb-box thb-left">
@@ -24,21 +23,8 @@
 					</div>
 				</div>
 			</div>
-			<?php } else if ( $thb_envato_hosted ) { ?>
-			<div class="steps2">
-				<div class="thb-box thb-left">
-					<figure><img src="<?php echo Thb_Theme_Admin::$thb_theme_directory_uri.'assets/img/admin/step3.png'; ?>" width="282" alt="Product Key Active" /></figure>
-				</div>
-				<div class="thb-box thb-right">
-					<h2>Welcome to Envato Hosted!</h2> 
-					<?php if ( defined('SUBSCRIPTION_CODE') ) { ?>
-					<strong><?php echo esc_attr(SUBSCRIPTION_CODE); ?></strong>
-					<?php } ?>
-					<p>Your theme is automatically registered with the Envato Hosted system. You can update your theme &amp; plugins without manual registration.</p>
-				</div>
-			</div>
 			<?php } else { ?>
-			
+
 			<p>By generating a product key with our system, you can use license key on 1 production and 1 development domain.</p>
 			<ul class="steps">
 				<li>

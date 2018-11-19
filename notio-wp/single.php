@@ -5,16 +5,12 @@
 	<?php } else { ?>
 	  <article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post blog-post'); ?> id="post-<?php the_ID(); ?>" role="article">
 	  	<?php if ( has_post_thumbnail() ) { ?>
-	  		<?php
-	  		    $image_id = get_post_thumbnail_id();
-	  		    $image_link = wp_get_attachment_image_src($image_id, 'full' );
-	  		?>
 				<figure class="post-gallery parallax">
-					<div class="parallax_bg" 
+					<div class="parallax_bg"
 						data-top-bottom="transform: translate3d(0px, 60%, 0px);"
-						data-80-top="transform: translate3d(0px, 0%, 0px);" 
-						data-smooth-scrolling="off"
-						style="background-image: url('<?php echo esc_attr($image_link[0]); ?>');">
+						data-80-top="transform: translate3d(0px, 0%, 0px);"
+						data-smooth-scrolling="off">
+						<?php the_post_thumbnail('notio-single-3x'); ?>
 					</div>
 				</figure>
 			<?php } ?>

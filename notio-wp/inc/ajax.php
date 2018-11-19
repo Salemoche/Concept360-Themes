@@ -1,9 +1,9 @@
 <?php function thb_blog_posts() {
-	$page = $_POST['page']; 
+	$page = $_POST['page'];
 	$ppp = get_option('posts_per_page');
 	$thb_i = $_POST['thb_i'];
 	$blog_style = ot_get_option('blog_style', 'style3');
-	
+
 	$args = array(
 		'posts_per_page'	 => $ppp,
 		'paged' => $page,
@@ -11,11 +11,11 @@
 	);
 
 	$more_query = new WP_Query( $args );
-		
-	if ($more_query->have_posts()) :  while ($more_query->have_posts()) : $more_query->the_post(); 
+
+	if ($more_query->have_posts()) :  while ($more_query->have_posts()) : $more_query->the_post();
 		$thb_i++;
 		set_query_var( 'thb_i', $thb_i );
-		get_template_part( 'inc/templates/blogbit/'.$blog_style); 
+		get_template_part( 'inc/templates/blogbit/'.$blog_style);
 	endwhile; else : endif;
 	wp_die();
 }
@@ -28,6 +28,9 @@ function thb_load_more() {
 	$aspect = $_POST['aspect'];
 	$style = $_POST['style'];
 	$masonry_layout = $_POST['layout'];
+	$thb_masonry = $_POST['thb_masonry'];
+	$thb_size = $_POST['thb_size'];
+	$grid_type = $_POST['grid_type'];
 	$loop = $_POST['loop'];
 	$page = $_POST['page'];
 	$hover_style = $_POST['hover_style'];
@@ -38,12 +41,16 @@ function thb_load_more() {
 	$query_builder = new ThbLoopQueryBuilder( $source_data );
 	$posts = $query_builder->build();
 	$posts = $posts[1];
-	
-	if ($posts->have_posts()) :  while ($posts->have_posts()) : $posts->the_post(); 
+	$is_custom = $style == 'style1' && $masonry_layout == 'custom';
+	if ($posts->have_posts()) :  while ($posts->have_posts()) : $posts->the_post();
 		$i++;
 		$columns = $aspect ? $columns : $columns. ' padding-1';
-		$size = ($style === 'style1' && $masonry_layout) ? thb_get_portfolio_size($masonry_layout, $i, 0) : $columns;
+		$size = ($style === 'style1' && $masonry_layout) ? thb_get_portfolio_size($masonry_layout, $i, 0) : $thb_size;
 		set_query_var( 'thb_masonry', $aspect );
+		if ($is_custom) {
+			set_query_var( 'thb_grid_type', $grid_type );
+			set_query_var( 'thb_masonry', 'custom' );
+		}
 		set_query_var( 'thb_size', $size );
 		set_query_var( 'thb_hover_style', $hover_style );
 		set_query_var( 'thb_title_position', $title_position );

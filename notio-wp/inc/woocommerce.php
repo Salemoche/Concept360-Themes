@@ -8,7 +8,7 @@ function thb_out_of_stock() {
   global $post;
   $id = $post->ID;
   $status = get_post_meta($id, '_stock_status',true);
-  
+
   if ($status == 'outofstock') {
   	return true;
   } else {
@@ -53,7 +53,7 @@ function thb_productCategories(){
 		'order'      => 'ASC',
 		'hide_empty' => '0'
 	);
-	
+
 	$product_categories = get_terms( 'product_cat', $args );
 	$out = array();
 	if ($product_categories) {
@@ -78,7 +78,7 @@ function thb_product_badge() {
 		if ( ( time() - ( 60 * 60 * 24 * $newness ) ) < $postdatestamp) { // If the product was published within the newness time frame display the new badge
 			echo '<span class="badge new">' . __( 'Just Arrived', 'notio' ) . '</span>';
 		}
-		
+
 	}
 }
 add_action( 'thb_product_badge', 'thb_product_badge',3 );
@@ -94,35 +94,6 @@ function thb_woocomerce_ajax_cart_update($fragments) {
 }
 add_filter('woocommerce_add_to_cart_fragments', 'thb_woocomerce_ajax_cart_update');
 
-
-/* Image Dimensions */
-global $pagenow;
-if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == 'themes.php' ) add_action( 'init', 'thb_woocommerce_image_dimensions', 1 );
-
-function thb_woocommerce_image_dimensions() {
-  	$catalog = array(
-		'width' 	=> '540',	// px
-		'height'	=> '600',	// px
-		'crop'		=> 1 		// true
-	);
-
-	$single = array(
-		'width' 	=> '1300',	// px
-		'height'	=> '9999',	// px
-		'crop'		=> 0 		// true
-	);
-
-	$thumbnail = array(
-		'width' 	=> '180',	// px
-		'height'	=> '180',	// px
-		'crop'		=> 1 		// false
-	);
-
-	// Image sizes
-	update_option( 'shop_catalog_image_size', $catalog ); 		// Product category thumbs
-	update_option( 'shop_single_image_size', $single ); 		// Single product image
-	update_option( 'shop_thumbnail_image_size', $thumbnail ); 	// Image gallery thumbs
-}
 
 /* Shop Page - Remove orderby & breadcrumb */
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
@@ -176,7 +147,7 @@ function thb_review_setup() {
 			unset($tabs['reviews']);
 			return $tabs;
 		}
-		add_filter( 'woocommerce_product_tabs', 'thb_remove_reviews_tab', 98);	
+		add_filter( 'woocommerce_product_tabs', 'thb_remove_reviews_tab', 98);
 	}
 }
 add_action( 'after_setup_theme', 'thb_review_setup' );

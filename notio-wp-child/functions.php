@@ -388,7 +388,7 @@
 					// Resize tiles, feature #1, others small
 					
 					// Feature left Story, if last one was right
-					if($lastFeature == $LAST_FEATURE_RIGHT && ($currentRow == "XXx" || $currentRow == "XXX"))
+					if($lastFeature == $LAST_FEATURE_RIGHT && ($currentRow == "XXx" || $currentRow == "XxX" || $currentRow == "XXX"))
 					{
 						// No wrapper
 						

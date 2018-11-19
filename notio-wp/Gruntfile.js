@@ -60,14 +60,17 @@ module.exports = function(grunt) {
 						"Clipboard": true,
 						"Pace": true,
 						"detectIE": true,
-						"vc": true
+						"vc": true,
+            "Cookies": true,
+            "SplitText": true,
+            "Linear": true,
+            "Expo": true
           }
 	      },
 	      all: [
 	        'Gruntfile.js',
 	        'assets/js/plugins/app.js',
 	        'assets/js/plugins/admin-meta.js',
-	        'assets/js/vendor/atvImg.js',
 	        'assets/js/plugins/admin-vc.js'
 	      ]
       },
@@ -91,7 +94,7 @@ module.exports = function(grunt) {
 	        }
 	      }
       },
-	
+
 			concat: {
 				options: {
 					stripBanners: true
@@ -101,7 +104,7 @@ module.exports = function(grunt) {
 					dest: 'assets/js/vendor.min.js',
 				},
 			},
-			
+
       // style (Sass) compilation via Compass
       compass: {
         dist: {
@@ -136,7 +139,7 @@ module.exports = function(grunt) {
           tasks: ['uglify']
 	      }
       },
-      
+
       // copy folder
       copy: {
         main: {
@@ -145,7 +148,7 @@ module.exports = function(grunt) {
           dest: '/Users/anteksiler/Desktop/themeforest/<%= theme_slugname %>/<%= theme_slugname %>-wp',
         },
       },
-      
+
       // clean folder
       clean: {
       	options: {
@@ -176,19 +179,19 @@ module.exports = function(grunt) {
 	        src: ['/Users/anteksiler/Desktop/themeforest/<%= theme_slugname %>/<%= theme_slugname %>-wp/footer.php', '/Users/anteksiler/Desktop/themeforest/<%= theme_slugname %>/<%= theme_slugname %>-wp/footer.php']
 	      }
       },
-      
+
 			// Compress
-			compress: {    
+			compress: {
 			  theme: {
 			    options: {
 			      archive: '/Users/anteksiler/Desktop/themeforest/<%= theme_slugname %>/<%= theme_slugname %>-wp.zip'
 			    },
 			    files: [
 			      {
-			      	expand: true, 
-			      	cwd: '/Users/anteksiler/Desktop/themeforest/<%= theme_slugname %>/', 
+			      	expand: true,
+			      	cwd: '/Users/anteksiler/Desktop/themeforest/<%= theme_slugname %>/',
 			      	src: ['<%= theme_slugname %>-wp/**/*']
-			      } 
+			      }
 			    ]
 			  },
 			  all_files: {
@@ -197,7 +200,7 @@ module.exports = function(grunt) {
 			    },
 			    files: [
 			      {
-			      	expand: true, 
+			      	expand: true,
 			      	cwd: '/Users/anteksiler/Desktop/themeforest/<%= theme_slugname %>/',
 			        src: [
 			          '<%= theme_slugname %>-wp.zip',
@@ -207,9 +210,9 @@ module.exports = function(grunt) {
 			          'Documentation.zip',
 			          'Slider Exports.zip'
 			        ]
-			      },  
+			      },
 			    ]
-			  } 
+			  }
 			}
   });
 
@@ -223,7 +226,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-compress');
-	
+
   // register task
   grunt.registerTask('default', [
     'jshint',
@@ -231,14 +234,14 @@ module.exports = function(grunt) {
     'concat',
     'watch'
   ]);
-	
+
 	grunt.registerTask('release', [
     'jshint',
     'compass:dist',
     'uglify',
     'watch'
   ]);
-  
+
   grunt.registerTask('pack', [
   	'copy',
   	'clean',

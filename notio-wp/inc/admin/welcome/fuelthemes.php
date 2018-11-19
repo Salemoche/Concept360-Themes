@@ -1,50 +1,45 @@
-<?php 
+<?php
 class Thb_Theme_Admin {
 	/**
 	 *	Main instance
 	 */
 	private static $_instance;
-	
+
 	/**
 	 *	Theme Name
 	 */
 	public static $thb_theme_name;
-	
+
 	/**
 	 *	Theme Version
 	 */
 	public static $thb_theme_version;
-	
+
 	/**
 	 *	Theme Slug
 	 */
 	public static $thb_theme_slug;
-	
+
 	/**
 	 *	Theme Directory
 	 */
 	public static $thb_theme_directory;
-	
+
 	/**
 	 *	Theme Directory URL
 	 */
 	public static $thb_theme_directory_uri;
-	
+
 	/**
 	 *	Product Key
 	 */
 	public static $thb_product_key;
-	
+
 	/**
 	 *	Product Key Expiration
 	 */
 	public static $thb_product_key_expired;
-	
-	/**
-	 * Envato Hosted
-	 */
-	public static $thb_envato_hosted;
-	
+
 	/**
 	 *	Theme Constructor executed only once per request
 	 */
@@ -53,7 +48,7 @@ class Thb_Theme_Admin {
 			_doing_it_wrong( __FUNCTION__, 'Cheatin&#8217; huh?', '2.0' );
 		}
 	}
-	
+
 	/**
 	 * You cannot clone this class
 	 */
@@ -67,13 +62,13 @@ class Thb_Theme_Admin {
 	public function __wakeup() {
 		_doing_it_wrong( __FUNCTION__, 'Cheatin&#8217; huh?', '2.0' );
 	}
-	
+
 	public static function instance() {
 		global $thb_Theme_Admin;
 		if ( ! self::$_instance ) {
 			self::$_instance = new self();
 			$thb_Theme_Admin = self::$_instance;
-			
+
 			// Theme Variables
 			$theme = wp_get_theme();
 			self::$thb_theme_name = $theme->get( 'Name' );
@@ -81,22 +76,19 @@ class Thb_Theme_Admin {
 			self::$thb_theme_slug = $theme->template;
 			self::$thb_theme_directory = get_template_directory() . '/';
 			self::$thb_theme_directory_uri = get_template_directory_uri() . '/';
-			
+
 			self::$thb_product_key = get_option("thb_".self::$thb_theme_slug."_key");
 			self::$thb_product_key_expired = get_option("thb_".self::$thb_theme_slug."_key_expired");
-			
-			// Envato Hosted
-			self::$thb_envato_hosted = defined('ENVATO_HOSTED_SITE');
-			
+
 			// After Setup Theme
 			add_action( 'after_setup_theme', array( self::$_instance, 'afterSetupTheme' ) );
-			
+
 			// Setup Admin Menus
 			if ( is_admin() ) {
 				self::$_instance->initAdminPages();
 			}
 		}
-		
+
 		return self::$_instance;
 	}
 	/**
@@ -106,51 +98,57 @@ class Thb_Theme_Admin {
 		/* WooCommerce Support */
 		add_theme_support( 'woocommerce' );
 		add_theme_support( 'wc-product-gallery-lightbox' );
-		
+
 		/* Text Domain */
-		load_theme_textdomain('notio', self::$thb_theme_directory . '/inc/languages');
-		
+		load_theme_textdomain('notio', get_stylesheet_directory() . '/inc/languages');
+
 		/* Add Support Support */
 		add_theme_support( 'html5' );
 		add_theme_support( 'nav-menus' );
 		add_theme_support( 'automatic-feed-links' );
-		
-		
+
+
 		/* Background Support */
 		add_theme_support( 'custom-background', array( 'default-color' => 'f9f9f9') );
 		add_filter( 'use_default_gallery_style', '__return_false' );
-		
+
 		/* Title Support */
 		add_theme_support( 'title-tag' );
-		
+
 		/* WooCommerce Products per Page */
 		add_filter( 'loop_shop_per_page', 'thb_shops_per_page', 20 );
-		
+
 		function thb_shops_per_page($products_per_page) {
 			$products_per_page = isset($_GET['products_per_page']) ? wp_unslash($_GET['products_per_page']) : ot_get_option('products_per_page');
-			return $products_per_page; 
+			return $products_per_page;
 		}
-		
+
 		/* Required Settings */
 		global $content_width;
 		if (!isset($content_width)) { $content_width = 1170; }
 		add_theme_support( 'automatic-feed-links' );
-		
+
 		/* Image Settings */
 		add_theme_support( 'post-thumbnails' );
-		set_post_thumbnail_size( 70, 60, true );
-		add_image_size('notio-single', 1200, 600, true );
-		add_image_size('notio-masonry', 900, 9999, false );
-		add_image_size('notio-general', 900, 600, true );
-		add_image_size('notio-small', 340, 240, true );
-		
+		set_post_thumbnail_size( 140, 120, true );
+
+		$thb_image_sizes = self::$_instance->thb_image_sizes();
+
+		// Register image size
+		foreach ( $thb_image_sizes as $image_size ) {
+			add_image_size( $image_size['slug'], $image_size['width'], $image_size['height'], $image_size['crop'] );
+		}
+
+		/* HTML5 Galleries */
+		add_theme_support( 'html5', array( 'gallery', 'caption' ) );
+
 		/* Register Menus */
 		register_nav_menus(
 			array(
 				'nav-menu' => esc_html__( 'Navigation Menu','notio' )
 			)
 		);
-		
+
 		$sidebars = ot_get_option('sidebars');
 		if(!empty($sidebars)) {
 			foreach($sidebars as $sidebar) {
@@ -165,6 +163,97 @@ class Thb_Theme_Admin {
 				));
 			}
 		}
+	}
+	public function thb_image_sizes() {
+		$thb_image_sizes = array(
+			array(
+				'slug'   => 'notio-thumbnail',
+				'width'  => 70,
+				'height' => 60,
+				'crop'   => true,
+			),
+			array(
+				'slug'   => 'notio-single',
+				'width'  => 400,
+				'height' => 200,
+				'crop'   => true,
+			),
+			array(
+				'slug'   => 'notio-masonry',
+				'width'  => 300,
+				'height' => 9999,
+				'crop'   => false,
+			),
+			array(
+				'slug'   => 'notio-general',
+				'width'  => 300,
+				'height' => 200,
+				'crop'   => true,
+			),
+			array(
+				'slug'   => 'notio-square',
+				'width'  => 380,
+				'height' => 350,
+				'crop'   => true,
+			),
+			array(
+				'slug'   => 'notio-rectangle',
+				'width'  => 380,
+				'height' => 315,
+				'crop'   => true,
+			),
+			array(
+				'slug'   => 'notio-tall',
+				'width'  => 380,
+				'height' => 700,
+				'crop'   => true,
+			),
+			array(
+				'slug'   => 'notio-wide',
+				'width'  => 760,
+				'height' => 350,
+				'crop'   => true,
+			),
+		);
+
+		function thb_calculate_image_orientation( $thb_image_sizes ) {
+			if ( ! is_array( $thb_image_sizes ) ) {
+				return;
+			}
+			$new_sizes = array();
+			foreach ( $thb_image_sizes as $image_size ) {
+				$new_sizes[] = array(
+					'slug' 	 => $image_size['slug'].'-small',
+					'width'  => absint($image_size['width'] / 2),
+					'height' => $image_size['height'] === 9999 ? 9999 : absint($image_size['height'] * 2),
+					'crop'   => $image_size['crop'],
+				);
+				$new_sizes[] = array(
+					'slug' 	 => $image_size['slug'].'-x2',
+					'width'  => $image_size['width'] * 2,
+					'height' => $image_size['height'] === 9999 ? 9999 : $image_size['height'] * 2,
+					'crop'   => $image_size['crop'],
+				);
+				$new_sizes[] = array(
+					'slug' 	 => $image_size['slug'].'-x3',
+					'width'  => $image_size['width'] * 3,
+					'height' => $image_size['height'] === 9999 ? 9999: $image_size['height'] * 3,
+					'crop'   => $image_size['crop'],
+				);
+				$new_sizes[] = array(
+					'slug' 	 => $image_size['slug'].'-mini',
+					'width'  => 20,
+					'height' => $image_size['height'] === 9999 ? 9999  : absint(($image_size['height'] * 20) / $image_size['width']),
+					'crop'   => $image_size['crop'],
+				);
+			}
+			return $new_sizes;
+		}
+		$new_sizes = thb_calculate_image_orientation($thb_image_sizes);
+		foreach($new_sizes as $new_size) {
+			$thb_image_sizes[] = $new_size;
+		}
+		return $thb_image_sizes;
 	}
 	public function thbDemos() {
 		return array(
@@ -269,6 +358,14 @@ class Thb_Theme_Admin {
 		      'import_widget_file_url' => "http://themes.fuelthemes.net/theme-demo-files/notio/shanua/widget_data.json",
 		      'import_image' => self::$thb_theme_directory_uri."assets/img/admin/demos/homepages/shanua.jpg",
 		      'import_demo_url' => "http://newnotio.fuelthemes.net/shanua"
+		    ),
+		    array(
+		      'import_file_name'       => 'Perfectus',
+		      'import_file_url'        => "http://themes.fuelthemes.net/theme-demo-files/notio/perfectus/democontent.xml",
+		      'import_theme_options_url' => "http://themes.fuelthemes.net/theme-demo-files/notio/perfectus/theme-options.txt",
+		      'import_widget_file_url' => "http://themes.fuelthemes.net/theme-demo-files/notio/perfectus/widget_data.json",
+		      'import_image' => self::$thb_theme_directory_uri."assets/img/admin/demos/homepages/perfectus.jpg",
+		      'import_demo_url' => "http://newnotio.fuelthemes.net/perfectus"
 		    )
 		);
 	}
@@ -277,13 +374,13 @@ class Thb_Theme_Admin {
 	 */
 	public function initAdminPages() {
 		global $pagenow;
-		
+
 		// Script and styles
 		add_action( 'admin_enqueue_scripts', array( & $this, 'adminPageEnqueue' ) );
-		
+
 		// Menu Pages
 		add_action( 'admin_menu', array( & $this, 'adminSetupMenu' ), 1 );
-		
+
 		// Theme Options Redirect
 		if ( isset($_GET['page']) ) {
 			if ( 'admin.php' == $pagenow && 'thb-theme-options' == $_GET['page'] ) {
@@ -293,39 +390,39 @@ class Thb_Theme_Admin {
 				}
 			}
 		}
-		
+
 		// Redirect to Main Page
 		add_action( 'after_switch_theme', array( & $this, 'thb_activation_redirect' ) );
-		
+
 		// Ajax Option Update
 		add_action( 'wp_ajax_thb_update_options', array( & $this, 'thb_update_options' ));
 		add_action( 'wp_ajax_nopriv_thb_update_options', array( & $this, 'thb_update_options' ));
-		
+
 		// Admin Notices
 		add_action( 'admin_notices', array( & $this, 'thb_admin_notices' ) );
-		
+
 		// Theme Updates
 		add_action( 'admin_init', array( & $this, 'thb_theme_update') );
-		
+
 		// Plugin Update Nonce
 		add_action( 'register_sidebar', array( & $this, 'thb_theme_admin_init' ) );
-		
+
 	}
 	function thb_admin_notices() {
 		$remote_ver = get_option("thb_".self::$thb_theme_slug."_remote_ver") ? get_option("thb_".self::$thb_theme_slug."_remote_ver") : self::$thb_theme_version;
 		$local_ver = self::$thb_theme_version;
 
 		if(version_compare($local_ver, $remote_ver, '<')) {
-			if ( 
-				( !self::$thb_product_key && ( self::$thb_product_key_expired == 0 ) && !self::$thb_envato_hosted ) || 
-				( self::$thb_product_key && ( self::$thb_product_key_expired == 1 ) && !self::$thb_envato_hosted ) 
+			if (
+				( !self::$thb_product_key && ( self::$thb_product_key_expired == 0 ) ) ||
+				( self::$thb_product_key && ( self::$thb_product_key_expired == 1 ) )
 			) {
 				echo '<div class="notice is-dismissible error thb_admin_notices">
 				<p>There is an update available for the <strong>' . self::$thb_theme_name . '</strong> theme. Go to <a href="' . admin_url( 'admin.php?page=thb-product-registration' ) . '">Product Registration</a> to enable theme updates.</p>
 				</div>';
 			}
-	
-			if ( ( self::$thb_product_key && ( self::$thb_product_key_expired == 0 ) ) || self::$thb_envato_hosted ) {
+
+			if ( ( self::$thb_product_key && ( self::$thb_product_key_expired == 0 ) ) ) {
 				echo '<div class="notice is-dismissible error thb_admin_notices">
 				<p>There is an update available for the <strong>' . self::$thb_theme_name . '</strong> theme. <a href="' . admin_url() . 'update-core.php">Update now</a>.</p>
 				</div>';
@@ -334,7 +431,7 @@ class Thb_Theme_Admin {
 	}
 	public function thb_update_options() {
 		$key = $_POST['key'];
-		$expired = $_POST['expired'];  
+		$expired = $_POST['expired'];
 		update_option("thb_".self::$thb_theme_slug."_key", $key);
 		update_option("thb_".self::$thb_theme_slug."_key_expired", $expired);
 		wp_die();
@@ -346,14 +443,13 @@ class Thb_Theme_Admin {
 	public function thb_check_for_update_plugins() {
 		$args = array(
 			'timeout' => 30,
-			'body' => array( 
+			'body' => array(
 				"item_ids" => '242431,2751380',
-				"product_key" => self::$thb_product_key,
-				"envato_hosted" => self::$thb_envato_hosted
+				"product_key" => self::$thb_product_key
 			)
 		);
 		$request = wp_remote_get( self::$_instance->dashboardUrl('plugin/version'), $args);
-		
+
 		$data = '';
 		if (!is_wp_error($request) || wp_remote_retrieve_response_code($request) === 200) {
 			$data = json_decode( wp_remote_retrieve_body($request));
@@ -364,30 +460,29 @@ class Thb_Theme_Admin {
 		global $wp_filesystem;
 		$args = array(
 			'timeout' => 30,
-			'body' => array( 
+			'body' => array(
 				"theme_name" => self::$thb_theme_name,
-				"product_key" => self::$thb_product_key,
-				"envato_hosted" => self::$thb_envato_hosted
+				"product_key" => self::$thb_product_key
 			)
 		);
-		
+
 		$request = wp_remote_get( self::$_instance->dashboardUrl('version'), $args);
 
     if (!is_wp_error($request) || wp_remote_retrieve_response_code($request) === 200) {
     	$data = json_decode( wp_remote_retrieve_body($request));
-			update_option("thb_".self::$thb_theme_slug."_key_expired", 0);	
-			
+			update_option("thb_".self::$thb_theme_slug."_key_expired", 0);
+
 			if (isset($data->success) && $data->success == false) {
 				self::$thb_product_key_expired = 1;
-				update_option("thb_".self::$thb_theme_slug."_key_expired", 1);	
+				update_option("thb_".self::$thb_theme_slug."_key_expired", 1);
 			} else {
 				if(version_compare(self::$thb_theme_version, $data->version, '<')) {
 					$transient->response[self::$thb_theme_slug] = array(
 						"new_version"	=> 		$data->version,
 						"package"		=>	    $data->download_url,
-						"url"			=>		'http://fuelthemes.net'		
+						"url"			=>		'http://fuelthemes.net'
 					);
-	
+
 					update_option("thb_".self::$thb_theme_slug."_remote_ver", $data->version);
 				}
 			}
@@ -396,14 +491,14 @@ class Thb_Theme_Admin {
 	}
 	public function thb_upgradeFilter( $reply, $package, $updater ) {
 		global $wp_filesystem;
-		$cond = ( !self::$thb_product_key || ( self::$thb_product_key_expired == 1 ) ) && !self::$thb_envato_hosted;
-		
+		$cond = ( !self::$thb_product_key || ( self::$thb_product_key_expired == 1 ) );
+
 		if ( isset( $updater->skin->theme_info ) && $updater->skin->theme_info['Name'] == self::$thb_theme_name ) {
 			if ( $cond ) {
 				return new WP_Error( 'no_credentials', sprintf( __( 'To receive automatic updates, registration is required. Please visit <a href="%1$s" target="_blank">Product Registration</a> to activate your theme.', 'notio' ), admin_url( 'admin.php?page=thb-product-registration' ) ) );
 			}
 		}
-		
+
 		// VisualComposer
 		if ( (isset( $updater->skin->plugin )) && ( $updater->skin->plugin == 'js_composer/js_composer.php') ) {
 			if ( $cond ) {
@@ -468,7 +563,7 @@ class Thb_Theme_Admin {
 			);
 		}
 		// Update Link
-		
+
 		else if ( version_compare( $installed_plugins[$item['file_path']]['Version'], $item['version'], '<' ) ) {
 			$actions = array(
 				'update' => sprintf(
@@ -512,9 +607,9 @@ class Thb_Theme_Admin {
 		return $actions;
 	}
 	public function thb_theme_admin_init() {
-	
+
 		if ( isset( $_GET['thb-deactivate'] ) && $_GET['thb-deactivate'] == 'deactivate-plugin' ) {
-			
+
 			check_admin_referer( 'thb-deactivate', 'thb-deactivate-nonce' );
 
 			if ( ! function_exists( 'get_plugins' ) ) {
@@ -529,10 +624,10 @@ class Thb_Theme_Admin {
 				}
 			}
 
-		} 
+		}
 
 		if ( isset( $_GET['thb-activate'] ) && $_GET['thb-activate'] == 'activate-plugin' ) {
-			
+
 			check_admin_referer( 'thb-activate', 'thb-activate-nonce' );
 
 			if ( ! function_exists( 'get_plugins' ) ) {
@@ -553,13 +648,13 @@ class Thb_Theme_Admin {
 	public function thb_activation_redirect() {
 		if ( ! ( defined( 'WP_CLI' ) && WP_CLI ) ) {
 			$notio_installed = 'notio_installed';
-			
-			if ( false == get_option( $notio_installed, false ) ) {		
+
+			if ( false == get_option( $notio_installed, false ) ) {
 				update_option( $notio_installed, true );
 				wp_redirect( admin_url( 'admin.php?page=thb-product-registration' ) );
 				die();
-			} 
-			
+			}
+
 			delete_option( $notio_installed );
 		}
 	}
@@ -567,29 +662,29 @@ class Thb_Theme_Admin {
 		wp_enqueue_script( 'thb-admin-meta', Thb_Theme_Admin::$thb_theme_directory_uri .'assets/js/admin-meta.min.js', array('jquery'), esc_attr(self::$thb_theme_version));
 		wp_enqueue_style("thb-admin-css", Thb_Theme_Admin::$thb_theme_directory_uri . "assets/css/admin.css", null, esc_attr(self::$thb_theme_version));
 		wp_enqueue_style( 'thb-admin-vs-css', Thb_Theme_Admin::$thb_theme_directory_uri . "assets/css/admin_vc.css", null, esc_attr(self::$thb_theme_version));
-		
+
 		if (class_exists('WPBakeryVisualComposerAbstract')) {
 			wp_enqueue_style( 'vc_extra_css', Thb_Theme_Admin::$thb_theme_directory_uri . 'assets/css/vc_extra.css' );
 			wp_enqueue_script( 'thb-admin-vc', Thb_Theme_Admin::$thb_theme_directory_uri .'assets/js/admin-vc.min.js', array('jquery'), esc_attr(self::$thb_theme_version));
 		}
 	}
 	public function adminSetupMenu() {
-		
+
 		// Product Registration
 		add_menu_page( Thb_Theme_Admin::$thb_theme_name, Thb_Theme_Admin::$thb_theme_name, 'edit_theme_options', 'thb-product-registration', array( & $this, 'thb_Product_Registration' ), '', 3 );
-		
+
 		// Product Registration
 		add_submenu_page( 'thb-product-registration', 'Registration', 'Registration', 'edit_theme_options', 'thb-product-registration', array( & $this, 'thb_Product_Registration' ) );
-		
+
 		// Plugins
 		add_submenu_page( 'thb-product-registration', 'Plugins', 'Plugins', 'edit_theme_options', 'thb-plugins', array( & $this, 'thb_Plugins' ) );
 
 		// Demo Import
 		add_submenu_page( 'thb-product-registration', 'Demo Import', 'Demo Import', 'edit_theme_options', 'thb-demo-import', array( & $this, 'thb_Demo_Import' ) );
-		
+
 		// Theme Options
-		add_submenu_page( 'thb-product-registration', 'Theme Options', 'Theme Options', 'edit_theme_options', 'thb-theme-options', '__return_false' ); 
-		
+		add_submenu_page( 'thb-product-registration', 'Theme Options', 'Theme Options', 'edit_theme_options', 'thb-theme-options', '__return_false' );
+
 	}
 	public function thb_Plugins() {
 		get_template_part( 'inc/admin/welcome/pages/plugins' );

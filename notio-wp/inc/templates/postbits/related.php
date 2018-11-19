@@ -2,7 +2,7 @@
 	<div <?php post_class('post related-post'); ?>>
 		<?php if ( has_post_thumbnail() ) { ?>
 			<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>" class="post-image">
-				<?php the_post_thumbnail('notio-small'); ?>
+				<?php the_post_thumbnail('notio-general-x2'); ?>
 			</a>
 		<?php } ?>
 		<header class="post-title entry-header">

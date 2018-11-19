@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function thb_get_hero_templates($template_list) {
 	$template_list['hero_section_01'] = array(
@@ -49,6 +49,11 @@ function thb_get_hero_templates($template_list) {
 		<h1 style="text-align: center;">Girl In Pink</h1>
 		[/vc_column_text][/vc_column][/vc_row]',
 	);
-	
+	$template_list['hero_section_07'] = array(
+		'name' => esc_html__( 'Hero Section - 07', 'notio' ),
+		'thumbnail' => Thb_Theme_Admin::$thb_theme_directory_uri."assets/img/admin/demos/hero/hero-e7.jpg",
+		'cat' => array( 'hero' ),
+		'sc' => '[vc_row mouse_scroll="true" thb_scroll_bottom_style="style3" css=".vc_custom_1541409991020{padding-top: 27vh !important;padding-bottom: 27vh !important;}" el_class="align-center"][vc_column thb_color="thb-light-column" width="1/2" el_class="hero" offset="vc_col-lg-7"][thb_fadetype fade_text="<h1>*THINK &amp; LEARN*</h1>" style="style2" extra_class="text-center"][thb_slidetype slide_text="*An inside look at the mind of the visionary behind famous video production works them seed were our there lesser fly there after creature beast.*" extra_class="text-center" thb_animated_color="rgba(255,255,255,0.6)"][/vc_column][/vc_row]',
+	);
 	return $template_list;
 }

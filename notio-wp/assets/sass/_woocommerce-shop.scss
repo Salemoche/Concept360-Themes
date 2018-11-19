@@ -10,16 +10,16 @@
 	line-height: 1;
 	font-weight: 400;
 	color: #545353;
-	
+
 	.breadcrumb-column {
 		margin-bottom: 20px;
 		@include min-break($break-small) {
-			margin-bottom: 0;	
+			margin-bottom: 0;
 		}
 	}
 	.result-column {
 		@include min-break($break-small) {
-			text-align: right;	
+			text-align: right;
 		}
 	}
 	.woocommerce-result-count,
@@ -35,11 +35,11 @@
 		select {
 			color: #403f44;
 			border: 0;
-			background: none;	
+			background: none;
 			height: auto;
 		}
 		@include min-break($break-medium) {
-			margin-left: 25px;	
+			margin-left: 25px;
 		}
 	}
 }
@@ -48,9 +48,9 @@
 	margin-bottom: 35px;
 	font-size: 16px;
 	padding-right: 10%;
-	
+
 	p {
-		font-size: inherit;	
+		font-size: inherit;
 	}
 }
 /* Products */
@@ -60,26 +60,29 @@
 		margin-bottom: 22px;
 		text-align: left;
 		flex-direction: column;
-		
+
 		&:hover {
 			.product_after_title .product_after_shop_loop_price {
-				@include translateY(-100%);	
+				@include translateY(-100%);
 			}
 			.product_after_title .product_after_shop_loop_buttons {
 				top: 0;
 			}
 		}
-		
+		&.will-animate {
+			opacity: 0;
+			@include translateY(30px);
+		}
 		.product_thumbnail {
 			position: relative;
 			width: 100%;
 			margin-bottom: 20px;
 			overflow: hidden;
 			img {
-				width: 100%;	
+				width: 100%;
 			}
 			a {
-				display: block;	
+				display: block;
 			}
 			&.thb_hover {
 				position: relative;
@@ -103,7 +106,7 @@
 		}
 		h3 {
 			font-size: 18px;
-			font-weight: 500;	
+			font-weight: 500;
 			margin: 0 0 2px;
 			line-height: 1;
 			.thb-capitalize-on & {
@@ -112,14 +115,14 @@
 			a {
 				&:hover {
 					color: $color1;
-				}	
+				}
 			}
 		}
 		.product_after_title {
 			position: relative;
 			overflow: hidden;
 			font-size: 16px;
-			
+
 			.product_after_shop_loop_buttons,
 			.product_after_shop_loop_price {
 				height: 25px;
@@ -150,7 +153,7 @@
 				font-weight: 400;
 				text-transform: none;
 				@extend .underline-link;
-				
+
 				&:after {
 					border-color: $color2;
 				}
@@ -172,7 +175,7 @@
 				height: 0;
 				background-size: cover;
 				background-position: center;
-				
+
 				@include firefox {
 					height: auto;
 					padding: 0;
@@ -180,7 +183,7 @@
 						content: '';
 						display: block;
 						width: 100%;
-						padding-bottom: 90%;	
+						padding-bottom: 90%;
 					}
 				}
 				div {
@@ -205,12 +208,12 @@
 							vertical-align: super;
 							font-size: 12px;
 							color: #f02121;
-						}	
+						}
 					}
 					span {
 						display: inline-block;
 						font-size: 14px;
-						opacity: 0;	
+						opacity: 0;
 						color: $color1;
 						@include translateX(10px);
 						@extend .transition;
@@ -219,23 +222,23 @@
 				&:hover {
 					div {
 						span {
-					 		opacity: 1;	
+					 		opacity: 1;
 					 		color: $color1;
 					 		@include translateX(0);
 						}
-					}	
+					}
 				}
 			}
 			&.double-height {
 				a {
 					padding-bottom: calc(180% + 28px);
-					
+
 					@include firefox {
 						padding: 0;
 						&:before {
-							padding-bottom: calc(180% + 28px);	
+							padding-bottom: calc(180% + 28px);
 						}
-					}	
+					}
 				}
 			}
 		} /* Product Category */
@@ -243,14 +246,14 @@
 }
 .price {
 	ins {
-		text-decoration: none;	
+		text-decoration: none;
 	}
 }
 .quantity {
 	.screen-reader-text {
 		display: none;
 	}
-	
+
 	.qty {
 		text-align: center;
 		padding-right: 5px;

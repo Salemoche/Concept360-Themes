@@ -11,14 +11,48 @@
 	&::-webkit-input-placeholder { @content; }
 }
 @mixin ie11() {
-	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { @content; } 
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { @content; }
 }
 @mixin firefox() {
 	@-moz-document url-prefix() { @content; }
 }
+@mixin clip-path($clip) {
+  -webkit-clip-path: $clip;
+  -moz-clip-path: $clip;
+  -ms-clip-path: $clip;
+  clip-path: $clip;
+}
+@mixin text-fill-color($value) {
+	-webkit-text-fill-color: $value;
+  -moz-text-fill-color: $value;
+  -o-text-fill-color: $value;
+  -ms-text-fill-color: $value;
+  text-fill-color: $value;
+}
+
+@mixin text-stroke-color($value) {
+	-webkit-text-stroke-color: $value;
+  -moz-text-stroke-color: $value;
+  -o-text-stroke-color: $value;
+  -ms-text-stroke-color: $value;
+  text-stroke-color: $value;
+}
+@mixin text-stroke-width($value) {
+	-webkit-text-stroke-width: $value;
+  -moz-text-stroke-width: $value;
+  -o-text-stroke-width: $value;
+  -ms-text-stroke-width: $value;
+  text-stroke-width: $value;
+}
 .reset {
 	margin: 0;
 	padding: 0;
+}
+.object-fit {
+	display: block;
+	object-fit: cover;
+	width:100%;
+	height: 100%;
 }
 .cf {
 	&:before,
@@ -60,17 +94,31 @@
 .linear-transition {
 	@include transition(all .35s linear);
 }
+.general-shadow-styles {
+	&.small-shadow {
+		@include box-shadow(0 4px 6px rgba(0,0,0,0.1));
+	}
+	&.medium-shadow {
+		@include box-shadow(0 4px 20px rgba(0,0,0,0.1));
+	}
+	&.large-shadow {
+		@include box-shadow(0 6px 30px rgba(0,0,0,0.1));
+	}
+	&.xlarge-shadow {
+		@include box-shadow(0 8px 40px rgba(0,0,0,0.08));
+	}
+}
 .admin-style {
 	.admin-bar & {
 		top: 46px;
-		
+
 		@media screen and (min-width: 783px){
 		  top: 32px;
 		}
 	}
 }
 .underline-link {
-	display: inline-block;	
+	display: inline-block;
 	position: relative;
 	&:after {
 		content: '';
@@ -79,14 +127,14 @@
 		left: 0;
 		width: 100%;
 		border-bottom: 1px solid $color2;
-		@include scale(0,1);	
+		@include scale(0,1);
 		@include transform-origin(0,0);
 		@extend .quick-transition;
 	}
 	&:hover {
 		&:after {
 			@include scale(1,1);
-		}	
+		}
 	}
 }
 .full-width-row {
@@ -128,14 +176,14 @@
 	}
 	&.low-padding {
 		margin: 0 -2px;
-		
+
 		&>.columns {
 			padding: 0 2px;
 		}
 	}
 	&.no-padding {
 		margin: auto;
-		
+
 		&>.columns {
 			padding: 0;
 		}
@@ -144,11 +192,20 @@
 		max-width: 75rem;
 		margin: 0 auto;
 	}
+	&.thb_video_play_button_enabled:not(.thb_video_active) {
+		>div:not(.columns) {
+			video {
+				visibility: hidden !important;
+			}
+		}
+	}
 	&.thb_video_bg {
 		position: relative;
 		overflow: hidden;
 		background-image: none !important;
-		
+		>div:not(.columns)>video {
+			pointer-events: none;
+		}
 		.columns {
 			z-index: 5;
 		}
@@ -156,8 +213,8 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			min-width: 100%; 
-			min-height: 100%; 
+			min-width: 100%;
+			min-height: 100%;
 			z-index: -1;
 			transform: translate3d(-50%, -50%, 0);
 		}
@@ -170,11 +227,11 @@
 			z-index: 0;
 			pointer-events: none;
 		}
-		
+
 	}
 	.mouse_scroll {
 		position: absolute;
-		
+
 		& + .thb_video_play {
 			bottom: 100px;
 		}
@@ -229,12 +286,12 @@
 	}
 	&.thb-light-column {
 		color: #fff;
-		
+
 		h1,h2,h3,h4,h5,h6,
 		label,
 		blockquote p,
 		.thb-testimonials cite, .thb-testimonials span {
-			color: #fff;	
+			color: #fff;
 		}
 		.slick .slick-dots li {
 			button {
@@ -242,7 +299,7 @@
 			}
 			&.slick-active {
 				button {
-					background: #fff;	
+					background: #fff;
 				}
 			}
 		}
@@ -252,20 +309,20 @@
 		.btn.style7 {
 			color: #fff;
 			border-color: rgba(#fff,0.2);
-			
+
 			&:before {
-				background: rgba(#fff,0.2);	
+				background: rgba(#fff,0.2);
 			}
 			&:after{
-				background: #fff;	
+				background: #fff;
 			}
 			&:hover {
-				color: #fff;	
+				color: #fff;
 			}
 		}
 		.btn-text {
       color: #fff;
-      
+
       &.style1:before,
       &.style2:before {
         background: rgba(#fff,0.2);
@@ -348,7 +405,7 @@
 /* Header Margin */
 .header-margin {
 	margin-top: 50px;
-	
+
 	@include min-break($break-medium) {
 		margin-top: 80px;
 	}
@@ -368,13 +425,13 @@
 	height: 100%;
 	overflow: hidden;
 	@include translate3d(0, 0, 0);
-	
+
 	.touch & {
 		-webkit-overflow-scrolling: touch;
 	}
 	&.ps--active-y:hover {
 		.ps__scrollbar-y-rail {
-			@include opacity(1);	
+			@include opacity(1);
 		}
 	}
 	.ps__scrollbar-y-rail {
@@ -413,7 +470,7 @@
 			background: $color1;
 			bottom: 0px;
 			height: 2px;
-			
+
 		}
 	}
 }

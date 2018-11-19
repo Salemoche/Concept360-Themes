@@ -6,22 +6,21 @@
 <?php
 	$key = Thb_Theme_Admin::$thb_product_key;
 	$expired = Thb_Theme_Admin::$thb_product_key_expired;
-	$thb_envato_hosted = Thb_Theme_Admin::$thb_envato_hosted;
 
-	$cond = ($key != '' && $expired != 1) || $thb_envato_hosted;
-	
+	$cond = ($key != '' && $expired != 1);
+
 ?>
 <div class="theme-browser thb-demo-import thb-content">
 <?php if (!$cond) { ?>
 	<div class="thb-error">
 		<p><span class="dashicons dashicons-warning"></span> To install any of the demo content sites below you must <a href="<?php echo esc_url(admin_url( 'admin.php?page=thb-product-registration' )); ?>">Activate your Theme</a>.</p>
 	</div>
-<?php 
-	} else if ( !$thb_envato_hosted ) {
-		include 'requirements.php'; 
+<?php
+	} else {
+		include 'requirements.php';
  	}
 ?>
-<?php 
+<?php
 	$demos = thb_Theme_Admin()->thbDemos();
 	$i = 0;
  	foreach ($demos as $demo) {

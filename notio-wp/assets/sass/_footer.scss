@@ -1,12 +1,12 @@
 .footer {
-	
+
 	&.full-width-footer {
 		padding: 0 15px;
 		@include min-break($break-small) {
-			padding: 0 30px;	
+			padding: 0 30px;
 		}
 		@include min-break($break-medium) {
-			padding: 0 45px;	
+			padding: 0 45px;
 		}
 		.row {
 			@extend .full-width-row;
@@ -24,7 +24,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		
+
 		.footer_simple_fixed_on & {
 			@include min-break($break-small) {
 				position: fixed;
@@ -35,11 +35,11 @@
 		}
 		.social-links {
 			line-height: 20px;
-			
+
 			a {
-				color: rgba(0,0,0,0.3);	
+				color: rgba(0,0,0,0.3);
 				margin-left: 15px;
-				
+
 				@each $profile, $color in $social {
 				  &.#{$profile} {
 				    &:hover {
@@ -47,10 +47,15 @@
 				    }
 				  }
 				}
+				// &.500px {
+				// 	&:hover {
+				// 		color: #0099e5;
+				// 	}
+				// }
 			}
 			p {
 				font-size: 14px;
-				margin: 0;	
+				margin: 0;
 			}
 		}
 		.menu {
@@ -58,12 +63,12 @@
 			margin: 0;
 			li {
 				display: inline-block;
-				
+
 				a {
-					font-size: 12px;	
+					font-size: 12px;
 				}
 				&:first-child a {
-					margin-left: 0;	
+					margin-left: 0;
 				}
 			}
 		}
@@ -73,21 +78,21 @@
 		padding-bottom: 30px;
 		@include min-break($break-small) {
 			padding-top: 60px;
-			padding-bottom: 60px;	
+			padding-bottom: 60px;
 		}
 		&.dark {
 			background: #191919;
 			color: #ececec;
-			
+
 			h6 {
-				color: #ececec;	
+				color: #ececec;
 			}
 			a {
 				color: #ececec;
-				
+
 				&:hover {
 					color: #fff;
-				}	
+				}
 			}
 		}
 		.site_bars_on & {
@@ -98,7 +103,7 @@
 	}
 	.widget {
 		h6 {
-			font-weight: 400;	
+			font-weight: 400;
 		}
 		font-size: 16px;
 		p,
@@ -121,10 +126,10 @@
   &.full-width-subfooter {
   	padding: 20px 15px;
   	@include min-break($break-small) {
-  		padding: 20px 30px;	
+  		padding: 20px 30px;
   	}
   	@include min-break($break-medium) {
-  		padding: 20px 45px;	
+  		padding: 20px 45px;
   	}
   	.row {
   		@extend .full-width-row;
@@ -133,16 +138,16 @@
   		min-width: 100%;
   	}
   }
-  
+	p {
+		font-size: 16px;
+		margin: 0;
+	}
   .subfooter-left-side {
     text-align: center;
     @include min-break($break-small) {
     	text-align: left;
-    	}
-    p {
-      font-size: 16px;
-      margin: 0;
     }
+
   }
   .subfooter-right-side {
     text-align: center;
@@ -154,27 +159,47 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    
+
     li {
       display: inline-block;
-      
+
       a {
         font-size: 16px;
       }
-      
+
       & + li {
         margin-left: 20px;
       }
     }
   }
+	.footer-logo-holder {
+		display: block;
+		text-align: center;
+		a {
+			display: inline-block;
+			margin-bottom: 20px;
+		}
+		.logoimg {
+			max-height: 20px;
+		}
+	}
   &.dark {
     background: #191919;
     color: #fff;
-    
+
     a {
       color: #fff;
     }
   }
+	&.style2 {
+
+		.thb-subfooter-menu {
+			margin-bottom: 20px;
+		}
+		p {
+			font-size: 12px;
+		}
+	}
   .site_bars_on & {
   	@include min-break($break-medium) {
   		margin: 0 60px;

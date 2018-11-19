@@ -1,7 +1,7 @@
 <?php
 
 function thb_filter_radio_images( $array, $field_id ) {
-  
+
   if ( $field_id == 'footer_columns' ) {
     $array = array(
       array(
@@ -39,17 +39,54 @@ function thb_filter_radio_images( $array, $field_id ) {
         'label'   => esc_html__( 'Single Column', 'notio' ),
         'src'     => Thb_Theme_Admin::$thb_theme_directory_uri . 'assets/img/admin/columns/one-columns.png'
       )
-      
+
     );
   }
-  
+  if ( $field_id == 'subfooter_style' ) {
+	  $array = array(
+	    array(
+	      'value'   => 'style1',
+	      'label'   => esc_html__( 'Style 1', 'revolution' ),
+	      'src'     => Thb_Theme_Admin::$thb_theme_directory_uri . 'assets/img/admin/subfooter/style1.png'
+	    ),
+	    array(
+	      'value'   => 'style2',
+	      'label'   => esc_html__( 'Style 2', 'revolution' ),
+	      'src'     => Thb_Theme_Admin::$thb_theme_directory_uri . 'assets/img/admin/subfooter/style2.png'
+	    )
+	  );
+	}
+  if ( $field_id == 'masonry_size' ) {
+	  $array = array(
+	    array(
+	      'value'   => 'large',
+	      'label'   => esc_html__( 'large', 'notio' ),
+	      'src'     => Thb_Theme_Admin::$thb_theme_directory_uri . 'assets/img/admin/masonry/large.png'
+	    ),
+	    array(
+	      'value'   => 'small',
+	      'label'   => esc_html__( 'small', 'notio' ),
+	      'src'     => Thb_Theme_Admin::$thb_theme_directory_uri . 'assets/img/admin/masonry/small.png'
+	    ),
+	    array(
+	      'value'   => 'wide',
+	      'label'   => esc_html__( 'wide', 'notio' ),
+	      'src'     => Thb_Theme_Admin::$thb_theme_directory_uri . 'assets/img/admin/masonry/wide.png'
+	    ),
+	    array(
+	      'value'   => 'tall',
+	      'label'   => esc_html__( 'tall', 'notio' ),
+	      'src'     => Thb_Theme_Admin::$thb_theme_directory_uri . 'assets/img/admin/masonry/tall.png'
+	    )
+	  );
+	}
   return $array;
-  
+
 }
 add_filter( 'ot_radio_images', 'thb_filter_radio_images', 10, 2 );
 
 function thb_social_links_settings( $id ) {
-    
+
   $settings = array(
     array(
       'label'       => esc_html__('Social Network', 'notio' ),
@@ -146,21 +183,21 @@ function thb_social_links_settings( $id ) {
       'type'      => 'text',
     )
   );
-  
+
   return $settings;
 
 }
 add_filter( 'ot_social_links_settings', 'thb_social_links_settings');
 
 function thb_type_social_links_load_defaults( $id ) {
-    
+
   $field_value = array(
     array(
       'social_network'    => 'facebook',
       'href'    => 'http://fuelthemes.net'
     )
   );
-  
+
   return $field_value;
 
 }
@@ -196,24 +233,24 @@ function thb_filter_ot_recognized_font_families( $array, $field_id ) {
 	ot_fetch_google_fonts( true, false );
 	$ot_google_fonts = wp_list_pluck( get_theme_mod( 'ot_google_fonts', array() ), 'family' );
   $array = array_merge($array,$ot_google_fonts);
-  
+
   if (ot_get_option('typekit_id')) {
   	$typekit_fonts = trim(ot_get_option('typekit_fonts'), ' ');
   	$typekit_fonts = explode(',', $typekit_fonts);
-  	
+
   	$array = array_merge($array,$typekit_fonts);
   }
   $self_hosted_names = array();
   if (ot_get_option('self_hosted_fonts')) {
   	$self_hosted_fonts = ot_get_option('self_hosted_fonts');
-  	
+
   	foreach ($self_hosted_fonts as $font) {
   		$self_hosted_names[] = $font['font_name'];
   	}
-  	
+
   	$array = array_merge($array,$self_hosted_names);
   }
-  
+
   foreach ($array as $font => $value) {
 		$thb_font_array[$value] = $value;
   }
@@ -229,7 +266,7 @@ function thb_filter_typography_fields( $array, $field_id ) {
 	  $array = array( 'font-size', 'font-style', 'font-weight', 'text-transform', 'line-height', 'letter-spacing' );
 	} else if ( in_array($field_id, array('body_type') ) ) {
 		$array = array( 'font-color','font-size', 'font-style', 'font-weight', 'text-transform', 'line-height', 'letter-spacing' );
-	} else if ( in_array($field_id, array('fullmenu_type', 'submenu_type') ) ) {
+	} else if ( in_array($field_id, array('fullmenu_type', 'submenu_type', 'subfootermenu_type') ) ) {
 		$array = array( 'font-size', 'font-style', 'font-weight', 'text-transform', 'line-height', 'letter-spacing' );
 	}
   return $array;
@@ -239,7 +276,7 @@ add_filter( 'ot_recognized_typography_fields', 'thb_filter_typography_fields', 1
 
 function thb_filter_color_fields( $array, $field_id ) {
 
-	if ( in_array($field_id, array("fullmenu_color", "submenu_color", "mobilemenu_color", "mobilesubmenu_color") ) ) {
+	if ( in_array($field_id, array("fullmenu_color", "submenu_color", "mobilemenu_color", "mobilesubmenu_color", "footerlink_color","subfootermenu_color") ) ) {
 		$array = array( 'link', 'hover' );
 	}
   return $array;
@@ -249,7 +286,7 @@ add_filter( 'ot_recognized_link_color_fields', 'thb_filter_color_fields', 10, 2 
 
 function thb_filter_spacing_fields( $array, $field_id ) {
 
-	if ( in_array($field_id, array("footer_padding") ) ) {
+	if ( in_array($field_id, array("footer_padding", "subfooter_padding") ) ) {
 		$array = array( 'top', 'bottom' );
 	}
   return $array;

@@ -34,7 +34,7 @@ extract( $atts );
 wp_enqueue_script( 'wpb_composer_front_js' );
 
 $el_class = $this->getExtraClass( $el_class );
-$thb_row_padding = $thb_row_padding ? 'no-padding' : ''; 
+$thb_row_padding = $thb_row_padding ? 'no-padding' : '';
 $thb_full_width = $thb_full_width ? 'full-width-row' : '';
 $mouse_scroll_class = $mouse_scroll == 'true' ? 'mouse_scroll_row' : '';
 $css_classes = array(
@@ -154,17 +154,17 @@ if ( $thb_video_bg !== '' ) {
 	preg_match($pattern, $css, $bg_image);
 
 	$wrapper_attributes[] = 'data-vide-bg="'.$video_type['ext'].': '.esc_attr($thb_video_bg). ( isset($bg_image[2]) ? ', poster: '.esc_attr($bg_image[2]) : '').'"';
-		
+
 	if (isset($bg_image[2])) {
 		$bg_url = strtok($bg_image[2], '?');
 		$bg_type = wp_check_filetype( $bg_url, wp_get_mime_types() );
 	}
-	
+
 	$wrapper_attributes[] = 'data-vide-options="posterType: '.( isset($bg_image[2]) ? esc_attr($bg_type['ext']) : 'none').', loop: true, muted: true, position: 50% 50%, resizing: true'. ($thb_video_play_button ? ', autoplay:false' : '').'"';
 	if ( $thb_video_overlay_color != '' ) {
 		$bg_video_overlay = '<div class="thb_video_overlay" style="background-color: '.esc_attr($thb_video_overlay_color) .';"></div>';
 	}
-	
+
 	$css_classes[] = 'thb_video_bg';
 }
 
@@ -175,8 +175,8 @@ $output .= '<div ' . implode( ' ', $wrapper_attributes ) . '>';
 $output .= wpb_js_remove_wpautop( $content );
 $output .= $bg_video_overlay;
 
-if ($mouse_scroll == 'true') {
-	$output .= '<a class="mouse_scroll '.$thb_scroll_bottom_color.'" href="#"></a>';	
+if ($mouse_scroll== 'true') {
+	$output .= '<div class="scroll-bottom '.esc_attr($thb_scroll_bottom_color.' '.$thb_scroll_bottom_style).'"><div></div></div>';
 }
 $output .= '</div>';
 $output .= $after_output;

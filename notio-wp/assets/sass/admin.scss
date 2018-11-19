@@ -21,7 +21,7 @@ $break-xlarge: 90.063em;
 	}
 	.theme-browser {
 		h2 {
-			text-align: left;	
+			text-align: left;
 		}
 		.theme-actions {
 			.dashicons-share-alt2 {
@@ -37,14 +37,14 @@ $break-xlarge: 90.063em;
 				bottom: 0;
 			}
 			&:nth-child(3n){
-				margin: 0 4% 4% 0;	
+				margin: 0 4% 4% 0;
 			}
 			&:nth-child(4n):not(.last) {
-			  margin: 0 4% 4% 0;	
+			  margin: 0 4% 4% 0;
 			}
-			
+
 			&.last {
-				margin: 0 !important;	
+				margin: 0 !important;
 			}
 			.theme-screenshot {
 				cursor: default;
@@ -55,7 +55,7 @@ $break-xlarge: 90.063em;
 				user-select: none;
 			}
 			img {
-				border: 0;	
+				border: 0;
 			}
 			.notice {
 				display: block !important;
@@ -76,9 +76,9 @@ $break-xlarge: 90.063em;
 		  color: #fff;
 		  border-color: darken(#d54e21, 10%);
 		  box-shadow: 0 1px 0 darken(#d54e21, 10%);
-		  
+
 		  .dashicons {
-		  	line-height: 26px;	
+		  	line-height: 26px;
 		  }
 		  &:hover {
 		  	background: lighten(#d54e21, 5%);
@@ -88,7 +88,7 @@ $break-xlarge: 90.063em;
 		  }
 		}
 	}
-	
+
 	.wp-badge.wp-thb-badge {
 		background: #1aa97f url('../img/admin/admin_logo.png') center 25px no-repeat;
 		background-size: 80px 80px;
@@ -101,15 +101,15 @@ $break-xlarge: 90.063em;
 		padding: 1px 0 1px 12px;
 		font-size: 13px;
 		line-height: 20px;
-		
+
 		p {
 			padding: 2px;
 	    margin: 7px 0;
 	    line-height: 1.5;
 	    font-size: 14px;
-	    
+
 	    a {
-	    	font-weight: 600;	
+	    	font-weight: 600;
 	    }
 		}
 	}
@@ -133,7 +133,7 @@ $break-xlarge: 90.063em;
 						content: "\f463";
 						font: 400 30px/1 dashicons;
 						animation: rotation 2s infinite linear;
-						margin-bottom: 10px;	
+						margin-bottom: 10px;
 					}
 				}
 			}
@@ -153,25 +153,25 @@ $break-xlarge: 90.063em;
 			td {
 				font-size: 16px;
 				font-weight: 600;
-			}	
+			}
 		}
 		tr {
 			td {
 				font-size: 14px;
 				&:first-child {
 					width: 40%;
-				}	
+				}
 			}
 			&:nth-child(odd) td {
-				background: #fcfcfc;	
+				background: #fcfcfc;
 			}
 		}
 		mark {
-			background: none;	
-			
+			background: none;
+
 			&.yes {
 				span {
-					color: #49b246;	
+					color: #49b246;
 				}
 			}
 			&.error {
@@ -180,20 +180,20 @@ $break-xlarge: 90.063em;
 			}
 		}
 	}
-	
+
 }
 
 /* Registration */
 .thb-registration {
 	.postbox {
 		padding: 15px;
-		
+
 		@include min-break($break-small) {
 			padding: 40px;
 		}
 		p {
 			margin: 0 0 40px;
-		}	
+		}
 	}
 	.steps2 {
 		display: flex;
@@ -205,7 +205,7 @@ $break-xlarge: 90.063em;
 			padding: 0 20px;
 			flex: 0 0 100%;
 			max-width: 100%;
-			
+
 			&.thb-left {
 				@include min-break($break-small) {
 					flex: 0 0 40%;
@@ -216,7 +216,7 @@ $break-xlarge: 90.063em;
 						border: 0;
 						box-shadow: 0;
 						max-width: 100%;
-					}	
+					}
 				}
 			}
 			&.thb-right {
@@ -228,7 +228,7 @@ $break-xlarge: 90.063em;
 					max-width: 60%;
 				}
 				h2 {
-					margin-top: 0;	
+					margin-top: 0;
 				}
 				strong {
 					display: block;
@@ -237,7 +237,7 @@ $break-xlarge: 90.063em;
 					font-weight: 600;
 					height: 56px;
 					line-height: 56px;
-					padding: 0 20px;	
+					padding: 0 20px;
 					border-radius: 3px;
 					margin-bottom: 22px;
 					overflow: hidden;
@@ -248,7 +248,7 @@ $break-xlarge: 90.063em;
 				}
 				.button {
 					display: inline-flex;
-					
+
 					& + .button {
 						margin-left: 10px;
 					}
@@ -272,26 +272,26 @@ $break-xlarge: 90.063em;
 			}
 			.thb-form {
 				display: flex;
-				
+
 				[type="text"] {
-					flex: 1;	
+					flex: 1;
 					height: 46px;
 					line-height: 46px;
 					padding: 0 20px;
 					margin-right: 10px;
 					border-radius: 3px;
 				}
-			}	
+			}
 			.step {
 				padding: 20px;
 				border: 1px solid #f1f1f1;
 				text-align: center;
 				width: 100%;
 				position: relative;
-				
+
 				@include min-break($break-small) {
 					padding: 40px;
-				} 
+				}
 				figure {
 					display: flex;
 					width: 100%;
@@ -304,7 +304,7 @@ $break-xlarge: 90.063em;
 						border: 0;
 						box-shadow: none;
 						max-width: 100%;
-					}	
+					}
 				}
 				.count {
 					display: block;
@@ -319,7 +319,7 @@ $break-xlarge: 90.063em;
 					position: absolute;
 					top: 20px;
 					left: 20px;
-					
+
 					&.large {
 	          width: 65px;
 	          line-height: 50px;
@@ -337,26 +337,26 @@ $break-xlarge: 90.063em;
 			  @include min-break($break-small) {
 			  	flex: 0 0 100%;
 			  	max-width: 100%;
-			  	
+
 			  }
 			  .step {
 	        @include min-break($break-small) {
 	        	padding: 10%;
 	        }
 	      }
-	      
+
 	      .thb-form {
 	        max-width: 600px;
 	        margin: 0 auto;
 	        align-items: center;
-	        
+
 	        svg {
 	        	margin-right: 20px;
 	        }
 	      }
 	    }
 		}
-		
+
 	}
 }
 /* Option Tree */
@@ -365,7 +365,7 @@ $break-xlarge: 90.063em;
 }
 #option-tree-sub-header {
 	h2 {
-		display: inline-block;	
+		display: inline-block;
 		margin: 5px;
 		line-height: 29px;
 		span {
@@ -394,8 +394,8 @@ $break-xlarge: 90.063em;
 		}
 	}
 }
-#option-tree-settings-api .description h3, 
-#option-tree-settings-api .format-setting-label .label, 
+#option-tree-settings-api .description h3,
+#option-tree-settings-api .format-setting-label .label,
 #poststuff .format-setting-label .label {
 	margin: 0;
 }
@@ -407,7 +407,7 @@ $break-xlarge: 90.063em;
 .ot-metabox-tabs.ui-tabs {
 	a {
 		&:focus {
-			box-shadow: none;	
+			box-shadow: none;
 		}
 	}
 }
@@ -449,4 +449,54 @@ $break-xlarge: 90.063em;
 }
 .thb_menu_options select {
 	max-width: 100%;
+}
+
+#setting_header_style .type-radio-image .option-tree-ui-radio-images img,
+#setting_footer_columns .type-radio-image .option-tree-ui-radio-images img,
+#setting_subfooter_style .type-radio-image .option-tree-ui-radio-images img,
+#setting_masonry_size .type-radio-image .option-tree-ui-radio-images img,
+#setting_footer_bar_style .type-radio-image .option-tree-ui-radio-images img {
+	width: 130px;
+	opacity: 1;
+}
+
+#page-ot_theme_options {
+  .ui-tabs {
+    #poststuff {
+      position: relative;
+      #post-body-content {
+        opacity: 0;
+        max-height: 400px;
+        @include transition(all .25s ease);
+      }
+
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -74px 0 0 -74px;
+        width: 148px;
+        height: 148px;
+        background: #fff url('../img/admin/ot-preloader.gif') center center;
+        background-size: 148px 148px;
+        opacity: 1;
+        @include transition(all .25s ease);
+      }
+    }
+    &.ui-widget {
+      #poststuff {
+        #post-body-content {
+          opacity: 1;
+          max-height: 100%;
+        }
+        &:after {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+    }
+  }
 }

@@ -48,27 +48,69 @@ $thb_offset_array = array(
 	'0%'  => '0%',
 	'5%'  => '5%',
 	'10%' => '10%',
-	'15%' => '15%',	
+	'15%' => '15%',
 	'20%' => '20%',
 	'25%' => '25%',
 	'30%' => '30%',
-	'35%' => '35%',	
+	'35%' => '35%',
 	'40%' => '40%',
-	'45%' => '45%',	
+	'45%' => '45%',
 	'50%' => '50%',
 	'55%' => '55%',
 	'60%' => '60%',
-	'65%' => '65%',	
+	'65%' => '65%',
 	'70%' => '70%',
-	'75%' => '75%',	
+	'75%' => '75%',
 	'80%' => '80%',
-	'85%' => '85%',	
+	'85%' => '85%',
 	'90%' => '90%',
-	'95%' => '95%',	
+	'95%' => '95%',
 	'100%' => '100%'
 );
 
-// Shortcodes 
+function thb_vc_gradient_direction( $group_name = 'Styling' ) {
+	return array(
+		"type" => "dropdown",
+		'heading' => esc_html__( 'Gradient Direction', 'notio' ),
+		'param_name' => 'bg_gradient_direction',
+		"class" => "hidden-label",
+		'description' => esc_html__( 'You can change the gradient direction here.', 'notio' ),
+		'group' => $group_name,
+		'edit_field_class' => 'vc_col-sm-6',
+		"value" => array(
+		  'Top to Bottom' => '0',
+			'Bottom Left to Top Right' => '-135',
+			'Top Left to Bottom Right' => '-45',
+			'Left to Right' => '-90'
+		),
+		'std' => '-135'
+	);
+}
+function thb_vc_gradient_color1( $group_name = 'Styling' ) {
+	return array(
+		'type' => 'colorpicker',
+		'heading' => esc_html__( 'Background Gradient Color 1', 'notio' ),
+		'param_name' => 'bg_gradient1',
+		"class" => "hidden-label",
+		'description' => esc_html__( 'Choose a first (top) color for the background gradient. Leave blank to disable.', 'notio' ),
+		'group' => $group_name,
+		'edit_field_class' => 'vc_col-sm-6',
+	);
+}
+
+function thb_vc_gradient_color2( $group_name = 'Styling' ) {
+	return array(
+		'type' => 'colorpicker',
+		'heading' => esc_html__( 'Background Gradient Color 2', 'notio' ),
+		'param_name' => 'bg_gradient2',
+		"class" => "hidden-label",
+		'description' => esc_html__( 'Choose a second (bottom) color for the background gradient.', 'notio' ),
+		'group' => $group_name,
+		'edit_field_class' => 'vc_col-sm-6',
+	);
+}
+
+// Shortcodes
 $shortcodes = Thb_Theme_Admin::$thb_theme_directory. 'vc_templates/';
 $files = glob($shortcodes.'thb_?*.php');
 foreach ($files as $filename) {
@@ -221,12 +263,27 @@ vc_add_param("vc_row", array(
 ));
 vc_add_param("vc_row", array(
 	"type" => "checkbox",
-	"heading" => esc_html__("Insert Mouse Scroll Icon?", "notio"),
+	"heading" => esc_html__("Display Scroll to Bottom Arrow?", "notio"),
 	"param_name" => "mouse_scroll",
 	"value" => array(
 		"Yes" => "true"
 	),
-	"description" => esc_html__("You can insert a mouse scroll icon to the bottom of the div.", "notio")
+	"description" => esc_html__("If you enable this, this will show an arrow at the bottom of the row", "notio")
+));
+
+vc_add_param("vc_row", array(
+	"type" => "dropdown",
+	"heading" => esc_html__("Scroll to Bottom Arrow Style", 'revolution'),
+	"param_name" => "thb_scroll_bottom_style",
+	"std" => "style2",
+	"value" => array(
+		"Line" => "style1",
+		"Mouse" => "style2",
+		"Arrow" => "style3",
+		"Triangle" => "style4"
+	),
+	"description" => esc_html__("This changes the shape of the arrow", 'revolution'),
+	"dependency" => Array('element' => "mouse_scroll", 'value' => array('true'))
 ));
 
 vc_add_param("vc_row", array(
@@ -239,7 +296,7 @@ vc_add_param("vc_row", array(
 	),
 	"std" => 'light',
 	"description" => esc_html__("Color of the scroll to bottom arrow", "notio"),
-	"dependency" => Array('element' => "thb_scroll_bottom", 'value' => array('true'))
+	"dependency" => Array('element' => "mouse_scroll", 'value' => array('true'))
 ));
 
 // Inner Row
@@ -268,6 +325,65 @@ vc_add_param("vc_row_inner", array(
 	'weight' => 1,
 	"description" => esc_html__("If you enable this, this row won't leave padding on the sides", "notio")
 ));
+
+// AutoType
+vc_map( array(
+	'base'  => 'thb_autotype',
+	'name' => esc_html__('Auto Type', 'notio'),
+	"description" => esc_html__("Animated text typing", "notio"),
+	'category' => esc_html__('by Fuel Themes', 'notio'),
+	"icon" => "thb_vc_ico_autotype",
+	"class" => "thb_vc_sc_autotype",
+	'params' => array(
+		array(
+			'type'       => 'textarea_safe',
+			'heading'    => esc_html__( 'Content', 'notio' ),
+			'param_name' => 'typed_text',
+			'value'		 => '<h2>Unleash creativity with the powerful tools of *notio;Developed by Fuel Themes*</h2>',
+			'description'=> '
+			Enter the content to display with typing text. <br />
+			Text within <b>*</b> will be animated, for example: <strong>*Sample text*</strong>. <br />
+			Text separator is <b>;</b> for example: <strong>*notio; Developed by Fuel Themes*</strong>',
+			"admin_label" => true,
+		),
+		array(
+			"type" => "colorpicker",
+			"heading" => esc_html__("Animated Text Color", "notio"),
+			"param_name" => "thb_animated_color",
+			"description" => esc_html__("Uses the accent color by default", "notio")
+		),
+		array(
+	    "type" => "textfield",
+	    "heading" => esc_html__("Type Speed", "notio"),
+	    "param_name" => "typed_speed",
+	    "description" => esc_html__("Speed of the type animation. Default is 50", "notio")
+		),
+		array(
+			"type" => "checkbox",
+			"heading" => esc_html__("Show Cursor?", "notio"),
+			"param_name" => "cursor",
+			"value" => array(
+				"Yes" => "1"
+			),
+			"std" => "1",
+			"description" => esc_html__("If enabled, the text will always animate, looping through the sentences used.", "notio"),
+		),
+		array(
+			"type" => "checkbox",
+			"heading" => esc_html__("Loop?", "notio"),
+			"param_name" => "loop",
+			"value" => array(
+				"Yes" => "1"
+			),
+			"description" => esc_html__("If enabled, the text will always animate, looping through the sentences used.", "notio"),
+		),
+		array(
+			"type" => "textfield",
+			"heading" => esc_html__("Extra Class Name", "notio"),
+			"param_name" => "extra_class",
+		),
+	)
+) );
 
 // Awards Parent
 vc_map( array(
@@ -365,6 +481,71 @@ vc_map( array(
 	"description" => esc_html__("Add an animated button", "notio" )
 ) );
 
+// Fade Type
+vc_map( array(
+	'base'  => 'thb_fadetype',
+	'name' => esc_html__('Fade Type', 'notio'),
+	"description" => esc_html__("Faded letter typing", "notio"),
+	'category' => esc_html__('by Fuel Themes', 'notio'),
+	"icon" => "thb_vc_ico_fadetype",
+	"class" => "thb_vc_sc_fadetype",
+	'params' => array(
+		array(
+			'type'       => 'textarea_safe',
+			'heading'    => esc_html__( 'Content', 'notio' ),
+			'param_name' => 'fade_text',
+			'value'		 => '<h2>*Unleash creativity with the powerful tools of notio, Developed by Fuel Themes*</h2>',
+			'description'=> 'Enter the content to display with typing text. <br />
+			Text within <b>*</b> will be animated, for example: <strong>*Sample text*</strong>. ',
+			"admin_label" => true
+		),
+		array(
+			"type" => "dropdown",
+			"heading" => esc_html__("Animation Styles", 'notio'),
+			"param_name" => "style",
+			"value" => array(
+				"Linear, from bottom" => "style1",
+				"Randomized, from top" => "style2",
+			),
+			"std" => "style1",
+			"description" => esc_html__("This changes style of the animation", 'notio')
+		),
+		array(
+			"type" => "textfield",
+			"heading" => esc_html__("Extra Class Name", "notio"),
+			"param_name" => "extra_class",
+		),
+	)
+) );
+
+// Gradient Type
+vc_map( array(
+	'base'  => 'thb_gradienttype',
+	'name' => esc_html__('Gradient Type', 'notio'),
+	"description" => esc_html__("Text with Gradient Color", "notio"),
+	'category' => esc_html__('by Fuel Themes', 'notio'),
+	"icon" => "thb_vc_ico_gradienttype",
+	"class" => "thb_vc_sc_gradienttype",
+	'params' => array(
+		array(
+			'type'       => 'textarea_safe',
+			'heading'    => esc_html__( 'Content', 'notio' ),
+			'param_name' => 'gradient_text',
+			'value'		 => '<h2>Unleash creativity with the powerful tools of notio, Developed by Fuel Themes</h2>',
+			'description'=> 'Enter the content to display with gradient.',
+			"admin_label" => true
+		),
+		$thb_animation_array,
+		array(
+			"type" => "textfield",
+			"heading" => esc_html__("Extra Class Name", "notio"),
+			"param_name" => "extra_class",
+		),
+	)
+) );
+vc_add_param( "thb_gradienttype", thb_vc_gradient_color1() );
+vc_add_param( "thb_gradienttype", thb_vc_gradient_color2() );
+
 // Text Button
 vc_map( array(
 	"name" => esc_html__( "Text Button", 'notio'),
@@ -375,7 +556,7 @@ vc_map( array(
 	"params" => array(
 		array(
 		  "type" => "dropdown",
-		  "heading" => esc_html__("Style", "revolution"),
+		  "heading" => esc_html__("Style", "notio"),
 		  "param_name" => "style",
 		  "value" => array(
 		  	'Style 1 (Line Left)' => "style1",
@@ -384,23 +565,23 @@ vc_map( array(
 		  	'Style 4 (Arrow Right)' => "style4",
 		  	'Style 5 (Arrow Right Small)' => "style5"
 		  ),
-		  "description" => esc_html__("This changes the look of the button", "revolution")
+		  "description" => esc_html__("This changes the look of the button", "notio")
 		),
 		array(
 		  "type" => "vc_link",
-		  "heading" => esc_html__("Link", "revolution"),
+		  "heading" => esc_html__("Link", "notio"),
 		  "param_name" => "link",
-		  "description" => esc_html__("Set your url & text for your button", "revolution"),
+		  "description" => esc_html__("Set your url & text for your button", "notio"),
 		  "admin_label" => true,
 		),
 		$thb_animation_array,
 		array(
 			"type" => "textfield",
-			"heading" => esc_html__("Extra Class Name", "revolution"),
+			"heading" => esc_html__("Extra Class Name", "notio"),
 			"param_name" => "extra_class",
 		),
 	),
-	"description" => esc_html__("Add a text button", "revolution")
+	"description" => esc_html__("Add a text button", "notio")
 ) );
 
 // Cascading Images
@@ -977,52 +1158,77 @@ vc_map( array(
 
 // Image shortcode
 vc_map( array(
-	"name" => esc_html__("Image", "notio"),
+	"name" => "Image",
 	"base" => "thb_image",
 	"icon" => "thb_vc_ico_image",
-	"class" => "thb_vc_sc_image",
-	"category" => esc_html__('by Fuel Themes', "notio"),
+	"class" => "thb_vc_sc_image wpb_vc_single_image",
+	"category" => esc_html__('by Fuel Themes', 'notio'),
 	"params" => array(
 		array(
 			"type" => "attach_image", //attach_images
-			"heading" => esc_html__("Select Image", "notio"),
+			"heading" => esc_html__("Select Image", 'notio'),
 			"param_name" => "image"
 		),
 		array(
 			"type" => "checkbox",
-			"heading" => esc_html__("Retina Size?", "notio"),
+			"heading" => esc_html__("Display Caption?", 'notio'),
+			"param_name" => "caption",
+			"value" => array(
+				"Yes" => "true"
+			),
+			"description" => esc_html__("If selected, the image caption will be displayed.", 'notio')
+		),
+		array(
+		  "type" => "dropdown",
+		  "heading" => esc_html__("Caption Style", 'notio'),
+		  "param_name" => "caption_style",
+		  "value" => array(
+		  	"Style1" => "style1",
+		  	"Style2" => "style2"
+		  ),
+		  "description" => esc_html__("Select caption style.", 'notio'),
+		  "dependency" => Array('element' => "caption", 'value' => array('true'))
+		),
+		array(
+			'type'           => 'textarea_html',
+			'heading'        => esc_html__( 'Text Below Image', 'notio' ),
+			'param_name'     => 'content'
+		),
+		array(
+			"type" => "checkbox",
+			"heading" => esc_html__("Retina Size?", 'notio'),
 			"param_name" => "retina",
 			"value" => array(
 				"Yes" => "retina_size"
 			),
-			"description" => esc_html__("If selected, the image will be display half-size, so it looks crisps on retina screens. Full Width setting will override this.", "notio")
+			"description" => esc_html__("If selected, the image will be display half-size, so it looks crisps on retina screens. Full Width setting will override this.", 'notio')
 		),
 		array(
 			"type" => "checkbox",
-			"heading" => esc_html__("Full Width?", "notio"),
+			"heading" => esc_html__("Full Width?", 'notio'),
 			"param_name" => "full_width",
 			"value" => array(
 				"Yes" => "true"
 			),
-			"description" => esc_html__("If selected, the image will always fill its container", "notio")
+			"description" => esc_html__("If selected, the image will always fill its container", 'notio')
 		),
 		$thb_animation_array,
 		array(
 		  "type" => "textfield",
-		  "heading" => esc_html__("Image size", "notio"),
+		  "heading" => esc_html__("Image size", 'notio'),
 		  "param_name" => "img_size",
-		  "description" => esc_html__("Enter image size. Example: thumbnail, medium, large, full or other sizes defined by current theme. Alternatively enter image size in pixels: 200x100 (Width x Height). Leave empty to use 'thumbnail' size.", "notio")
+		  "description" => esc_html__("Enter image size. Example: thumbnail, medium, large, full or other sizes defined by current theme. Alternatively enter image size in pixels: 200x100 (Width x Height). Leave empty to use 'thumbnail' size.", 'notio')
 		),
 		array(
 		  "type" => "dropdown",
-		  "heading" => esc_html__("Image alignment", "notio"),
+		  "heading" => esc_html__("Image alignment", 'notio'),
 		  "param_name" => "alignment",
-		  "value" => array("Align left" => "left", "Align right" => "right", "Align center" => "center"),
-		  "description" => esc_html__("Select image alignment.", "notio")
+		  "value" => array("Align left" => "alignleft", "Align right" => "alignright", "Align center" => "aligncenter", "Align None" => "alignnone"),
+		  "description" => esc_html__("Select image alignment.", 'notio')
 		),
 		array(
 			"type" => "checkbox",
-			"heading" => esc_html__("Link to Full-Width Image?", "notio"),
+			"heading" => esc_html__("Link to Full-Width Image?", 'notio'),
 			"param_name" => "lightbox",
 			"value" => array(
 				"Yes" => "true"
@@ -1030,13 +1236,75 @@ vc_map( array(
 		),
 		array(
 		  "type" => "vc_link",
-		  "heading" => esc_html__("Image link", "notio"),
+		  "heading" => esc_html__("Image link", 'notio'),
 		  "param_name" => "img_link",
-		  "description" => esc_html__("Enter url if you want this image to have link.", "notio"),
+		  "description" => esc_html__("Enter url if you want this image to have link.", 'notio'),
 		  "dependency" => Array('element' => "lightbox", 'is_empty' => true)
+		),
+		array(
+			"type" => "textfield",
+			"heading" => esc_html__("Extra Class Name", "notio"),
+			"param_name" => "extra_class",
+		),
+		array(
+			"type" => "textfield",
+			"heading" => esc_html__("Border Radius", 'notio'),
+			"param_name" => "thb_border_radius",
+			'group' 				=> 'Styling',
+			"description" => esc_html__("You can add your own border-radius code here. For ex: 2px 2px 4px 4px", 'notio')
+		),
+		array(
+			"type" 						=> "dropdown",
+			"heading" 				=> esc_html__("Box Shadow", "notio"),
+			"param_name" 			=> "box_shadow",
+			"value" 						=> array(
+				'No Shadow' => "",
+				'Small' => "small-shadow",
+				'Medium' => "medium-shadow",
+				'Large' => "large-shadow",
+				'X-Large' => "xlarge-shadow",
+			),
+			"dependency" => Array('element' => "style", 'value' => array('lightbox-style2')),
+			'group' 				=> 'Styling',
+			"description" => esc_html__("Select from different shadow styles.", 'notio')
+		),
+		array(
+			"type" 						=> "dropdown",
+			"heading" 				=> esc_html__("Image Max Width", "notio"),
+			"param_name" 			=> "max_width",
+			"value" 						=> array(
+				'100%' => "size_100",
+				'125%' => "size_125",
+				'150%' => "size_150",
+				'175%' => "size_175",
+				'200%' => "size_200",
+				'225%' => "size_225",
+				'250%' => "size_250",
+				'275%' => "size_275",
+			),
+			"std" => "size_100",
+			'group' 				=> 'Styling',
+			"description" => esc_html__("By default, image is contained within the columns, by setting this, you can extend the image over the container", 'notio')
+		),
+		array(
+			"type" => "checkbox",
+			"heading" => esc_html__("Show Video on Hover?", 'notio'),
+			"param_name" => "video",
+			'group' 				=> esc_html__('Video', 'notio'),
+			"value" => array(
+				"Yes" => "true"
+			)
+		),
+		array(
+			"type" => "textfield",
+			"heading" => esc_html__("Video URL", 'notio'),
+			"param_name" => "video_url",
+			'group' 				=> esc_html__('Video', 'notio'),
+			"description" => esc_html__("Please enter your video url here. (mp4 file)", 'notio'),
+			"dependency" => Array('element' => "video", 'value' => array('true'))
 		)
 	),
-	"description" => esc_html__("Add an animated image", "notio")
+	"description" => esc_html__("Add an animated image", 'notio')
 ) );
 
 // Image Slider
@@ -1188,17 +1456,18 @@ vc_map( array(
 	"class" => "thb_vc_sc_portfolio",
 	"category" => esc_html__("by Fuel Themes", "notio"),
 	"params"	=> array(
-	  array(
-	      "type" => "dropdown",
-	      "heading" => esc_html__("Portfolio Style", "notio"),
-	      "param_name" => "style",
-	      "value" => array(
-	      	'Style 1 - Hover Titles' => "style1",
-	      	'Style 2 - Titles under Images' => "style2"
-	      ),
-	      "admin_label" => true,
-	      "description" => esc_html__("Select Portfolio Style", "notio")
-	  ),
+		array(
+			"type" => "thb_radio_image",
+			"heading" => esc_html__("Portfolio Style", 'notio'),
+			"param_name" => "style",
+			'save_always' => true,
+			"std" => 'style1',
+			"admin_label" => true,
+			"options" => array(
+				'style1' 				=> Thb_Theme_Admin::$thb_theme_directory_uri."/assets/img/admin/portfolio_style/style1.png",
+				'style2' 				=> Thb_Theme_Admin::$thb_theme_directory_uri."/assets/img/admin/portfolio_style/style2.png"
+			)
+		),
 	  array(
 	      "type" => "dropdown",
 	      "heading" => esc_html__("Masonry Layout", "notio"),
@@ -1207,11 +1476,24 @@ vc_map( array(
 	      	'Layout 1' => "style1",
 	      	'Layout 2' => "style2",
 	      	'Layout 3' => "style3",
-	      	'Layout 4' => "style4"
+	      	'Layout 4' => "style4",
+	      	'Custom' => "custom"
 	      ),
 	      "admin_label" => true,
-	      "description" => esc_html__("Select Masonry Layout for Style 1", "notio" ),
+	      "description" => esc_html__("Select Masonry Layout. Custom uses the sizes defined inside each portfolio's settings.'", "notio" ),
 	      "dependency" => Array('element' => "style", 'value' => array('style1'))
+	  ),
+		array(
+	      "type" => "dropdown",
+	      "heading" => esc_html__("Custom Layout Grid Type", "notio"),
+	      "param_name" => "grid_type",
+	      "value" => array(
+	      	'4 Columns' => "4",
+	      	'3 Columns' => "3"
+	      ),
+	      "std" => "4",
+	      "description" => esc_html__("This changes the grid structure. You need to specify each item size inside their settings.", "notio" ),
+	      "dependency" => Array('element' => "masonry_style", 'value' => array('custom'))
 	  ),
 	  array(
 	      "type" => "dropdown",
@@ -1280,7 +1562,7 @@ vc_map( array(
 	      "description" => esc_html__("Select which categories you want to filter", "notio"),
 	      "dependency" => Array('element' => "add_filters", 'value' => array('true'))
 	  ),
-	  
+
 	  array(
 	      "type" => "checkbox",
 	      "heading" => esc_html__("Add Load More Button?", "notio"),
@@ -1323,6 +1605,7 @@ vc_map( array(
 	      	'Style 7 - 3D' => "hover-style7",
 	      	'Style 8 - Hover Image' => "hover-style8",
 	      	'Style 9 - With Button' => "hover-style9",
+					'Style 10 - Inside Shadow' => "hover-style10"
 	      ),
 	      "description" => esc_html__("Changes the effect of your hover styles.", "notio"),
 	      "dependency" => Array('element' => "style", 'value' => array('style1'))
@@ -1362,15 +1645,16 @@ vc_map( array(
 	"category" => esc_html__("by Fuel Themes", "notio"),
 	"params"	=> array(
 		array(
-		    "type" => "dropdown",
-		    "heading" => esc_html__("Portfolio Style", "notio"),
-		    "param_name" => "style",
-		    "value" => array(
-		    	'Style 1 - Hover Titles' => "style1",
-		    	'Style 2 - Titles under Images' => "style2"
-		    ),
-		    "admin_label" => true,
-		    "description" => esc_html__("Select Portfolio Style", "notio" )
+			"type" => "thb_radio_image",
+			"heading" => esc_html__("Portfolio Style", 'notio'),
+			"param_name" => "style",
+			'save_always' => true,
+			"std" => 'style1',
+			"admin_label" => true,
+			"options" => array(
+				'style1' 				=> Thb_Theme_Admin::$thb_theme_directory_uri."/assets/img/admin/portfolio_style/style1.png",
+				'style2' 				=> Thb_Theme_Admin::$thb_theme_directory_uri."/assets/img/admin/portfolio_style/style2.png"
+			)
 		),
 		array(
 		    "type" => "dropdown",
@@ -1417,6 +1701,7 @@ vc_map( array(
 	      "value" => array(
 	      		"Yes" => "true"
 	      	),
+				"group" => "Filters",
 	      "description" => esc_html__("This will display filters on the top", "notio" )
 	  ),
 	  array(
@@ -1424,6 +1709,7 @@ vc_map( array(
 	      "heading" => esc_html__("Filter Categories", "notio"),
 	      "param_name" => "filter_categories",
 	      "value" => thb_portfolioCategories(),
+				"group" => "Filters",
 	      "description" => esc_html__("Select which categories you want to filter", "notio"),
 	      "dependency" => Array('element' => "add_filters", 'value' => array('true'))
 	  ),
@@ -1431,6 +1717,7 @@ vc_map( array(
 	      "type" => "dropdown",
 	      "heading" => esc_html__("Filter Style", "notio"),
 	      "param_name" => "filter_style",
+				"group" => "Filters",
 	      "value" => array(
 	      	'Style 1 - Over Portfolio Items' => "style1",
 	      	'Style 2 - On top of Portfolio Items' => "style2",
@@ -1442,6 +1729,7 @@ vc_map( array(
 	      "type" => "checkbox",
 	      "heading" => esc_html__("Add Load More Button?", "notio"),
 	      "param_name" => "loadmore",
+				"group" => "Load More",
 	      "value" => array(
 	      		"Yes" => "true"
 	      	),
@@ -1451,6 +1739,7 @@ vc_map( array(
 	    "type" => "dropdown",
 	    "heading" => esc_html__("Load More Button Style", "notio"),
 	    "param_name" => "loadmore_style",
+			"group" => "Load More",
 	    "value" => array(
 	    	'Default' => 'loadmore',
 	    	'Style 1' => "style1",
@@ -1478,6 +1767,7 @@ vc_map( array(
 	      	'Style 7 - 3D' => "hover-style7",
 	      	'Style 8 - Hover Image' => "hover-style8",
 	      	'Style 9 - With Button' => "hover-style9",
+					'Style 10 - Inside Shadow' => "hover-style10"
 	      ),
 	      "description" => esc_html__("Changes the effect of your hover styles.", "notio"),
 	      "dependency" => Array('element' => "style", 'value' => array('style1'))
@@ -1898,7 +2188,88 @@ vc_map( array(
 	),
 	"description" => esc_html__("Display a Share Button", "notio" )
 ) );
+// slidetype
+vc_map( array(
+	'base'  => 'thb_slidetype',
+	'name' => esc_html__('Slide Type', 'notio'),
+	"description" => esc_html__("Animated text scrolling", "notio"),
+	'category' => esc_html__('by Fuel Themes', 'notio'),
+	"icon" => "thb_vc_ico_slidetype",
+	"class" => "thb_vc_sc_slidetype",
+	'params' => array(
+		array(
+			'type'       => 'textarea_safe',
+			'heading'    => esc_html__( 'Content', 'notio' ),
+			'param_name' => 'slide_text',
+			'value'		 => '<h2>*notio;Developed by Fuel Themes*</h2>',
+			'description'=> 'Enter the content to display with typing text. <br />
+			Text within <b>*</b> will be animated, for example: <strong>*Sample text*</strong>. <br />
+			Text separator is <b>;</b> for example: <strong>*notio; Developed by Fuel Themes*</strong> which will create new lines at ;',
+			"admin_label" => true,
+		),
+		array(
+			"type" => "dropdown",
+			"heading" => esc_html__("Style", "notio"),
+			"param_name" => "style",
+			"admin_label" => true,
+			"value" => array(
+				'Lines' => "style1",
+				'Words' => "style2",
+				'Characters' => "style3",
+			),
+		),
+		array(
+			"type" => "colorpicker",
+			"heading" => esc_html__("Animated Text Color", "notio"),
+			"param_name" => "thb_animated_color",
+			"description" => esc_html__("Uses the accent color by default", "notio")
+		),
+		array(
+			"type" => "textfield",
+			"heading" => esc_html__("Extra Class Name", "notio"),
+			"param_name" => "extra_class",
+		),
+	)
+) );
 
+// stroke type
+vc_map( array(
+	'base'  => 'thb_stroketype',
+	'name' => esc_html__('Stroke Type', 'notio'),
+	"description" => esc_html__("Text with Stroke style", "notio"),
+	'category' => esc_html__('by Fuel Themes', 'notio'),
+	"icon" => "thb_vc_ico_stroketype",
+	"class" => "thb_vc_sc_stroketype",
+	'params' => array(
+		array(
+			'type'       => 'textarea_safe',
+			'heading'    => esc_html__( 'Content', 'notio' ),
+			'param_name' => 'slide_text',
+			'value'		 => '<h1>notio</h1>',
+			'description'=> 'Enter the content to display with stroke.',
+			"admin_label" => true,
+		),
+		array(
+			"type" => "colorpicker",
+			"heading" => esc_html__("Text Color", "notio"),
+			"param_name" => "thb_color",
+			"description" => esc_html__("Select text color", "notio")
+		),
+		array(
+		  "type" 					=> "textfield",
+		  "heading" 			=> esc_html__("Stroke Width", "notio"),
+		  "param_name" 		=> "stroke_width",
+		  "std"=> "2px",
+		  "description" 	=> esc_html__("Enter the value for the stroke width. ", "notio" )
+		),
+		array(
+			"type" => "textfield",
+			"heading" => esc_html__("Extra Class Name", "notio"),
+			"param_name" => "extra_class",
+		),
+		$thb_animation_array
+	)
+) );
 // Styled Header
 vc_map( array(
 	"name" => esc_html__("Styled Header", 'notio'),

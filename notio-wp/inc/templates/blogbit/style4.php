@@ -6,14 +6,15 @@
 	<div class="small-12 small-order-1 medium-6<?php if ($thb_i % 2 != 0) { echo ' medium-push-6'; } ?> columns ">
 		<?php if ( has_post_thumbnail() ) { ?>
 		<figure class="post-gallery parallax">
-			<?php 
-				$image_id = get_post_thumbnail_id(); 
-				$image_url = wp_get_attachment_image_src($image_id, 'full'); 
+			<?php
+				$image_id = get_post_thumbnail_id();
+				$image_url = wp_get_attachment_image_src($image_id, 'full');
 			?>
-			<div class="parallax_bg" 
+			<div class="parallax_bg"
 						data-top-bottom="transform: translate3d(0px, 10%, 0px);"
-						data-bottom-top="transform: translate3d(0px, -10%, 0px);"
-						style="background-image: url(<?php echo esc_html($image_url[0]); ?>);"></div>
+						data-bottom-top="transform: translate3d(0px, -10%, 0px);">
+				<?php the_post_thumbnail('notio-general-x3'); ?>
+			</div>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"></a>
 		</figure>
 		<?php } ?>
@@ -28,7 +29,7 @@
 				<?php the_excerpt(); ?>
 				<a href="<?php the_permalink(); ?>" class="more-link"><?php _e( 'Read More', 'notio' ); ?></a>
 			</div>
-			
+
 		</div>
 	</div>
 	<?php do_action( 'thb_PostMeta' ); ?>

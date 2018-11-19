@@ -1,6 +1,6 @@
 <?php
 /**
- * Initialize the meta boxes. 
+ * Initialize the meta boxes.
  */
 add_action( 'admin_init', 'thb_custom_meta_boxes' );
 
@@ -20,10 +20,10 @@ add_action( 'admin_init', 'thb_custom_meta_boxes' );
 function thb_custom_meta_boxes() {
 
   /**
-   * Create a custom meta boxes array that we pass to 
+   * Create a custom meta boxes array that we pass to
    * the OptionTree Meta Box API Class.
    */
-  
+
   $post_meta_box_sidebar_gallery = array(
     'id'        => 'meta_box_sidebar_gallery',
     'title'     => 'Gallery',
@@ -79,6 +79,52 @@ function thb_custom_meta_boxes() {
     	  'type'        => 'upload',
     	  'class'       => 'ot-upload-attachment-id',
     	  'desc'        => esc_html__('This is used when the hover style is set to "Show Hover Image" inside VC element settings', 'notio')
+    	),
+      array(
+    	  'label'       => esc_html__('Custom Masonry Size', 'notio'),
+    	  'id'          => 'masonry_size',
+    	  'type'        => 'radio-image',
+    	  'desc'        => esc_html__('This changes the size of the masonry when Portfolio Masonry element is being used and Custom layout is selected. ', 'notio'),
+    	  'std'         => 'small',
+    	),
+      array(
+    	  'label'       => esc_html__('Listing Type', 'notio'),
+    	  'id'          => 'main_listing_type',
+    	  'type'        => 'radio',
+    	  'desc'        => esc_html__('By default, portfolio image links to the portfolio page.', 'notio'),
+    	  'choices'     => array(
+    	    array(
+    	      'label'       => esc_html__('Regular', 'notio'),
+    	      'value'       => 'regular'
+    	    ),
+    	    array(
+    	      'label'       => esc_html__('Lightbox', 'notio'),
+    	      'value'       => 'lightbox'
+    	    ),
+    	    array(
+    	      'label'       => esc_html__('Link', 'notio'),
+    	      'value'       => 'link'
+    	    ),
+    	    array(
+    	      'label'       => esc_html__('Video', 'notio'),
+    	      'value'       => 'video'
+    	    )
+    	  ),
+    	  'std'         => 'regular'
+    	),
+    	array(
+    	  'label'       => esc_html__('Enter Link', 'notio'),
+    	  'id'          => 'main_listing_link',
+    	  'type'        => 'text',
+    	  'desc'        => esc_html__('Enter the url of the page you want the portfolio item to link to.', 'notio'),
+    	  'condition'   => 'main_listing_type:is(link)'
+    	),
+    	array(
+    	  'label'       => esc_html__('Set Video URL', 'notio'),
+    	  'id'          => 'main_listing_video',
+    	  'type'        => 'upload',
+    	  'desc'        => esc_html__('You can set the video for this portfolio here. Only MP4 extension is allowed.', 'notio'),
+    	  'condition'   => 'main_listing_type:is(video)'
     	),
     	array(
     	  'id'          => 'tab2',
@@ -167,9 +213,9 @@ function thb_custom_meta_boxes() {
     	)
     )
   );
-  
+
   /**
-   * Register our meta boxes using the 
+   * Register our meta boxes using the
    * ot_register_meta_box() function.
    */
 	ot_register_meta_box( $page_metabox );

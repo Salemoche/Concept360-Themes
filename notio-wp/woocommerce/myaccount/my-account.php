@@ -13,14 +13,12 @@
  * @see     https://docs.woothemes.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 2.6.0
+ * @version 3.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
-wc_print_notices();
 ?>
 <div class="my-account-wrapper">
 	<div class="row">

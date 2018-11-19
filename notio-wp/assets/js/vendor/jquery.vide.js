@@ -163,23 +163,6 @@
   }
 
   /**
-   * Search a poster
-   * @private
-   * @param {String} path
-   * @param {Function} callback
-   */
-  function findPoster(path, callback) {
-    var onLoad = function() {
-      callback(this.src);
-    };
-
-    $('<img src="' + path + '.gif">').on('load', onLoad);
-    $('<img src="' + path + '.jpg">').on('load', onLoad);
-    $('<img src="' + path + '.jpeg">').on('load', onLoad);
-    $('<img src="' + path + '.png">').on('load', onLoad);
-  }
-
-  /**
    * Vide constructor
    * @param {HTMLElement} element
    * @param {Object|String} path
@@ -207,7 +190,7 @@
     } else if (typeof path === 'object') {
       for (var i in path) {
         if (path.hasOwnProperty(i)) {
-          path[i] = path[i].replace(/\.\w*$/, '');
+          path[i] = path[i];
         }
       }
     }
@@ -260,7 +243,6 @@
         'background-repeat': 'no-repeat',
         'background-position': position.x + ' ' + position.y
       });
-
     // Get a poster path
     if (typeof path === 'object') {
       if (path.poster) {
@@ -277,12 +259,8 @@
     }
 
     // Set a video poster
-    if (posterType === 'detect') {
-      findPoster(poster, function(url) {
-        $wrapper.css('background-image', 'url(' + url + ')');
-      });
-    } else if (posterType !== 'none') {
-      $wrapper.css('background-image', 'url(' + poster + '.' + posterType + ')');
+    if (posterType !== 'none') {
+      $wrapper.css('background-image', 'url(' + poster + ')');
     }
 
     // If a parent element has a static position, make it relative
@@ -292,27 +270,7 @@
 
     $element.prepend($wrapper);
 
-    if (typeof path === 'object') {
-      if (path.mp4) {
-        sources += '<source src="' + path.mp4 + '.mp4" type="video/mp4">';
-      }
-
-      if (path.webm) {
-        sources += '<source src="' + path.webm + '.webm" type="video/webm">';
-      }
-
-      if (path.ogv) {
-        sources += '<source src="' + path.ogv + '.ogv" type="video/ogg">';
-      }
-
-      $video = vide.$video = $('<video>' + sources + '</video>');
-    } else {
-      $video = vide.$video = $('<video>' +
-        '<source src="' + path + '.mp4" type="video/mp4">' +
-        '<source src="' + path + '.webm" type="video/webm">' +
-        '<source src="' + path + '.ogv" type="video/ogg">' +
-        '</video>');
-    }
+    $video = vide.$video = $('<video><source src="' + path.mp4 + '" type="video/mp4"></video>');
 
     // https://github.com/VodkaBears/Vide/issues/110
     try {
@@ -323,12 +281,13 @@
           autoplay: settings.autoplay,
           loop: settings.loop,
           volume: settings.volume,
+          preload: 'auto',
           muted: settings.muted,
           defaultMuted: settings.muted,
           playbackRate: settings.playbackRate,
           defaultPlaybackRate: settings.playbackRate
         });
-       
+
     } catch (e) {
       throw new Error(NOT_IMPLEMENTED_MSG);
     }
@@ -337,7 +296,7 @@
     $video.css({
       margin: 'auto',
       position: 'absolute',
-      'z-index': -1,
+      'z-index': 0,
       top: position.y,
       left: position.x,
       '-webkit-transform': 'translate(-' + position.x + ', -' + position.y + ')',
@@ -356,13 +315,13 @@
     })
 
     // Make it visible, when it's already playing
-    .one('playing.' + PLUGIN_NAME, function() {
+    .one('canplay playing.' + PLUGIN_NAME, function() {
       $video.css({
         visibility: 'visible'
       }).animate({
         opacity: 1
       });
-      $wrapper.css('background-image', 'none');
+      //$wrapper.css('background-image', 'none');
     });
 
     // Resize event is available only for 'window'

@@ -2,13 +2,13 @@
 	$footer_columns = ot_get_option('footer_columns', 'fourcolumns');
 	$footer_color = ot_get_option('footer_color', 'light');
 	$footer_max_width = ot_get_option('footer_max_width', 'off');
-	
+
 	$footer_classes[] = 'footer';
 	$footer_classes[] = 'style2';
 	$footer_classes[] = $footer_color;
 	$footer_classes[] = $footer_max_width === 'off' ? 'full-width-footer' : false;
-	
-	if ('on' === ot_get_option('footer_widgetized', 'on')) { 
+
+	if ('on' === ot_get_option('footer_widgetized', 'on')) {
 ?>
 <footer id="footer" class="<?php echo implode(' ', $footer_classes); ?>">
 	<div class="row">
@@ -86,5 +86,4 @@
 	</div>
 </footer>
 <?php } ?>
-<?php if ('on' === ot_get_option('subfooter', 'off')) { get_template_part('inc/templates/footer/subfooter-style1'); } ?>
-	
+<?php if ('on' === ot_get_option('subfooter', 'off')) { get_template_part('inc/templates/footer/subfooter-'.ot_get_option('subfooter_style', 'style1')); } ?>

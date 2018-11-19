@@ -13,7 +13,7 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.3.0
+ * @version   3.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,9 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="row">
 	<div class="small-12 columns text-center">
 		<h1 class="thb-shop-title"><?php esc_html_e('Checkout', 'notio'); ?></h1>
-	
+
 <?php
-wc_print_notices();
 
 do_action( 'woocommerce_before_checkout_form', $checkout );
 
@@ -59,13 +58,13 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 	<?php endif; ?>
 	<div class="cart-collaterals thb-fixed">
 		<h3 id="order_review_heading"><?php _e( 'Your order', 'woocommerce' ); ?></h3>
-	
+
 		<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
-	
+
 		<div id="order_review" class="woocommerce-checkout-review-order">
 			<?php do_action( 'woocommerce_checkout_order_review' ); ?>
 		</div>
-	
+
 		<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
 	</div>
 </form>

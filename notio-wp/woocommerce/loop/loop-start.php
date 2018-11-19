@@ -17,4 +17,4 @@
  */
 ?>
 <?php $products_per_row = isset($_GET['products_per_row']) ? $_GET['products_per_row'] : ot_get_option('products_per_row', 4); ?>
-<ul class="products row small-up-1 medium-up-2 large-up-<?php echo esc_attr($products_per_row); ?>">
+<ul class="products row thb-main-products small-up-1 medium-up-2 large-up-<?php echo esc_attr($products_per_row); ?>">

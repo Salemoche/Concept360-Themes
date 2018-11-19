@@ -15,7 +15,7 @@
  * @package 	WooCommerce/Templates
  * @version     3.3.1
  */
- 
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -31,7 +31,7 @@ if ( $total <= 1 ) {
 ?>
 
 <!-- PAGINATION -->
-<div class="pagination">
+<div class="pagination woocommerce-pagination">
 <?php
 		echo paginate_links( apply_filters( 'woocommerce_pagination_args', array(
 			'base'         => $base,

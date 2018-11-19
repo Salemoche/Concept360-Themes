@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.3.2
+ * @version 3.5.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -28,6 +28,7 @@ if ( ! function_exists( 'wc_get_gallery_image_html' ) ) {
 global $product;
 $columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );
 $post_thumbnail_id = $product->get_image_id();
+$placeholder       = has_post_thumbnail() ? 'with-images' : 'without-images';
 $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_classes', array(
 	'woocommerce-product-gallery',
 	'woocommerce-product-gallery--' . ( has_post_thumbnail() ? 'with-images' : 'without-images' ),
@@ -40,11 +41,11 @@ $attachment_ids = $product->get_gallery_image_ids();
 <div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>">
 	<figure class="woocommerce-product-gallery__wrapper">
 	<?php
-			if ( has_post_thumbnail() ) {
+			if ( $product->get_image_id() ) {
 				$html  = wc_get_gallery_image_html( $post_thumbnail_id, true );
 			} else {
 				$html  = '<div class="woocommerce-product-gallery__image--placeholder">';
-				$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src() ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
+				$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src('woocommerce_single') ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
 				$html .= '</div>';
 			}
 			echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );

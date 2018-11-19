@@ -6,11 +6,8 @@
 <article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post row full-width-row no-padding blog-style5 ' . $color); ?> id="post-<?php the_ID(); ?>" data-i="<?php echo esc_attr($thb_i); ?>">
 	<div class="small-12 medium-4 columns">
 		<?php if ( has_post_thumbnail() ) { ?>
-		<?php 
-			$image_id = get_post_thumbnail_id(); 
-			$image_url = wp_get_attachment_image_src($image_id, 'full'); 
-		?>
-		<figure class="post-gallery" style="background-image: url(<?php echo esc_html($image_url[0]); ?>);">
+		<figure class="post-gallery">
+			<?php the_post_thumbnail('notio-general-x3'); ?>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"></a>
 		</figure>
 		<?php } ?>

@@ -1,14 +1,11 @@
 <article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post blog-style1'); ?> id="post-<?php the_ID(); ?>">
 	<?php if ( has_post_thumbnail() ) { ?>
 		<figure class="post-gallery parallax">
-			<?php 
-				$image_id = get_post_thumbnail_id(); 
-				$image_url = wp_get_attachment_image_src($image_id, 'full'); 
-			?>
-			<div class="parallax_bg" 
+			<div class="parallax_bg"
 						data-top-bottom="transform: translate3d(0px, 20%, 0px);"
-						data-bottom-top="transform: translate3d(0px, -20%, 0px);"
-						style="background-image: url(<?php echo esc_html($image_url[0]); ?>);"></div>
+						data-bottom-top="transform: translate3d(0px, -20%, 0px);">
+				<?php the_post_thumbnail('notio-single-3x'); ?>
+			</div>
 		</figure>
 	<?php } ?>
 	<div class="row align-center">

@@ -1,6 +1,6 @@
 <?php
 /**
- * Initialize the options before anything else. 
+ * Initialize the options before anything else.
  */
 add_action( 'admin_init', 'thb_theme_options', 1 );
 
@@ -13,14 +13,14 @@ add_action( 'admin_init', 'thb_theme_options', 1 );
  * @since     2.0
  */
 function thb_theme_options() {
-  
+
   /**
-   * Get a copy of the saved settings array. 
+   * Get a copy of the saved settings array.
    */
   $saved_settings = get_option( 'option_tree_settings', array() );
-  
+
   /**
-   * Create a custom settings array that we pass to 
+   * Create a custom settings array that we pass to
    * the OptionTree Settings API Class.
    */
   $custom_settings = array(
@@ -57,10 +57,14 @@ function thb_theme_options() {
         'title'       => esc_html__('Shop Settings', 'notio'),
         'id'          => 'shop'
       ),
-     
+
       array(
         'title'       => esc_html__('Misc', 'notio'),
         'id'          => 'misc'
+      ),
+      array(
+        'title'       => esc_html__('GDPR', 'notio'),
+        'id'          => 'gdpr'
       )
     ),
     'settings'        => array(
@@ -102,14 +106,7 @@ function thb_theme_options() {
     	  'std'         => 'on',
     	  'section'     => 'general'
     	),
-    	array(
-    	  'label'        => esc_html__('Preloader', 'notio'),
-    	  'id'          => 'preloader',
-    	  'type'        => 'on_off',
-    	  'desc'        => esc_html__('You can disable preloader here. You can also customize it inside Customization > Backgrounds.', 'notio'),
-    	  'std'         => 'on',
-    	  'section'     => 'general'
-    	),
+
     	array(
     	  'label'        => esc_html__('Keyboard Navigation', 'notio'),
     	  'id'          => 'keyboard_nav',
@@ -174,6 +171,34 @@ function thb_theme_options() {
     	  ),
     	  'condition'   => 'site_bars_portfolio:is(on)'
     	),
+      array(
+    	  'id'          => 'general_tab3',
+    	  'label'        => esc_html__('Preloader / Lazy Load', 'notio'),
+    	  'type'        => 'tab',
+    	  'section'     => 'general'
+    	),
+      array(
+        'label'       => esc_html__('Preloading Type', 'notio' ),
+        'id'          => 'thb_preload_type',
+        'type'        => 'radio',
+        'desc'        => esc_html__('This is the circular preloader you see on some areas.', 'notio'),
+        'choices'     => array(
+          array(
+            'label'       => esc_html__('Full-Screen Preloader', 'notio'),
+            'value'       => 'preloader'
+          ),
+          array(
+            'label'       => esc_html__('Lazy Load Images', 'notio'),
+            'value'       => 'lazyload'
+          ),
+          array(
+            'label'       => esc_html__('No Preloader', 'notio'),
+            'value'       => 'none'
+          )
+        ),
+        'std'         => 'preloader',
+        'section'     => 'general'
+      ),
       array(
         'id'          => 'header_tab1',
         'label'        => esc_html__('Header Settings', 'notio'),
@@ -417,6 +442,28 @@ function thb_theme_options() {
         'section'     => 'shop'
       ),
       array(
+        'label'       => esc_html__('Product Pagination Style', 'notio'),
+        'id'          => 'shop_product_listing_pagination',
+        'type'        => 'radio',
+        'desc'        => esc_html__('Which pagination syle would you like to use on shop page?', 'notio'),
+        'choices'     => array(
+          array(
+            'label'       => esc_html__('Regular Pagination', 'notio'),
+            'value'       => 'style1'
+          ),
+          array(
+            'label'       => esc_html__('Load More Button', 'notio'),
+            'value'       => 'style2'
+          ),
+          array(
+            'label'       => esc_html__('Infinite Load', 'notio'),
+            'value'       => 'style3'
+          )
+        ),
+        'std'         => 'style1',
+        'section'     => 'shop'
+      ),
+      array(
         'label'       => esc_html__('Products Per Page', 'notio' ),
         'id'          => 'products_per_page',
         'type'        => 'text',
@@ -469,7 +516,7 @@ function thb_theme_options() {
             'label'        => esc_html__('1 Month', 'notio'),
             'value'       => '30'
           )
-          
+
         ),
         'std'         => '7',
         'section'     => 'shop'
@@ -1059,35 +1106,42 @@ function thb_theme_options() {
         'label'       => esc_html__('Full Menu Font', 'notio'),
         'id'          => 'fullmenu_type',
         'type'        => 'typography',
-        'desc'        => esc_html__('Font Family Setting for the full menu style', 'notio'),
+        'desc'        => esc_html__('Font Settings for the full menu style', 'notio'),
         'section'     => 'typography'
       ),
       array(
         'label'       => esc_html__('Full Menu Dropdown Font', 'notio'),
         'id'          => 'submenu_type',
         'type'        => 'typography',
-        'desc'        => esc_html__('Font Family Setting for the full menu style', 'notio'),
+        'desc'        => esc_html__('Font Settings for the full menu style', 'notio'),
         'section'     => 'typography'
       ),
       array(
         'label'       => esc_html__('Body Font', 'notio'),
         'id'          => 'body_type',
         'type'        => 'typography',
-        'desc'        => esc_html__('Font Family Setting for the body.', 'notio'),
+        'desc'        => esc_html__('Font Settings for the body.', 'notio'),
         'section'     => 'typography'
       ),
       array(
         'label'       => esc_html__('Footer Font', 'notio'),
         'id'          => 'footer_type',
         'type'        => 'typography',
-        'desc'        => esc_html__('Font Family Setting for the body.', 'notio'),
+        'desc'        => esc_html__('Font Settings for the body.', 'notio'),
         'section'     => 'typography'
       ),
       array(
         'label'       => esc_html__('Footer Widget Title Font', 'notio'),
         'id'          => 'footer_widget_title_type',
         'type'        => 'typography',
-        'desc'        => esc_html__('Font Family Setting for the footer widget titles.', 'notio'),
+        'desc'        => esc_html__('Font Setting for the footer widget titles.', 'notio'),
+        'section'     => 'typography'
+      ),
+      array(
+        'label'       => esc_html__('Sub-Footer Menu Font', 'notio'),
+        'id'          => 'subfootermenu_type',
+        'type'        => 'typography',
+        'desc'        => esc_html__('Font Settings for the menu inside the sub-footer.', 'notio'),
         'section'     => 'typography'
       ),
       array(
@@ -1213,7 +1267,19 @@ function thb_theme_options() {
         'type'        => 'colorpicker',
         'desc'        => esc_html__('Change the accent color used throughout the theme', 'notio'),
         'section'     => 'customization',
-        'std'		  => ''
+      ),
+      array(
+        'label'        => esc_html__('General Text Color', 'notio'),
+        'id'          => 'text_color',
+        'type'        => 'colorpicker',
+        'desc'        => esc_html__('Change the body text color.', 'notio'),
+        'section'     => 'customization',
+      ),
+      array(
+        'id'          => 'customization_tab2',
+        'label'        => esc_html__('Link Colors', 'notio'),
+        'type'        => 'tab',
+        'section'     => 'customization'
       ),
       array(
         'label'        => esc_html__('Full Menu Link Colors', 'notio'),
@@ -1244,7 +1310,21 @@ function thb_theme_options() {
         'section'     => 'customization'
       ),
       array(
-        'id'          => 'customization_tab4',
+        'label'        => esc_html__('Footer Link Colors', 'notio'),
+        'id'          => 'footerlink_color',
+        'type'        => 'link_color',
+        'desc'        => esc_html__('This changes link colors for the Footer.', 'notio'),
+        'section'     => 'customization'
+      ),
+      array(
+        'label'        => esc_html__('Sub-Footer Menu Link Colors', 'notio'),
+        'id'          => 'subfootermenu_color',
+        'type'        => 'link_color',
+        'desc'        => esc_html__('This changes link colors for the sub-footer menu.', 'notio'),
+        'section'     => 'customization'
+      ),
+      array(
+        'id'          => 'customization_tab3',
         'label'        => esc_html__('Backgrounds', 'notio'),
         'type'        => 'tab',
         'section'     => 'customization'
@@ -1457,6 +1537,14 @@ function thb_theme_options() {
         'section'     => 'footer'
       ),
       array(
+        'label'       => esc_html__('Sub-Footer Style', 'notio'),
+        'id'          => 'subfooter_style',
+        'type'        => 'radio-image',
+        'desc'        => esc_html__('You can change your Sub-Footer style here.', 'notio'),
+        'std'         => 'style1',
+        'section'     => 'footer'
+      ),
+      array(
         'label'       => esc_html__('Sub-Footer Max Width', 'notio'),
         'id'          => 'subfooter_max_width',
         'type'        => 'on_off',
@@ -1483,6 +1571,33 @@ function thb_theme_options() {
         'section'     => 'footer',
       ),
       array(
+        'label'       => esc_html__('Display Sub-Footer Logo?', 'notio'),
+        'id'          => 'subfooter_logo',
+        'type'        => 'on_off',
+        'desc'        => esc_html__('Would you like to display the Subfooter Logo?', 'notio'),
+        'std'         => 'off',
+        'section'     => 'footer',
+        'condition'		=> 'subfooter_style:is(style2)'
+      ),
+      array(
+        'label'       => esc_html__('Sub-Footer Logo', 'notio'),
+        'id'          => 'subfooter_logo_upload',
+        'type'        => 'upload',
+        'desc'        => esc_html__('You can upload your own subfooter logo here. Since this theme is retina-ready, <strong>please upload a double size image.</strong>', 'notio'),
+        'section'     => 'footer',
+        'operator'    => 'and',
+        'condition'		=> 'subfooter_logo:is(on),subfooter_style:is(style2)'
+      ),
+      array(
+        'label'       => esc_html__('Sub-Footer Logo Height', 'notio'),
+        'id'          => 'subfooter_logo_height',
+        'type'        => 'measurement',
+        'desc'        => esc_html__('You can modify the subfooter logo height from here. This is maximum height, so your logo may get smaller depending on screen size', 'notio'),
+        'section'     => 'footer',
+        'operator'    => 'and',
+        'condition'		=> 'subfooter_logo:is(on),subfooter_style:is(style2)'
+      ),
+      array(
         'label'       => esc_html__('Sub-Footer Text', 'notio' ),
         'id'          => 'subfooter_text',
         'type'        => 'textarea',
@@ -1496,14 +1611,43 @@ function thb_theme_options() {
         'type'        => 'menu_select',
         'desc'        => esc_html__('Menu to be displayed on the subfooter', 'notio' ),
         'section'     => 'footer',
-        
-      )
+      ),
+      array(
+        'label'       => esc_html__('Sub-Footer Padding', 'notio'),
+        'id'          => 'subfooter_padding',
+        'type'        => 'spacing',
+        'desc'        => esc_html__('You can modify the Sub-Footer padding here', 'notio'),
+        'section'     => 'footer'
+      ),
+      array(
+        'id'          => 'gdpr_tab1',
+        'label'       => esc_html__('Cookie Bar', 'notio'),
+        'type'        => 'tab',
+        'section'     => 'gdpr'
+      ),
+      array(
+        'label'       => esc_html__('Cookie Bar', 'notio'),
+        'id'          => 'thb_cookie_bar',
+        'type'        => 'on_off',
+        'desc'        => esc_html__('Would you like to show the cookie bar?', 'notio'),
+        'std'         => 'on',
+        'section'     => 'gdpr',
+      ),
+      array(
+        'label'       => esc_html__('Cookie Bar Content', 'notio'),
+        'id'          => 'thb_cookie_bar_content',
+        'type'        => 'textarea',
+        'desc'        => esc_html__('This content appears inside the cookie bar.', 'notio'),
+        'rows'        => '4',
+        'section'     => 'gdpr',
+        'condition'   => 'thb_cookie_bar:is(on)'
+      ),
     )
   );
-  
+
   /* settings are not the same update the DB */
   if ( $saved_settings !== $custom_settings ) {
-    update_option( 'option_tree_settings', $custom_settings ); 
+    update_option( 'option_tree_settings', $custom_settings );
   }
 
 }
@@ -1520,30 +1664,30 @@ function thb_theme_options() {
  * @since     2.0
  */
 if ( ! function_exists( 'ot_type_menu_select' ) ) {
-  
+
   function ot_type_menu_select( $args = array() ) {
-    
+
     /* turns arguments array into variables */
     extract( $args );
-    
+
     /* verify a description */
     $has_desc = $field_desc ? true : false;
-    
+
     /* format setting outer wrapper */
     echo '<div class="format-setting type-category-select ' . ( $has_desc ? 'has-desc' : 'no-desc' ) . '">';
-      
+
       /* description */
       echo $has_desc ? '<div class="description">' . htmlspecialchars_decode( $field_desc ) . '</div>' : '';
-      
+
       /* format setting inner wrapper */
       echo '<div class="format-setting-inner">';
-      
+
         /* build category */
         echo '<select name="' . esc_attr( $field_name ) . '" id="' . esc_attr( $field_id ) . '" class="option-tree-ui-select ' . $field_class . '">';
-        
+
         /* get category array */
         $menus = get_terms( 'nav_menu');
-        
+
         /* has cats */
         if ( ! empty( $menus ) ) {
           echo '<option value="">-- ' . esc_html__( 'Choose One', 'notio' ) . ' --</option>';
@@ -1553,13 +1697,13 @@ if ( ! function_exists( 'ot_type_menu_select' ) ) {
         } else {
           echo '<option value="">' . esc_html__( 'No Menus Found', 'notio' ) . '</option>';
         }
-        
+
         echo '</select>';
-      
+
       echo '</div>';
-    
+
     echo '</div>';
-    
+
   }
-  
+
 }

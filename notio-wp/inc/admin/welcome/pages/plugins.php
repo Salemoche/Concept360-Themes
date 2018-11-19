@@ -6,9 +6,8 @@
 		<?php
 			$key = Thb_Theme_Admin::$thb_product_key;
 			$expired = Thb_Theme_Admin::$thb_product_key_expired;
-			$thb_envato_hosted = Thb_Theme_Admin::$thb_envato_hosted;
-			
-			$cond = ($key != '' && $expired != 1) || $thb_envato_hosted;
+
+			$cond = ($key != '' && $expired != 1);
 		?>
 		<?php if (!$cond) { ?>
 			<div class="thb-error">
@@ -20,9 +19,9 @@
 		$i = 0;
 		foreach( $plugins as $plugin ):
 			if (!$plugin['required']) continue;
-	
+
 			$file_path = $plugin['file_path'];
-			
+
 			$actions = Thb_Theme_Admin()->thb_plugins_install( $plugin );
 
 			if( is_plugin_active( $file_path ) ) {
@@ -40,9 +39,9 @@
 				<?php foreach( $actions as $action ) { echo wp_kses_post($action); } ?>
 			</div>
 
-			
+
 		</div>
-	
+
 		<?php $i++; endforeach; ?>
 	</div>
 </div>
