@@ -56,7 +56,7 @@
       while ( have_rows('team-member') ) : the_row();
     
     ?>
-        <?php if(the_sub_field('team-member_link')) :?>
+        <?php if(get_sub_field('team-member_link')) :?>
         <a class="columns small-6 medium-4 team-member" href="<?php the_sub_field('team-member_link'); ?>">
           <div>
         <?php else : ?>
@@ -70,7 +70,7 @@
               </div>
             </div>
           </div>
-        <?php echo the_sub_field('team-member_link') ? '</a>' : ''; ?>
+        <?php echo get_sub_field('team-member_link') ? '</a>' : ''; ?>
 
     <?php 
 

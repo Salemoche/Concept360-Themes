@@ -189,7 +189,32 @@
         '.
           $phone . 
         '
-      </li>
+			</li>
+			<li>
+				
+			<div class="social-media__container social-media__container--small">
+				<a href="https://vimeo.com/concept360">
+					<div class="concept-header__main__social-media concept-header__main__social-media--vimeo">
+						
+					</div>
+				</a>
+				<a href="https://www.facebook.com/concept360ch">
+					<div class="concept-header__main__social-media concept-header__main__social-media--facebook">
+						
+					</div>
+				</a>
+				<a href="https://www.instagram.com/concept360.ch">
+					<div class="concept-header__main__social-media concept-header__main__social-media--instagram">
+						
+					</div>
+				</a>
+				<a href="mailto:info@concept360.ch">
+					<div class="concept-header__main__social-media concept-header__main__social-media--mail">
+						
+					</div>
+				</a>
+			</div>
+			</li>
     </ul>
   </li>'
   ;

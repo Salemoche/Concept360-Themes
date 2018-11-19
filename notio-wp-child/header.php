@@ -33,7 +33,7 @@
 			<a href="<?php echo get_home_url(); ?>">
 				<div class="concept-header__main__logo"></div>
 			</a>
-			<div class="concept-header__main__social-media__container">
+			<div class="concept-header__main__social-media__container social-media__container">
 				<a href="https://vimeo.com/concept360">
 					<div class="concept-header__main__social-media concept-header__main__social-media--vimeo">
 						

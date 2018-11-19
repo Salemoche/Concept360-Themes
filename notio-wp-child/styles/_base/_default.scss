@@ -45,6 +45,8 @@ a {
 }
 
 p, a, span, b, i, strong, pre {
+
+    letter-spacing: -0.3px;
     
     @media screen and (max-width: $breakpoint-small) {
         font-size: .8rem;
@@ -330,6 +332,11 @@ div[role=main] {
 
 }
 
+.tp-bullets {
+    opacity: 0;
+    transition: $transition-time;
+}
+
 .quote__container, .press__container {
 
     display: flex;
@@ -590,7 +597,7 @@ div[role=main] {
         position: relative;
         opacity: 1 !important;
         z-index: 1000;
-        transition: background $transition-time;
+        transition: $transition-time;
         border: none !important;
 
         &__logo {
@@ -620,67 +627,7 @@ div[role=main] {
 
         }
 
-        &__social-media__container {
-
-            display: flex;
-            justify-content: space-between;
-            min-width: 120px;
-            width: 5.5vw;
-            // position: absolute;
-            // right: calc(#{$spacing-side-large} * 2 + 20px + 50px);
-            right: calc(#{$spacing-side-large} + 50px);
-            z-index: 102;
-            align-content: center;
-            align-items: center;
-
-            @include center-vertically;
-            
-            .concept-header__main__social-media{
-
-                width: 20px;
-                height: 20px;
-                min-height: 20px;
-                min-width: 20px;
-                width: 1vw;
-                height: 1vw;
-                background-position: center;
-                background-size: contain;
-                transition: $transition-time;
-                background-repeat: no-repeat;
-
-                // @include hover;
-
-                &--vimeo {
-                    background-image: url('./assets/vimeo.svg');
-                
-                &:hover {
-                    background-image: url('./assets/vimeo--red.svg');
-                }
-
-                }
-                &--facebook {
-                    background-image: url('./assets/facebook.svg');
-                
-                    &:hover {
-                        background-image: url('./assets/facebook--red.svg');
-                    }
-                }
-                &--mail {
-                    background-image: url('./assets/mail.svg');
-                
-                    &:hover {
-                        background-image: url('./assets/mail--red.svg');
-                    }
-                }
-                &--instagram {
-                    background-image: url('./assets/instagram.svg');
-                
-                    &:hover {
-                        background-image: url('./assets/instagram--red.svg');
-                    }
-                }
-            }
-        }
+        
 
         
     }
@@ -981,6 +928,10 @@ div[role=main] {
             }
         }
 
+        .social-media__container--small {
+            display: flex;
+        }
+
     }
 
     
@@ -991,6 +942,76 @@ div[role=main] {
 
     }
 
+}
+
+.social-media__container {
+
+    display: flex;
+    justify-content: space-between;
+    min-width: 120px;
+    width: 5.5vw;
+    // position: absolute;
+    // right: calc(#{$spacing-side-large} * 2 + 20px + 50px);
+    right: calc(#{$spacing-side-large} + 50px);
+    z-index: 102;
+    align-content: center;
+    align-items: center;
+
+    @include center-vertically;
+    
+    .concept-header__main__social-media{
+
+        width: 20px;
+        height: 20px;
+        min-height: 20px;
+        min-width: 20px;
+        width: 1vw;
+        height: 1vw;
+        background-position: center;
+        background-size: contain;
+        transition: $transition-time;
+        background-repeat: no-repeat;
+
+        // @include hover;
+
+        &--vimeo {
+            background-image: url('./assets/vimeo.svg');
+        
+        &:hover {
+            background-image: url('./assets/vimeo--red.svg');
+        }
+
+        }
+        &--facebook {
+            background-image: url('./assets/facebook.svg');
+        
+            &:hover {
+                background-image: url('./assets/facebook--red.svg');
+            }
+        }
+        &--mail {
+            background-image: url('./assets/mail.svg');
+        
+            &:hover {
+                background-image: url('./assets/mail--red.svg');
+            }
+        }
+        &--instagram {
+            background-image: url('./assets/instagram.svg');
+        
+            &:hover {
+                background-image: url('./assets/instagram--red.svg');
+            }
+        }
+    }
+
+    &--small {
+        position: relative;
+        right: unset;
+        top: 20px;
+
+        display: none;
+    }
 }
 
 .mobile-toggle {
@@ -1277,10 +1298,18 @@ div[role=main] {
 
     position: absolute;
     top: 50%;
-    transform: translateY(-63%);
+    transform: translateY(-50%);
     right: -49px;
     opacity: 0;
     transition: $transition-time;
+
+    > a {
+        
+        height: 40px;
+        width: 41px;
+        margin-left: 0;
+        transform: translateX(6px);
+    }
 
 }
 
@@ -1329,8 +1358,9 @@ div[role=main] {
 
     }
     
-    .breadcrumb > a {
+    .breadcrumb > a, .breadcrumb > span {
         margin-left: 0;
+        font-size: 0.8rem;
     }
 
     span {
@@ -1342,6 +1372,9 @@ div[role=main] {
     height: 30px;
     background: #404040;
     background: $anthrazit;
+    position: absolute;
+    left: 0;
+    width: 100vw;
 }
 
 .footer {
@@ -1855,6 +1888,17 @@ div[role=main] {
     iframe {
         width: 90vw !important;
         height: calc(90vw / 1.7777777) !important;
+    }
+
+    @media screen and (max-width: $breakpoint-medium) {
+        
+        width: 100vw !important;
+        height: calc(100vw / 1.7777777) !important;
+        
+        iframe {
+            width: 100vw !important;
+            height: calc(100vw / 1.7777777) !important;
+        }
     }
 }
 
