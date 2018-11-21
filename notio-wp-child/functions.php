@@ -254,6 +254,24 @@
 	}
 
 	/*
+	 *	Clean HTML code
+	 */
+	 
+	add_action( 'template_redirect', function() {
+		ob_start( function( $buffer ){
+			$buffer = str_replace( array( 'type="text/javascript"', "" ), '', $buffer );
+			$buffer = str_replace( array( "type='text/javascript'", "" ), '', $buffer );
+			
+			// Also works with other attributes...
+			$buffer = str_replace( array( 'type="text/css"', "" ), '', $buffer );
+			$buffer = str_replace( array( "type='text/css'", "" ), '', $buffer );
+			
+			return $buffer;
+		});
+	});
+
+
+	/*
 	 *	Rearrange posts
 	 */
 
