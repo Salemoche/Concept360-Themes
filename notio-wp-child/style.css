@@ -317,9 +317,9 @@ div[role=main] {
         background-repeat: no-repeat;
         background-position: center;
         position: absolute; }
-      .quote__container .quote__logo__container--hover, .quote__container .press__logo__container--hover, .press__container .quote__logo__container--hover, .press__container .press__logo__container--hover {
-        opacity: 0;
-        transition: 0.3s; }
+        .quote__container .quote__logo__container .press__logo--hover, .quote__container .press__logo__container .press__logo--hover, .press__container .quote__logo__container .press__logo--hover, .press__container .press__logo__container .press__logo--hover {
+          opacity: 0;
+          transition: 0.3s; }
     .quote__container .quote a:hover h4, .quote__container .press a:hover h4, .press__container .quote a:hover h4, .press__container .press a:hover h4 {
       box-shadow: inset 0px -7px 0px 0px #e31b23; }
     .quote__container .quote:hover, .quote__container .press:hover, .press__container .quote:hover, .press__container .press:hover {
@@ -328,6 +328,8 @@ div[role=main] {
         color: white; }
       .quote__container .quote:hover .press__logo--hover, .quote__container .press:hover .press__logo--hover, .press__container .quote:hover .press__logo--hover, .press__container .press:hover .press__logo--hover {
         opacity: 1; }
+      .quote__container .quote:hover .press__logo--regular, .quote__container .press:hover .press__logo--regular, .press__container .quote:hover .press__logo--regular, .press__container .press:hover .press__logo--regular {
+        opacity: 0; }
     @media screen and (max-width: 768px) {
       .quote__container .quote, .quote__container .press, .press__container .quote, .press__container .press {
         width: 50%;
@@ -408,9 +410,7 @@ div[role=main] {
     position: relative;
     min-height: 55px;
     transition: min-height 0.3s;
-    overflow: hidden;
-    position: absolute;
-    top: 3vw; }
+    overflow: hidden; }
     .concept-header__project-category__container ul {
       list-style: none;
       display: flex;
@@ -656,7 +656,7 @@ div[role=main] {
       #mobile-menu .menu-holder > ul > li.address-item {
         float: right;
         position: absolute;
-        top: 120px;
+        top: 129px;
         left: 50%;
         width: 40%;
         margin-top: 0; }
@@ -810,7 +810,7 @@ div[role=main] {
   max-width: unset; }
   .footer a {
     color: #f9f9f9; }
-    .footer a:hover {
+    .footer a:hover p {
       box-shadow: inset 0px -7px 0px 0px #e31b23; }
   .footer__call-to-action {
     color: white;
@@ -831,7 +831,7 @@ div[role=main] {
     background: #282828;
     color: white;
     text-align: center;
-    padding: 40px 5vw !important; }
+    padding: 40px 0 !important; }
     .footer__info > div {
       position: relative; }
     .footer__info a {
@@ -953,12 +953,15 @@ div[role=main] {
     padding-bottom: 0; }
   .wpcf7 p {
     width: calc(100% / 3);
-    padding: 0 2vw; }
+    padding: 0 2vw;
+    margin-bottom: 5px; }
     .wpcf7 p input {
       width: 100%; }
     .wpcf7 p:nth-of-type(1) {
       margin-left: 0;
       padding-left: 0; }
+    .wpcf7 p:nth-of-type(2) {
+      padding-right: 0; }
     .wpcf7 p:nth-of-type(3) {
       margin-right: 0;
       padding-right: 0; }
@@ -966,6 +969,7 @@ div[role=main] {
       width: calc(100% / 3 * 2);
       margin-left: 0;
       padding-left: 0;
+      padding-right: 0;
       display: flex;
       align-items: flex-end; }
       .wpcf7 p:nth-of-type(4) textarea {
@@ -1170,7 +1174,7 @@ div[role=main] {
   display: inline-block;
   -webkit-transform: translateY(20%);
           transform: translateY(20%);
-  position: absolute;
+  margin-right: 8px;
   left: -30px;
   top: -4px; }
 
@@ -1191,302 +1195,303 @@ body.home .concept-header__main, body.page-template-landing .concept-header__mai
 body.home .concept-header__project-category__container, body.page-template-landing .concept-header__project-category__container {
   display: none; }
 
-body.home .home__landing, body.home .landing__landing, body.page-template-landing .home__landing, body.page-template-landing .landing__landing {
-  height: 100vh;
-  padding: 0; }
-  body.home .home__landing__video, body.home .landing__landing__video, body.page-template-landing .home__landing__video, body.page-template-landing .landing__landing__video {
-    background: #282828;
+body.home .home, body.home .landing, body.page-template-landing .home, body.page-template-landing .landing {
+  padding-right: 15px; }
+  body.home .home__landing, body.home .landing__landing, body.page-template-landing .home__landing, body.page-template-landing .landing__landing {
     height: 100vh;
-    top: 80vh;
-    width: 100vw; }
-    body.home .home__landing__video .vp-player-layout, body.home .landing__landing__video .vp-player-layout, body.page-template-landing .home__landing__video .vp-player-layout, body.page-template-landing .landing__landing__video .vp-player-layout {
-      min-height: 100% !important;
-      top: 0 !important;
-      min-width: 100% !important;
-      left: 50% !important;
-      -webkit-transform: translateX(-50%);
-              transform: translateX(-50%); }
-    body.home .home__landing__video .wp-video, body.home .landing__landing__video .wp-video, body.page-template-landing .home__landing__video .wp-video, body.page-template-landing .landing__landing__video .wp-video {
-      position: absolute;
-      left: 0; }
-      body.home .home__landing__video .wp-video .mejs-overlay, body.home .home__landing__video .wp-video .mejs-controls, body.home .home__landing__video .wp-video .ytp-watermark, body.home .landing__landing__video .wp-video .mejs-overlay, body.home .landing__landing__video .wp-video .mejs-controls, body.home .landing__landing__video .wp-video .ytp-watermark, body.page-template-landing .home__landing__video .wp-video .mejs-overlay, body.page-template-landing .home__landing__video .wp-video .mejs-controls, body.page-template-landing .home__landing__video .wp-video .ytp-watermark, body.page-template-landing .landing__landing__video .wp-video .mejs-overlay, body.page-template-landing .landing__landing__video .wp-video .mejs-controls, body.page-template-landing .landing__landing__video .wp-video .ytp-watermark {
-        display: none; }
-    body.home .home__landing__video video.video-stream, body.home .landing__landing__video video.video-stream, body.page-template-landing .home__landing__video video.video-stream, body.page-template-landing .landing__landing__video video.video-stream {
-      min-width: 100vw !important;
-      min-height: 100vh !important;
-      left: 0 !important;
-      top: 0 !important;
-      -webkit-transform: scale(2.5) !important;
-              transform: scale(2.5) !important; }
-    body.home .home__landing__video iframe, body.home .landing__landing__video iframe, body.page-template-landing .home__landing__video iframe, body.page-template-landing .landing__landing__video iframe {
+    padding: 0; }
+    body.home .home__landing__video, body.home .landing__landing__video, body.page-template-landing .home__landing__video, body.page-template-landing .landing__landing__video {
+      background: #282828;
+      height: 100vh;
       width: 100vw;
-      height: 105vh;
-      position: absolute;
-      left: 0;
-      top: 0;
-      -webkit-filter: brightness(0.3);
-              filter: brightness(0.3); }
-    body.home .home__landing__video__fallback, body.home .landing__landing__video__fallback, body.page-template-landing .home__landing__video__fallback, body.page-template-landing .landing__landing__video__fallback {
-      width: 100%;
-      height: 100%;
-      background-size: cover; }
-  body.home .home__landing__text, body.home .landing__landing__text, body.page-template-landing .home__landing__text, body.page-template-landing .landing__landing__text {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    top: 0; }
-    body.home .home__landing__text__title, body.home .landing__landing__text__title, body.page-template-landing .home__landing__text__title, body.page-template-landing .landing__landing__text__title {
-      z-index: 1;
-      position: absolute;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-              transform: translateY(-50%);
-      left: 5vw; }
-      @media screen and (min-width: 1080px) {
-        body.home .home__landing__text__title, body.home .landing__landing__text__title, body.page-template-landing .home__landing__text__title, body.page-template-landing .landing__landing__text__title {
-          top: 40vh;
-          width: 60%; } }
-      body.home .home__landing__text__title h1, body.home .landing__landing__text__title h1, body.page-template-landing .home__landing__text__title h1, body.page-template-landing .landing__landing__text__title h1 {
-        font-size: 3.5rem;
-        font-weight: 600;
-        color: white;
-        line-height: 1; }
-        @media screen and (min-width: 1080px) {
-          body.home .home__landing__text__title h1, body.home .landing__landing__text__title h1, body.page-template-landing .home__landing__text__title h1, body.page-template-landing .landing__landing__text__title h1 {
-            width: 100%; } }
-      body.home .home__landing__text__title h2, body.home .landing__landing__text__title h2, body.page-template-landing .home__landing__text__title h2, body.page-template-landing .landing__landing__text__title h2 {
-        font-size: 1rem;
-        color: #e31b23;
-        text-transform: uppercase;
-        margin-bottom: 30px;
-        font-family: 'Gotham-Bold', sans-serif; }
-    body.home .home__landing__text__project-category__container, body.home .landing__landing__text__project-category__container, body.page-template-landing .home__landing__text__project-category__container, body.page-template-landing .landing__landing__text__project-category__container {
-      position: absolute;
-      top: 80vh;
-      left: 5vw;
-      width: 60%; }
-      @media screen and (min-width: 1080px) {
-        body.home .home__landing__text__project-category__container, body.home .landing__landing__text__project-category__container, body.page-template-landing .home__landing__text__project-category__container, body.page-template-landing .landing__landing__text__project-category__container {
-          top: 70vh; } }
-      body.home .home__landing__text__project-category__container h3, body.home .landing__landing__text__project-category__container h3, body.page-template-landing .home__landing__text__project-category__container h3, body.page-template-landing .landing__landing__text__project-category__container h3 {
-        font-size: 1.2rem;
-        color: white;
-        display: inline;
-        transition: 0.3s; }
-      body.home .home__landing__text__project-category__container p, body.home .landing__landing__text__project-category__container p, body.page-template-landing .home__landing__text__project-category__container p, body.page-template-landing .landing__landing__text__project-category__container p {
-        font-size: 1rem;
-        color: white;
-        margin-top: 10px; }
-      body.home .home__landing__text__project-category__container a:hover > h3, body.home .landing__landing__text__project-category__container a:hover > h3, body.page-template-landing .home__landing__text__project-category__container a:hover > h3, body.page-template-landing .landing__landing__text__project-category__container a:hover > h3 {
-        box-shadow: inset 0px -7px 0px 0px #e31b23; }
-    body.home .home__landing__text .home__landing__scroll, body.home .home__landing__text .landing__landing__scroll, body.home .landing__landing__text .home__landing__scroll, body.home .landing__landing__text .landing__landing__scroll, body.page-template-landing .home__landing__text .home__landing__scroll, body.page-template-landing .home__landing__text .landing__landing__scroll, body.page-template-landing .landing__landing__text .home__landing__scroll, body.page-template-landing .landing__landing__text .landing__landing__scroll {
-      font-size: 1rem;
-      text-transform: uppercase;
-      color: white;
-      bottom: 50px;
-      position: absolute;
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-              transform: translateX(-50%); }
-      body.home .home__landing__text .home__landing__scroll__icon, body.home .home__landing__text .landing__landing__scroll__icon, body.home .landing__landing__text .home__landing__scroll__icon, body.home .landing__landing__text .landing__landing__scroll__icon, body.page-template-landing .home__landing__text .home__landing__scroll__icon, body.page-template-landing .home__landing__text .landing__landing__scroll__icon, body.page-template-landing .landing__landing__text .home__landing__scroll__icon, body.page-template-landing .landing__landing__text .landing__landing__scroll__icon {
-        margin: 0 auto;
-        height: 35px;
-        width: 15px;
-        margin-top: 20px;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        background-image: url("./assets/arrow_down.svg"); }
-
-body.home .home__about__slider, body.home .landing__about__slider, body.page-template-landing .home__about__slider, body.page-template-landing .landing__about__slider {
-  height: 50vh;
-  width: 100%;
-  overflow: hidden;
-  padding: 0;
-  background: white;
-  height: calc(50vw / 1.777777); }
-  body.home .home__about__slider .rev_slider, body.home .home__about__slider .rev_slider_wrapper, body.home .landing__about__slider .rev_slider, body.home .landing__about__slider .rev_slider_wrapper, body.page-template-landing .home__about__slider .rev_slider, body.page-template-landing .home__about__slider .rev_slider_wrapper, body.page-template-landing .landing__about__slider .rev_slider, body.page-template-landing .landing__about__slider .rev_slider_wrapper {
-    height: 100% !important; }
-  body.home .home__about__slider__wrapper, body.home .landing__about__slider__wrapper, body.page-template-landing .home__about__slider__wrapper, body.page-template-landing .landing__about__slider__wrapper {
-    position: absolute;
-    width: 50vw; }
-    body.home .home__about__slider__wrapper__text, body.home .landing__about__slider__wrapper__text, body.page-template-landing .home__about__slider__wrapper__text, body.page-template-landing .landing__about__slider__wrapper__text {
-      left: calc(50vw + 5vw) !important;
-      top: 5vw !important; }
-      body.home .home__about__slider__wrapper__text p, body.home .home__about__slider__wrapper__text h1, body.home .home__about__slider__wrapper__text h2, body.home .landing__about__slider__wrapper__text p, body.home .landing__about__slider__wrapper__text h1, body.home .landing__about__slider__wrapper__text h2, body.page-template-landing .home__about__slider__wrapper__text p, body.page-template-landing .home__about__slider__wrapper__text h1, body.page-template-landing .home__about__slider__wrapper__text h2, body.page-template-landing .landing__about__slider__wrapper__text p, body.page-template-landing .landing__about__slider__wrapper__text h1, body.page-template-landing .landing__about__slider__wrapper__text h2 {
-        max-width: calc(50vw - 5vw * 2) !important;
-        width: calc(50vw - 5vw * 2) !important;
-        overflow: hidden;
-        font-size: 1rem !important;
-        line-height: 1.2rem !important; }
-      body.home .home__about__slider__wrapper__text p:last-of-type, body.home .landing__about__slider__wrapper__text p:last-of-type, body.page-template-landing .home__about__slider__wrapper__text p:last-of-type, body.page-template-landing .landing__about__slider__wrapper__text p:last-of-type {
-        margin-bottom: 30px !important; }
-      body.home .home__about__slider__wrapper__text h1, body.home .landing__about__slider__wrapper__text h1, body.page-template-landing .home__about__slider__wrapper__text h1, body.page-template-landing .landing__about__slider__wrapper__text h1 {
-        font-size: 2rem !important;
-        margin-bottom: 15px !important;
-        line-height: 2rem !important; }
-      body.home .home__about__slider__wrapper__text h2, body.home .landing__about__slider__wrapper__text h2, body.page-template-landing .home__about__slider__wrapper__text h2, body.page-template-landing .landing__about__slider__wrapper__text h2 {
-        font-size: 1rem !important;
-        font-weight: 600;
-        line-height: 1rem !important; }
-      body.home .home__about__slider__wrapper__text .tp-bullets, body.home .landing__about__slider__wrapper__text .tp-bullets, body.page-template-landing .home__about__slider__wrapper__text .tp-bullets, body.page-template-landing .landing__about__slider__wrapper__text .tp-bullets {
-        width: 9px;
-        height: 9px;
-        float: left;
-        margin-right: 10px;
-        border-radius: 50%;
-        position: relative;
-        left: 3vw !important;
-        top: 20px !important; }
-        body.home .home__about__slider__wrapper__text .tp-bullets.active, body.home .landing__about__slider__wrapper__text .tp-bullets.active, body.page-template-landing .home__about__slider__wrapper__text .tp-bullets.active, body.page-template-landing .landing__about__slider__wrapper__text .tp-bullets.active {
-          background: black; }
-    body.home .home__about__slider__wrapper__foto, body.home .landing__about__slider__wrapper__foto, body.page-template-landing .home__about__slider__wrapper__foto, body.page-template-landing .landing__about__slider__wrapper__foto {
-      left: 0% !important;
-      top: 0% !important;
-      width: 50vw;
-      height: 100%;
-      overflow: hidden;
-      -webkit-transform: translate(0%, 0%) !important;
-              transform: translate(0%, 0%) !important; }
-      body.home .home__about__slider__wrapper__foto img, body.home .landing__about__slider__wrapper__foto img, body.page-template-landing .home__about__slider__wrapper__foto img, body.page-template-landing .landing__about__slider__wrapper__foto img {
-        height: auto !important;
-        width: 50vw !important; }
-  body.home .home__about__slider h2, body.home .landing__about__slider h2, body.page-template-landing .home__about__slider h2, body.page-template-landing .landing__about__slider h2 {
-    text-transform: uppercase;
-    color: #e31b23 !important; }
-  body.home .home__about__slider h1, body.home .landing__about__slider h1, body.page-template-landing .home__about__slider h1, body.page-template-landing .landing__about__slider h1 {
-    font-size: 1.8rem; }
-  body.home .home__about__slider p, body.home .landing__about__slider p, body.page-template-landing .home__about__slider p, body.page-template-landing .landing__about__slider p {
-    color: #282828; }
-
-body.home .home__ueber-uns, body.home .landing__ueber-uns, body.page-template-landing .home__ueber-uns, body.page-template-landing .landing__ueber-uns {
-  color: white;
-  display: flex;
-  padding: 40px 5vw;
-  align-items: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url("./assets/background_mountain.png");
-  flex-wrap: wrap; }
-  body.home .home__ueber-uns__text, body.home .landing__ueber-uns__text, body.page-template-landing .home__ueber-uns__text, body.page-template-landing .landing__ueber-uns__text {
-    flex-basis: 30%;
-    min-width: 300px;
-    flex-grow: 1;
-    padding-right: 5vw; }
-    body.home .home__ueber-uns__text h4, body.home .landing__ueber-uns__text h4, body.page-template-landing .home__ueber-uns__text h4, body.page-template-landing .landing__ueber-uns__text h4 {
-      color: white;
-      margin-bottom: 10px;
-      font-size: 1.6rem; }
-    body.home .home__ueber-uns__text p, body.home .home__ueber-uns__text b, body.home .landing__ueber-uns__text p, body.home .landing__ueber-uns__text b, body.page-template-landing .home__ueber-uns__text p, body.page-template-landing .home__ueber-uns__text b, body.page-template-landing .landing__ueber-uns__text p, body.page-template-landing .landing__ueber-uns__text b {
-      font-size: 0.8rem; }
-  body.home .home__ueber-uns__info__container, body.home .landing__ueber-uns__info__container, body.page-template-landing .home__ueber-uns__info__container, body.page-template-landing .landing__ueber-uns__info__container {
-    flex-basis: 70%;
-    min-width: calc(768px * 0.7);
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
-    box-shadow: 0px 13px 34px -5px rgba(0, 0, 0, 0.3); }
-    body.home .home__ueber-uns__info__container .home__ueber-uns__info__item, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item {
-      background-color: #282828;
-      padding: 1vw 1.5vw;
-      width: calc(100% / 3);
       position: relative;
-      display: flex;
-      align-items: flex-start;
-      align-content: flex-start;
-      flex-wrap: wrap; }
-      @media screen and (max-width: 768px) {
-        body.home .home__ueber-uns__info__container .home__ueber-uns__info__item, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item {
-          height: auto !important; } }
-      body.home .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item a {
-        color: white;
-        font-size: 1rem;
-        font-weight: 600;
-        margin-bottom: 10px;
+      overflow: hidden; }
+      body.home .home__landing__video .vp-player-layout, body.home .landing__landing__video .vp-player-layout, body.page-template-landing .home__landing__video .vp-player-layout, body.page-template-landing .landing__landing__video .vp-player-layout {
+        min-height: 100% !important;
+        top: 0 !important;
+        min-width: 100% !important;
+        left: 50% !important;
+        -webkit-transform: translateX(-50%);
+                transform: translateX(-50%); }
+      body.home .home__landing__video .wp-video, body.home .landing__landing__video .wp-video, body.page-template-landing .home__landing__video .wp-video, body.page-template-landing .landing__landing__video .wp-video {
+        position: absolute;
+        left: 0; }
+        body.home .home__landing__video .wp-video .mejs-overlay, body.home .home__landing__video .wp-video .mejs-controls, body.home .home__landing__video .wp-video .ytp-watermark, body.home .landing__landing__video .wp-video .mejs-overlay, body.home .landing__landing__video .wp-video .mejs-controls, body.home .landing__landing__video .wp-video .ytp-watermark, body.page-template-landing .home__landing__video .wp-video .mejs-overlay, body.page-template-landing .home__landing__video .wp-video .mejs-controls, body.page-template-landing .home__landing__video .wp-video .ytp-watermark, body.page-template-landing .landing__landing__video .wp-video .mejs-overlay, body.page-template-landing .landing__landing__video .wp-video .mejs-controls, body.page-template-landing .landing__landing__video .wp-video .ytp-watermark {
+          display: none; }
+      body.home .home__landing__video .video-stream, body.home .home__landing__video .html5-main-video, body.home .home__landing__video .vsc-initialized, body.home .landing__landing__video .video-stream, body.home .landing__landing__video .html5-main-video, body.home .landing__landing__video .vsc-initialized, body.page-template-landing .home__landing__video .video-stream, body.page-template-landing .home__landing__video .html5-main-video, body.page-template-landing .home__landing__video .vsc-initialized, body.page-template-landing .landing__landing__video .video-stream, body.page-template-landing .landing__landing__video .html5-main-video, body.page-template-landing .landing__landing__video .vsc-initialized {
+        min-width: 100vw !important;
+        min-height: 100vh !important;
+        left: 0 !important;
+        top: 0 !important;
+        -webkit-transform: scale(2.5) !important;
+                transform: scale(2.5) !important;
+        display: none !important; }
+      body.home .home__landing__video iframe, body.home .landing__landing__video iframe, body.page-template-landing .home__landing__video iframe, body.page-template-landing .landing__landing__video iframe {
+        width: 100vw;
+        position: absolute;
+        left: 0;
+        top: 0;
+        -webkit-filter: brightness(0.3);
+                filter: brightness(0.3);
+        max-height: 100%; }
+      body.home .home__landing__video__fallback, body.home .landing__landing__video__fallback, body.page-template-landing .home__landing__video__fallback, body.page-template-landing .landing__landing__video__fallback {
         width: 100%;
-        display: inline; }
+        height: 100%;
+        background-size: cover; }
+    body.home .home__landing__text, body.home .landing__landing__text, body.page-template-landing .home__landing__text, body.page-template-landing .landing__landing__text {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      top: 0; }
+      body.home .home__landing__text__title, body.home .landing__landing__text__title, body.page-template-landing .home__landing__text__title, body.page-template-landing .landing__landing__text__title {
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+        left: 5vw; }
         @media screen and (min-width: 1080px) {
-          body.home .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item a {
-            font-size: 1.2rem; } }
-      body.home .home__ueber-uns__info__container .home__ueber-uns__info__item a:hover, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item a:hover, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item a:hover, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item a:hover, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item a:hover, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item a:hover, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item a:hover, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item a:hover {
-        box-shadow: inset 0px -7px 0px 0px #e31b23; }
-      body.home .home__ueber-uns__info__container .home__ueber-uns__info__item p, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item p, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item p, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item p {
+          body.home .home__landing__text__title, body.home .landing__landing__text__title, body.page-template-landing .home__landing__text__title, body.page-template-landing .landing__landing__text__title {
+            top: 40vh;
+            width: 60%; } }
+        body.home .home__landing__text__title h1, body.home .landing__landing__text__title h1, body.page-template-landing .home__landing__text__title h1, body.page-template-landing .landing__landing__text__title h1 {
+          font-size: 3.5rem;
+          font-weight: 600;
+          color: white;
+          line-height: 1; }
+          @media screen and (min-width: 1080px) {
+            body.home .home__landing__text__title h1, body.home .landing__landing__text__title h1, body.page-template-landing .home__landing__text__title h1, body.page-template-landing .landing__landing__text__title h1 {
+              width: 100%; } }
+        body.home .home__landing__text__title h2, body.home .landing__landing__text__title h2, body.page-template-landing .home__landing__text__title h2, body.page-template-landing .landing__landing__text__title h2 {
+          font-size: 1rem;
+          color: #e31b23;
+          text-transform: uppercase;
+          margin-bottom: 30px;
+          font-family: 'Gotham-Bold', sans-serif; }
+      body.home .home__landing__text__project-category__container, body.home .landing__landing__text__project-category__container, body.page-template-landing .home__landing__text__project-category__container, body.page-template-landing .landing__landing__text__project-category__container {
+        position: absolute;
+        top: 80vh;
+        left: 5vw;
+        width: 60%; }
+        @media screen and (min-width: 1080px) {
+          body.home .home__landing__text__project-category__container, body.home .landing__landing__text__project-category__container, body.page-template-landing .home__landing__text__project-category__container, body.page-template-landing .landing__landing__text__project-category__container {
+            top: 70vh; } }
+        body.home .home__landing__text__project-category__container h3, body.home .landing__landing__text__project-category__container h3, body.page-template-landing .home__landing__text__project-category__container h3, body.page-template-landing .landing__landing__text__project-category__container h3 {
+          font-size: 1.2rem;
+          color: white;
+          display: inline;
+          transition: 0.3s; }
+        body.home .home__landing__text__project-category__container p, body.home .landing__landing__text__project-category__container p, body.page-template-landing .home__landing__text__project-category__container p, body.page-template-landing .landing__landing__text__project-category__container p {
+          font-size: 1rem;
+          color: white;
+          margin-top: 10px; }
+        body.home .home__landing__text__project-category__container a:hover > h3, body.home .landing__landing__text__project-category__container a:hover > h3, body.page-template-landing .home__landing__text__project-category__container a:hover > h3, body.page-template-landing .landing__landing__text__project-category__container a:hover > h3 {
+          box-shadow: inset 0px -7px 0px 0px #e31b23; }
+      body.home .home__landing__text .home__landing__scroll, body.home .home__landing__text .landing__landing__scroll, body.home .landing__landing__text .home__landing__scroll, body.home .landing__landing__text .landing__landing__scroll, body.page-template-landing .home__landing__text .home__landing__scroll, body.page-template-landing .home__landing__text .landing__landing__scroll, body.page-template-landing .landing__landing__text .home__landing__scroll, body.page-template-landing .landing__landing__text .landing__landing__scroll {
+        font-size: 1rem;
+        text-transform: uppercase;
         color: white;
-        font-size: 0.8rem;
-        font-weight: 300;
-        margin-bottom: 0; }
-      body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even), body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even), body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even), body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even), body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even), body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even), body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even), body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) {
-        background: white; }
-        body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) a, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) a, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) a, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) a, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) a, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) a, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) a, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) a {
-          color: #282828; }
-  @media screen and (min-width: 1650px) {
-    body.home .home__ueber-uns .home__ueber-uns__info__item p, body.home .home__ueber-uns .home__ueber-uns__text p, body.home .home__ueber-uns .home__ueber-uns__text b, body.home .landing__ueber-uns .home__ueber-uns__info__item p, body.home .landing__ueber-uns .home__ueber-uns__text p, body.home .landing__ueber-uns .home__ueber-uns__text b, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text b, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text b {
-      font-size: 1.2rem; } }
-  @media screen and (man-width: 1650px) {
-    body.home .home__ueber-uns .home__ueber-uns__info__item p, body.home .home__ueber-uns .home__ueber-uns__text p, body.home .home__ueber-uns .home__ueber-uns__text b, body.home .landing__ueber-uns .home__ueber-uns__info__item p, body.home .landing__ueber-uns .home__ueber-uns__text p, body.home .landing__ueber-uns .home__ueber-uns__text b, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text b, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text b {
-      font-size: 1rem; } }
-  @media screen and (min-width: 1650px) {
-    body.home .home__ueber-uns .home__ueber-uns__info__item h5, body.home .home__ueber-uns .home__ueber-uns__info__item h4, body.home .landing__ueber-uns .home__ueber-uns__info__item h5, body.home .landing__ueber-uns .home__ueber-uns__info__item h4, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h4, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h4 {
-      font-size: 1.4rem !important; } }
-  @media screen and (max-width: 1650px) {
-    body.home .home__ueber-uns .home__ueber-uns__info__item h5, body.home .home__ueber-uns .home__ueber-uns__info__item h4, body.home .landing__ueber-uns .home__ueber-uns__info__item h5, body.home .landing__ueber-uns .home__ueber-uns__info__item h4, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h4, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h4 {
-      font-size: 1rem; } }
-  @media screen and (min-width: 1600px) {
-    body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
-      font-size: 1rem !important; } }
-  @media screen and (max-width: 1600px) {
-    body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
-      font-size: 0.8rem !important; } }
-  @media screen and (max-width: 1400px) {
-    body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
-      font-size: 0.6rem !important; } }
-  @media screen and (max-width: 1100px) {
-    body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
-      font-size: 0.5rem !important; } }
-  @media screen and (max-width: 938px) {
-    body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
-      font-size: 0.7rem !important; } }
-
-body.home .home__random-projects, body.home .landing__random-projects, body.page-template-landing .home__random-projects, body.page-template-landing .landing__random-projects {
-  height: 18.75vw;
-  max-height: calc(1920px / 3 / 1.777777);
-  margin-bottom: 4vh;
-  font-size: 2rem;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 0; }
-  body.home .home__random-projects .projects__project, body.home .landing__random-projects .projects__project, body.page-template-landing .home__random-projects .projects__project, body.page-template-landing .landing__random-projects .projects__project {
-    flex-basis: calc(100% / 3);
-    flex-grow: 1;
+        bottom: 50px;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+                transform: translateX(-50%); }
+        body.home .home__landing__text .home__landing__scroll__icon, body.home .home__landing__text .landing__landing__scroll__icon, body.home .landing__landing__text .home__landing__scroll__icon, body.home .landing__landing__text .landing__landing__scroll__icon, body.page-template-landing .home__landing__text .home__landing__scroll__icon, body.page-template-landing .home__landing__text .landing__landing__scroll__icon, body.page-template-landing .landing__landing__text .home__landing__scroll__icon, body.page-template-landing .landing__landing__text .landing__landing__scroll__icon {
+          margin: 0 auto;
+          height: 35px;
+          width: 15px;
+          margin-top: 20px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          background-image: url("./assets/arrow_down.svg"); }
+  body.home .home__about__slider, body.home .landing__about__slider, body.page-template-landing .home__about__slider, body.page-template-landing .landing__about__slider {
+    height: 50vh;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    background: white;
+    height: calc(50vw / 1.777777); }
+    body.home .home__about__slider .rev_slider, body.home .home__about__slider .rev_slider_wrapper, body.home .landing__about__slider .rev_slider, body.home .landing__about__slider .rev_slider_wrapper, body.page-template-landing .home__about__slider .rev_slider, body.page-template-landing .home__about__slider .rev_slider_wrapper, body.page-template-landing .landing__about__slider .rev_slider, body.page-template-landing .landing__about__slider .rev_slider_wrapper {
+      height: 100% !important; }
+    body.home .home__about__slider__wrapper, body.home .landing__about__slider__wrapper, body.page-template-landing .home__about__slider__wrapper, body.page-template-landing .landing__about__slider__wrapper {
+      position: absolute;
+      width: 50vw;
+      max-width: calc((1920px) / 2); }
+      body.home .home__about__slider__wrapper__text, body.home .landing__about__slider__wrapper__text, body.page-template-landing .home__about__slider__wrapper__text, body.page-template-landing .landing__about__slider__wrapper__text {
+        left: calc(50vw + 5vw) !important;
+        top: 5vw !important; }
+        body.home .home__about__slider__wrapper__text p, body.home .home__about__slider__wrapper__text h1, body.home .home__about__slider__wrapper__text h2, body.home .landing__about__slider__wrapper__text p, body.home .landing__about__slider__wrapper__text h1, body.home .landing__about__slider__wrapper__text h2, body.page-template-landing .home__about__slider__wrapper__text p, body.page-template-landing .home__about__slider__wrapper__text h1, body.page-template-landing .home__about__slider__wrapper__text h2, body.page-template-landing .landing__about__slider__wrapper__text p, body.page-template-landing .landing__about__slider__wrapper__text h1, body.page-template-landing .landing__about__slider__wrapper__text h2 {
+          max-width: calc(50vw - 5vw * 2) !important;
+          width: calc(50vw - 5vw * 2) !important;
+          overflow: hidden;
+          font-size: 1rem !important;
+          line-height: 1.2rem !important; }
+        body.home .home__about__slider__wrapper__text p:last-of-type, body.home .landing__about__slider__wrapper__text p:last-of-type, body.page-template-landing .home__about__slider__wrapper__text p:last-of-type, body.page-template-landing .landing__about__slider__wrapper__text p:last-of-type {
+          margin-bottom: 30px !important; }
+        body.home .home__about__slider__wrapper__text h1, body.home .landing__about__slider__wrapper__text h1, body.page-template-landing .home__about__slider__wrapper__text h1, body.page-template-landing .landing__about__slider__wrapper__text h1 {
+          font-size: 2rem !important;
+          margin-bottom: 15px !important;
+          line-height: 2rem !important; }
+        body.home .home__about__slider__wrapper__text h2, body.home .landing__about__slider__wrapper__text h2, body.page-template-landing .home__about__slider__wrapper__text h2, body.page-template-landing .landing__about__slider__wrapper__text h2 {
+          font-size: 1rem !important;
+          font-weight: 600;
+          line-height: 1rem !important; }
+        body.home .home__about__slider__wrapper__text .tp-bullets, body.home .landing__about__slider__wrapper__text .tp-bullets, body.page-template-landing .home__about__slider__wrapper__text .tp-bullets, body.page-template-landing .landing__about__slider__wrapper__text .tp-bullets {
+          width: 9px;
+          height: 9px;
+          float: left;
+          margin-right: 10px;
+          border-radius: 50%;
+          position: relative;
+          left: 3vw !important;
+          top: 20px !important; }
+          body.home .home__about__slider__wrapper__text .tp-bullets.active, body.home .landing__about__slider__wrapper__text .tp-bullets.active, body.page-template-landing .home__about__slider__wrapper__text .tp-bullets.active, body.page-template-landing .landing__about__slider__wrapper__text .tp-bullets.active {
+            background: black; }
+      body.home .home__about__slider__wrapper__foto, body.home .landing__about__slider__wrapper__foto, body.page-template-landing .home__about__slider__wrapper__foto, body.page-template-landing .landing__about__slider__wrapper__foto {
+        left: 0% !important;
+        top: 0% !important;
+        width: 50vw;
+        height: 100%;
+        overflow: hidden;
+        -webkit-transform: translate(0%, 0%) !important;
+                transform: translate(0%, 0%) !important; }
+        body.home .home__about__slider__wrapper__foto img, body.home .landing__about__slider__wrapper__foto img, body.page-template-landing .home__about__slider__wrapper__foto img, body.page-template-landing .landing__about__slider__wrapper__foto img {
+          height: auto !important;
+          width: 50vw !important; }
+    body.home .home__about__slider h2, body.home .landing__about__slider h2, body.page-template-landing .home__about__slider h2, body.page-template-landing .landing__about__slider h2 {
+      text-transform: uppercase;
+      color: #e31b23 !important; }
+    body.home .home__about__slider h1, body.home .landing__about__slider h1, body.page-template-landing .home__about__slider h1, body.page-template-landing .landing__about__slider h1 {
+      font-size: 1.8rem; }
+    body.home .home__about__slider p, body.home .landing__about__slider p, body.page-template-landing .home__about__slider p, body.page-template-landing .landing__about__slider p {
+      color: #282828; }
+  body.home .home__ueber-uns, body.home .landing__ueber-uns, body.page-template-landing .home__ueber-uns, body.page-template-landing .landing__ueber-uns {
+    color: white;
+    display: flex;
+    padding: 40px 5vw;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("./assets/background_mountain.png");
+    flex-wrap: wrap; }
+    body.home .home__ueber-uns__text, body.home .landing__ueber-uns__text, body.page-template-landing .home__ueber-uns__text, body.page-template-landing .landing__ueber-uns__text {
+      flex-basis: 30%;
+      min-width: 300px;
+      flex-grow: 1;
+      padding-right: 5vw; }
+      body.home .home__ueber-uns__text h4, body.home .landing__ueber-uns__text h4, body.page-template-landing .home__ueber-uns__text h4, body.page-template-landing .landing__ueber-uns__text h4 {
+        color: white;
+        margin-bottom: 10px;
+        font-size: 1.6rem; }
+      body.home .home__ueber-uns__text p, body.home .home__ueber-uns__text b, body.home .landing__ueber-uns__text p, body.home .landing__ueber-uns__text b, body.page-template-landing .home__ueber-uns__text p, body.page-template-landing .home__ueber-uns__text b, body.page-template-landing .landing__ueber-uns__text p, body.page-template-landing .landing__ueber-uns__text b {
+        font-size: 0.8rem; }
+    body.home .home__ueber-uns__info__container, body.home .landing__ueber-uns__info__container, body.page-template-landing .home__ueber-uns__info__container, body.page-template-landing .landing__ueber-uns__info__container {
+      flex-basis: 70%;
+      min-width: calc(768px * 0.7);
+      display: flex;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      box-shadow: 0px 13px 34px -5px rgba(0, 0, 0, 0.3); }
+      body.home .home__ueber-uns__info__container .home__ueber-uns__info__item, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item {
+        background-color: #282828;
+        padding: 1vw 1.5vw;
+        width: calc(100% / 3);
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        align-content: flex-start;
+        flex-wrap: wrap; }
+        @media screen and (max-width: 768px) {
+          body.home .home__ueber-uns__info__container .home__ueber-uns__info__item, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item {
+            height: auto !important; } }
+        body.home .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item a {
+          color: white;
+          font-size: 1rem;
+          font-weight: 600;
+          margin-bottom: 10px;
+          width: 100%;
+          display: inline; }
+          @media screen and (min-width: 1080px) {
+            body.home .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item a {
+              font-size: 1.2rem; } }
+        body.home .home__ueber-uns__info__container .home__ueber-uns__info__item a:hover, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item a:hover, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item a:hover, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item a:hover, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item a:hover, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item a:hover, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item a:hover, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item a:hover {
+          box-shadow: inset 0px -7px 0px 0px #e31b23; }
+        body.home .home__ueber-uns__info__container .home__ueber-uns__info__item p, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item p, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item p, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item p {
+          color: white;
+          font-size: 0.8rem;
+          font-weight: 300;
+          margin-bottom: 0; }
+        body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even), body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even), body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even), body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even), body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even), body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even), body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even), body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) {
+          background: white; }
+          body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) a, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) a, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) a, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) a, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) a, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) a, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) a, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) a {
+            color: #282828; }
+    @media screen and (min-width: 1650px) {
+      body.home .home__ueber-uns .home__ueber-uns__info__item p, body.home .home__ueber-uns .home__ueber-uns__text p, body.home .home__ueber-uns .home__ueber-uns__text b, body.home .landing__ueber-uns .home__ueber-uns__info__item p, body.home .landing__ueber-uns .home__ueber-uns__text p, body.home .landing__ueber-uns .home__ueber-uns__text b, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text b, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text b {
+        font-size: 1.2rem; } }
+    @media screen and (man-width: 1650px) {
+      body.home .home__ueber-uns .home__ueber-uns__info__item p, body.home .home__ueber-uns .home__ueber-uns__text p, body.home .home__ueber-uns .home__ueber-uns__text b, body.home .landing__ueber-uns .home__ueber-uns__info__item p, body.home .landing__ueber-uns .home__ueber-uns__text p, body.home .landing__ueber-uns .home__ueber-uns__text b, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text b, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text b {
+        font-size: 1rem; } }
+    @media screen and (min-width: 1650px) {
+      body.home .home__ueber-uns .home__ueber-uns__info__item h5, body.home .home__ueber-uns .home__ueber-uns__info__item h4, body.home .landing__ueber-uns .home__ueber-uns__info__item h5, body.home .landing__ueber-uns .home__ueber-uns__info__item h4, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h4, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h4 {
+        font-size: 1.4rem !important; } }
+    @media screen and (max-width: 1650px) {
+      body.home .home__ueber-uns .home__ueber-uns__info__item h5, body.home .home__ueber-uns .home__ueber-uns__info__item h4, body.home .landing__ueber-uns .home__ueber-uns__info__item h5, body.home .landing__ueber-uns .home__ueber-uns__info__item h4, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h4, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h4 {
+        font-size: 1rem; } }
+    @media screen and (min-width: 1600px) {
+      body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
+        font-size: 1rem !important; } }
+    @media screen and (max-width: 1600px) {
+      body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
+        font-size: 0.8rem !important; } }
+    @media screen and (max-width: 1400px) {
+      body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
+        font-size: 0.6rem !important; } }
+    @media screen and (max-width: 1100px) {
+      body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
+        font-size: 0.5rem !important; } }
+    @media screen and (max-width: 938px) {
+      body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
+        font-size: 0.7rem !important; } }
+  body.home .home__random-projects, body.home .landing__random-projects, body.page-template-landing .home__random-projects, body.page-template-landing .landing__random-projects {
     height: 18.75vw;
     max-height: calc(1920px / 3 / 1.777777);
-    min-width: 33%;
-    max-width: 34%;
-    width: calc(100% / 3);
-    float: left; }
-
-body.home .home__customers, body.home .landing__customers, body.page-template-landing .home__customers, body.page-template-landing .landing__customers {
-  text-align: center;
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
-  padding: 0 2vw 4vh 2vw !important; }
-  body.home .home__customers h3, body.home .landing__customers h3, body.page-template-landing .home__customers h3, body.page-template-landing .landing__customers h3 {
-    font-size: 1.8rem;
-    margin-bottom: 0; }
-  body.home .home__customers p, body.home .landing__customers p, body.page-template-landing .home__customers p, body.page-template-landing .landing__customers p {
-    margin-bottom: 40px; }
-  body.home .home__customers__item, body.home .landing__customers__item, body.page-template-landing .home__customers__item, body.page-template-landing .landing__customers__item {
-    height: 130px;
-    position: relative;
-    margin: 0px 0px 10px 0px; }
-    body.home .home__customers__item img, body.home .landing__customers__item img, body.page-template-landing .home__customers__item img, body.page-template-landing .landing__customers__item img {
-      width: 80%;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%); }
+    margin-bottom: 4vh;
+    font-size: 2rem;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0; }
+    body.home .home__random-projects .projects__project, body.home .landing__random-projects .projects__project, body.page-template-landing .home__random-projects .projects__project, body.page-template-landing .landing__random-projects .projects__project {
+      flex-basis: calc(100% / 3);
+      flex-grow: 1;
+      height: 18.75vw;
+      max-height: calc(1920px / 3 / 1.777777);
+      min-width: 33%;
+      max-width: 34%;
+      width: calc(100% / 3);
+      float: left; }
+  body.home .home__customers, body.home .landing__customers, body.page-template-landing .home__customers, body.page-template-landing .landing__customers {
+    text-align: center;
+    -webkit-filter: grayscale(1);
+            filter: grayscale(1);
+    padding: 0 2vw 4vh 2vw !important; }
+    body.home .home__customers h3, body.home .landing__customers h3, body.page-template-landing .home__customers h3, body.page-template-landing .landing__customers h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0; }
+    body.home .home__customers p, body.home .landing__customers p, body.page-template-landing .home__customers p, body.page-template-landing .landing__customers p {
+      margin-bottom: 40px; }
+    body.home .home__customers__item, body.home .landing__customers__item, body.page-template-landing .home__customers__item, body.page-template-landing .landing__customers__item {
+      height: 130px;
+      position: relative;
+      margin: 0px 0px 10px 0px; }
+      body.home .home__customers__item img, body.home .landing__customers__item img, body.page-template-landing .home__customers__item img, body.page-template-landing .landing__customers__item img {
+        width: 80%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%); }
 
 @media screen and (max-width: 768px) {
   body.home .home__landing__text__title, body.home .landing__landing__text__title, body.page-template-landing .home__landing__text__title, body.page-template-landing .landing__landing__text__title {
@@ -1522,12 +1527,7 @@ body.home .home__customers, body.home .landing__customers, body.page-template-la
       top: calc(100vw / 1.777777) !important;
       max-width: calc( 1920px / 2); }
       body.home .home__about__slider__wrapper__foto img, body.home .landing__about__slider__wrapper__foto img, body.page-template-landing .home__about__slider__wrapper__foto img, body.page-template-landing .landing__about__slider__wrapper__foto img {
-        width: 100vw !important; } }
-  @media screen and (max-width: 768px) and (min-width: 1920px) {
-    body.home .home__about__slider__wrapper .home__slider__wrapper__text, body.home .landing__about__slider__wrapper .home__slider__wrapper__text, body.page-template-landing .home__about__slider__wrapper .home__slider__wrapper__text, body.page-template-landing .landing__about__slider__wrapper .home__slider__wrapper__text {
-      left: calc( 1920px / 2) !important; } }
-
-@media screen and (max-width: 768px) {
+        width: 100vw !important; }
   body.home .home__random-projects, body.home .landing__random-projects, body.page-template-landing .home__random-projects, body.page-template-landing .landing__random-projects {
     height: 28.125vw; }
     body.home .home__random-projects .projects__project, body.home .landing__random-projects .projects__project, body.page-template-landing .home__random-projects .projects__project, body.page-template-landing .landing__random-projects .projects__project {
@@ -1611,6 +1611,12 @@ body.home .home__customers, body.home .landing__customers, body.page-template-la
       max-width: 50%;
       height: 80px; } }
 
+@media screen and (min-width: 1920px) {
+  body.home .home__about__slider__wrapper__text, body.home .landing__about__slider__wrapper__text, body.page-template-landing .home__about__slider__wrapper__text, body.page-template-landing .landing__about__slider__wrapper__text {
+    left: calc( 1920px / 2 + 60px) !important; }
+  body.home .home__landing .home__landing__scroll, body.home .home__landing .landing__landing__scroll, body.home .landing__landing .home__landing__scroll, body.home .landing__landing .landing__landing__scroll, body.page-template-landing .home__landing .home__landing__scroll, body.page-template-landing .home__landing .landing__landing__scroll, body.page-template-landing .landing__landing .home__landing__scroll, body.page-template-landing .landing__landing .landing__landing__scroll {
+    left: calc(50% - ((100vw - 1920px) / 2 )); } }
+
 body.page-template-landing .landing__landing__text {
   top: 0; }
 
@@ -1682,8 +1688,8 @@ body.page-template-landing .landing__info__information {
       .project__content__image__play-button {
         height: 7vw;
         width: 7vw;
-        min-width: 50px;
-        min-height: 50px;
+        min-width: 70px;
+        min-height: 70px;
         max-width: 110px;
         max-height: 110px;
         border-radius: 50%;
@@ -1766,8 +1772,8 @@ body.page-template-landing .landing__info__information {
     .project__image__play-button {
       height: 7vw;
       width: 7vw;
-      min-width: 50px;
-      min-height: 50px;
+      min-width: 70px;
+      min-height: 70px;
       border-radius: 50%;
       background-size: contain;
       background-repeat: no-repeat;
@@ -2257,7 +2263,7 @@ body.page-template-about .main > .row {
     margin-bottom: 0; }
 
 body.page-template-about .main .about {
-  margin-top: 8vh;
+  margin-top: 60px;
   padding-left: 0; }
   body.page-template-about .main .about__content {
     padding: 0; }
@@ -2412,6 +2418,9 @@ body.page-template-about .quotes .quote div, body.page-template-about .press .qu
     padding: 50px 10vw; }
   body.page-template-about .press p, body.page-template-about .quotes p {
     font-size: .8rem; } }
+
+body.page-template-about .footer {
+  margin-top: 30px; }
 
 body.search .main .search-results {
   margin-top: calc(60px + 15px * 2 + 1rem + 9px);

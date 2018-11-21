@@ -22,7 +22,7 @@ body.page-template-about {
 
     .main .about {
 
-        margin-top: $menu-height;
+        margin-top: 60px;
         padding-left: 0;
 
         &__content {
@@ -405,5 +405,10 @@ body.page-template-about {
             font-size: .8rem;
         }
         
+    }
+
+    .footer {
+        
+        margin-top: 30px;
     }
 }

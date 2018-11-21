@@ -34,8 +34,8 @@
     <div class="columns small-4 about__content__contact-info about__content__contact-info--large">
       <div class="about__content__breadcrumbs concept-breadcrumbs">
           <nav class="breadcrumb">
-            <a href="<?php get_home_url();?>">Home</a>
-            <span>/</span>
+            <!-- <a href="< ?php get_home_url();?>">Home</a>
+            <span>/</span> -->
             <a href="<?php get_permalink();?>"><?php the_title();?></a>
           </nav>
       </div>
@@ -121,8 +121,13 @@
         <a href="<?php the_sub_field('press_link'); ?>">
           <div class="about__press press">
             <div class="press__logo__container">
-              <div class="about__press__logo press__logo  press__logo--regular" style="background-image: url( <?php the_sub_field('press_logo'); ?>);"></div>
-              <div class="about__press__logo press__logo press__logo--hover" style="background-image: url( <?php the_sub_field('press_logo-hover'); ?>);"></div> 
+              <?php if (get_sub_field('logo-hover') == true) : ?>
+                <div class="about__press__logo press__logo  press__logo--regular" style="background-image: url( <?php the_sub_field('press_logo'); ?>);"></div>
+                <div class="about__press__logo press__logo press__logo--hover" style="background-image: url( <?php the_sub_field('logo-hover'); ?>);"></div> 
+              <?php else : ?>
+                <div class="about__press__logo press__logo  press__logo--regular" style="background-image: url( <?php the_sub_field('press_logo'); ?>);"></div>
+                <div class="about__press__logo press__logo press__logo--hover" style="background-image: url( <?php the_sub_field('press_logo'); ?>);"></div> 
+              <?php endif ?>
             </div>
               <!-- <img src="" alt=""> -->
             <h4><?php the_sub_field('press_article'); ?></h4>

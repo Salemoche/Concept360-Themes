@@ -26,6 +26,9 @@ body.home, body.page-template-landing {
     }
 
     .home, .landing {
+
+        padding-right: 15px;
+
         &__landing {
 
             // position: relative;
@@ -36,8 +39,10 @@ body.home, body.page-template-landing {
 
                 background: $anthrazit;
                 height: 100vh;
-                    top: 80vh;
+                    // top: 80vh;
                 width: 100vw;
+                position: relative;
+                overflow: hidden;
 
                 .vp-player-layout {
                     
@@ -58,23 +63,25 @@ body.home, body.page-template-landing {
 
                 }
 
-                video.video-stream {
+                .video-stream, .html5-main-video, .vsc-initialized {
                     min-width: 100vw !important;
                     min-height: 100vh !important;
                     left: 0 !important;
                     top: 0 !important;
                     transform: scale(2.5) !important;
+                    display: none !important;
                 }
 
                 iframe {
                     width: 100vw;
-                    height: 105vh;
+                    // height: 105vh;
                     position: absolute;
                     left: 0;
                     top: 0;
                     // z-index: -1;
                     filter: brightness(0.3);
                     // pointer-events: none;
+                    max-height: 100%;
                 }
 
                 &__fallback {
@@ -208,6 +215,7 @@ body.home, body.page-template-landing {
                 position: absolute;
                 // transform: translate(-50%, -50%) !important;
                 width: 50vw;
+                max-width: calc((#{$breakpoint-large}) / 2);
                 
                 &__text {
                     left: calc(50vw + #{$spacing-side-large}) !important;
@@ -660,13 +668,8 @@ body.home, body.page-template-landing {
                         }
                     }
 
-                    @media screen and (min-width: $breakpoint-large) {
-                        
-                        .home__slider__wrapper__text {
-                            left: calc( #{$breakpoint-large} / 2) !important;
-                        }
-                    }
                 }
+
             }
 
             &__random-projects {
@@ -841,6 +844,25 @@ body.home, body.page-template-landing {
                     width: 50%;
                     max-width: 50%;
                     height: 80px;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-large ) {
+        .home, .landing {
+
+            &__about__slider {
+                    
+                &__wrapper__text {
+                    left: calc( #{$breakpoint-large} / 2 + 60px) !important;
+                }
+            }
+
+
+            &__landing {
+                .home__landing__scroll, .landing__landing__scroll {
+                    left: calc(50% - ((100vw - #{$breakpoint-large}) / 2 ));
                 }
             }
         }
