@@ -20,8 +20,8 @@
 	// 	wp_enqueue_style( 'parent-style', get_template_directory_uri().'/assets/css/app.css' );
 	// }
 
-	function enqueue_parent_style() {
-		wp_enqueue_style( 'style', '/wp-content/themes/notio-wp-child/app.css');
+	function enqueue_parent_styles() {
+		wp_enqueue_style( 'style', '/wp-content/themes/notio-wp-child/app.css' );
 	}
 
 
