@@ -359,8 +359,8 @@ div[role=main] {
     }
 
     @media screen and (max-width: $breakpoint-small) {
-        top: unset !important;
-        bottom: 0 !important;
+        // top: unset !important;
+        // bottom: 0 !important;
     }
 
     .tp-bullet-image, .tp-bullet-imageoverlay, .tp-bullet-title {
@@ -640,8 +640,8 @@ div[role=main] {
         &__logo {
 
             width: 170px;
-            min-width: 170px;
-            width: 10vw;
+            min-width: 120px;
+            width: 7vw;
             height: 40px;
             min-height: 40px;
             height: 4vw;
@@ -913,6 +913,7 @@ div[role=main] {
     @media screen and (max-width: $breakpoint-small) {
 
         .concept-header {
+            
 
             &__main {
 
@@ -931,13 +932,17 @@ div[role=main] {
 
             &__project-category__container {
 
+                overflow: visible;
+                
                 ul {
                     padding-left: $spacing-side-small;
                     width: calc(100vw - 130px);
+                    padding-top: 6px;
 
                     li {
                         margin-right: 7px;
                         margin-top: 13px;
+                        font-size: .60rem;
 
                         
                         &.tag {
@@ -953,7 +958,7 @@ div[role=main] {
 
                         
                         
-                        a {
+                        a, li {
                             font-size: .60rem;
                         }
 
@@ -963,6 +968,21 @@ div[role=main] {
 
             &__project-category__search-form {
                 right: $spacing-side-small;
+            }
+
+            &__all-tags {
+                
+                background: $white;
+                width: 100vw !important;
+                max-width: unset;
+                padding: 40px 0;
+                padding-top: 0;
+
+                &__back {
+                    display: block;
+                    width: 60%;
+                    background-position: left;
+                }
             }
         }
 
@@ -1297,6 +1317,8 @@ div[role=main] {
 
     @media screen and (max-width: $breakpoint-small) {
 
+        width: 100% !important;
+
         .mobile-menu {
             padding: 23vh 70px 0 70px;
 
@@ -1622,6 +1644,9 @@ div[role=main] {
 
         &__contact-form {
             // padding-top: 0;
+            p  {
+                padding: $spacing-side-large;
+            }
         }
     }
 
@@ -1652,7 +1677,7 @@ div[role=main] {
     @media screen and (min-width: $breakpoint-large ){
         
         .wpcf7 {
-            max-width: calc(#{$breakpoint-large} - 5.4vw * 2);
+            max-width: calc(#{$breakpoint-large} - 5vw * 2);
             margin: 0 auto !important;
 
             form {
@@ -1949,6 +1974,10 @@ div[role=main] {
     }
 }
 
+.fbx-item-current {
+    overflow: hidden !important;
+}
+
 .fbx-caption {
     position: absolute;
     top: 0;
@@ -1985,6 +2014,46 @@ div[role=main] {
     }
 
     color: green;
+
+}
+
+
+@media screen and (max-width: $breakpoint-small) {
+
+    .fbx-caption {
+        max-height: 50px;
+    }
+    
+    .fbx-caption-desc {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+    
+    .fbx-prev, .fbx-next {
+        width: 20px !important;
+        top: 50% !important;
+        transform: translateY(-50%);
+        left: unset !important;
+        right: unset !important;
+    }
+
+    .fbx-prev {
+        
+        left: 20px !important;
+    }
+
+    .fbx-next {
+        
+        right: 20px !important;
+    }
+
+    .fbx-close {
+        
+        left: unset !important;
+        width: 20px !important;
+        right: 20px !important;
+    }
+    
 }
 
 
@@ -2065,3 +2134,6 @@ div[role=main] {
 .footer__info .icon-mail {
   background-image: url("./assets/email.svg"); }
 
+.pace {
+    top: 0 !important;
+}

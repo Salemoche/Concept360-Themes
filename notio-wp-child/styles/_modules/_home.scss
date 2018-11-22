@@ -183,7 +183,7 @@ body.home, body.page-template-landing {
                     font-size: 1rem;
                     text-transform: uppercase;
                     color: white;
-                    bottom: 50px;
+                    bottom: 60px;
 
                     @include center-horizontally;
                     
@@ -604,6 +604,8 @@ body.home, body.page-template-landing {
 
         .home, .landing {
 
+            padding-right: 0;
+            
             &__landing {
                 &__text {
 
@@ -728,6 +730,7 @@ body.home, body.page-template-landing {
     @media screen and (max-width: $breakpoint-small) {
         .home, .landing {
 
+
             &__landing {
                 &__text {
 
@@ -746,7 +749,7 @@ body.home, body.page-template-landing {
                     
                     &__project-category__container {
 
-                        top: 85%;
+                        top: 75%;
                         left: $spacing-side-small;
                         width: calc(100% - #{$spacing-side-small}*2);
 
@@ -773,34 +776,34 @@ body.home, body.page-template-landing {
 
                 &__wrapper {
                     
-                    &__text {
-                        // width: calc( 100vw - #{$spacing-side-large} * 2) !important;
-                        // left: calc( #{$spacing-side-large}) !important;
+                    // &__text {
+                    //     // width: calc( 100vw - #{$spacing-side-large} * 2) !important;
+                    //     // left: calc( #{$spacing-side-large}) !important;
                         
-                        top: calc(100vw / 1.777777 + 30px;) !important;
-                        height: 280px;
+                    //     top: calc(100vw / 1.777777 + 30px;) !important;
+                    //     height: 280px;
 
-                        p, h3, h3 {
-                        }
+                    //     p, h3, h3 {
+                    //     }
 
-                        h2 {
-                            line-height: 1rem !important;                            
-                        }
+                    //     h2 {
+                    //         line-height: 1rem !important;                            
+                    //     }
 
-                    }
+                    // }
 
-                    &__foto {
-                        top: 0 !important;
-                        height: calc(100vw / 1.777777) !important;
-                        position: absolute !important; 
+                    // &__foto {
+                    //     top: 0 !important;
+                    //     height: calc(100vw / 1.777777) !important;
+                    //     position: absolute !important; 
                         
-                        img {
-                            height: auto !important;
-                            width: 100vw !important;
-                            min-height: 100% !important;
-                            min-width: 100vw !important;
-                        }
-                    }
+                    //     img {
+                    //         height: auto !important;
+                    //         width: 100vw !important;
+                    //         min-height: 100% !important;
+                    //         min-width: 100vw !important;
+                    //     }
+                    // }
                 }
             }
 
