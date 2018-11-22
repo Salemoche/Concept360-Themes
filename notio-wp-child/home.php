@@ -82,18 +82,20 @@
             </a>
           </div>-->
         </div>
-        <div class="home__landing__scroll">
-          <?php echo get_field('home_scroll'); ?>
-          <div class="home__landing__scroll__icon"></div>
-        </div>
+        <a href="#home__about__slider">
+          <div class="home__landing__scroll">
+            <?php echo get_field('home_scroll'); ?>
+            <div class="home__landing__scroll__icon"></div>
+          </div>
+        </a>
       </div>
     </div>
-    <div class="home__about__slider columns small-12">
+    <div class="home__about__slider columns small-12" id="home__about__slider">
       <?php echo do_shortcode( '[rev_slider alias="home"]' ); ?>
     </div>
     <div class="home__ueber-uns columns small-12">
       <div class="home__ueber-uns__text">
-        <h4><?php echo get_post_meta($post->ID, 'home_about-us_title', true); ?></h4>
+        <h5><?php echo get_post_meta($post->ID, 'home_about-us_title', true); ?></h5>
         <p><?php echo get_post_meta($post->ID, 'home_about-us_text', true); ?></p>
       </div>
       <div class="home__ueber-uns__info__container">
@@ -138,7 +140,7 @@
 
         } else {      
           if(has_category(37)): ?>
-            <div class="projects__project project__insight project__thumbnail <?php echo get_post_meta($randPost->ID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
+            <div class="projects__project project__insight project__thumbnail">
               <a href="<?php the_permalink($randPost->ID) ?>">
                 <div class="projects__project__info__container">
                   <h3><?php get_the_title($randPost->ID); ?></h3>

@@ -238,7 +238,7 @@ $(document).ready( function () {
 
     setTimeout( function () {
 
-        $('.tp-bullets').appendTo($('.home__about__slider__text'));
+        // $('.tp-bullets').appendTo($('.home__about__slider__text'));
         $('.tp-bullets').css('opacity', 1);
     }, 100);
 

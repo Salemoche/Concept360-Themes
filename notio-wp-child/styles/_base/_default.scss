@@ -345,7 +345,27 @@ div[role=main] {
 
 .tp-bullets {
     opacity: 0;
-    transition: $transition-time;
+    // transition: $transition-time;
+    left: calc(50vw + 5vw + 29px) !important;
+
+    @media screen and (min-width: $breakpoint-large) {
+        left: calc(50% + 60px + 29px) !important;  
+    }
+
+    @media screen and (max-width: $breakpoint-medium) {
+        left: 50% !important;  
+        top: 250px !important;
+        bottom: unset !important;
+    }
+
+    @media screen and (max-width: $breakpoint-small) {
+        top: unset !important;
+        bottom: 0 !important;
+    }
+
+    .tp-bullet-image, .tp-bullet-imageoverlay, .tp-bullet-title {
+        display: none !important;
+    }
 }
 
 .quote__container, .press__container {
