@@ -21,28 +21,34 @@ $(document).ready( function () {
 
 
     $('#player').css('display', 'none');
-    console.log("the fucking video is " + $('.home'));
 
 
     //
     // Home Video
     //
 
-    if (aspectRatio < 1) {
+    
+      
+    if (aspectRatio < 0.5) {
+        $('.home__landing__video>iframe').css('transform', 'scale(10)');
+    } else if (aspectRatio < 0.8) {
+        $('.home__landing__video>iframe').css('transform', 'scale(3.5)');
+    } else if (aspectRatio < 1) {
         $('.home__landing__video>iframe').css('transform', 'scale(2.4)');
-        console.log('big');
     } else if (aspectRatio < 1.2) {
         $('.home__landing__video>iframe').css('transform', 'scale(1.8)');
-        console.log('big');
     } else if (aspectRatio < 1.5) {
         $('.home__landing__video>iframe').css('transform', 'scale(1.5)');
-        console.log('big');
     } else if (aspectRatio < 1.8) {
-        $('.home__landing__video>iframe').css('transform', 'scale(1.2)');
-        console.log('big');
-    } else {
-        $('.home__landing__video>iframe').css('transform', 'scale(1)');
-        console.log('small');
+        $('.home__landing__video>iframe').css('transform', 'scale(1.4)');
+    } else if (aspectRatio > 3.5) {
+        $('.home__landing__video>iframe').css('transform', 'scale(2.4)');
+    } else if (aspectRatio > 2.8) {
+        $('.home__landing__video>iframe').css('transform', 'scale(1.8)');
+    } else if (aspectRatio > 2.4) {
+        $('.home__landing__video>iframe').css('transform', 'scale(1.6)');
+    } else if (aspectRatio > 1.8) {
+        $('.home__landing__video>iframe').css('transform', 'scale(1.4)');
     }
 
     $(window).resize( function() {
@@ -63,21 +69,27 @@ $(document).ready( function () {
 
         console.log(aspectRatio);
 
-        if (aspectRatio < 1) {
+      
+        if (aspectRatio < 0.5) {
+            $('.home__landing__video>iframe').css('transform', 'scale(10)');
+        } else if (aspectRatio < 0.8) {
+            $('.home__landing__video>iframe').css('transform', 'scale(3.5)');
+        } else if (aspectRatio < 1) {
             $('.home__landing__video>iframe').css('transform', 'scale(2.4)');
-            console.log('big');
         } else if (aspectRatio < 1.2) {
             $('.home__landing__video>iframe').css('transform', 'scale(1.8)');
-            console.log('big');
         } else if (aspectRatio < 1.5) {
             $('.home__landing__video>iframe').css('transform', 'scale(1.5)');
-            console.log('big');
         } else if (aspectRatio < 1.8) {
-            $('.home__landing__video>iframe').css('transform', 'scale(1.2)');
-            console.log('big');
-        } else {
-            $('.home__landing__video>iframe').css('transform', 'scale(1)');
-            console.log('small');
+            $('.home__landing__video>iframe').css('transform', 'scale(1.4)');
+        } else if (aspectRatio > 3.5) {
+            $('.home__landing__video>iframe').css('transform', 'scale(2.4)');
+        } else if (aspectRatio > 2.8) {
+            $('.home__landing__video>iframe').css('transform', 'scale(1.8)');
+        } else if (aspectRatio > 2.4) {
+            $('.home__landing__video>iframe').css('transform', 'scale(1.6)');
+        } else if (aspectRatio > 1.8) {
+            $('.home__landing__video>iframe').css('transform', 'scale(1.4)');
         }
 
         if(window.innerWidth > 768) {
@@ -249,6 +261,28 @@ $(document).ready( function () {
 
 
     //
+    // Lightbox
+    //
+
+    // $('.project__image img').click( function() {
+    //     var that = $(this);
+
+    //         console.log(that);    
+    //         // that.css('opacity', '0.5');
+
+    //     // that.children($('.fbx-count')).appendTo(that.children($('.fbx-caption-title')));
+
+    //     setTimeout(function() {  
+    //     //    $('.fbx-count').appendTo($('.fbx-caption-title'));
+    //     }, 1000)
+    // })
+
+    setTimeout(function() {  
+        $('.fbx-count').appendTo($('.fbx-caption-desc'));
+        console.log($('.fbx-count').text());
+    }, 2000)
+
+    //
     // General
     //
 
@@ -299,6 +333,8 @@ $(document).ready( function () {
     $( window ).resize(function() {
         autoHover();        
     });
+
+    $('.fbx-next::before').css('color', 'green');
 
     //
     // Language Differences

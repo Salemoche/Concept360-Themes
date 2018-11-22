@@ -243,6 +243,7 @@ div[role=main] {
                 box-shadow: inset 0px -12px 0px 0px rgba(227,27,35,75);
             }
         } 
+
     }
 
     &.project__insight {
@@ -260,6 +261,16 @@ div[role=main] {
 
     @media screen and (max-width: $breakpoint-medium) {
         min-height: unset;
+    }
+
+    
+    @media screen and (min-width: $breakpoint-medium) {
+            
+        &.projects__project__highlight .project-hover-info__aligner {
+            p {
+                max-width: 70%;
+            }
+        }
     }
 }
 
@@ -876,6 +887,7 @@ div[role=main] {
                 }
             }
         }
+
     }
 
     @media screen and (max-width: $breakpoint-small) {
@@ -1408,14 +1420,14 @@ div[role=main] {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        background-image: url('./assets/background_mountain.png');
+        background-image: url('./assets/background_mountain.jpg');
 
         
         p {
             font-size: 1.2rem;
             font-weight: $light;
             margin-bottom: 0;
-
+            box-shadow: none !important;
         }
 
         b {
@@ -1704,6 +1716,7 @@ div[role=main] {
     &-response-output {
 
         font-size: 1rem;
+        padding-bottom: 20px;
     }
 
     label {
@@ -1922,10 +1935,21 @@ div[role=main] {
     bottom: unset;
     text-align: left;
     transition: none;
+    transform: none !important;
     
     .fbx-close-caption {
         display: none;
     }
+}
+
+.fbx-count {
+    position: relative;
+    margin-left: 20px;
+}
+
+.fbx-close {
+    top: 5px !important;
+    right: 5px !important;
 }
 
 .lg-backdrop, .lg-outer, .fbx-fullscreen-toggle, .fbx-credit, .pagination-space, .fbx-play {
@@ -1939,6 +1963,8 @@ div[role=main] {
             color: $red !important;
         }
     }
+
+    color: green;
 }
 
 

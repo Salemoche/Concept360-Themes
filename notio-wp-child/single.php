@@ -103,7 +103,7 @@
         ?>
         <div class="project__image">
           <?php if( !empty($url) ){ ?><a href="<?php echo $full_image_url; ?>" <?php echo ($target == 'true' )? 'target="_blank"': ''; ?>><?php } ?>
-          <a href="<?php echo $full_image_url; ?>" rel="concept-gallery">
+          <a href="<?php echo $full_image_url; ?>"  target="foobox" class="foobox" rel="concept-gallery">
             <img src="<?php echo $full_image_url; ?>" alt="<?php echo $title; ?>">
           </a>
             <?php if( !empty($url) ){ ?></a><?php } ?>

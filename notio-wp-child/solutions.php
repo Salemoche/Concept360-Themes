@@ -25,6 +25,8 @@
       <?php the_content(); ?>
     </div>
   </div>
+  
+  <div class="footer-spacer"></div>
 
 <?php endwhile; ?>
 
