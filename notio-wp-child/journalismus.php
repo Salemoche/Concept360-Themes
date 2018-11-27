@@ -14,18 +14,19 @@
 	  
 	  foreach($posts as $post) { //while($catquery->have_posts()) : $catquery->the_post(); 
 	
+	    // Fetch master post, if not in master language
+	    $masterPostID = apply_filters( 'wpml_object_id', $post->ID, 'post', false, 'de');
+		$isHighlighted = get_post_meta($post->ID, 'highlight', true) || get_post_meta( $masterPostID , 'highlight', true);
+	  
 		// Check for wrapper, as comment_count
 		if($post->comment_count == 1 && !$wrapperFlag) { $wrapperFlag = 1 ?><div class="project-wrapper" style="flex-basis: calc(100%/3); float: left"> <?php ; }
 		else if($post->comment_count == 0 && $wrapperFlag) { $wrapperFlag = 0; ?></div><?php }
 	
-		$image_id = get_post_meta($post->ID, 'project_image-main', true);
-		$image_url = wp_get_attachment_image_src( $image_id, 'large'  )[0];
 		$post_description = get_post_meta($post->ID, 'project_description', true);
-		$post_description_length = strlen($post_description);
 		$post_description_short = get_post_meta($post->ID, 'project_teaser', true); 
         ?>
         <?php if(has_category(37)): ?>
-          <div class="projects__project project__insight project__thumbnail <?php echo get_post_meta($post->ID, 'highlight', true) && $post->comment_status != 1 ? 'projects__project__highlight' : '' ?>">
+          <div class="projects__project project__insight project__thumbnail <?php echo ($isHighlighted && $post->comment_status != 1) ? 'projects__project__highlight' : '' ?>">
             <a href="<?php the_permalink() ?>">
               <div>
                 <h3><?php the_title(); ?></h3>
@@ -33,10 +34,10 @@
             </a>
           </div>
         <?php else: ?>
-          <div class="projects__project project__thumbnail <?php echo get_post_meta($post->ID, 'highlight', true) && $post->comment_status != 1 ? 'projects__project__highlight' : '' ?>">
+          <div class="projects__project project__thumbnail <?php echo ($isHighlighted && $post->comment_status != 1) ? 'projects__project__highlight' : '' ?>">
             <a href="<?php the_permalink() ?>">
               <div>
-                <?php echo the_post_thumbnail($post->ID) ? the_post_thumbnail($post->ID) : ''; ?>
+                <?php echo get_the_post_thumbnail($masterPostID, 'large') ? get_the_post_thumbnail($masterPostID, 'large') : ''; ?>
                 <div class="projects__project__info project-hover-info">
                   <div class="project-hover-info__aligner">
                     <h3><?php echo the_title(); ?></h3>

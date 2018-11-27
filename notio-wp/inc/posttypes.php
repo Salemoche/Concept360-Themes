@@ -75,4 +75,4 @@ function thb_create_post_type_portfolios() {
 }
 
 /* Initialize post types */
-add_action( 'init', 'thb_create_post_type_portfolios', 1 );
+//add_action( 'init', 'thb_create_post_type_portfolios', 1 );

@@ -55,7 +55,7 @@
       
       <?php echo get_field('iframe');  ?>
       <?php endif; ?>
-	  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/65N0noy0aEI?autoplay=1&controls=0&disablekb=1&modestbranding=1&hd=1&autohide=1&mute=1&loop=1&playlist=65N0noy0aEI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	  <iframe width="100%" height="100%" data-no-lazy="1" src="https://www.youtube.com/embed/65N0noy0aEI?autoplay=1&controls=0&disablekb=1&modestbranding=1&hd=1&autohide=1&mute=1&loop=1&playlist=65N0noy0aEI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="home__landing__text">
         <div class="home__landing__text__title">
@@ -121,8 +121,8 @@
         $allPosts = array();
 
         while ($i < 3) { 
-          $randIndex = rand(0, count(get_posts())-1); 
-          $randPost = get_posts()[$randIndex];
+          $randIndex = rand(0, count(get_posts(array('suppress_filters' => false)))-1); 
+          $randPost = get_posts(array('suppress_filters' => false))[$randIndex];
           $image_id = get_post_meta($randPost->ID, 'project_image-main', true);
           $image_url = wp_get_attachment_image_src( $image_id, 'large' )[0];
           $post_description = get_post_meta($randPost->ID, 'project_description', true);

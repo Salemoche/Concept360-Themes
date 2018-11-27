@@ -5,6 +5,8 @@
 <?php 
   $image_id = get_post_meta($post->ID, 'project_image-main', true);
   $image_url = wp_get_attachment_image_src( $image_id, 'large'  )[0];
+  
+  $currentPostID = apply_filters( 'wpml_object_id', $post->ID, 'post', false, 'de') ? apply_filters( 'wpml_object_id', $post->ID, 'post', false, 'de') : $post->ID;
 ?>
   <div class="project row <?php echo has_category(37) ? 'project__insight' : '';?>">
     <!-- <div class="project__content columns medium-8 small-12 collapse"> -->
@@ -13,7 +15,7 @@
           <?php echo get_field('iframe'); ?>
         </div>
         <a href="#iframe0" target="foobox" class="foobox" rel="concept-gallery">
-          <?php echo the_post_thumbnail( 'medium_large' ); ?>
+          <?php echo get_the_post_thumbnail($currentPostID, 'large' ); ?>
           <div class="project__content__image__play-button"></div>
         </a>
         <?php //the_content(); // the_field('home_video'); ?>
@@ -22,7 +24,7 @@
       <div class="project__info project__info columns small-12 medium-4 ">
         <div class="project__info__breadcrumbs concept-breadcrumbs">
           <nav class="breadcrumb">
-            <a href="<?php echo get_permalink(686);?>">Projekte</a>
+            <a href="<?php echo get_permalink(686);?>"><?php echo esc_html_e("Projekte", "c360"); ?></a>
             <span>/</span>
             <?php if(has_category(35)) : ?>
               <a href="<?php echo get_permalink(684);?>"><?php echo get_cat_name(35); ?></a>
@@ -68,9 +70,9 @@
     
     <div class="project__images columns small-12">
     <?php
-      if( have_rows('project_media') ): 
+      if( have_rows('project_media', $currentPostID) ): 
 
-        while ( have_rows('project_media') ) : the_row();
+        while ( have_rows('project_media', $currentPostID) ) : the_row();
         ?>
           <div class="project__image">
             <?php $video_id = get_row_index(); ?>  
@@ -85,7 +87,7 @@
       <?php 
         endwhile;
       endif;
-      $images = acf_photo_gallery('project_images', $post->ID) ? acf_photo_gallery('project_images', $post->ID) : '';
+      $images = acf_photo_gallery('project_images', $currentPostID) ? acf_photo_gallery('project_images', $currentPostID) : '';
       //Check if return array has anything in it
       if( $images && count($images) ):
           //Cool, we got some data so now let's loop over it
@@ -111,7 +113,7 @@
       <?php endforeach; endif; ?>
     </div>
     <div class="project__related-projects row columns small-12">
-      <h4><?php esc_html_e("Weitere Projekte"); ?></h4>
+      <h4><?php esc_html_e("Other projects", "c360"); ?></h4>
       <?php
       $tags = wp_get_post_terms( get_queried_object_id(), 'post_tag', ['fields' => 'ids'] );
       // $args = [
@@ -138,15 +140,18 @@
               ]
           ]
       ];
-
+	  
+	    
       $my_query = new wp_query( $args );
-      if( $my_query->have_posts() ) {
-              while( $my_query->have_posts() ) {
-                $my_query->the_post(); ?>
-                  <div class="columns small-12 medium-4 projects__project project__thumbnail <?php echo get_post_meta($randPost->ID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
+	  $posts = $my_query->get_posts();
+	  
+	  foreach($posts as $post) {
+	    $masterPostID = apply_filters( 'wpml_object_id', $post->ID, 'post', false, 'de');
+		?>
+                  <div class="columns small-12 medium-4 projects__project project__thumbnail">
                     <a href="<?php the_permalink() ?>">
                       <div class="projects__project__info__container">
-                      <?php echo the_post_thumbnail( 'large' ); ?>
+                      <?php echo get_the_post_thumbnail($masterPostID, 'large' ); ?>
                         <div class="projects__project__info project-hover-info">
                           <div class="project-hover-info__aligner">
                             <h3><?php echo the_title(); ?></h3>
@@ -157,11 +162,9 @@
                       </div>
                     </a>
                   </div>
-              <?php }
+              <?php 
+      } 
               wp_reset_postdata();
-      } else {
-        echo '<p>Nothing found</p>';
-      }
       ?> 
     </div>
   </div>
