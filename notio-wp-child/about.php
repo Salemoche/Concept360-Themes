@@ -17,7 +17,7 @@
             <a href="<?php get_permalink();?>"><?php the_title();?></a>
           </nav>
         </div>
-        <h3><?php the_title(); ?></h3>
+        <h2><?php the_title(); ?></h2>
       </div>
       <div class="columns small-12 medium-6 about__content__contact-info about__content__contact-info--medium">
         <h3><?php echo get_post_meta(779, 'footer_call_mail', true); ?></h3>
@@ -39,7 +39,7 @@
             <a href="<?php get_permalink();?>"><?php the_title();?></a>
           </nav>
       </div>
-      <h3><?php the_title(); ?></h3>
+      <h1><?php the_title(); ?></h1>
       <h3><?php echo get_post_meta(779, 'footer_call_mail', true); ?></h3>
       <a href="mailto:<?php echo get_post_meta(779, 'settings_email', true); ?>"><p><?php echo get_post_meta(779, 'settings_email', true); ?></p></a>
       <h3><?php echo get_post_meta(779, 'footer_call_phone', true); ?></h3>
@@ -130,7 +130,7 @@
               <?php endif ?>
             </div>
               <!-- <img src="" alt=""> -->
-            <h4><?php the_sub_field('press_article'); ?></h4>
+            <p class="about__press__article"><?php the_sub_field('press_article'); ?></p>
             <p><?php the_sub_field('press_details'); ?></p>
           </div>
         </a>

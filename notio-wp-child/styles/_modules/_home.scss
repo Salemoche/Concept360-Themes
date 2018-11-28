@@ -255,6 +255,7 @@ body.home, body.page-template-landing {
                         font-size: 1rem !important;
                         font-weight: 600;
                         line-height: 1rem !important;
+                        margin-bottom: 15px;
                     }
 
                     .tp-bullets {
@@ -368,7 +369,7 @@ body.home, body.page-template-landing {
 
                 p, b {
                     font-size: 0.8rem;
-                    
+                    margin-bottom: 0;
                     // @media screen and (min-width: $breakpoint-medium-large) {
                     //     font-size: 1.2rem !important; 
                     // }
@@ -815,8 +816,6 @@ body.home, body.page-template-landing {
 
                 &__text {
 
-                    p {
-                    }
                 }
 
                 &__info__container {
@@ -829,7 +828,7 @@ body.home, body.page-template-landing {
                     .home__ueber-uns__info__item {
                         flex-basis: unset;
                         width: calc(100vw - 2*40px);
-                        padding: 4vw 6vw;
+                        padding: 6vw 6vw;
                     }
                 }
             }

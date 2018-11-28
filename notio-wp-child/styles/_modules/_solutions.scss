@@ -11,13 +11,13 @@ body.page-template-solutions {
             font-size: 1rem;
         }
         @media screen and (max-width: $breakpoint-medium) {
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
         @media screen and (max-width: $breakpoint-medium-large) {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
         @media screen and (min-width: $breakpoint-medium-large) {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
     }
 
@@ -27,7 +27,8 @@ body.page-template-solutions {
 
 
     p {
-        font-weight: 500;
+        // font-weight: 500;
+        margin-bottom: 0;
     }
 
     .main .row {
@@ -82,6 +83,7 @@ body.page-template-solutions {
 
             p {
                 margin-bottom: 0;
+                font-weight: 600;
             }
         }
 
@@ -183,6 +185,7 @@ body.page-template-solutions {
 
                 position: relative;
                 padding: 0;
+                margin-bottom: $spacing-bottom;
 
                 h5 {
                     color: $red;
@@ -190,8 +193,9 @@ body.page-template-solutions {
                 }
 
                 h6 {
-                    font-family: 'Gotham-Bold';
-                    font-weight: 600;
+                    font-family: 'Ubuntu';
+                    font-weight: 400;
+                    font-size: 1.2rem;
                 }
 
                 p {
@@ -313,6 +317,25 @@ body.page-template-solutions {
             padding-right: $spacing-side-large;
         }
 
+        
+        .main {
+            .graphic-container {
+                height: 40vw;
+            }
+
+            .description-container {
+                height: 30vh;
+            }
+
+            .solutions__working-style__graphic__text p {
+                width: 85vw;
+            }
+        }
+
+        .main .solutions__working-style__graphic svg {
+            width: 40vw;
+        }
+
         .solutions__bakery {
 
             p, h1, h2, h3, h4 {
@@ -366,6 +389,16 @@ body.page-template-solutions {
                 background-size: 150% !important;
                 
                 height: 80vw;
+            }
+        }
+
+        .main {
+            .graphic-container {
+                height: 90vw;
+            }
+
+            .description-container {
+                height: 50vh;
             }
         }
 

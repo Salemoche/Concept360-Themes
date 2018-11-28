@@ -274,6 +274,10 @@
                 font-weight: 600;
                 
             }
+
+            p {
+                margin-bottom: $spacing-bottom;
+            }
         }
 
         &__tags {

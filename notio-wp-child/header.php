@@ -63,10 +63,10 @@
 
 				<?php if (!strpos($url, '?s=')) : ?>
 
-					<li class="concept-header__list-item"><a href="<?php echo get_permalink(686) ?>" <?php  echo strpos($url, 'highlights') ? 'class="menu-active"' : ''; ?>><?php echo esc_html_e('Highlights', 'c360'); ?></a></li>
-					<li class="concept-header__list-item"><a href="<?php echo get_permalink(684) ?>" <?php  if (strpos($url, 'corporate') || has_category('Corporate')) { echo 'class="menu-active"'; }?>><?php echo esc_html_e('Corporate', 'c360'); ?></a></li>
-					<li class="concept-header__list-item"><a href="<?php echo get_permalink(702) ?>" <?php  if (strpos($url, 'journalism') || has_category('Journalismus') || has_category('Journalism')) { echo 'class="menu-active"'; }?>><?php echo esc_html_e('Journalismus', 'c360'); ?></a></li>
-					<li class="concept-header__list-item"><!--<a href="<?php echo get_permalink(704) ?>" <?php  if (strpos($url, 'insights') || has_category('Insight')) { echo 'class="menu-active"'; }?>>--><?php echo esc_html_e('Insights', 'c360'); ?><!--</a>--></li>
+					<li class="concept-header__list-item  <?php  echo strpos($url, 'highlights') ? 'menu-active' : ''; ?>"><a href="<?php echo get_permalink(686) ?>"><?php echo esc_html_e('Highlights', 'c360'); ?></a></li>
+					<li class="concept-header__list-item <?php  if (strpos($url, 'corporate') || has_category('Corporate')) { echo 'menu-active'; }?>"><a href="<?php echo get_permalink(684) ?>" ><?php echo esc_html_e('Corporate', 'c360'); ?></a></li>
+					<li class="concept-header__list-item <?php  if (strpos($url, 'journalism') || has_category('Journalismus') || has_category('Journalism')) { echo 'menu-active'; }?>"><a href="<?php echo get_permalink(702) ?>" ><?php echo esc_html_e('Journalismus', 'c360'); ?></a></li>
+					<li class="concept-header__list-item <?php  if (strpos($url, 'insights') || has_category('Insight')) { echo 'menu-active'; }?>"><!--<a href="<?php echo get_permalink(704) ?>" >--><?php echo esc_html_e('Insights', 'c360'); ?><!--</a>--></li>
 					<!-- <li class="concept-header__project-category__search">
 						<form action="POST">
 							<input type="text" placeholder="Suchbegriff hier eingeben">
@@ -98,12 +98,13 @@
 					foreach ($allTags as $tag) {
 											
 						if (tag_description($tag)) {
-							echo '<a href="' . get_home_url() . '/?s='. $tag->name . '" ><li class="tag">' . $tag->name . ' </li></a>';					
+							echo '<a href="' . get_home_url() . '/?s='. $tag->name . '" style="order: 1' /*. tag_description($tag)*/ . ';"><li class="tag">' . $tag->name . ' </li></a>';					
 						}
 					
 					}
 				?>
 			</ul>
+			<div class="concept-header__project-category__expand"></div>
 			<div class="concept-header__project-category__search-form"><?php get_search_form(); ?></div>
 		</nav>
 	</div>
