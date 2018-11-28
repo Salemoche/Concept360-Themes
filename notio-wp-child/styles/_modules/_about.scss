@@ -161,6 +161,11 @@ body.page-template-about {
                 display: inline-block;
             }
         }
+
+        
+        @media screen and (min-width: $breakpoint-large) {
+            margin-top: 3vw !important;
+        }
     }
 
     .team-member__container {

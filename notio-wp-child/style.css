@@ -27,7 +27,8 @@
 
 html {
   overflow-x: hidden;
-  width: 100vw; }
+  width: 100vw;
+  scroll-behavior: smooth; }
 
 body {
   background: white;
@@ -1258,7 +1259,9 @@ div[role=main] {
   background-image: url("./assets/email.svg"); }
 
 .pace {
-  top: 0 !important; }
+  top: 0 !important;
+  height: 100vh;
+  margin-top: 0; }
 
 body.home .concept-header__main, body.page-template-landing .concept-header__main {
   background: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0) 100%); }
@@ -2033,6 +2036,9 @@ body.page-template-landing .landing__info__information {
     margin-bottom: 2vw !important; }
   .project.project__insight .project__content__content .wpb_row {
     margin-bottom: 2vw; }
+  @media screen and (min-width: 1920px) {
+    .project {
+      margin-top: calc(3vw + 55px); } }
 
 .rp4wp-related-posts {
   width: 100vw;
@@ -2119,6 +2125,9 @@ body.page-template-highlights #wrapper, body.page-template-journalismus #wrapper
       height: calc(100vw/1.77777);
       width: 100vw !important;
       min-width: unset !important; } }
+  @media screen and (min-width: 1920px) {
+    .projects {
+      margin-top: calc(3vw + 55px); } }
 
 body.page-template-insights .projects__project-container .projects__project {
   background: white;
@@ -2279,6 +2288,9 @@ body.page-template-solutions .main .solutions {
         width: 150%; }
       body.page-template-solutions .main .solutions__services__graphic .wpb_wrapper {
         width: 100%; }
+  @media screen and (min-width: 1920px) {
+    body.page-template-solutions .main .solutions {
+      margin-top: 3vw !important; } }
 
 @media screen and (max-width: 768px) {
   body.page-template-solutions .main .row {
@@ -2412,6 +2424,9 @@ body.page-template-about .main .about {
     body.page-template-about .main .about__press__container .press {
       padding-top: 30px;
       display: inline-block; }
+  @media screen and (min-width: 1920px) {
+    body.page-template-about .main .about {
+      margin-top: 3vw !important; } }
 
 body.page-template-about .team-member__container {
   padding: 0 !important; }

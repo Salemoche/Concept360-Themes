@@ -261,6 +261,10 @@ body.page-template-solutions {
             }
         }
 
+        @media screen and (min-width: $breakpoint-large) {
+            margin-top: 3vw !important;
+        }
+
         
     }
 

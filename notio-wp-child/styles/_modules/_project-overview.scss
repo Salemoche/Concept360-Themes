@@ -95,6 +95,10 @@ body.page-template-highlights, body.page-template-journalismus, body.page-templa
             }
         }
     }
+
+    @media screen and (min-width: $breakpoint-large) {
+        margin-top: calc(3vw + 55px);
+    }
 }
 
 body.page-template-insights {

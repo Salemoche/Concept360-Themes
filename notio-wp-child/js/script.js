@@ -67,7 +67,7 @@ $(document).ready( function () {
         $('.about__content__image').css('height', $('.about__content__image').width()/1.77777);
 
 
-        console.log(aspectRatio);
+        // console.log(aspectRatio);
 
       
         if (aspectRatio < 0.5) {
@@ -211,7 +211,7 @@ $(document).ready( function () {
 
         var id = $(this).attr('id');
 
-        console.log(id);
+        // console.log(id);
 
         $('.solutions__working-style__graphic__text p').css('display', 'block');
         $('.solutions__working-style__graphic__text').css('display', 'none');
@@ -223,7 +223,7 @@ $(document).ready( function () {
 
         var id = $(this).attr('id');
 
-        console.log(id);
+        // console.log(id);
 
         $('.solutions__working-style__graphic__text p').css('display', 'none');
         $('.solutions__working-style__graphic__text').css('display', 'block');
@@ -279,7 +279,7 @@ $(document).ready( function () {
 
     setTimeout(function() {  
         $('.fbx-count').appendTo($('.fbx-caption-desc'));
-        console.log($('.fbx-count').text());
+        // console.log($('.fbx-count').text());
     }, 2000)
 
     //
@@ -301,7 +301,7 @@ $(document).ready( function () {
 
     if ($(window).scrollTop() > window.innerHeight - 50) {
         scrolled = true;
-        console.log(scrolled);
+        // console.log(scrolled);
     }
 
     $(window).scroll( function() {
@@ -317,7 +317,7 @@ $(document).ready( function () {
         if (scrolled != pScrolled) {
             $('.concept-header__main').toggleClass('scrolled');
             pScrolled = scrolled;
-            console.log($(window).scrollTop() + ", " + window.innerHeight);
+            // console.log($(window).scrollTop() + ", " + window.innerHeight);
 
         }
 
@@ -378,3 +378,37 @@ function autoHover() {
 
     }
 }
+
+//
+// Smooth scrolling
+//
+
+$('a[href*="#"]')
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .click(function(event) {
+        if (
+        location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+        && 
+        location.hostname == this.hostname
+        ) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+            event.preventDefault();
+            $('html, body').animate({
+            scrollTop: target.offset().top
+            }, 1000, function() {
+            var $target = $(target);
+            $target.focus();
+            if ($target.is(":focus")) {
+                return false;
+            } else {
+                $target.attr('tabindex','-1'); 
+                $target.focus();
+            };
+            });
+        }
+        }
+
+});
