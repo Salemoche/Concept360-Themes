@@ -113,7 +113,7 @@
       <?php endforeach; endif; ?>
     </div>
     <div class="project__related-projects row columns small-12">
-      <h4><?php esc_html_e("Other projects", "c360"); ?></h4>
+      <h4><?php esc_html_e("Weitere Projekte", "c360"); ?></h4>
       <?php
       $tags = wp_get_post_terms( get_queried_object_id(), 'post_tag', ['fields' => 'ids'] );
       // $args = [
