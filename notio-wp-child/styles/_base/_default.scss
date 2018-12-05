@@ -647,10 +647,8 @@ div[role=main] {
 
             width: 170px;
             min-width: 120px;
-            width: 7vw;
             height: 40px;
             min-height: 40px;
-            height: 4vw;
             cursor: pointer;
             background-size: contain;
             background-repeat: no-repeat;
@@ -936,7 +934,7 @@ div[role=main] {
                 height: 70px;
 
                 &__logo {
-                    width: 150px;
+                    // width: 150px;
                     left: $spacing-side-small;
                 }
 
@@ -1029,7 +1027,7 @@ div[role=main] {
 
                 
                 &.open {
-                    min-height: calc(100vh - 70px - 45px);
+                    min-height: calc(100vh - 70px);
                     height: unset;
 
                     .concept-header__project-category__expand {
@@ -1219,7 +1217,7 @@ div[role=main] {
     top: -49px !important;
 
     
-    @media screen and (max-height: 560px) {
+    @media screen and (max-height: 500px) {
 
         .menu-container {
             width: 100% !important;
@@ -1933,6 +1931,7 @@ div[role=main] {
         .wpcf7-recaptcha div {
             margin: 0 auto;
             margin-bottom: 6px;
+            width: 0 !important;
     
         }
     
@@ -2179,6 +2178,38 @@ div[role=main] {
     
 }
 
+.thb-cookie-bar {
+    .thb-cookie-text a {
+        font-weight: 400;
+        font-size: 13px;
+
+        &:hover {
+            box-shadow: inset 0px -4px 0px 0px rgba(227,27,35,75);    
+        }
+    }
+
+    .button.white {
+        border: 1px solid white;
+        border-radius: 0;  
+        transition: $transition-time; 
+        
+        &:hover {
+            border-color: $red;
+            background: none;
+            color: white;
+        }
+    }
+}
+
+body.logged-in {
+    @media screen and (max-width: 375px) {
+        .concept-header .concept-header__project-category__container.open {
+            min-height: calc(100vh - 70px - 45px);
+        }
+
+    }
+}
+
 
 //
 // Breakpoints
@@ -2193,6 +2224,12 @@ div[role=main] {
     h1 {
         font-size: 4.5rem;
     }
+}
+
+@media screen and (max-height: $breakpoint-small) {
+
+
+
 }
 
 //

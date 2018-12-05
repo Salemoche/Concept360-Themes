@@ -407,10 +407,8 @@ div[role=main] {
     .concept-header__main__logo {
       width: 170px;
       min-width: 120px;
-      width: 7vw;
       height: 40px;
       min-height: 40px;
-      height: 4vw;
       cursor: pointer;
       background-size: contain;
       background-repeat: no-repeat;
@@ -567,7 +565,6 @@ div[role=main] {
     .concept-header .concept-header__main {
       height: 70px; }
       .concept-header .concept-header__main__logo {
-        width: 150px;
         left: 20px; }
       .concept-header .concept-header__main__social-media__container > a {
         display: none; }
@@ -616,7 +613,7 @@ div[role=main] {
                 transform: rotate(-90deg);
         transition: 0.3s; }
       .concept-header .concept-header__project-category__container.open {
-        min-height: calc(100vh - 70px - 45px);
+        min-height: calc(100vh - 70px);
         height: unset; }
         .concept-header .concept-header__project-category__container.open .concept-header__project-category__expand {
           -webkit-transform: rotate(90deg);
@@ -727,7 +724,7 @@ div[role=main] {
 #mobile-menu {
   z-index: 101;
   top: -49px !important; }
-  @media screen and (max-height: 560px) {
+  @media screen and (max-height: 500px) {
     #mobile-menu .menu-container {
       width: 100% !important; }
     #mobile-menu #menu-main {
@@ -1119,7 +1116,8 @@ div[role=main] {
         border-color: #e31b23; }
     .wpcf7 .send-container .wpcf7-recaptcha div {
       margin: 0 auto;
-      margin-bottom: 6px; }
+      margin-bottom: 6px;
+      width: 0 !important; }
     .wpcf7 .send-container .wpcf7-response-output {
       display: block;
       width: 100vw; }
@@ -1269,6 +1267,25 @@ div[role=main] {
     left: unset !important;
     width: 20px !important;
     right: 20px !important; } }
+
+.thb-cookie-bar .thb-cookie-text a {
+  font-weight: 400;
+  font-size: 13px; }
+  .thb-cookie-bar .thb-cookie-text a:hover {
+    box-shadow: inset 0px -4px 0px 0px #e31b23; }
+
+.thb-cookie-bar .button.white {
+  border: 1px solid white;
+  border-radius: 0;
+  transition: 0.3s; }
+  .thb-cookie-bar .button.white:hover {
+    border-color: #e31b23;
+    background: none;
+    color: white; }
+
+@media screen and (max-width: 375px) {
+  body.logged-in .concept-header .concept-header__project-category__container.open {
+    min-height: calc(100vh - 70px - 45px); } }
 
 @media screen and (min-width: 1080px) {
   p, p span {
@@ -1536,7 +1553,8 @@ body.home .home, body.home .landing, body.page-template-landing .home, body.page
       flex-basis: 30%;
       min-width: 300px;
       flex-grow: 1;
-      padding-right: 5vw; }
+      padding-right: 5vw;
+      margin-bottom: 20px; }
       body.home .home__ueber-uns__text h4, body.home .landing__ueber-uns__text h4, body.page-template-landing .home__ueber-uns__text h4, body.page-template-landing .landing__ueber-uns__text h4 {
         color: white;
         margin-bottom: 10px;
@@ -1635,7 +1653,7 @@ body.home .home, body.home .landing, body.page-template-landing .home, body.page
     text-align: center;
     -webkit-filter: grayscale(1);
             filter: grayscale(1);
-    padding: 0 2vw 4vh 2vw !important; }
+    padding: 0 calc(5vw - .9375rem) 4vh calc(5vw - .9375rem) !important; }
     body.home .home__customers p, body.home .landing__customers p, body.page-template-landing .home__customers p, body.page-template-landing .landing__customers p {
       margin-bottom: 40px; }
     body.home .home__customers__item, body.home .landing__customers__item, body.page-template-landing .home__customers__item, body.page-template-landing .landing__customers__item {
@@ -2621,7 +2639,7 @@ body.page-template-about .quotes .quote div, body.page-template-about .press .qu
     body.page-template-about .main .row > h3:first-of-type {
       text-transform: unset; }
   body.page-template-about .about__content__contact-info > h2 {
-    margin-left: 0 !important; }
+    width: 100%; }
   body.page-template-about .about__content p, body.page-template-about .about__content h1, body.page-template-about .about__content h2, body.page-template-about .about__content h3 {
     margin-left: 5vw;
     font-size: 1rem; }

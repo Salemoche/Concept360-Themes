@@ -350,6 +350,8 @@ body.home, body.page-template-landing {
                 flex-grow: 1;
                 // padding: 30px;
                 padding-right: $spacing-side-large;
+                margin-bottom: 20px;
+
 
                 h4 {
                     color: white;
@@ -574,7 +576,7 @@ body.home, body.page-template-landing {
             text-align: center;
             filter: grayscale(1);
             // padding: 40px calc(#{$spacing-side-large} - 1rem) !important;
-            padding: 0 2vw $spacing-bottom 2vw !important;
+            padding: 0 calc(5vw - .9375rem) $spacing-bottom  calc(5vw - .9375rem) !important;
 
             h3 {
                 // font-size: 1.8rem;

@@ -325,6 +325,52 @@ $(document).ready( function () {
     // }, 2000)
 
     //
+    // Orientation change
+    //
+
+    var landscape;
+    var pLandscape;
+
+    if (window.orientation == 90 || window.orientation == -90) {
+        landscape = true;
+    } else {
+        landscape = false;
+    }
+
+    pLandscape = landscape;
+
+
+    function doOnOrientationChange() {
+
+
+        if (window.orientation == 90 || window.orientation == -90) {
+            landscape = true;
+        } else {
+            landscape = false;
+        }
+
+        if (pLandscape == false && landscape == true) {
+            console.log('to landscape');
+            $('.concept-header__all-tags').css('visibility', 'hidden');
+            $('.concept-header__list-item hr').css('display', 'none')
+
+        } else {
+            console.log('to portrait');
+            $('.concept-header__all-tags').css('visibility', 'visible');
+            $('.concept-header__list-item hr').css('display', 'inherit')
+        }
+
+        plandscape = landscape;
+
+
+        // if (landscape)
+
+
+    }
+
+    window.addEventListener('orientationchange', doOnOrientationChange);
+
+    //
     // General
     //
 
@@ -502,10 +548,10 @@ var scrollPossible = true;
 $(window).scroll( function() {
     if($('.fbx-2').css('visibility') == 'visible') {
         disableScroll();
-        console.log('no Scroll');
+        // console.log('no Scroll');
     } else {
         enableScroll();
-        console.log('Scroll');
+        // console.log('Scroll');
     }
 
     // scrollPossible = !scrollPossible;
