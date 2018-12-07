@@ -136,12 +136,27 @@ body.home, body.page-template-landing {
     
                     h2 {
                         
-                        font-size: 1rem;
+                        // font-size: 1rem;
                         color: $red;
                         text-transform: uppercase;
                         margin-bottom: 30px;
                         font-family: 'Gotham-Bold', sans-serif;
-                        
+                                   
+                        @media screen and (min-width: $breakpoint-large) {
+                            font-size: 1.4rem;
+                        }
+                        @media screen and (max-width: $breakpoint-large) {
+                            font-size: 1.3rem;
+                        }
+                        @media screen and (max-width: $breakpoint-medium-large-plus) {
+                            font-size: 1.2rem;
+                        }
+                        @media screen and (max-width: $breakpoint-medium-large) {
+                            font-size: 1.1rem;
+                        }
+                        @media screen and (max-width: $breakpoint-medium) {
+                            font-size: 1rem;
+                        }
                     }
 
                 }

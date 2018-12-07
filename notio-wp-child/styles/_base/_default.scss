@@ -73,10 +73,19 @@ p, a, span, b, i, strong, pre {
         font-size: 1.4rem;
     }
     @media screen and (max-width: $breakpoint-large) {
+        font-size: 1.3rem;
+    }
+    @media screen and (max-width: $breakpoint-medium-large-plus) {
         font-size: 1.2rem;
+    }
+    @media screen and (max-width: $breakpoint-medium-large) {
+        font-size: 1.1rem;
     }
     @media screen and (max-width: $breakpoint-medium) {
         font-size: 1rem;
+    }
+    @media screen and (max-width: $breakpoint-small-plus) {
+        font-size: 0.9rem;
     }
     @media screen and (max-width: $breakpoint-small) {
         font-size: 0.8rem;
@@ -87,25 +96,37 @@ p, a, span, b, i, strong, pre {
 
 h1  {
 
-    // font-size: 4vw;
-    
-    // @media screen and (max-width: $breakpoint-small) {
-    //     font-size: 1.8rem;
+    // @media screen and (min-width: $breakpoint-medium-large) {
+    //     font-size: 5rem;
+    // }
+    // @media screen and (max-width: 1440px) {
+    //     font-size: 3.5rem;
     // }
     // @media screen and (max-width: $breakpoint-medium) {
     //     font-size: 2.4rem;
     // }
-    // @media screen and (max-width: $breakpoint-medium-large) {
-    //     font-size: 6vw;
+    // @media screen and (max-width: $breakpoint-small) {
+    //     font-size: 1.8rem;
     // }
-    @media screen and (min-width: $breakpoint-medium-large) {
+
+       
+    @media screen and (min-width: $breakpoint-large) {
         font-size: 5rem;
     }
-    @media screen and (max-width: 1440px) {
-        font-size: 3.5rem;
+    @media screen and (max-width: $breakpoint-large) {
+        font-size: 4.2rem;
+    }
+    @media screen and (max-width: $breakpoint-medium-large-plus) {
+        font-size: 3.6rem;
+    }
+    @media screen and (max-width: $breakpoint-medium-large) {
+        font-size: 3rem;
     }
     @media screen and (max-width: $breakpoint-medium) {
         font-size: 2.4rem;
+    }
+    @media screen and (max-width: $breakpoint-small-plus) {
+        font-size: 2rem;
     }
     @media screen and (max-width: $breakpoint-small) {
         font-size: 1.8rem;
@@ -115,66 +136,149 @@ h1  {
 
 h2  {
     
-    @media screen and (max-width: $breakpoint-small) {
-        font-size: 1.6rem;
+    // @media screen and (max-width: $breakpoint-small) {
+    //     font-size: 1.6rem;
+    // }
+    // @media screen and (max-width: $breakpoint-medium) {
+    //     font-size: 1.8rem;
+    // }
+    // @media screen and (max-width: $breakpoint-medium-large) {
+    //     font-size: 2.4rem;
+    // }
+    // @media screen and (min-width: $breakpoint-medium-large) {
+    //     font-size: 3rem;
+    // }
+       
+    @media screen and (min-width: $breakpoint-large) {
+        font-size: 3rem;
+    }
+    @media screen and (max-width: $breakpoint-large) {
+        font-size: 2.8rem;
+    }
+    @media screen and (max-width: $breakpoint-medium-large-plus) {
+        font-size: 2.4rem;
+    }
+    @media screen and (max-width: $breakpoint-medium-large) {
+        font-size: 2rem;
     }
     @media screen and (max-width: $breakpoint-medium) {
         font-size: 1.8rem;
     }
-    @media screen and (max-width: $breakpoint-medium-large) {
-        font-size: 2.4rem;
+    @media screen and (max-width: $breakpoint-small-plus) {
+        font-size: 1.7rem;
     }
-    @media screen and (min-width: $breakpoint-medium-large) {
-        font-size: 3rem;
+    @media screen and (max-width: $breakpoint-small) {
+        font-size: 1.6rem;
     }
 }
 
 h3  {
     
-    @media screen and (max-width: $breakpoint-small) {
-        font-size: 1.2rem;
+    // @media screen and (max-width: $breakpoint-small) {
+    //     font-size: 1.2rem;
+    // }
+    // @media screen and (max-width: $breakpoint-medium) {
+    //     font-size: 1.6rem;
+    // }
+    // @media screen and (max-width: $breakpoint-medium-large) {
+    //     font-size: 1.8rem;
+    // }
+
+    // @media screen and (min-width: $breakpoint-medium-large) {
+    //     font-size: 2.4rem;
+    // }
+    
+    @media screen and (min-width: $breakpoint-large) {
+        font-size: 2.4rem;
     }
-    @media screen and (max-width: $breakpoint-medium) {
-        font-size: 1.6rem;
+    @media screen and (max-width: $breakpoint-large) {
+        font-size: 2rem;
     }
-    @media screen and (max-width: $breakpoint-medium-large) {
+    @media screen and (max-width: $breakpoint-medium-large-plus) {
         font-size: 1.8rem;
     }
-
-    @media screen and (min-width: $breakpoint-medium-large) {
-        font-size: 2.4rem;
+    @media screen and (max-width: $breakpoint-medium-large) {
+        font-size: 1.6rem;
+    }
+    @media screen and (max-width: $breakpoint-medium) {
+        font-size: 1.4rem;
+    }
+    @media screen and (max-width: $breakpoint-small-plus) {
+        font-size: 1.3rem;
+    }
+    @media screen and (max-width: $breakpoint-small) {
+        font-size: 1.2rem;
     }
 }
 
 h4  {
     
-    @media screen and (max-width: $breakpoint-small) {
-        font-size: 1rem;
+    // @media screen and (max-width: $breakpoint-small) {
+    //     font-size: 1rem;
+    // }
+    // @media screen and (max-width: $breakpoint-medium) {
+    //     font-size: 1.2rem;
+    // }
+    // @media screen and (max-width: $breakpoint-medium-large) {
+    //     font-size: 1.4rem;
+    // }
+    // @media screen and (min-width: $breakpoint-medium-large) {
+    //     font-size: 1.8rem;
+    // }
+
+       
+    @media screen and (min-width: $breakpoint-large) {
+        font-size: 1.8rem;
+    }
+    @media screen and (max-width: $breakpoint-large) {
+        font-size: 1.6rem;
+    }
+    @media screen and (max-width: $breakpoint-medium-large-plus) {
+        font-size: 1.4rem;
+    }
+    @media screen and (max-width: $breakpoint-medium-large) {
+        font-size: 1.3rem;
     }
     @media screen and (max-width: $breakpoint-medium) {
         font-size: 1.2rem;
     }
-    @media screen and (max-width: $breakpoint-medium-large) {
-        font-size: 1.4rem;
+    @media screen and (max-width: $breakpoint-small-plus) {
+        font-size: 1.1rem;
     }
-    @media screen and (min-width: $breakpoint-medium-large) {
-        font-size: 1.8rem;
+    @media screen and (max-width: $breakpoint-small) {
+        font-size: 1rem;
     }
 }
 
 h6, h5  {
     
-    @media screen and (max-width: $breakpoint-small) {
-        font-size: 1rem;
+    // @media screen and (max-width: $breakpoint-small) {
+    //     font-size: 1rem;
+    // }
+    // @media screen and (max-width: $breakpoint-medium) {
+    //     font-size: 1rem;
+    // }
+    // @media screen and (max-width: $breakpoint-medium-large) {
+    //     font-size: 1.2rem;
+    // }
+    // @media screen and (min-width: $breakpoint-medium-large) {
+    //     font-size: 1.4rem;
+
+           
+    @media screen and (min-width: $breakpoint-large) {
+        font-size: 1.4rem;
+    }
+    @media screen and (max-width: $breakpoint-large) {
+        font-size: 1.3rem;
+    }
+    @media screen and (max-width: $breakpoint-medium-large-plus) {
+        font-size: 1.2rem;
+    }
+    @media screen and (max-width: $breakpoint-medium-large) {
+        font-size: 1.1rem;
     }
     @media screen and (max-width: $breakpoint-medium) {
         font-size: 1rem;
-    }
-    @media screen and (max-width: $breakpoint-medium-large) {
-        font-size: 1.2rem;
-    }
-    @media screen and (min-width: $breakpoint-medium-large) {
-        font-size: 1.4rem;
     }
 }
 
@@ -415,7 +519,7 @@ div[role=main] {
     // min-height: calc(50vh - 200px);
     flex-wrap: wrap;
 
-    h3, h4 {
+    h3, h4, h5 {
         display: inline;        
     }
 
@@ -452,9 +556,9 @@ div[role=main] {
         background: $gray;
         color: $anthrazit;
 
-        h4 {
+        h5 {
             color: $anthrazit;
-            font-size: 1.4rem;
+            // font-size: 1.4rem;
             margin-bottom: 5px;
             transition: $transition-time;
         }
@@ -520,11 +624,11 @@ div[role=main] {
                 
             background: $anthrazit;
 
-            h4 {
+            h5 {
                 box-shadow: inset 0px -7px 0px 0px rgba(227,27,35,75);
             }
             
-            h4, p {
+            h5, p {
                 color: white;
             }
 

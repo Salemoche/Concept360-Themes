@@ -53,93 +53,154 @@ p, a, span, b, i, strong, pre {
       font-size: 1.4rem; } }
   @media screen and (max-width: 1920px) {
     p, a, span, b, i, strong, pre {
+      font-size: 1.3rem; } }
+  @media screen and (max-width: 1440px) {
+    p, a, span, b, i, strong, pre {
       font-size: 1.2rem; } }
+  @media screen and (max-width: 1080px) {
+    p, a, span, b, i, strong, pre {
+      font-size: 1.1rem; } }
   @media screen and (max-width: 768px) {
     p, a, span, b, i, strong, pre {
       font-size: 1rem; } }
+  @media screen and (max-width: 571px) {
+    p, a, span, b, i, strong, pre {
+      font-size: 0.9rem; } }
   @media screen and (max-width: 375px) {
     p, a, span, b, i, strong, pre {
       font-size: 0.8rem; } }
 
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1920px) {
   h1 {
     font-size: 5rem; } }
 
+@media screen and (max-width: 1920px) {
+  h1 {
+    font-size: 4.2rem; } }
+
 @media screen and (max-width: 1440px) {
   h1 {
-    font-size: 3.5rem; } }
-
-@media screen and (max-width: 768px) {
-  h1 {
-    font-size: 2.4rem; } }
-
-@media screen and (max-width: 375px) {
-  h1 {
-    font-size: 1.8rem; } }
-
-@media screen and (max-width: 375px) {
-  h2 {
-    font-size: 1.6rem; } }
-
-@media screen and (max-width: 768px) {
-  h2 {
-    font-size: 1.8rem; } }
+    font-size: 3.6rem; } }
 
 @media screen and (max-width: 1080px) {
-  h2 {
+  h1 {
+    font-size: 3rem; } }
+
+@media screen and (max-width: 768px) {
+  h1 {
     font-size: 2.4rem; } }
 
-@media screen and (min-width: 1080px) {
+@media screen and (max-width: 571px) {
+  h1 {
+    font-size: 2rem; } }
+
+@media screen and (max-width: 375px) {
+  h1 {
+    font-size: 1.8rem; } }
+
+@media screen and (min-width: 1920px) {
   h2 {
     font-size: 3rem; } }
 
-@media screen and (max-width: 375px) {
-  h3 {
-    font-size: 1.2rem; } }
+@media screen and (max-width: 1920px) {
+  h2 {
+    font-size: 2.8rem; } }
 
-@media screen and (max-width: 768px) {
-  h3 {
-    font-size: 1.6rem; } }
+@media screen and (max-width: 1440px) {
+  h2 {
+    font-size: 2.4rem; } }
 
 @media screen and (max-width: 1080px) {
-  h3 {
+  h2 {
+    font-size: 2rem; } }
+
+@media screen and (max-width: 768px) {
+  h2 {
     font-size: 1.8rem; } }
 
-@media screen and (min-width: 1080px) {
+@media screen and (max-width: 571px) {
+  h2 {
+    font-size: 1.7rem; } }
+
+@media screen and (max-width: 375px) {
+  h2 {
+    font-size: 1.6rem; } }
+
+@media screen and (min-width: 1920px) {
   h3 {
     font-size: 2.4rem; } }
 
-@media screen and (max-width: 375px) {
-  h4 {
-    font-size: 1rem; } }
+@media screen and (max-width: 1920px) {
+  h3 {
+    font-size: 2rem; } }
 
-@media screen and (max-width: 768px) {
-  h4 {
-    font-size: 1.2rem; } }
+@media screen and (max-width: 1440px) {
+  h3 {
+    font-size: 1.8rem; } }
 
 @media screen and (max-width: 1080px) {
-  h4 {
+  h3 {
+    font-size: 1.6rem; } }
+
+@media screen and (max-width: 768px) {
+  h3 {
     font-size: 1.4rem; } }
 
-@media screen and (min-width: 1080px) {
+@media screen and (max-width: 571px) {
+  h3 {
+    font-size: 1.3rem; } }
+
+@media screen and (max-width: 375px) {
+  h3 {
+    font-size: 1.2rem; } }
+
+@media screen and (min-width: 1920px) {
   h4 {
     font-size: 1.8rem; } }
 
+@media screen and (max-width: 1920px) {
+  h4 {
+    font-size: 1.6rem; } }
+
+@media screen and (max-width: 1440px) {
+  h4 {
+    font-size: 1.4rem; } }
+
+@media screen and (max-width: 1080px) {
+  h4 {
+    font-size: 1.3rem; } }
+
+@media screen and (max-width: 768px) {
+  h4 {
+    font-size: 1.2rem; } }
+
+@media screen and (max-width: 571px) {
+  h4 {
+    font-size: 1.1rem; } }
+
 @media screen and (max-width: 375px) {
-  h6, h5 {
+  h4 {
     font-size: 1rem; } }
+
+@media screen and (min-width: 1920px) {
+  h6, h5 {
+    font-size: 1.4rem; } }
+
+@media screen and (max-width: 1920px) {
+  h6, h5 {
+    font-size: 1.3rem; } }
+
+@media screen and (max-width: 1440px) {
+  h6, h5 {
+    font-size: 1.2rem; } }
+
+@media screen and (max-width: 1080px) {
+  h6, h5 {
+    font-size: 1.1rem; } }
 
 @media screen and (max-width: 768px) {
   h6, h5 {
     font-size: 1rem; } }
-
-@media screen and (max-width: 1080px) {
-  h6, h5 {
-    font-size: 1.2rem; } }
-
-@media screen and (min-width: 1080px) {
-  h6, h5 {
-    font-size: 1.4rem; } }
 
 .underline-link:hover:after, .products .product .product_after_title .button:hover:after, .wpb_text_column a:hover:after {
   display: none; }
@@ -287,7 +348,7 @@ div[role=main] {
   display: flex;
   padding: 0;
   flex-wrap: wrap; }
-  .quote__container h3, .quote__container h4, .press__container h3, .press__container h4 {
+  .quote__container h3, .quote__container h4, .quote__container h5, .press__container h3, .press__container h4, .press__container h5 {
     display: inline; }
   .quote__container a, .press__container a {
     height: 18.75vw;
@@ -312,9 +373,8 @@ div[role=main] {
     background: white;
     background: #f2f2f2;
     color: #282828; }
-    .quote__container .quote h4, .quote__container .press h4, .press__container .quote h4, .press__container .press h4 {
+    .quote__container .quote h5, .quote__container .press h5, .press__container .quote h5, .press__container .press h5 {
       color: #282828;
-      font-size: 1.4rem;
       margin-bottom: 5px;
       transition: 0.3s; }
     .quote__container .quote .about__press__article, .quote__container .press .about__press__article, .press__container .quote .about__press__article, .press__container .press .about__press__article {
@@ -343,9 +403,9 @@ div[role=main] {
       box-shadow: inset 0px -7px 0px 0px #e31b23; }
     .quote__container .quote:hover, .quote__container .press:hover, .press__container .quote:hover, .press__container .press:hover {
       background: #282828; }
-      .quote__container .quote:hover h4, .quote__container .press:hover h4, .press__container .quote:hover h4, .press__container .press:hover h4 {
+      .quote__container .quote:hover h5, .quote__container .press:hover h5, .press__container .quote:hover h5, .press__container .press:hover h5 {
         box-shadow: inset 0px -7px 0px 0px #e31b23; }
-      .quote__container .quote:hover h4, .quote__container .quote:hover p, .quote__container .press:hover h4, .quote__container .press:hover p, .press__container .quote:hover h4, .press__container .quote:hover p, .press__container .press:hover h4, .press__container .press:hover p {
+      .quote__container .quote:hover h5, .quote__container .quote:hover p, .quote__container .press:hover h5, .quote__container .press:hover p, .press__container .quote:hover h5, .press__container .quote:hover p, .press__container .press:hover h5, .press__container .press:hover p {
         color: white; }
       .quote__container .quote:hover .press__logo--hover, .quote__container .press:hover .press__logo--hover, .press__container .quote:hover .press__logo--hover, .press__container .press:hover .press__logo--hover {
         opacity: 1; }
@@ -1452,11 +1512,25 @@ body.home .home, body.home .landing, body.page-template-landing .home, body.page
             body.home .home__landing__text__title h1, body.home .landing__landing__text__title h1, body.page-template-landing .home__landing__text__title h1, body.page-template-landing .landing__landing__text__title h1 {
               max-width: unset; } }
         body.home .home__landing__text__title h2, body.home .landing__landing__text__title h2, body.page-template-landing .home__landing__text__title h2, body.page-template-landing .landing__landing__text__title h2 {
-          font-size: 1rem;
           color: #e31b23;
           text-transform: uppercase;
           margin-bottom: 30px;
           font-family: 'Gotham-Bold', sans-serif; }
+          @media screen and (min-width: 1920px) {
+            body.home .home__landing__text__title h2, body.home .landing__landing__text__title h2, body.page-template-landing .home__landing__text__title h2, body.page-template-landing .landing__landing__text__title h2 {
+              font-size: 1.4rem; } }
+          @media screen and (max-width: 1920px) {
+            body.home .home__landing__text__title h2, body.home .landing__landing__text__title h2, body.page-template-landing .home__landing__text__title h2, body.page-template-landing .landing__landing__text__title h2 {
+              font-size: 1.3rem; } }
+          @media screen and (max-width: 1440px) {
+            body.home .home__landing__text__title h2, body.home .landing__landing__text__title h2, body.page-template-landing .home__landing__text__title h2, body.page-template-landing .landing__landing__text__title h2 {
+              font-size: 1.2rem; } }
+          @media screen and (max-width: 1080px) {
+            body.home .home__landing__text__title h2, body.home .landing__landing__text__title h2, body.page-template-landing .home__landing__text__title h2, body.page-template-landing .landing__landing__text__title h2 {
+              font-size: 1.1rem; } }
+          @media screen and (max-width: 768px) {
+            body.home .home__landing__text__title h2, body.home .landing__landing__text__title h2, body.page-template-landing .home__landing__text__title h2, body.page-template-landing .landing__landing__text__title h2 {
+              font-size: 1rem; } }
       body.home .home__landing__text__project-category__container, body.home .landing__landing__text__project-category__container, body.page-template-landing .home__landing__text__project-category__container, body.page-template-landing .landing__landing__text__project-category__container {
         position: absolute;
         top: 80vh;

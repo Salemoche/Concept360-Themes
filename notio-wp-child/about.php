@@ -92,7 +92,7 @@
     ?>
       <a href="<?php the_sub_field('quote_link'); ?>" class="about__quote quote">
         <div >
-          <h4><?php the_sub_field('quote_quote'); ?></h4>
+          <h5><?php the_sub_field('quote_quote'); ?></h5>
           <p><?php the_sub_field('quote_name'); ?></p>
           <p><?php the_sub_field('quote_details'); ?></p>
         </div>
