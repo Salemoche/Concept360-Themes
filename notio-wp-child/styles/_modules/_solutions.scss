@@ -8,16 +8,16 @@ body.page-template-solutions {
     h1, h2, h3, h4, h5   {
     
         @media screen and (max-width: $breakpoint-small) {
-            font-size: 1rem;
+            ////font-size: 1.4vw;
         }
         @media screen and (max-width: $breakpoint-medium) {
-            font-size: 1rem;
+            ////font-size: 1.4vw;
         }
         @media screen and (max-width: $breakpoint-medium-large) {
-            font-size: 1.2rem;
+            ////font-size: 1.5vw;
         }
         @media screen and (min-width: $breakpoint-medium-large) {
-            font-size: 1.4rem;
+            ////font-size: 1.75vw;
         }
     }
 
@@ -162,7 +162,7 @@ body.page-template-solutions {
 
                 .number {
                     position: absolute;
-                    font-size: 1.4rem;
+                    ////font-size: 1.75vw;
                     display: none;
 
                     &-1 {
@@ -195,7 +195,7 @@ body.page-template-solutions {
                 h6 {
                     font-family: 'Ubuntu';
                     font-weight: 400;
-                    font-size: 1.2rem;
+                    ////font-size: 1.5vw;
                 }
 
                 p {

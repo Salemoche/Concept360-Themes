@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 p {
-    font-size: 1rem;
+    font-size: 1.4vw;
 }
 
 a {
@@ -45,26 +45,52 @@ a {
     }
 }
 
+// p, a, span, b, i, strong, pre {
+
+//     letter-spacing: -0.3px;
+    
+//     @media screen and (max-width: $breakpoint-small) {
+//         font-size: 1.1vw;
+//     }
+//     @media screen and (max-width: $breakpoint-medium) {
+//         font-size: 1.4vw;
+//     }
+//     @media screen and (max-width: $breakpoint-medium-large) {
+//         font-size: 1.4vw;
+//     }
+//     @media screen and (min-width: $breakpoint-medium-large) {
+//         font-size: 1.5vw;
+//     }
+// }
+
 p, a, span, b, i, strong, pre {
 
     letter-spacing: -0.3px;
+
+    font-size: 1vw;
     
-    @media screen and (max-width: $breakpoint-small) {
-        font-size: .8rem;
+    @media screen and (min-width: $breakpoint-large) {
+        font-size: 1.4rem;
+    }
+    @media screen and (max-width: $breakpoint-large) {
+        font-size: 1.3vw;
+    }
+    @media screen and (max-width: 1440px) {
+        font-size: 1.2rem;
     }
     @media screen and (max-width: $breakpoint-medium) {
         font-size: 1rem;
     }
-    @media screen and (max-width: $breakpoint-medium-large) {
-        font-size: 1rem;
+    @media screen and (max-width: $breakpoint-small) {
+        font-size: 0.8rem;
     }
-    @media screen and (min-width: $breakpoint-medium-large) {
-        font-size: 1.2rem;
-    }
+
 }
 
 
 h1  {
+
+    font-size: 4vw;
     
     @media screen and (max-width: $breakpoint-small) {
         font-size: 1.8rem;
@@ -73,18 +99,18 @@ h1  {
         font-size: 2.4rem;
     }
     @media screen and (max-width: $breakpoint-medium-large) {
-        font-size: 3rem;
+        font-size: 6vw;
     }
-    @media screen and (min-width: $breakpoint-medium-large) {
-        font-size: 4.8rem;
-    }
+    // @media screen and (min-width: $breakpoint-medium-large) {
+    //     font-size: 4.8rem;
+    // }
 }
 
 
 h2  {
     
     @media screen and (max-width: $breakpoint-small) {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
     @media screen and (max-width: $breakpoint-medium) {
         font-size: 1.8rem;
@@ -92,9 +118,9 @@ h2  {
     @media screen and (max-width: $breakpoint-medium-large) {
         font-size: 2.4rem;
     }
-    @media screen and (min-width: $breakpoint-medium-large) {
-        font-size: 3rem;
-    }
+    // @media screen and (min-width: $breakpoint-medium-large) {
+    //     font-size: 3rem;
+    // }
 }
 
 h3  {
@@ -103,46 +129,46 @@ h3  {
         font-size: 1.2rem;
     }
     @media screen and (max-width: $breakpoint-medium) {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
     @media screen and (max-width: $breakpoint-medium-large) {
         font-size: 1.8rem;
     }
-    @media screen and (min-width: $breakpoint-medium-large) {
-        font-size: 2.4rem;
-    }
+    // @media screen and (min-width: $breakpoint-medium-large) {
+    //     font-size: 2.4rem;
+    // }
 }
 
 h4  {
     
     @media screen and (max-width: $breakpoint-small) {
-        font-size: 1rem;
+        font-size: 1;
     }
     @media screen and (max-width: $breakpoint-medium) {
-        font-size: 1.2rem;
+        font-size: 1.2;
     }
     @media screen and (max-width: $breakpoint-medium-large) {
         font-size: 1.4rem;
     }
-    @media screen and (min-width: $breakpoint-medium-large) {
-        font-size: 1.8rem;
-    }
+    // @media screen and (min-width: $breakpoint-medium-large) {
+    //     font-size: 1.8rem;
+    // }
 }
 
 h6, h5  {
     
     @media screen and (max-width: $breakpoint-small) {
-        font-size: 1rem;
+        font-size: 1.4vw;
     }
     @media screen and (max-width: $breakpoint-medium) {
-        font-size: 1rem;
+        font-size: 1.4vw;
     }
     @media screen and (max-width: $breakpoint-medium-large) {
-        font-size: 1.2rem;
+        font-size: 1.5vw;
     }
-    @media screen and (min-width: $breakpoint-medium-large) {
-        font-size: 1.4rem;
-    }
+    // @media screen and (min-width: $breakpoint-medium-large) {
+    //     font-size: 1.75vw;
+    // }
 }
 
 
@@ -234,7 +260,7 @@ div[role=main] {
             h3 {
                 transition: $transition-time;
                 display: inline;
-                font-size: 1.2rem;
+                font-size: 1.5vw;
             }
         }
 
@@ -298,20 +324,20 @@ div[role=main] {
     }
 
     h3 {
-        font-size: 1.2rem;
+        font-size: 1.5vw;
         margin-bottom: 5px;
         box-shadow: inset 0px -7px 0px 0px rgba(227,27,35,75);
         display: inline;
     }
 
     p {
-        font-size: .8rem !important;
+        font-size: 1.1vw !important;
         width: 100%;
         margin-bottom: 0;
         margin-top: 10px;
         
         @media screen and (min-width: $breakpoint-medium-large) {
-            font-size: 1.2rem;
+            font-size: 1.5vw;
         }
     }
 
@@ -326,7 +352,7 @@ div[role=main] {
 
     @media screen and (max-width: $breakpoint-medium) {
         h3 {
-            font-size: 0.8rem;
+            font-size: 1.1vw;
         }
     }
 }
@@ -417,7 +443,7 @@ div[role=main] {
 
         h4 {
             color: $anthrazit;
-            font-size: 1rem;
+            font-size: 1.4vw;
             margin-bottom: 5px;
             transition: $transition-time;
         }
@@ -429,7 +455,7 @@ div[role=main] {
         p {
             margin-bottom: 0;
             flex-basis: 100%;
-            font-size: .8rem;
+            font-size: 1.1vw;
         }
 
 
@@ -572,11 +598,11 @@ div[role=main] {
         @media screen and (min-width: 1440px){
 
             h4 {
-                font-size: 1.4rem;
+                font-size: 1.75vw;
             }
 
             p {
-                font-size: 1.2rem;
+                font-size: 1.5vw;
             }
         }
     }
@@ -633,7 +659,7 @@ div[role=main] {
     &__main {   
 
         min-height: $menu-height;
-        min-height: 60px;
+        min-height: 80px;
         height: 3vw;
     	width: 100%;
         background: $anthrazit;
@@ -702,7 +728,7 @@ div[role=main] {
                 font-size: $submenu-font-size;
                 
                 a {
-                    font-size: 1rem;
+                    font-size: 1.4vw;
                     color: $anthrazit;
                     transition: $transition-time;
 
@@ -741,7 +767,7 @@ div[role=main] {
                 padding: 7px 10px;
                 margin: 10px 0;
                 margin-left: 5px;
-                font-size: 0.8rem;
+                font-size: 1.1vw;
             }
         }
 
@@ -764,7 +790,7 @@ div[role=main] {
             .tag {
                 padding: 7px 10px;
                 margin: 10px 0;
-                font-size: 0.8rem;
+                font-size: 1.1vw;
                 transition: $transition-time;
 
                 &:hover {
@@ -1233,7 +1259,7 @@ div[role=main] {
             width: 50%;
 
             a {
-                font-size: 1.4rem;
+                font-size: 1.75vw;
                 margin-bottom: 4vh;
             }
 
@@ -1246,7 +1272,7 @@ div[role=main] {
                 margin-top: 0;
     
                 ul li a {
-                    font-size: 1rem;
+                    font-size: 1.4vw;
                 }
             }
         }
@@ -1290,7 +1316,7 @@ div[role=main] {
 
         li>a {
             color: white;
-            font-size: 2rem;
+            font-size: 2.5vw;
             padding-bottom: 0;
             margin-bottom: 30px;
             font-weight: 400;
@@ -1323,7 +1349,7 @@ div[role=main] {
 
                 a {
                     text-transform: none;
-                    font-size: 1rem;
+                    font-size: 1.4vw;
                     font-weight: 400;
                 }
 
@@ -1358,7 +1384,7 @@ div[role=main] {
         }
 
         span {
-            font-size: .8rem !important;
+            font-size: 1.1vw !important;
 
         }
     }
@@ -1386,7 +1412,7 @@ div[role=main] {
     //             float: right;
 
     //             a {
-    //                 font-size: 1.2rem;
+    //                 font-size: 1.5vw;
     //                 color: white;
 
     //                 &:hover {
@@ -1431,13 +1457,13 @@ div[role=main] {
 
             li {
                 a {
-                    font-size: 1.4rem;
+                    font-size: 1.75vw;
                     margin-bottom: 10px;
                 }
 
                 &.address-item {
                     a {
-                        font-size: 0.8rem;
+                        font-size: 1.1vw;
 
                         &:hover {
                             box-shadow: inset 0px -3px 0px 0px rgba(227,27,35,75);            
@@ -1476,7 +1502,7 @@ div[role=main] {
 }
 
 .tag {
-    font-size: 0.8rem;
+    font-size: 1.1vw;
     font-weight: $bold;
     background: $gray;
     padding: 8px 14px;
@@ -1512,7 +1538,7 @@ div[role=main] {
 
     a, > .breadcrumb {
 
-        font-size: 0.8rem;
+        font-size: 1.1vw;
         font-weight: $bold;
         color: $red;
         text-transform: uppercase;
@@ -1522,11 +1548,11 @@ div[role=main] {
     
     .breadcrumb > a, .breadcrumb > span {
         margin-left: 0;
-        font-size: 0.8rem;
+        font-size: 1.1vw;
     }
 
     span {
-        font-size: 0.8rem;
+        font-size: 1.1vw;
     }
 }
 
@@ -1568,14 +1594,14 @@ div[role=main] {
 
         
         p {
-            font-size: 1.2rem;
+            font-size: 1.5vw;
             font-weight: $light;
             margin-bottom: 0;
             box-shadow: none !important;
         }
 
         b {
-            font-size: 1.2rem;
+            font-size: 1.5vw;
             font-weight: $bold;
         }
 
@@ -1601,13 +1627,13 @@ div[role=main] {
         // }
 
         h4 {
-            font-size: 1.2rem;
+            font-size: 1.5vw;
             color: white;
             margin-bottom: 10px;
         }
 
         p {
-            font-size: 1rem;
+            font-size: 1.4vw;
             margin-bottom: 0;
             margin: 0 auto;
             display: inline;
@@ -1700,7 +1726,7 @@ div[role=main] {
             padding: 30px $spacing-side-small;
 
             p, b {
-                font-size: .8rem;
+                font-size: 1.1vw;
             }
         }
 
@@ -1762,14 +1788,14 @@ div[role=main] {
             
             
             p, b, i, em, a {
-                font-size: 1.4rem !important;
+                font-size: 1.75vw !important;
             }
 
         }
 
         .footer__info {
             p {
-                font-size: 1.2rem;
+                font-size: 1.5vw;
             }
             padding: 40px calc((100vw - 1920px) / 2 - 10px + 5.4vw) !important;
         }
@@ -1863,7 +1889,7 @@ div[role=main] {
 
     &-response-output {
 
-        font-size: 1rem;
+        font-size: 1.4vw;
         padding-bottom: 20px;
     }
 
@@ -2215,16 +2241,16 @@ body.logged-in {
 // Breakpoints
 //
 
-@media screen and (min-width: $breakpoint-medium-large) {
+// @media screen and (min-width: $breakpoint-medium-large) {
     
-    p, p span {
-        font-size: 1.2rem;
-    }
+//     p, p span {
+//         font-size: 1.5vw;
+//     }
     
-    h1 {
-        font-size: 4.5rem;
-    }
-}
+//     h1 {
+//         font-size: 4.5rem;
+//     }
+// }
 
 @media screen and (max-height: $breakpoint-small) {
 

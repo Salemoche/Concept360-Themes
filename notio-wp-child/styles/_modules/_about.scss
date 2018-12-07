@@ -10,21 +10,21 @@ body.page-template-about {
 
         > h3 {
             display: block;
-            // font-size: 1.6rem;
+            // ////font-size: 1.6rem;
             max-width: 90vw;
             margin-left: $spacing-side-large;
 
             @media screen and (max-width: $breakpoint-small) {
-                font-size: 1rem !important;
+                ////font-size: 1.4vw !important;
             }
             @media screen and (max-width: $breakpoint-medium) {
-                font-size: 1rem !important;
+                ////font-size: 1.4vw !important;
             }
             @media screen and (max-width: $breakpoint-medium-large) {
-                font-size: 1.2rem !important;
+                ////font-size: 1.2rem !important;
             }
             @media screen and (min-width: $breakpoint-medium-large) {
-                font-size: 1.4rem !important;
+                ////font-size: 1.75vw !important;
             }
         }
 
@@ -48,28 +48,28 @@ body.page-template-about {
                 padding-top: $spacing-side;
 
                 // h1, h2 {
-                //     font-size: 1.8rem;
+                //     ////font-size: 1.8rem;
                 //     text-transform: uppercase;
                 //     margin-bottom: $spacing-bottom;
-                //     // font-size: 1.8rem;
+                //     // ////font-size: 1.8rem;
                 // }
 
                 h1, h2  {
-                    font-size: 1.8rem;
+                    ////font-size: 1.8rem;
                     text-transform: uppercase;
                     margin-bottom: $spacing-bottom;
     
                     @media screen and (max-width: $breakpoint-small) {
-                        font-size: 1.2rem;
+                        ////font-size: 1.5vw;
                     }
                     @media screen and (max-width: $breakpoint-medium) {
-                        font-size: 1.4rem;
+                        ////font-size: 1.75vw;
                     }
                     @media screen and (max-width: $breakpoint-medium-large) {
-                        font-size: 1.8rem;
+                        ////font-size: 1.8rem;
                     }
                     @media screen and (min-width: $breakpoint-medium-large) {
-                        font-size: 2.4rem;
+                        ////font-size: 2.4rem;
                     }
                 }
 
@@ -82,7 +82,7 @@ body.page-template-about {
                     p {
                         display: inline;
                         transition: $transition-time;
-                        // font-size: 1rem !important;
+                        // ////font-size: 1.4vw !important;
                     }
 
                     &:hover {
@@ -112,7 +112,7 @@ body.page-template-about {
                 }
     
                 h3 {
-                    font-size: 1rem;
+                    ////font-size: 1.4vw;
                     text-transform: uppercase;
                     font-weight: 600;
                     margin-bottom: 0px;
@@ -143,7 +143,7 @@ body.page-template-about {
                 // p, h1, h2, h3 {
                 //     margin-left: $spacing-side-large;
                 //     margin-right: $spacing-side-large;
-                //     font-size: 1rem;
+                //     ////font-size: 1.4vw;
                 // }
 
                 .wpb_column {
@@ -375,7 +375,7 @@ body.page-template-about {
             }
 
             > h3 {
-                font-size: 1rem;
+                ////font-size: 1.4vw;
                 text-transform: uppercase;
 
                 &:first-of-type {
@@ -395,7 +395,7 @@ body.page-template-about {
                 
                 p, h1, h2, h3 {
                     margin-left: $spacing-side-large;
-                    font-size: 1rem;
+                    ////font-size: 1.4vw;
                 }
 
                 a p {
@@ -454,7 +454,7 @@ body.page-template-about {
         }
 
         .press p, .quotes p {
-            font-size: .8rem;
+            ////font-size: 1.1vw;
         }
         
     }

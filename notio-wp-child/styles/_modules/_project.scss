@@ -6,16 +6,16 @@
     p, a, span, b, i, strong, em, pre {
     
         @media screen and (max-width: $breakpoint-small) {
-            font-size: .8rem;
+            ////font-size: 1.1vw;
         }
         @media screen and (max-width: $breakpoint-medium) {
-            font-size: 1rem;
+            ////font-size: 1.4vw;
         }
         @media screen and (max-width: $breakpoint-medium-large-project) {
-            font-size: 1rem;
+            ////font-size: 1.4vw;
         }
         @media screen and (min-width: $breakpoint-medium-large-project) {
-            font-size: 1.2rem;
+            ////font-size: 1.5vw;
         }
     }
 
@@ -26,16 +26,16 @@
     // p, a, span, b, i, strong, em {
     
     //     @media screen and (max-width: $breakpoint-small) {
-    //         font-size: .8rem;
+    //         ////font-size: 1.1vw;
     //     }
     //     @media screen and (max-width: $breakpoint-medium) {
-    //         font-size: 1rem;
+    //         ////font-size: 1.4vw;
     //     }
     //     @media screen and (max-width: $breakpoint-medium-large-project) {
-    //         font-size: 1rem;
+    //         ////font-size: 1.4vw;
     //     }
     //     @media screen and (min-width: $breakpoint-medium-large-project) {
-    //         font-size: 1.2rem;
+    //         ////font-size: 1.5vw;
     //     }
     // }
 
@@ -80,10 +80,6 @@
             }
 
             &__play-button {
-                height: 7vw;
-                width: 7vw;
-                min-width: 70px;
-                min-height: 70px;
                 max-width: 110px;
                 max-height: 110px;
                 border-radius: 50%;
@@ -97,6 +93,28 @@
 
                 &:hover {
                     transform: translate(-50%, -50%) scale(1.05);
+                }
+
+                
+                @media screen and (min-width: $breakpoint-medium-large){
+                    height: 100px;
+                    width: 100px;
+                }
+
+                @media screen and (max-width: $breakpoint-medium-large){
+                    height: 80px;
+                    width: 80px;   
+                }
+
+                @media screen and (max-width: $breakpoint-medium){
+                    height: 60px;
+                    width: 60px;
+                }
+                
+                @media screen and (max-width: $breakpoint-small){
+                    
+                    height: 40px;
+                    width: 40px;
                 }
             }
         }
@@ -156,12 +174,12 @@
 
             p, strong {
                 margin-left: $spacing-side-large;
-                // font-size: 1rem;
+                // ////font-size: 1.4vw;
             }
 
             h1, h2, h3 {
                 margin-left: $spacing-side-large;
-                font-size: 0.9rem;
+                ////font-size: 0.9rem;
             }
 
             h1, h2, h3 {
@@ -169,7 +187,7 @@
             }
 
             a {
-                font-size: 1rem;
+                ////font-size: 1.4vw;
                 color: $gray-dark;
 
                 &:hover {
@@ -184,7 +202,7 @@
 
 
             span {
-                // font-size: 1rem;
+                // ////font-size: 1.4vw;
             }
 
             > .row > .wpb_column:last-of-type{
@@ -205,11 +223,11 @@
             @media screen and (min-width: $breakpoint-medium-large-project) {
 
                 p, b, span, h1, h2, h3, h4, a, strong, em, pre {
-                    font-size: 1.2rem;
+                    ////font-size: 1.5vw;
                 }
 
                 h1, h2, h3, h4 {
-                    font-size: 1rem;
+                    ////font-size: 1.4vw;
                 }
             }
 
@@ -232,10 +250,6 @@
         }
 
         &__play-button {
-            height: 7vw;
-            width: 7vw;
-            min-width: 70px;
-            min-height: 70px;
             border-radius: 50%;
             background-size: contain;
             background-repeat: no-repeat;
@@ -247,6 +261,27 @@
 
             &:hover {
                 transform: translate(-50%, -50%) scale(1.05);
+            }
+
+            @media screen and (max-width: $breakpoint-small){
+                
+                height: 40px;
+                width: 40px;
+            }
+
+            @media screen and (max-width: $breakpoint-medium){
+                height: 60px;
+                width: 60px;
+            }
+
+            @media screen and (max-width: $breakpoint-medium-large){
+                height: 80px;
+                width: 80px;   
+            }
+            
+            @media screen and (minx-width: $breakpoint-medium-large){
+                height: 100px;
+                width: 100px;
             }
         }
     }
@@ -260,7 +295,7 @@
         max-height: calc(#{$teaser-height-33}*2);
 
         &__title h2 {
-            // font-size: 1.8rem !important;
+            // ////font-size: 1.8rem !important;
             margin-bottom: 2vh;
         }
 
@@ -295,7 +330,7 @@
             }
 
             &__tag {
-                // font-size: 0.8rem;
+                // ////font-size: 1.1vw;
                 // font-weight: $bold;
                 // background: $gray;
                 // padding: 10px 15px;
@@ -319,10 +354,10 @@
 
         &__more-info {
 
-            font-size: 1rem;
+            ////font-size: 1.4vw;
 
             h1, h1 span {
-                font-size: 1rem;
+                ////font-size: 1.4vw;
                 text-transform: uppercase;
                 font-weight: $bold;
                 margin-top: 20px;
@@ -334,7 +369,7 @@
             }
 
             p, p span, pre, a {
-                font-size: 1rem;
+                ////font-size: 1.4vw;
             }
         }
 
@@ -349,7 +384,7 @@
 
     &__images {
         // display: flex;
-        font-size: 1rem;
+        ////font-size: 1.4vw;
         margin: 0 0 $spacing-bottom 0;
         padding-left: 0 !important;
         padding-right: 0 !important;
@@ -607,7 +642,7 @@
         margin: 0 40px;
         margin-bottom: 20px;
         text-transform: uppercase;
-        font-size: 1.4rem;
+        ////font-size: 1.75vw;
     }
     
 

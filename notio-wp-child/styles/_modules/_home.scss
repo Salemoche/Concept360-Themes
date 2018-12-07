@@ -117,7 +117,7 @@ body.home, body.page-template-landing {
                     }
     
                     h1 {
-                        font-size: 3.5rem;
+                        // ////font-size: 3.5rem;
                         font-weight: $bold;
                         color: white;
                         line-height: 1;
@@ -130,10 +130,10 @@ body.home, body.page-template-landing {
     
                     h2 {
                         
-                        font-size: 1rem;
+                        ////font-size: 1.4vw;
                         color: $red;
                         text-transform: uppercase;
-                        margin-bottom: 30px;
+                        margin-bottom: 20px;
                         font-family: 'Gotham-Bold', sans-serif;
                         
                     }
@@ -157,14 +157,14 @@ body.home, body.page-template-landing {
                     }
     
                     h3 {
-                        font-size: 1.2rem;
+                        ////font-size: 1.5vw;
                         color: white;
                         display: inline;
                         transition: $transition-time;
                     }
     
                     p {
-                        font-size: 1rem;
+                        ////font-size: 1.4vw;
                         color: white;
                         margin-top: 10px;
                     }
@@ -180,7 +180,7 @@ body.home, body.page-template-landing {
                 .home__landing__scroll, .landing__landing__scroll {
                     // display: none;
 
-                    font-size: 1rem;
+                    ////font-size: 1.4vw;
                     text-transform: uppercase;
                     color: white;
                     bottom: 60px;
@@ -236,8 +236,8 @@ body.home, body.page-template-landing {
                         max-width: calc(50vw - #{$spacing-side-large} * 2) !important;
                         width: calc(50vw - #{$spacing-side-large} * 2) !important;
                         overflow: hidden;
-                        font-size: 1rem !important;
-                        line-height: 1.2rem !important;
+                        ////font-size: 1.4vw !important;
+                        line-height: 1.6vw !important;
                         // width: auto !important;
                     }
 
@@ -246,15 +246,15 @@ body.home, body.page-template-landing {
                     }
 
                     h2 {
-                        font-size: 2rem !important;
+                        ////font-size: 2.4vw !important;
                         margin-bottom: 15px !important;
-                        line-height: 2rem !important
+                        line-height: 2.4vw !important
                     }
 
                     h3 {
-                        font-size: 1rem !important;
+                        ////font-size: 1.4vw !important;
                         font-weight: 600;
-                        line-height: 1rem !important;
+                        line-height: 1.4vw !important;
                         margin-bottom: 15px;
                     }
 
@@ -276,7 +276,7 @@ body.home, body.page-template-landing {
                     
                     // p::after {
                     //     content: '';
-                    //     font-size: 1rem;
+                    //     ////font-size: 1.4vw;
                     //     position: absolute;
                     //     left: 0;
                     //     bottom: -40px;
@@ -323,7 +323,7 @@ body.home, body.page-template-landing {
             }
 
             h2 {
-                font-size: 1.8rem;
+                ////font-size: 1.8rem;
             }
 
             p {
@@ -356,10 +356,10 @@ body.home, body.page-template-landing {
                 h4 {
                     color: white;
                     margin-bottom: 10px;
-                    font-size: 1.6rem;
+                    ////font-size: 1.6rem;
 
                     // @media screen and (min-width: $breakpoint-medium-large) {
-                    //     font-size: 1.8rem; 
+                    //     ////font-size: 1.8rem; 
                     // }
 
                 }
@@ -370,10 +370,10 @@ body.home, body.page-template-landing {
                 }
 
                 p, b {
-                    font-size: 0.8rem;
+                    // ////font-size: 1.1vw;
                     margin-bottom: 0;
                     // @media screen and (min-width: $breakpoint-medium-large) {
-                    //     font-size: 1.2rem !important; 
+                    //     ////font-size: 1.2rem !important; 
                     // }
                 }
 
@@ -414,7 +414,7 @@ body.home, body.page-template-landing {
 
                     h5, a {
                         color: white;
-                        font-size: 1rem;
+                        ////font-size: 1.4vw;
                         font-weight: $bold;
                         margin-bottom: 10px;
                         width: 100%;
@@ -423,7 +423,7 @@ body.home, body.page-template-landing {
 
                         
                         @media screen and (min-width: $breakpoint-medium-large) {
-                            font-size: 1.2rem; 
+                            ////font-size: 1.5vw; 
                         }
                     }
 
@@ -433,13 +433,13 @@ body.home, body.page-template-landing {
 
                     p {
                         color: white;
-                        font-size: 0.8rem; 
+                        // ////font-size: 1.1vw; 
                         font-weight: $regular;
                         margin-bottom: 0;
 
                         
                         // @media screen and (min-width: $breakpoint-medium-large) {
-                        //     font-size: 1rem !important; 
+                        //     ////font-size: 1.4vw !important; 
                         // }
                     }
 
@@ -454,87 +454,87 @@ body.home, body.page-template-landing {
                 }
             }
 
-            .home__ueber-uns__info__item p, .home__ueber-uns__text p, .home__ueber-uns__text b {
+            // .home__ueber-uns__info__item p, .home__ueber-uns__text p, .home__ueber-uns__text b {
                 
-                @media screen and (min-width: 1650px) {
-                    font-size: 1.2rem; 
-                }
+            //     @media screen and (min-width: 1650px) {
+            //         ////font-size: 1.5vw; 
+            //     }
 
-                @media screen and (man-width: 1650px) {
-                    font-size: 1rem; 
-                }
+            //     @media screen and (man-width: 1650px) {
+            //         ////font-size: 1.4vw; 
+            //     }
 
-                // @media screen and (max-width: 1200px) {
-                //     font-size: 0.7rem; 
-                // }
+            //     // @media screen and (max-width: 1200px) {
+            //     //     ////font-size: 0.7rem; 
+            //     // }
+
+            // //     @media screen and (max-width: 1400px) {
+            // //         ////font-size: 0.6rem !important; 
+            // //     }
+
+                
+            // //     @media screen and (max-width: 1100px) {
+            // //         ////font-size: 0.5rem !important; 
+            // //     }
+
+            // //     @media screen and (max-width: 938px) {
+            // //         ////font-size: 0.7rem !important; 
+            // //     }
+            // }
+
+            
+            // .home__ueber-uns__info__item h5, .home__ueber-uns__info__item h4 {
+                
+            //     @media screen and (min-width: 1650px) {
+            //         ////font-size: 1.75vw !important; 
+            //     }
+
+            //     @media screen and (max-width: 1650px) {
+            //         ////font-size: 1.4vw; 
+            //     }
+
+            //     // @media screen and (max-width: 1600px) {
+            //     //     ////font-size: 1.4vw !important; 
+            //     // }
+
+            //     // @media screen and (max-width: 1400px) {
+            //     //     ////font-size: 1.1vw !important; 
+            //     // }
+
+                
+            //     // @media screen and (max-width: 1100px) {
+            //     //     ////font-size: 0.7rem !important; 
+            //     // }
+
+            //     // @media screen and (max-width: 938px) {
+            //     //     ////font-size: 0.9rem !important; 
+            //     // }
+            // }
+
+            
+            // .home__ueber-uns__info__item {
+                
+            //     @media screen and (min-width: 1600px) {
+            //         ////font-size: 1.4vw !important; 
+            //     }
+
+            //     @media screen and (max-width: 1600px) {
+            //         ////font-size: 1.1vw !important; 
+            //     }
 
             //     @media screen and (max-width: 1400px) {
-            //         font-size: 0.6rem !important; 
+            //         ////font-size: 0.6rem !important; 
             //     }
 
                 
             //     @media screen and (max-width: 1100px) {
-            //         font-size: 0.5rem !important; 
+            //         ////font-size: 0.5rem !important; 
             //     }
 
             //     @media screen and (max-width: 938px) {
-            //         font-size: 0.7rem !important; 
+            //         ////font-size: 0.7rem !important; 
             //     }
-            }
-
-            
-            .home__ueber-uns__info__item h5, .home__ueber-uns__info__item h4 {
-                
-                @media screen and (min-width: 1650px) {
-                    font-size: 1.4rem !important; 
-                }
-
-                @media screen and (max-width: 1650px) {
-                    font-size: 1rem; 
-                }
-
-                // @media screen and (max-width: 1600px) {
-                //     font-size: 1rem !important; 
-                // }
-
-                // @media screen and (max-width: 1400px) {
-                //     font-size: 0.8rem !important; 
-                // }
-
-                
-                // @media screen and (max-width: 1100px) {
-                //     font-size: 0.7rem !important; 
-                // }
-
-                // @media screen and (max-width: 938px) {
-                //     font-size: 0.9rem !important; 
-                // }
-            }
-
-            
-            .home__ueber-uns__info__item {
-                
-                @media screen and (min-width: 1600px) {
-                    font-size: 1rem !important; 
-                }
-
-                @media screen and (max-width: 1600px) {
-                    font-size: 0.8rem !important; 
-                }
-
-                @media screen and (max-width: 1400px) {
-                    font-size: 0.6rem !important; 
-                }
-
-                
-                @media screen and (max-width: 1100px) {
-                    font-size: 0.5rem !important; 
-                }
-
-                @media screen and (max-width: 938px) {
-                    font-size: 0.7rem !important; 
-                }
-            }
+            // }
 
         }
 
@@ -542,7 +542,7 @@ body.home, body.page-template-landing {
             height: $teaser-height-33;
             max-height: $teaser-max-height-33;
             margin-bottom: $spacing-bottom;
-            font-size: 2rem;
+            ////font-size: 2.5vw;
             // display: flex;
             flex-wrap: wrap;
             width: 100%;
@@ -579,7 +579,7 @@ body.home, body.page-template-landing {
             padding: 0 calc(5vw - .9375rem) $spacing-bottom  calc(5vw - .9375rem) !important;
 
             h3 {
-                // font-size: 1.8rem;
+                // ////font-size: 1.8rem;
                 // margin-bottom: 0;
             }
 
@@ -723,7 +723,7 @@ body.home, body.page-template-landing {
                 }
 
                 h3 {
-                    font-size: 1.6rem;
+                    ////font-size: 1.6rem;
                     // margin-bottom: 10px;
                 }
             }
@@ -743,10 +743,10 @@ body.home, body.page-template-landing {
                         width: calc(100% - #{$spacing-side-small}*2);
                         
                         h1 {
-                            font-size: 2rem;
+                            ////font-size: 2.5vw;
                         }
                         h2 {
-                            font-size: 0.8rem;
+                            ////font-size: 1.1vw;
                         }
                     }
                     
@@ -758,10 +758,10 @@ body.home, body.page-template-landing {
 
                         .home__landing__text__project-category {
                             h3 {
-                                font-size: 1rem;
+                                ////font-size: 1.4vw;
                             }   
                             p {
-                                font-size: 0.8rem;
+                                ////font-size: 1.1vw;
                             }
                         }
                     }
@@ -908,7 +908,7 @@ body.home, body.page-template-landing {
                         }
             
                         h2 {
-                            font-size: 1.4rem !important;
+                            ////font-size: 1.75vw !important;
                             line-height: 1.4rem !important;
                         }
                         
@@ -962,21 +962,21 @@ body.page-template-landing {
             &__information {
 
                 color: $anthrazit;
-                font-size: 1.2rem;
+                ////font-size: 1.5vw;
                 padding-top: $spacing-bottom;
                 padding-left: $spacing-bottom;
 
                 h1 {
-                    font-size: 2rem;
+                    ////font-size: 2.5vw;
                 }
 
                 h2 {
-                    font-size: 1.5rem;
+                    ////font-size: 1.5rem;
                     margin-bottom: 0px;
                 }
 
                 p, b, span, em, strong {
-                    font-size: 1rem;
+                    ////font-size: 1.4vw;
                     color: $anthrazit;
                 }
                 
