@@ -319,6 +319,17 @@ $(document).ready( function () {
         // console.log($('.fbx-count').text());
     })
 
+    $('.fbx-btn-transition::before').mouseenter( function() {
+        $(this).css('display', 'none');
+        console.log('yo');
+    });
+
+    
+    $('.fbx-btn-transition::before').mouseleave( function() {
+        $(this).css('display', 'none');
+        console.log('yo');
+    });
+
     // setTimeout(function() {  
     //     // $('.fbx-count').appendTo($('.fbx-caption'));
     //     console.log($('.fbx-count').text());

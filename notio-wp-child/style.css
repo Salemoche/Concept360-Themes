@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Gotham-Black', sans-serif; }
 
 p {
-  font-size: 1rem; }
+  font-size: 1.4rem; }
 
 a {
   color: #e31b23; }
@@ -46,39 +46,51 @@ a {
     color: red; }
 
 p, a, span, b, i, strong, pre {
-  letter-spacing: -0.3px; }
-  @media screen and (max-width: 375px) {
+  letter-spacing: -0.3px;
+  font-size: 1vw; }
+  @media screen and (min-width: 1920px) {
     p, a, span, b, i, strong, pre {
-      font-size: .8rem; } }
+      font-size: 1.4rem; } }
+  @media screen and (max-width: 1920px) {
+    p, a, span, b, i, strong, pre {
+      font-size: 1.3vw; } }
+  @media screen and (max-width: 1440px) {
+    p, a, span, b, i, strong, pre {
+      font-size: 1.2rem; } }
   @media screen and (max-width: 768px) {
     p, a, span, b, i, strong, pre {
       font-size: 1rem; } }
-  @media screen and (max-width: 1080px) {
+  @media screen and (max-width: 375px) {
     p, a, span, b, i, strong, pre {
-      font-size: 1rem; } }
-  @media screen and (min-width: 1080px) {
-    p, a, span, b, i, strong, pre {
-      font-size: 1.2rem; } }
-
-@media screen and (max-width: 375px) {
-  h1 {
-    font-size: 1.8rem; } }
-
-@media screen and (max-width: 768px) {
-  h1 {
-    font-size: 2.4rem; } }
-
-@media screen and (max-width: 1080px) {
-  h1 {
-    font-size: 3rem; } }
+      font-size: 0.8rem; } }
 
 @media screen and (min-width: 1080px) {
   h1 {
     font-size: 4.8rem; } }
 
+@media screen and (min-width: 1920px) {
+  h1 {
+    font-size: 6vw; } }
+
+@media screen and (max-width: 1920px) {
+  h1 {
+    font-size: 1.3vw; } }
+
+@media screen and (max-width: 1440px) {
+  h1 {
+    font-size: 1.2rem; } }
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 1rem; } }
+
+@media screen and (max-width: 375px) {
+  h1 {
+    font-size: 0.8rem; } }
+
 @media screen and (max-width: 375px) {
   h2 {
-    font-size: 1.4rem; } }
+    font-size: 1.6rem; } }
 
 @media screen and (max-width: 768px) {
   h2 {
@@ -88,26 +100,18 @@ p, a, span, b, i, strong, pre {
   h2 {
     font-size: 2.4rem; } }
 
-@media screen and (min-width: 1080px) {
-  h2 {
-    font-size: 3rem; } }
-
 @media screen and (max-width: 375px) {
   h3 {
     font-size: 1.2rem; } }
 
 @media screen and (max-width: 768px) {
   h3 {
-    font-size: 1.4rem; } }
+    font-size: 1.6rem; } }
 
 @media screen and (max-width: 1080px) {
   h3 {
     font-size: 1.8rem; } }
 
-@media screen and (min-width: 1080px) {
-  h3 {
-    font-size: 2.4rem; } }
-
 @media screen and (max-width: 375px) {
   h4 {
     font-size: 1rem; } }
@@ -120,10 +124,6 @@ p, a, span, b, i, strong, pre {
   h4 {
     font-size: 1.4rem; } }
 
-@media screen and (min-width: 1080px) {
-  h4 {
-    font-size: 1.8rem; } }
-
 @media screen and (max-width: 375px) {
   h6, h5 {
     font-size: 1rem; } }
@@ -135,10 +135,6 @@ p, a, span, b, i, strong, pre {
 @media screen and (max-width: 1080px) {
   h6, h5 {
     font-size: 1.2rem; } }
-
-@media screen and (min-width: 1080px) {
-  h6, h5 {
-    font-size: 1.4rem; } }
 
 .underline-link:hover:after, .products .product .product_after_title .button:hover:after, .wpb_text_column a:hover:after {
   display: none; }
@@ -203,7 +199,7 @@ div[role=main] {
     .project__thumbnail.project__insight div h3, .project__thumbnail.team-member__insight div h3, .team-member.project__insight div h3, .team-member.team-member__insight div h3 {
       transition: 0.3s;
       display: inline;
-      font-size: 1.2rem; }
+      font-size: 1.5vw; }
   .project__thumbnail.project__insight:hover .project__thumbnail.project__insight.hovered h3, .project__thumbnail.team-member__insight:hover .project__thumbnail.project__insight.hovered h3, .team-member.project__insight:hover .project__thumbnail.project__insight.hovered h3, .team-member.team-member__insight:hover .project__thumbnail.project__insight.hovered h3, .project__thumbnail.project__insight:hover .project__thumbnail.team-member__insight.hovered h3, .project__thumbnail.team-member__insight:hover .project__thumbnail.team-member__insight.hovered h3, .team-member.project__insight:hover .project__thumbnail.team-member__insight.hovered h3, .team-member.team-member__insight:hover .project__thumbnail.team-member__insight.hovered h3, .project__thumbnail.project__insight:hover .team-member.project__insight.hovered h3, .project__thumbnail.team-member__insight:hover .team-member.project__insight.hovered h3, .team-member.project__insight:hover .team-member.project__insight.hovered h3, .team-member.team-member__insight:hover .team-member.project__insight.hovered h3, .project__thumbnail.project__insight:hover .team-member.team-member__insight.hovered h3, .project__thumbnail.team-member__insight:hover .team-member.team-member__insight.hovered h3, .team-member.project__insight:hover .team-member.team-member__insight.hovered h3, .team-member.team-member__insight:hover .team-member.team-member__insight.hovered h3 {
     box-shadow: inset 0px -12px 0px 0px #e31b23; }
   .project__thumbnail.project__insight, .team-member.project__insight {
@@ -238,25 +234,25 @@ div[role=main] {
     .project-hover-info, .team-member-hover-info {
       padding: 5vw; } }
   .project-hover-info h3, .team-member-hover-info h3 {
-    font-size: 1.2rem;
+    font-size: 1.5vw;
     margin-bottom: 5px;
     box-shadow: inset 0px -7px 0px 0px #e31b23;
     display: inline; }
   .project-hover-info p, .team-member-hover-info p {
-    font-size: .8rem !important;
+    font-size: 1rem !important;
     width: 100%;
     margin-bottom: 0;
     margin-top: 10px; }
     @media screen and (min-width: 1080px) {
       .project-hover-info p, .team-member-hover-info p {
-        font-size: 1.2rem; } }
+        font-size: 1.5vw; } }
   .project-hover-info:hover, .team-member-hover-info:hover {
     opacity: 1; }
   .project-hover-info *, .team-member-hover-info * {
     color: white; }
   @media screen and (max-width: 768px) {
     .project-hover-info h3, .team-member-hover-info h3 {
-      font-size: 0.8rem; } }
+      font-size: 1rem; } }
 
 .ytp-title, .ytp-button, .ytp-watermark, .yt-uix-sessionlink {
   opacity: 0 !important;
@@ -296,8 +292,6 @@ div[role=main] {
       .quote__container a, .press__container a {
         height: calc(100vw/1.77777); } }
   .quote__container .quote, .quote__container .press, .press__container .quote, .press__container .press {
-    background: #282828;
-    color: white;
     padding: 50px 5vw;
     flex-basis: calc(100% / 3);
     height: 18.75vw;
@@ -309,10 +303,11 @@ div[role=main] {
     transition: 0.3s;
     position: relative;
     background: white;
+    background: #f2f2f2;
     color: #282828; }
     .quote__container .quote h4, .quote__container .press h4, .press__container .quote h4, .press__container .press h4 {
       color: #282828;
-      font-size: 1rem;
+      font-size: 1.4rem;
       margin-bottom: 5px;
       transition: 0.3s; }
     .quote__container .quote .about__press__article, .quote__container .press .about__press__article, .press__container .quote .about__press__article, .press__container .press .about__press__article {
@@ -320,7 +315,7 @@ div[role=main] {
     .quote__container .quote p, .quote__container .press p, .press__container .quote p, .press__container .press p {
       margin-bottom: 0;
       flex-basis: 100%;
-      font-size: .8rem; }
+      font-size: 1rem; }
     .quote__container .quote__logo__container, .quote__container .press__logo__container, .press__container .quote__logo__container, .press__container .press__logo__container {
       width: 100%;
       margin-bottom: 15px;
@@ -341,6 +336,8 @@ div[role=main] {
       box-shadow: inset 0px -7px 0px 0px #e31b23; }
     .quote__container .quote:hover, .quote__container .press:hover, .press__container .quote:hover, .press__container .press:hover {
       background: #282828; }
+      .quote__container .quote:hover h4, .quote__container .press:hover h4, .press__container .quote:hover h4, .press__container .press:hover h4 {
+        box-shadow: inset 0px -7px 0px 0px #e31b23; }
       .quote__container .quote:hover h4, .quote__container .quote:hover p, .quote__container .press:hover h4, .quote__container .press:hover p, .press__container .quote:hover h4, .press__container .quote:hover p, .press__container .press:hover h4, .press__container .press:hover p {
         color: white; }
       .quote__container .quote:hover .press__logo--hover, .quote__container .press:hover .press__logo--hover, .press__container .quote:hover .press__logo--hover, .press__container .press:hover .press__logo--hover {
@@ -360,9 +357,11 @@ div[role=main] {
           height: calc(100vw/1.77777); } }
     @media screen and (min-width: 1440px) {
       .quote__container .quote h4, .quote__container .press h4, .press__container .quote h4, .press__container .press h4 {
-        font-size: 1.4rem; }
+        font-size: 1.75vw; }
       .quote__container .quote p, .quote__container .press p, .press__container .quote p, .press__container .press p {
-        font-size: 1.2rem; } }
+        font-size: 1.5vw; } }
+  .quote__container .quote, .press__container .quote {
+    background: #f2f2f2; }
 
 .burger-menu {
   width: 40px;
@@ -395,7 +394,7 @@ div[role=main] {
   z-index: 100; }
   .concept-header__main {
     min-height: 8vh;
-    min-height: 60px;
+    min-height: 80px;
     height: 3vw;
     width: 100%;
     background: #282828;
@@ -455,7 +454,7 @@ div[role=main] {
         padding: 7px 10px;
         margin: 10px 0;
         margin-left: 5px;
-        font-size: 0.8rem; }
+        font-size: 1rem; }
     .concept-header__project-category__container .concept-header__all-tags {
       display: flex;
       flex-wrap: wrap;
@@ -471,7 +470,7 @@ div[role=main] {
       .concept-header__project-category__container .concept-header__all-tags .tag {
         padding: 7px 10px;
         margin: 10px 0;
-        font-size: 0.8rem;
+        font-size: 1rem;
         transition: 0.3s; }
         .concept-header__project-category__container .concept-header__all-tags .tag:hover {
           background: #e31b23;
@@ -732,7 +731,7 @@ div[role=main] {
     #mobile-menu .menu-holder > ul > li {
       width: 50%; }
       #mobile-menu .menu-holder > ul > li a {
-        font-size: 1.4rem;
+        font-size: 1.75vw;
         margin-bottom: 4vh; }
       #mobile-menu .menu-holder > ul > li.address-item {
         float: right;
@@ -742,7 +741,7 @@ div[role=main] {
         width: 40%;
         margin-top: 0; }
         #mobile-menu .menu-holder > ul > li.address-item ul li a {
-          font-size: 1rem; } }
+          font-size: 1.4rem; } }
 
 .menu-holder {
   pointer-events: all;
@@ -766,7 +765,7 @@ div[role=main] {
       margin-right: calc(-5vw - 0.6vw); }
     .menu-container .mobile-menu li > a {
       color: white;
-      font-size: 2rem;
+      font-size: 2.4rem;
       padding-bottom: 0;
       margin-bottom: 30px;
       font-weight: 400; }
@@ -788,16 +787,18 @@ div[role=main] {
         margin-bottom: 10px; }
         .menu-container .mobile-menu .address-item li a {
           text-transform: none;
-          font-size: 1rem;
+          font-size: 1.4rem;
           font-weight: 400; }
         .menu-container .mobile-menu .address-item li a:hover {
           box-shadow: inset 0px -7px 0px 0px #e31b23; }
   .menu-container .menu-language-select {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
-    transition-delay: 3s;
-    display: none; }
+    justify-content: flex-start; }
+    .menu-container .menu-language-select a:hover {
+      box-shadow: none !important; }
+      .menu-container .menu-language-select a:hover span {
+        box-shadow: inset 0px -7px 0px 0px #e31b23; }
   .menu-container .wpml-ls-menu-item {
     float: left;
     margin-right: 20px;
@@ -805,7 +806,7 @@ div[role=main] {
     .menu-container .wpml-ls-menu-item#menu-item-wpml-ls-3-en {
       margin-right: 0; }
     .menu-container .wpml-ls-menu-item span {
-      font-size: .8rem !important; }
+      font-size: 1rem !important; }
   .menu-container .language-select {
     display: none; }
   @media screen and (max-width: 768px) {
@@ -819,10 +820,10 @@ div[role=main] {
         .menu-container .mobile-menu .menu-language-select {
           justify-content: center; }
         .menu-container .mobile-menu li a {
-          font-size: 1.4rem;
+          font-size: 1.75vw;
           margin-bottom: 10px; }
         .menu-container .mobile-menu li.address-item a {
-          font-size: 0.8rem; }
+          font-size: 1rem; }
           .menu-container .mobile-menu li.address-item a:hover {
             box-shadow: inset 0px -3px 0px 0px #e31b23; }
       .menu-container .language-select {
@@ -844,7 +845,7 @@ div[role=main] {
             transform: translateX(6px); }
 
 .tag {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 600;
   background: #f2f2f2;
   padding: 8px 14px;
@@ -869,15 +870,15 @@ div[role=main] {
   .concept-breadcrumbs * {
     margin-right: 2px; }
   .concept-breadcrumbs a, .concept-breadcrumbs > .breadcrumb {
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #e31b23;
     text-transform: uppercase; }
   .concept-breadcrumbs .breadcrumb > a, .concept-breadcrumbs .breadcrumb > span {
     margin-left: 0;
-    font-size: 0.8rem; }
+    font-size: 1rem; }
   .concept-breadcrumbs span {
-    font-size: 0.8rem; }
+    font-size: 1rem; }
 
 .footer-spacer {
   height: 30px;
@@ -904,12 +905,12 @@ div[role=main] {
     background-position: center;
     background-image: url("./assets/background_mountain.jpg"); }
     .footer__call-to-action p {
-      font-size: 1.2rem;
+      font-size: 1.5vw;
       font-weight: 100;
       margin-bottom: 0;
       box-shadow: none !important; }
     .footer__call-to-action b {
-      font-size: 1.2rem;
+      font-size: 1.5vw;
       font-weight: 600; }
   .footer__info {
     background: #282828;
@@ -921,11 +922,11 @@ div[role=main] {
     .footer__info a {
       position: relative; }
     .footer__info h4 {
-      font-size: 1.2rem;
+      font-size: 1.5vw;
       color: white;
       margin-bottom: 10px; }
     .footer__info p {
-      font-size: 1rem;
+      font-size: 1.4rem;
       margin-bottom: 0;
       margin: 0 auto;
       display: inline;
@@ -981,7 +982,7 @@ div[role=main] {
     .footer .footer__call-to-action {
       padding: 30px 20px; }
       .footer .footer__call-to-action p, .footer .footer__call-to-action b {
-        font-size: .8rem; }
+        font-size: 1rem; }
     .footer .footer__info {
       flex-wrap: wrap; }
       .footer .footer__info > div {
@@ -1014,11 +1015,11 @@ div[role=main] {
     .footer h4 {
       font-size: 1.6rem; }
     .footer .footer__call-to-action p, .footer .footer__call-to-action b, .footer .footer__call-to-action i, .footer .footer__call-to-action em, .footer .footer__call-to-action a {
-      font-size: 1.4rem !important; }
+      font-size: 1.75vw !important; }
     .footer .footer__info {
       padding: 40px calc((100vw - 1920px) / 2 - 10px + 5.4vw) !important; }
       .footer .footer__info p {
-        font-size: 1.2rem; } }
+        font-size: 1.5vw; } }
   @media screen and (min-width: 1920px) {
     .footer .wpcf7 {
       max-width: calc(1920px - 5vw * 2);
@@ -1064,7 +1065,7 @@ div[role=main] {
     .wpcf7 p:last-of-type {
       opacity: 0; }
   .wpcf7-response-output {
-    font-size: 1rem;
+    font-size: 1.4rem;
     padding-bottom: 20px; }
   .wpcf7 label {
     text-align: left;
@@ -1187,6 +1188,8 @@ div[role=main] {
   margin-left: 0 !important;
   margin-right: 0 !important;
   margin-top: 0 !important;
+  max-height: 100% !important;
+  max-width: calc(100vh / 0.5625) !important;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1194,7 +1197,9 @@ div[role=main] {
           transform: translate(-50%, -50%); }
   .fbx-inner iframe {
     width: 90vw !important;
-    height: calc(90vw / 1.7777777) !important; }
+    height: calc(90vw / 1.7777777) !important;
+    max-height: 100vh !important;
+    max-width: calc(100vh / 0.5625) !important; }
   @media screen and (max-width: 768px) {
     .fbx-inner {
       width: 100vw !important;
@@ -1202,6 +1207,10 @@ div[role=main] {
       .fbx-inner iframe {
         width: 100vw !important;
         height: calc(100vw / 1.7777777) !important; } }
+
+.fbx-stage {
+  left: -0.1px !important;
+  width: 100.2% !important; }
 
 .fbx-item-current {
   overflow: hidden !important; }
@@ -1246,7 +1255,7 @@ div[role=main] {
     width: 100vw !important;
     max-height: 100vh !important; } }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (max-height: 375px) {
   .fbx-caption {
     max-height: 50px; }
   .fbx-caption-desc {
@@ -1287,12 +1296,6 @@ div[role=main] {
   body.logged-in .concept-header .concept-header__project-category__container.open {
     min-height: calc(100vh - 70px - 45px); } }
 
-@media screen and (min-width: 1080px) {
-  p, p span {
-    font-size: 1.2rem; }
-  h1 {
-    font-size: 4.5rem; } }
-
 /* Tiles - 181106/mt */
 .project-wrapper {
   flex-basis: calc(100% / 3);
@@ -1323,7 +1326,7 @@ div[role=main] {
   height: 20px;
   min-height: 20px;
   min-width: 20px;
-  width: 1vw;
+  width: 1.1vw;
   height: 1vw;
   background-position: center;
   background-size: contain;
@@ -2286,7 +2289,7 @@ body.page-template-solutions .main .solutions {
     padding-top: 40px;
     margin-bottom: 4vh; }
     body.page-template-solutions .main .solutions__text p {
-      margin-bottom: 0;
+      margin-bottom: 10px;
       font-weight: 600; }
   body.page-template-solutions .main .solutions__working-style {
     margin-top: 4vh; }
@@ -2493,7 +2496,8 @@ body.page-template-about .main .about {
     padding: 0; }
     body.page-template-about .main .about__content__contact-info {
       padding-left: 5vw;
-      padding-top: 40px; }
+      padding-top: 40px;
+      padding-right: calc(15px + 2vw); }
       body.page-template-about .main .about__content__contact-info h1, body.page-template-about .main .about__content__contact-info h2 {
         font-size: 1.8rem;
         text-transform: uppercase;
@@ -2558,7 +2562,8 @@ body.page-template-about .main .about {
       color: white; }
     body.page-template-about .main .about__press__container .press {
       padding-top: 30px;
-      display: inline-block; }
+      display: inline-block;
+      width: 100%; }
   @media screen and (min-width: 1920px) {
     body.page-template-about .main .about {
       margin-top: 3vw !important; } }

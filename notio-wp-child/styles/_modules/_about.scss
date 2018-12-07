@@ -46,6 +46,7 @@ body.page-template-about {
 
                 padding-left: $spacing-side-large;
                 padding-top: $spacing-side;
+                padding-right: calc(15px + 2vw);
 
                 // h1, h2 {
                 //     font-size: 1.8rem;
@@ -195,6 +196,7 @@ body.page-template-about {
             .press {
                 padding-top: 30px;
                 display: inline-block;
+                width: 100%;
             }
         }
 
