@@ -73,9 +73,6 @@ p, a, span, b, i, strong, pre {
         font-size: 1.4rem;
     }
     @media screen and (max-width: $breakpoint-large) {
-        font-size: 1.3vw;
-    }
-    @media screen and (max-width: 1440px) {
         font-size: 1.2rem;
     }
     @media screen and (max-width: $breakpoint-medium) {
@@ -102,23 +99,16 @@ h1  {
     //     font-size: 6vw;
     // }
     @media screen and (min-width: $breakpoint-medium-large) {
-        font-size: 4.8rem;
-    }
-       
-    @media screen and (min-width: $breakpoint-large) {
-        font-size: 6vw;
-    }
-    @media screen and (max-width: $breakpoint-large) {
-        font-size: 1.3vw;
+        font-size: 5rem;
     }
     @media screen and (max-width: 1440px) {
-        font-size: 1.2rem;
+        font-size: 3.5rem;
     }
     @media screen and (max-width: $breakpoint-medium) {
-        font-size: 1rem;
+        font-size: 2.4rem;
     }
     @media screen and (max-width: $breakpoint-small) {
-        font-size: 0.8rem;
+        font-size: 1.8rem;
     }
 }
 
@@ -134,9 +124,9 @@ h2  {
     @media screen and (max-width: $breakpoint-medium-large) {
         font-size: 2.4rem;
     }
-    // @media screen and (min-width: $breakpoint-medium-large) {
-    //     font-size: 3rem;
-    // }
+    @media screen and (min-width: $breakpoint-medium-large) {
+        font-size: 3rem;
+    }
 }
 
 h3  {
@@ -150,9 +140,10 @@ h3  {
     @media screen and (max-width: $breakpoint-medium-large) {
         font-size: 1.8rem;
     }
-    // @media screen and (min-width: $breakpoint-medium-large) {
-    //     font-size: 2.4rem;
-    // }
+
+    @media screen and (min-width: $breakpoint-medium-large) {
+        font-size: 2.4rem;
+    }
 }
 
 h4  {
@@ -166,9 +157,9 @@ h4  {
     @media screen and (max-width: $breakpoint-medium-large) {
         font-size: 1.4rem;
     }
-    // @media screen and (min-width: $breakpoint-medium-large) {
-    //     font-size: 1.8rem;
-    // }
+    @media screen and (min-width: $breakpoint-medium-large) {
+        font-size: 1.8rem;
+    }
 }
 
 h6, h5  {
@@ -182,9 +173,9 @@ h6, h5  {
     @media screen and (max-width: $breakpoint-medium-large) {
         font-size: 1.2rem;
     }
-    // @media screen and (min-width: $breakpoint-medium-large) {
-    //     font-size: 1.75vw;
-    // }
+    @media screen and (min-width: $breakpoint-medium-large) {
+        font-size: 1.4rem;
+    }
 }
 
 
@@ -393,7 +384,7 @@ div[role=main] {
     left: calc(50vw + 5vw + 29px) !important;
 
     @media screen and (min-width: $breakpoint-large) {
-        left: calc(50% + 60px + 29px) !important;  
+        left: calc(50% + 130px + 29px) !important;  
     }
 
     @media screen and (max-width: $breakpoint-medium) {
@@ -409,6 +400,11 @@ div[role=main] {
 
     .tp-bullet-image, .tp-bullet-imageoverlay, .tp-bullet-title {
         display: none !important;
+    }
+
+    
+    .tp-bullet {
+        border: 1px solid black !important;
     }
 }
 
@@ -615,13 +611,13 @@ div[role=main] {
 
         @media screen and (min-width: 1440px){
 
-            h4 {
-                font-size: 1.75vw;
-            }
+            // h4 {
+            //     font-size: 1.75vw;
+            // }
 
-            p {
-                font-size: 1.5vw;
-            }
+            // p {
+            //     font-size: 1.5vw;
+            // }
         }
     }
 
@@ -1480,7 +1476,7 @@ div[role=main] {
 
             li {
                 a {
-                    font-size: 1.75vw;
+                    font-size: 2rem;
                     margin-bottom: 10px;
                 }
 
@@ -1616,15 +1612,29 @@ div[role=main] {
         background-image: url('./assets/background_mountain.jpg');
 
         
-        p {
-            font-size: 1.5vw;
+        p, b {
+            // font-size: 1.5vw;
             font-weight: $light;
             margin-bottom: 0;
             box-shadow: none !important;
+
+    
+            // @media screen and (max-width: $breakpoint-small) {
+            //     font-size: 1rem;
+            // }
+            @media screen and (max-width: $breakpoint-medium) {
+                font-size: 1.2rem;
+            }
+            @media screen and (max-width: $breakpoint-medium-large) {
+                font-size: 1.4rem;
+            }
+            @media screen and (min-width: $breakpoint-medium-large) {
+                font-size: 1.8rem;
+            }
         }
 
         b {
-            font-size: 1.5vw;
+            // font-size: 1.5vw;
             font-weight: $bold;
         }
 
@@ -1656,13 +1666,26 @@ div[role=main] {
         }
 
         p {
-            font-size: 1.4rem;
+            // font-size: 1.4rem;
             margin-bottom: 0;
             margin: 0 auto;
             display: inline;
             transition: $transition-time;
             // transform: translateX(15px);
             // padding-left: 30px;
+
+            // @media screen and (max-width: $breakpoint-small) {
+            //     font-size: 1rem;
+            // }
+            @media screen and (max-width: $breakpoint-medium) {
+                font-size: 1.2rem;
+            }
+            @media screen and (max-width: $breakpoint-medium-large) {
+                font-size: 1.4rem;
+            }
+            @media screen and (min-width: $breakpoint-medium-large) {
+                font-size: 1.8rem;
+            }
         }
     }
 
@@ -1811,7 +1834,7 @@ div[role=main] {
             
             
             p, b, i, em, a {
-                font-size: 1.75vw !important;
+                // font-size: 2rem !important;
             }
 
         }

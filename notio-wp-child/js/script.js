@@ -92,18 +92,18 @@ $(document).ready( function () {
             $('.home__landing__video>iframe').css('transform', 'scale(1.4)');
         }
 
-        if(window.innerWidth > 768) {
+        // if(window.innerWidth > 768) {
 
-            $('div.landing__ueber-uns__info__item').css('height', $('div.landing__ueber-uns__info__item').outerWidth() / 1.77777);
-            $('div.home__ueber-uns__info__item').css('height', $('div.home__ueber-uns__info__item').outerWidth() / 1.77777);
-        }
+        //     $('div.landing__ueber-uns__info__item').css('height', $('div.landing__ueber-uns__info__item').outerWidth() / 1.77777);
+        //     $('div.home__ueber-uns__info__item').css('height', $('div.home__ueber-uns__info__item').outerWidth() / 1.77777);
+        // }
     });
 
-    if(window.innerWidth > 768) {
-        $('div.landing__ueber-uns__info__item').css('height', $('div.landing__ueber-uns__info__item').outerWidth() / 1.77777);
-        $('div.home__ueber-uns__info__item').css('height', $('div.home__ueber-uns__info__item').outerWidth() / 1.77777);
+    // if(window.innerWidth > 768) {
+    //     $('div.landing__ueber-uns__info__item').css('height', $('div.landing__ueber-uns__info__item').outerWidth() / 1.77777);
+    //     $('div.home__ueber-uns__info__item').css('height', $('div.home__ueber-uns__info__item').outerWidth() / 1.77777);
     
-    }
+    // }
 
     
 

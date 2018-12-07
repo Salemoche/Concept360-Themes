@@ -7,7 +7,7 @@
 	</div><!-- End role["main"] -->
 	<div class="footer row">
 		<a href="#contact-form"class="footer__call-to-action columns small-12">
-        	<p><?php echo _e('<b>Benötigen Sie Hilfe</b> bei der Umsetzung Ihres Projektes oder<br/>wollen Sie sich <b>unverbindlich beraten lassen?</b>', 'c360'); ?></p>
+        	<p><?php echo _e('<b>Benötigen Sie Hilfe</b> bei der Umsetzung Ihres Projektes oder wollen Sie sich <b>unverbindlich beraten lassen?</b>', 'c360'); ?></p>
 		</a>
 		<div class="footer__info columns small-12 row">
 			<div class="footer__info__telefon columns small-4 medium-4">

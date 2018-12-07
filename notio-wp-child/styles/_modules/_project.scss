@@ -3,21 +3,21 @@
     margin-top: $spacing-top-submenu;
 
     
-    p, a, span, b, i, strong, em, pre {
+    // p, a, span, b, i, strong, em, pre {
     
-        @media screen and (max-width: $breakpoint-small) {
-            font-size: .8rem;
-        }
-        @media screen and (max-width: $breakpoint-medium) {
-            font-size: 1rem;
-        }
-        @media screen and (max-width: $breakpoint-medium-large-project) {
-            font-size: 1rem;
-        }
-        @media screen and (min-width: $breakpoint-medium-large-project) {
-            font-size: 1.2rem;
-        }
-    }
+    //     @media screen and (max-width: $breakpoint-small) {
+    //         font-size: .8rem;
+    //     }
+    //     @media screen and (max-width: $breakpoint-medium) {
+    //         font-size: 1rem;
+    //     }
+    //     @media screen and (max-width: $breakpoint-medium-large-project) {
+    //         font-size: 1rem;
+    //     }
+    //     @media screen and (min-width: $breakpoint-medium-large-project) {
+    //         font-size: 1.2rem;
+    //     }
+    // }
 
     .fett * {
         font-weight: 600;
@@ -169,7 +169,7 @@
             }
 
             a {
-                font-size: 1rem;
+                // font-size: 1rem;
                 color: $gray-dark;
 
                 &:hover {
@@ -205,7 +205,7 @@
             @media screen and (min-width: $breakpoint-medium-large-project) {
 
                 p, b, span, h1, h2, h3, h4, a, strong, em, pre {
-                    font-size: 1.2rem;
+                    // font-size: 1.2rem;
                 }
 
                 h1, h2, h3, h4 {

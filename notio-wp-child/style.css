@@ -53,9 +53,6 @@ p, a, span, b, i, strong, pre {
       font-size: 1.4rem; } }
   @media screen and (max-width: 1920px) {
     p, a, span, b, i, strong, pre {
-      font-size: 1.3vw; } }
-  @media screen and (max-width: 1440px) {
-    p, a, span, b, i, strong, pre {
       font-size: 1.2rem; } }
   @media screen and (max-width: 768px) {
     p, a, span, b, i, strong, pre {
@@ -66,27 +63,19 @@ p, a, span, b, i, strong, pre {
 
 @media screen and (min-width: 1080px) {
   h1 {
-    font-size: 4.8rem; } }
-
-@media screen and (min-width: 1920px) {
-  h1 {
-    font-size: 6vw; } }
-
-@media screen and (max-width: 1920px) {
-  h1 {
-    font-size: 1.3vw; } }
+    font-size: 5rem; } }
 
 @media screen and (max-width: 1440px) {
   h1 {
-    font-size: 1.2rem; } }
+    font-size: 3.5rem; } }
 
 @media screen and (max-width: 768px) {
   h1 {
-    font-size: 1rem; } }
+    font-size: 2.4rem; } }
 
 @media screen and (max-width: 375px) {
   h1 {
-    font-size: 0.8rem; } }
+    font-size: 1.8rem; } }
 
 @media screen and (max-width: 375px) {
   h2 {
@@ -100,6 +89,10 @@ p, a, span, b, i, strong, pre {
   h2 {
     font-size: 2.4rem; } }
 
+@media screen and (min-width: 1080px) {
+  h2 {
+    font-size: 3rem; } }
+
 @media screen and (max-width: 375px) {
   h3 {
     font-size: 1.2rem; } }
@@ -111,6 +104,10 @@ p, a, span, b, i, strong, pre {
 @media screen and (max-width: 1080px) {
   h3 {
     font-size: 1.8rem; } }
+
+@media screen and (min-width: 1080px) {
+  h3 {
+    font-size: 2.4rem; } }
 
 @media screen and (max-width: 375px) {
   h4 {
@@ -124,6 +121,10 @@ p, a, span, b, i, strong, pre {
   h4 {
     font-size: 1.4rem; } }
 
+@media screen and (min-width: 1080px) {
+  h4 {
+    font-size: 1.8rem; } }
+
 @media screen and (max-width: 375px) {
   h6, h5 {
     font-size: 1rem; } }
@@ -135,6 +136,10 @@ p, a, span, b, i, strong, pre {
 @media screen and (max-width: 1080px) {
   h6, h5 {
     font-size: 1.2rem; } }
+
+@media screen and (min-width: 1080px) {
+  h6, h5 {
+    font-size: 1.4rem; } }
 
 .underline-link:hover:after, .products .product .product_after_title .button:hover:after, .wpb_text_column a:hover:after {
   display: none; }
@@ -267,7 +272,7 @@ div[role=main] {
   left: calc(50vw + 5vw + 29px) !important; }
   @media screen and (min-width: 1920px) {
     .tp-bullets {
-      left: calc(50% + 60px + 29px) !important; } }
+      left: calc(50% + 130px + 29px) !important; } }
   @media screen and (max-width: 768px) {
     .tp-bullets {
       left: 50% !important;
@@ -275,6 +280,8 @@ div[role=main] {
       bottom: unset !important; } }
   .tp-bullets .tp-bullet-image, .tp-bullets .tp-bullet-imageoverlay, .tp-bullets .tp-bullet-title {
     display: none !important; }
+  .tp-bullets .tp-bullet {
+    border: 1px solid black !important; }
 
 .quote__container, .press__container {
   display: flex;
@@ -355,11 +362,6 @@ div[role=main] {
           height: 28.125vw; }
         .quote__container .quote a, .quote__container .press a, .press__container .quote a, .press__container .press a {
           height: calc(100vw/1.77777); } }
-    @media screen and (min-width: 1440px) {
-      .quote__container .quote h4, .quote__container .press h4, .press__container .quote h4, .press__container .press h4 {
-        font-size: 1.75vw; }
-      .quote__container .quote p, .quote__container .press p, .press__container .quote p, .press__container .press p {
-        font-size: 1.5vw; } }
   .quote__container .quote, .press__container .quote {
     background: #f2f2f2; }
 
@@ -820,7 +822,7 @@ div[role=main] {
         .menu-container .mobile-menu .menu-language-select {
           justify-content: center; }
         .menu-container .mobile-menu li a {
-          font-size: 1.75vw;
+          font-size: 2rem;
           margin-bottom: 10px; }
         .menu-container .mobile-menu li.address-item a {
           font-size: 1rem; }
@@ -904,13 +906,20 @@ div[role=main] {
     background-repeat: no-repeat;
     background-position: center;
     background-image: url("./assets/background_mountain.jpg"); }
-    .footer__call-to-action p {
-      font-size: 1.5vw;
+    .footer__call-to-action p, .footer__call-to-action b {
       font-weight: 100;
       margin-bottom: 0;
       box-shadow: none !important; }
+      @media screen and (max-width: 768px) {
+        .footer__call-to-action p, .footer__call-to-action b {
+          font-size: 1.2rem; } }
+      @media screen and (max-width: 1080px) {
+        .footer__call-to-action p, .footer__call-to-action b {
+          font-size: 1.4rem; } }
+      @media screen and (min-width: 1080px) {
+        .footer__call-to-action p, .footer__call-to-action b {
+          font-size: 1.8rem; } }
     .footer__call-to-action b {
-      font-size: 1.5vw;
       font-weight: 600; }
   .footer__info {
     background: #282828;
@@ -926,11 +935,19 @@ div[role=main] {
       color: white;
       margin-bottom: 10px; }
     .footer__info p {
-      font-size: 1.4rem;
       margin-bottom: 0;
       margin: 0 auto;
       display: inline;
       transition: 0.3s; }
+      @media screen and (max-width: 768px) {
+        .footer__info p {
+          font-size: 1.2rem; } }
+      @media screen and (max-width: 1080px) {
+        .footer__info p {
+          font-size: 1.4rem; } }
+      @media screen and (min-width: 1080px) {
+        .footer__info p {
+          font-size: 1.8rem; } }
   .footer__contact-form {
     background: black !important;
     color: white;
@@ -1014,8 +1031,6 @@ div[role=main] {
   @media screen and (min-width: 1080px) {
     .footer h4 {
       font-size: 1.6rem; }
-    .footer .footer__call-to-action p, .footer .footer__call-to-action b, .footer .footer__call-to-action i, .footer .footer__call-to-action em, .footer .footer__call-to-action a {
-      font-size: 1.75vw !important; }
     .footer .footer__info {
       padding: 40px calc((100vw - 1920px) / 2 - 10px + 5.4vw) !important; }
       .footer .footer__info p {
@@ -1426,13 +1441,16 @@ body.home .home, body.home .landing, body.page-template-landing .home, body.page
           body.home .home__landing__text__title, body.home .landing__landing__text__title, body.page-template-landing .home__landing__text__title, body.page-template-landing .landing__landing__text__title {
             left: calc((100vw - 1920px) / 2 + 5vw); } }
         body.home .home__landing__text__title h1, body.home .landing__landing__text__title h1, body.page-template-landing .home__landing__text__title h1, body.page-template-landing .landing__landing__text__title h1 {
-          font-size: 3.5rem;
           font-weight: 600;
           color: white;
-          line-height: 1; }
+          line-height: 1;
+          max-width: 70%; }
           @media screen and (min-width: 1080px) {
             body.home .home__landing__text__title h1, body.home .landing__landing__text__title h1, body.page-template-landing .home__landing__text__title h1, body.page-template-landing .landing__landing__text__title h1 {
               width: 100%; } }
+          @media screen and (max-width: 768px) {
+            body.home .home__landing__text__title h1, body.home .landing__landing__text__title h1, body.page-template-landing .home__landing__text__title h1, body.page-template-landing .landing__landing__text__title h1 {
+              max-width: unset; } }
         body.home .home__landing__text__title h2, body.home .landing__landing__text__title h2, body.page-template-landing .home__landing__text__title h2, body.page-template-landing .landing__landing__text__title h2 {
           font-size: 1rem;
           color: #e31b23;
@@ -1446,17 +1464,15 @@ body.home .home, body.home .landing, body.page-template-landing .home, body.page
         width: 60%; }
         @media screen and (min-width: 1080px) {
           body.home .home__landing__text__project-category__container, body.home .landing__landing__text__project-category__container, body.page-template-landing .home__landing__text__project-category__container, body.page-template-landing .landing__landing__text__project-category__container {
-            top: 70vh; } }
+            top: 65vh; } }
         @media screen and (min-width: 1920px) {
           body.home .home__landing__text__project-category__container, body.home .landing__landing__text__project-category__container, body.page-template-landing .home__landing__text__project-category__container, body.page-template-landing .landing__landing__text__project-category__container {
             left: calc((100vw - 1920px) / 2 + 5vw); } }
-        body.home .home__landing__text__project-category__container h3, body.home .landing__landing__text__project-category__container h3, body.page-template-landing .home__landing__text__project-category__container h3, body.page-template-landing .landing__landing__text__project-category__container h3 {
-          font-size: 1.2rem;
+        body.home .home__landing__text__project-category__container h5, body.home .landing__landing__text__project-category__container h5, body.page-template-landing .home__landing__text__project-category__container h5, body.page-template-landing .landing__landing__text__project-category__container h5 {
           color: white;
           display: inline;
           transition: 0.3s; }
         body.home .home__landing__text__project-category__container p, body.home .landing__landing__text__project-category__container p, body.page-template-landing .home__landing__text__project-category__container p, body.page-template-landing .landing__landing__text__project-category__container p {
-          font-size: 1rem;
           color: white;
           margin-top: 10px; }
         body.home .home__landing__text__project-category__container a:hover > h3, body.home .landing__landing__text__project-category__container a:hover > h3, body.page-template-landing .home__landing__text__project-category__container a:hover > h3, body.page-template-landing .landing__landing__text__project-category__container a:hover > h3 {
@@ -1502,13 +1518,47 @@ body.home .home, body.home .landing, body.page-template-landing .home, body.page
           width: calc(50vw - 5vw * 2) !important;
           overflow: hidden;
           font-size: 1rem !important;
-          line-height: 1.2rem !important; }
+          line-height: unset !important; }
+        body.home .home__about__slider__wrapper__text p, body.home .landing__about__slider__wrapper__text p, body.page-template-landing .home__about__slider__wrapper__text p, body.page-template-landing .landing__about__slider__wrapper__text p {
+          margin-bottom: 0 !important; }
+          @media screen and (min-width: 1920px) {
+            body.home .home__about__slider__wrapper__text p, body.home .landing__about__slider__wrapper__text p, body.page-template-landing .home__about__slider__wrapper__text p, body.page-template-landing .landing__about__slider__wrapper__text p {
+              font-size: 1.4rem !important;
+              line-height: 2.1rem !important; } }
+          @media screen and (max-width: 1920px) {
+            body.home .home__about__slider__wrapper__text p, body.home .landing__about__slider__wrapper__text p, body.page-template-landing .home__about__slider__wrapper__text p, body.page-template-landing .landing__about__slider__wrapper__text p {
+              font-size: 1.2rem !important;
+              line-height: 1.8rem !important; } }
+          @media screen and (max-width: 768px) {
+            body.home .home__about__slider__wrapper__text p, body.home .landing__about__slider__wrapper__text p, body.page-template-landing .home__about__slider__wrapper__text p, body.page-template-landing .landing__about__slider__wrapper__text p {
+              font-size: 1rem !important;
+              line-height: 1.5rem !important; } }
+          @media screen and (max-width: 375px) {
+            body.home .home__about__slider__wrapper__text p, body.home .landing__about__slider__wrapper__text p, body.page-template-landing .home__about__slider__wrapper__text p, body.page-template-landing .landing__about__slider__wrapper__text p {
+              font-size: 0.8rem !important;
+              line-height: 1.2rem !important; } }
         body.home .home__about__slider__wrapper__text p:last-of-type, body.home .landing__about__slider__wrapper__text p:last-of-type, body.page-template-landing .home__about__slider__wrapper__text p:last-of-type, body.page-template-landing .landing__about__slider__wrapper__text p:last-of-type {
           margin-bottom: 30px !important; }
         body.home .home__about__slider__wrapper__text h2, body.home .landing__about__slider__wrapper__text h2, body.page-template-landing .home__about__slider__wrapper__text h2, body.page-template-landing .landing__about__slider__wrapper__text h2 {
           font-size: 2rem !important;
           margin-bottom: 15px !important;
           line-height: 2rem !important; }
+          @media screen and (max-width: 375px) {
+            body.home .home__about__slider__wrapper__text h2, body.home .landing__about__slider__wrapper__text h2, body.page-template-landing .home__about__slider__wrapper__text h2, body.page-template-landing .landing__about__slider__wrapper__text h2 {
+              font-size: 1.2rem !important;
+              line-height: 1.2rem !important; } }
+          @media screen and (max-width: 768px) {
+            body.home .home__about__slider__wrapper__text h2, body.home .landing__about__slider__wrapper__text h2, body.page-template-landing .home__about__slider__wrapper__text h2, body.page-template-landing .landing__about__slider__wrapper__text h2 {
+              font-size: 1.6rem !important;
+              line-height: 1.6rem !important; } }
+          @media screen and (max-width: 1080px) {
+            body.home .home__about__slider__wrapper__text h2, body.home .landing__about__slider__wrapper__text h2, body.page-template-landing .home__about__slider__wrapper__text h2, body.page-template-landing .landing__about__slider__wrapper__text h2 {
+              font-size: 1.8rem !important;
+              line-height: 1.8rem !important; } }
+          @media screen and (min-width: 1080px) {
+            body.home .home__about__slider__wrapper__text h2, body.home .landing__about__slider__wrapper__text h2, body.page-template-landing .home__about__slider__wrapper__text h2, body.page-template-landing .landing__about__slider__wrapper__text h2 {
+              font-size: 2.4rem !important;
+              line-height: 2.4rem !important; } }
         body.home .home__about__slider__wrapper__text h3, body.home .landing__about__slider__wrapper__text h3, body.page-template-landing .home__about__slider__wrapper__text h3, body.page-template-landing .landing__about__slider__wrapper__text h3 {
           font-size: 1rem !important;
           font-weight: 600;
@@ -1524,6 +1574,8 @@ body.home .home, body.home .landing, body.page-template-landing .home, body.page
           top: 20px !important; }
           body.home .home__about__slider__wrapper__text .tp-bullets.active, body.home .landing__about__slider__wrapper__text .tp-bullets.active, body.page-template-landing .home__about__slider__wrapper__text .tp-bullets.active, body.page-template-landing .landing__about__slider__wrapper__text .tp-bullets.active {
             background: black; }
+          body.home .home__about__slider__wrapper__text .tp-bullets .tp-bullet, body.home .landing__about__slider__wrapper__text .tp-bullets .tp-bullet, body.page-template-landing .home__about__slider__wrapper__text .tp-bullets .tp-bullet, body.page-template-landing .landing__about__slider__wrapper__text .tp-bullets .tp-bullet {
+            border: 1px solid black !important; }
       body.home .home__about__slider__wrapper__foto, body.home .landing__about__slider__wrapper__foto, body.page-template-landing .home__about__slider__wrapper__foto, body.page-template-landing .landing__about__slider__wrapper__foto {
         left: 0% !important;
         top: 0% !important;
@@ -1554,30 +1606,28 @@ body.home .home, body.home .landing, body.page-template-landing .home, body.page
     flex-wrap: wrap; }
     body.home .home__ueber-uns__text, body.home .landing__ueber-uns__text, body.page-template-landing .home__ueber-uns__text, body.page-template-landing .landing__ueber-uns__text {
       flex-basis: 30%;
-      min-width: 300px;
       flex-grow: 1;
       padding-right: 5vw;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      min-width: 210px; }
       body.home .home__ueber-uns__text h4, body.home .landing__ueber-uns__text h4, body.page-template-landing .home__ueber-uns__text h4, body.page-template-landing .landing__ueber-uns__text h4 {
         color: white;
         margin-bottom: 10px;
         font-size: 1.6rem; }
-      body.home .home__ueber-uns__text h5, body.home .landing__ueber-uns__text h5, body.page-template-landing .home__ueber-uns__text h5, body.page-template-landing .landing__ueber-uns__text h5 {
+      body.home .home__ueber-uns__text h3, body.home .landing__ueber-uns__text h3, body.page-template-landing .home__ueber-uns__text h3, body.page-template-landing .landing__ueber-uns__text h3 {
         color: white;
         margin-bottom: 10px; }
       body.home .home__ueber-uns__text p, body.home .home__ueber-uns__text b, body.home .landing__ueber-uns__text p, body.home .landing__ueber-uns__text b, body.page-template-landing .home__ueber-uns__text p, body.page-template-landing .home__ueber-uns__text b, body.page-template-landing .landing__ueber-uns__text p, body.page-template-landing .landing__ueber-uns__text b {
-        font-size: 0.8rem;
         margin-bottom: 0; }
     body.home .home__ueber-uns__info__container, body.home .landing__ueber-uns__info__container, body.page-template-landing .home__ueber-uns__info__container, body.page-template-landing .landing__ueber-uns__info__container {
       flex-basis: 70%;
-      min-width: calc(768px * 0.7);
       display: flex;
       flex-wrap: wrap;
       flex-grow: 1;
       box-shadow: 0px 13px 34px -5px rgba(0, 0, 0, 0.3); }
       body.home .home__ueber-uns__info__container .home__ueber-uns__info__item, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item {
         background-color: #282828;
-        padding: 1vw 1.5vw;
+        padding: 1.3vw 2.3vw;
         width: calc(100% / 3);
         position: relative;
         display: flex;
@@ -1589,52 +1639,20 @@ body.home .home, body.home .landing, body.page-template-landing .home, body.page
             height: auto !important; } }
         body.home .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item a {
           color: white;
-          font-size: 1rem;
           font-weight: 600;
           margin-bottom: 10px;
           width: 100%;
           display: inline; }
-          @media screen and (min-width: 1080px) {
-            body.home .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item a, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item a {
-              font-size: 1.2rem; } }
         body.home .home__ueber-uns__info__container .home__ueber-uns__info__item a:hover, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item a:hover, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item a:hover, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item a:hover, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item a:hover, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item a:hover, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item a:hover, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item a:hover {
           box-shadow: inset 0px -7px 0px 0px #e31b23; }
         body.home .home__ueber-uns__info__container .home__ueber-uns__info__item p, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item p, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item p, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item p {
           color: white;
-          font-size: 0.8rem;
           font-weight: 300;
           margin-bottom: 0; }
         body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even), body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even), body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even), body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even), body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even), body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even), body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even), body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) {
           background: white; }
           body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.home .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) a, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.home .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) a, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.home .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) a, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.home .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) a, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .home__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) a, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .home__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) a, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .landing__ueber-uns__info__container .home__ueber-uns__info__item:nth-of-type(even) a, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) h5, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) p, body.page-template-landing .landing__ueber-uns__info__container .landing__ueber-uns__info__item:nth-of-type(even) a {
             color: #282828; }
-    @media screen and (min-width: 1650px) {
-      body.home .home__ueber-uns .home__ueber-uns__info__item p, body.home .home__ueber-uns .home__ueber-uns__text p, body.home .home__ueber-uns .home__ueber-uns__text b, body.home .landing__ueber-uns .home__ueber-uns__info__item p, body.home .landing__ueber-uns .home__ueber-uns__text p, body.home .landing__ueber-uns .home__ueber-uns__text b, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text b, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text b {
-        font-size: 1.2rem; } }
-    @media screen and (man-width: 1650px) {
-      body.home .home__ueber-uns .home__ueber-uns__info__item p, body.home .home__ueber-uns .home__ueber-uns__text p, body.home .home__ueber-uns .home__ueber-uns__text b, body.home .landing__ueber-uns .home__ueber-uns__info__item p, body.home .landing__ueber-uns .home__ueber-uns__text p, body.home .landing__ueber-uns .home__ueber-uns__text b, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text p, body.page-template-landing .home__ueber-uns .home__ueber-uns__text b, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text p, body.page-template-landing .landing__ueber-uns .home__ueber-uns__text b {
-        font-size: 1rem; } }
-    @media screen and (min-width: 1650px) {
-      body.home .home__ueber-uns .home__ueber-uns__info__item h5, body.home .home__ueber-uns .home__ueber-uns__info__item h4, body.home .landing__ueber-uns .home__ueber-uns__info__item h5, body.home .landing__ueber-uns .home__ueber-uns__info__item h4, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h4, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h4 {
-        font-size: 1.4rem !important; } }
-    @media screen and (max-width: 1650px) {
-      body.home .home__ueber-uns .home__ueber-uns__info__item h5, body.home .home__ueber-uns .home__ueber-uns__info__item h4, body.home .landing__ueber-uns .home__ueber-uns__info__item h5, body.home .landing__ueber-uns .home__ueber-uns__info__item h4, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item h4, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h5, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item h4 {
-        font-size: 1rem; } }
-    @media screen and (min-width: 1600px) {
-      body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
-        font-size: 1rem !important; } }
-    @media screen and (max-width: 1600px) {
-      body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
-        font-size: 0.8rem !important; } }
-    @media screen and (max-width: 1400px) {
-      body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
-        font-size: 0.6rem !important; } }
-    @media screen and (max-width: 1100px) {
-      body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
-        font-size: 0.5rem !important; } }
-    @media screen and (max-width: 938px) {
-      body.home .home__ueber-uns .home__ueber-uns__info__item, body.home .landing__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .home__ueber-uns .home__ueber-uns__info__item, body.page-template-landing .landing__ueber-uns .home__ueber-uns__info__item {
-        font-size: 0.7rem !important; } }
   body.home .home__random-projects, body.home .landing__random-projects, body.page-template-landing .home__random-projects, body.page-template-landing .landing__random-projects {
     height: 18.75vw;
     max-height: calc(1920px / 3 / 1.777777);
@@ -1689,8 +1707,6 @@ body.home .home, body.home .landing, body.page-template-landing .home, body.page
       padding-bottom: 40px; }
       body.home .home__ueber-uns__text, body.home .landing__ueber-uns__text, body.page-template-landing .home__ueber-uns__text, body.page-template-landing .landing__ueber-uns__text {
         padding: 0; }
-        body.home .home__ueber-uns__text p, body.home .landing__ueber-uns__text p, body.page-template-landing .home__ueber-uns__text p, body.page-template-landing .landing__ueber-uns__text p {
-          margin-bottom: 20px; }
       body.home .home__ueber-uns__info__container, body.home .landing__ueber-uns__info__container, body.page-template-landing .home__ueber-uns__info__container, body.page-template-landing .landing__ueber-uns__info__container {
         padding: 0;
         min-width: unset; }
@@ -1784,7 +1800,7 @@ body.home .home, body.home .landing, body.page-template-landing .home, body.page
 
 @media screen and (min-width: 1920px) {
   body.home .home__about__slider__wrapper__text, body.home .landing__about__slider__wrapper__text, body.page-template-landing .home__about__slider__wrapper__text, body.page-template-landing .landing__about__slider__wrapper__text {
-    left: calc( 1920px / 2 + 60px) !important; }
+    left: calc( 1920px / 2 + 130px) !important; }
   body.home .home__landing .home__landing__scroll, body.home .home__landing .landing__landing__scroll, body.home .landing__landing .home__landing__scroll, body.home .landing__landing .landing__landing__scroll, body.page-template-landing .home__landing .home__landing__scroll, body.page-template-landing .home__landing .landing__landing__scroll, body.page-template-landing .landing__landing .home__landing__scroll, body.page-template-landing .landing__landing .landing__landing__scroll {
     left: 50%; } }
 
@@ -1828,18 +1844,6 @@ body.page-template-landing .landing__info__information {
 
 .project {
   margin-top: calc(60px + 15px * 2 + 1rem + 9px); }
-  @media screen and (max-width: 375px) {
-    .project p, .project a, .project span, .project b, .project i, .project strong, .project em, .project pre {
-      font-size: .8rem; } }
-  @media screen and (max-width: 768px) {
-    .project p, .project a, .project span, .project b, .project i, .project strong, .project em, .project pre {
-      font-size: 1rem; } }
-  @media screen and (max-width: 1440px) {
-    .project p, .project a, .project span, .project b, .project i, .project strong, .project em, .project pre {
-      font-size: 1rem; } }
-  @media screen and (min-width: 1440px) {
-    .project p, .project a, .project span, .project b, .project i, .project strong, .project em, .project pre {
-      font-size: 1.2rem; } }
   .project .fett * {
     font-weight: 600; }
   .project__content {
@@ -1926,7 +1930,6 @@ body.page-template-landing .landing__info__information {
       .project__content__content h1, .project__content__content h2, .project__content__content h3 {
         margin-bottom: 0; }
       .project__content__content a {
-        font-size: 1rem;
         color: #636363; }
         .project__content__content a:hover {
           box-shadow: inset 0px -7px 0px 0px #e31b23; }
@@ -1941,8 +1944,6 @@ body.page-template-landing .landing__info__information {
         .project__content__content > .row > .wpb_column:last-of-type h1, .project__content__content > .row > .wpb_column:last-of-type h2, .project__content__content > .row > .wpb_column:last-of-type h3, .project__content__content > .row > .wpb_column:last-of-type h4 {
           text-transform: uppercase; }
       @media screen and (min-width: 1440px) {
-        .project__content__content p, .project__content__content b, .project__content__content span, .project__content__content h1, .project__content__content h2, .project__content__content h3, .project__content__content h4, .project__content__content a, .project__content__content strong, .project__content__content em, .project__content__content pre {
-          font-size: 1.2rem; }
         .project__content__content h1, .project__content__content h2, .project__content__content h3, .project__content__content h4 {
           font-size: 1rem; } }
     .project__content .wpb_singcle_image, .project__content .wpb_single_image figure, .project__content .wpb_single_image .vc_single_image-wrapper, .project__content .wpb_single_image img {

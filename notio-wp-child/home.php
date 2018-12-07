@@ -64,7 +64,7 @@
         <div class="home__landing__text__project-category__container row">
           <div class="home__landing__text__project-category home__landing_project-category--projects columns small-4">
             <a href="<?php echo get_permalink(686)?>">
-              <h3>Projekte</h3>
+              <h5>Projekte</h5>
               <p><?php echo get_post_meta($post->ID, 'landing_projects_text', true); ?></p>
             </a>
           </div>
@@ -94,7 +94,7 @@
     </div>
     <div class="home__ueber-uns columns small-12">
       <div class="home__ueber-uns__text">
-        <h5><?php echo get_post_meta($post->ID, 'home_about-us_title', true); ?></h5>
+        <h3><?php echo get_post_meta($post->ID, 'home_about-us_title', true); ?></h3>
         <p><?php echo get_post_meta($post->ID, 'home_about-us_text', true); ?></p>
       </div>
       <div class="home__ueber-uns__info__container">
