@@ -312,7 +312,7 @@ $(document).ready( function () {
         setTimeout(function() {  
         //    $('.fbx-count').appendTo($('.fbx-caption-title'));
             // $('.fbx-count').appendTo($('.fbx-caption-desc'));
-            $('.fbx-count').css('left', $('.fbx-caption').text().length * 6);
+            $('.fbx-count').css('left', $('.fbx-caption').text().length * 7);
             $('.fbx-count').css('opacity', 1);
         }, 1000)
 

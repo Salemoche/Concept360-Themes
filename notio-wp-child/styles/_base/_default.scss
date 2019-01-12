@@ -485,10 +485,10 @@ div[role=main] {
 .tp-bullets {
     opacity: 0;
     // transition: $transition-time;
-    left: calc(50vw + 5vw + 29px) !important;
+    left: calc(50vw + 5vw + 21px) !important;
 
     @media screen and (min-width: $breakpoint-large) {
-        left: calc(50% + 130px + 29px) !important;  
+        left: calc(50% + 130px + 21px) !important;  
     }
 
     @media screen and (max-width: $breakpoint-medium) {
@@ -559,18 +559,22 @@ div[role=main] {
         h5 {
             color: $anthrazit;
             // font-size: 1.4rem;
-            margin-bottom: 5px;
             transition: $transition-time;
         }
 
         .about__press__article {
             font-weight: 600;
+            display: inline;
         }
 
         p {
             margin-bottom: 0;
             flex-basis: 100%;
             font-size: 1rem;
+
+            &:first-of-type {
+                margin-top: 10px;
+            }
         }
 
 
@@ -625,7 +629,7 @@ div[role=main] {
             background: $anthrazit;
 
             h5 {
-                box-shadow: inset 0px -7px 0px 0px rgba(227,27,35,75);
+                box-shadow: inset 0px -4px 0px 0px rgba(227,27,35,75);
             }
             
             h5, p {
@@ -1510,6 +1514,12 @@ div[role=main] {
             font-size: 1rem !important;
 
         }
+
+        i {
+            height: 10px;
+            width: 10px;
+            font-size: 19px;
+        }
     }
 
     .language-select {
@@ -1727,13 +1737,13 @@ div[role=main] {
             //     font-size: 1rem;
             // }
             @media screen and (max-width: $breakpoint-medium) {
-                font-size: 1.2rem;
+                font-size: 1rem;
             }
             @media screen and (max-width: $breakpoint-medium-large) {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
             }
             @media screen and (min-width: $breakpoint-medium-large) {
-                font-size: 1.8rem;
+                font-size: 1.4rem;
             }
         }
 
@@ -2292,6 +2302,8 @@ div[role=main] {
 }
 
 .fbx-close {
+    // top: -35px !important;
+    // right: -35px !important;
     top: 5px !important;
     right: 5px !important;
 }
@@ -2360,6 +2372,8 @@ div[role=main] {
         left: unset !important;
         width: 20px !important;
         right: 20px !important;
+        top: 5px !important;
+        right: 5px !important;
     }
     
 }

@@ -14,7 +14,7 @@
         <div id="iframe0"  style="display: none;">
           <?php echo get_field('iframe'); ?>
         </div>
-        <a href="#iframe0" target="foobox" class="foobox" rel="concept-gallery">
+        <a href="#iframe0" target="foobox" class="foobox" rel="concept-gallery" data-caption-title="<?php the_title(); ?>">
           <?php echo get_the_post_thumbnail($currentPostID, 'large' ); ?>
           <div class="project__content__image__play-button"></div>
         </a>
@@ -79,7 +79,7 @@
             <div class="hidden-iframe" id="iframe<?php echo $video_id; ?>"  style="display: none;">
               <?php the_sub_field('iframe_gallery'); ?>
             </div>
-            <a href="#iframe<?php echo $video_id; ?>" target="foobox" class="foobox" rel="concept-gallery">
+            <a href="#iframe<?php echo $video_id; ?>" target="foobox" class="foobox" rel="concept-gallery" data-caption-title="<?php the_title(); ?>!">
               <img src="<?php the_sub_field('iframe_gallery_image'); ?>" alt="">
               <div class="project__image__play-button"></div>
             </a>
@@ -105,7 +105,7 @@
         ?>
         <div class="project__image">
           <?php if( !empty($url) ){ ?><a href="<?php echo $full_image_url; ?>" <?php echo ($target == 'true' )? 'target="_blank"': ''; ?>><?php } ?>
-          <a href="<?php echo $full_image_url; ?>"  target="foobox" class="foobox" rel="concept-gallery">
+          <a href="<?php echo $full_image_url; ?>"  target="foobox" class="foobox" rel="concept-gallery" data-caption-title="<?php the_title(); ?>!">
             <img src="<?php echo $full_image_url; ?>" alt="<?php echo $title; ?>">
           </a>
             <?php if( !empty($url) ){ ?></a><?php } ?>

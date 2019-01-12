@@ -64,13 +64,13 @@ body.page-template-about {
                         font-size: 1.2rem;
                     }
                     @media screen and (max-width: $breakpoint-medium) {
-                        font-size: 1.4rem;
+                        font-size: 1.3rem;
                     }
                     @media screen and (max-width: $breakpoint-medium-large) {
-                        font-size: 1.8rem;
+                        font-size: 1.6rem;
                     }
                     @media screen and (min-width: $breakpoint-medium-large) {
-                        font-size: 2.4rem;
+                        font-size: 1.8rem;
                     }
                 }
 
@@ -195,7 +195,6 @@ body.page-template-about {
 
             .press {
                 padding-top: 30px;
-                display: inline-block;
                 width: 100%;
             }
         }
