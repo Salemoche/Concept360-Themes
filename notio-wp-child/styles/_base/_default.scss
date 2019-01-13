@@ -486,6 +486,7 @@ div[role=main] {
     opacity: 0;
     // transition: $transition-time;
     left: calc(50vw + 5vw + 21px) !important;
+    top: 95% !important;
 
     @media screen and (min-width: $breakpoint-large) {
         left: calc(50% + 130px + 21px) !important;  
@@ -497,9 +498,10 @@ div[role=main] {
         bottom: unset !important;
     }
 
-    @media screen and (max-width: $breakpoint-small) {
+    @media screen and (max-width: 1000px) and (min-width: $breakpoint-medium) {
         // top: unset !important;
         // bottom: 0 !important;
+        display: none;
     }
 
     .tp-bullet-image, .tp-bullet-imageoverlay, .tp-bullet-title {

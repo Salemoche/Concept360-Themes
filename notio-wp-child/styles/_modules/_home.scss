@@ -254,7 +254,7 @@ body.home, body.page-template-landing {
                     top: 3vw !important;
 
                     p, h2, h3 {
-                        max-width: calc(50vw - #{$spacing-side-large} * 2) !important;
+                        max-width: calc(50vw - #{$spacing-side-large} - 0.5vw * 2) !important;
                         width: calc(50vw - #{$spacing-side-large} * 2) !important;
                         overflow: hidden;
                         font-size: 1rem !important;

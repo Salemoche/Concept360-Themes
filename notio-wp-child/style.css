@@ -330,7 +330,8 @@ div[role=main] {
 
 .tp-bullets {
   opacity: 0;
-  left: calc(50vw + 5vw + 21px) !important; }
+  left: calc(50vw + 5vw + 21px) !important;
+  top: 95% !important; }
   @media screen and (min-width: 1920px) {
     .tp-bullets {
       left: calc(50% + 130px + 21px) !important; } }
@@ -339,6 +340,9 @@ div[role=main] {
       left: 50% !important;
       top: 250px !important;
       bottom: unset !important; } }
+  @media screen and (max-width: 1000px) and (min-width: 768px) {
+    .tp-bullets {
+      display: none; } }
   .tp-bullets .tp-bullet-image, .tp-bullets .tp-bullet-imageoverlay, .tp-bullets .tp-bullet-title {
     display: none !important; }
   .tp-bullets .tp-bullet {
@@ -1605,7 +1609,7 @@ body.home .home, body.home .landing, body.page-template-landing .home, body.page
         left: calc(50vw + 5vw) !important;
         top: 3vw !important; }
         body.home .home__about__slider__wrapper__text p, body.home .home__about__slider__wrapper__text h2, body.home .home__about__slider__wrapper__text h3, body.home .landing__about__slider__wrapper__text p, body.home .landing__about__slider__wrapper__text h2, body.home .landing__about__slider__wrapper__text h3, body.page-template-landing .home__about__slider__wrapper__text p, body.page-template-landing .home__about__slider__wrapper__text h2, body.page-template-landing .home__about__slider__wrapper__text h3, body.page-template-landing .landing__about__slider__wrapper__text p, body.page-template-landing .landing__about__slider__wrapper__text h2, body.page-template-landing .landing__about__slider__wrapper__text h3 {
-          max-width: calc(50vw - 5vw * 2) !important;
+          max-width: calc(50vw - 5vw - 0.5vw * 2) !important;
           width: calc(50vw - 5vw * 2) !important;
           overflow: hidden;
           font-size: 1rem !important;
