@@ -1,4 +1,4 @@
-<?php /* Template Name: Concept 360 - Landing */ ?>
+<?php /* Template Name: Concept 360 - Landing Copy */ ?>
 
 <?php get_header(); ?>
 

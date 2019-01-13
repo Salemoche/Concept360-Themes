@@ -634,6 +634,14 @@ body.home, body.page-template-landing {
                 //     }
                 // }
 
+                &.projects__project__highlight .project-hover-info__aligner {
+                    p {
+                        max-width: unset !important;
+                    }
+
+                    
+                }
+
             }
         }
 
@@ -997,7 +1005,7 @@ body.home, body.page-template-landing {
 
 body.page-template-landing {
 
-    .landing {
+    .home {
 
         &__landing {
             &__text {
@@ -1050,4 +1058,177 @@ body.page-template-landing {
         }
 
     }
+
+
+    .home__ueber-uns {
+        background-image: url('./assets/background_mountain_light.jpg'); 
+        color: $anthrazit;
+
+        h3 {
+            color: $anthrazit;
+        }
+    }
+
+    .home__random-projects {
+        .projects__project h3 {
+            margin-left: 0;
+        }
+    }
+
+    .tp-bullet {
+        border: 1px solid white !important;
+    }
+
+    .landing__content {
+        margin-top: 100vh;
+        margin-bottom: $spacing-bottom;
+
+        .columns {
+            padding: 0;
+        }
+
+        .landing__content__about--small {
+            display: none;
+            padding: 5vw !important;
+        }
+
+        &__left {
+            
+            &__slider {
+                height: calc(100vw * 0.666666 / 1.777777);
+                background: $anthrazit;
+                max-height: calc(#{$breakpoint-large} / 3 * 2 / 1.777777);
+                margin-bottom: $spacing-bottom;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .rev_slider_wrapper, .rev_slider {
+                    height: 100% !important;
+                    width: 100% !important;
+                }
+            }
+
+            &__content {
+                
+                p, h1, h2, h3, h4, h5, h6, strong {
+                    margin-left: $spacing-side-large;
+                } 
+            }
+        }
+
+        &__right {
+            padding: 5vw !important;
+
+            h1, h2, h3, h4, h5, h6 {
+                    
+                @media screen and (min-width: $breakpoint-large) {
+                    font-size: 2.4rem;
+                }
+                @media screen and (max-width: $breakpoint-large) {
+                    font-size: 2rem;
+                }
+                @media screen and (max-width: $breakpoint-medium-large-plus) {
+                    font-size: 1.8rem;
+                }
+                @media screen and (max-width: $breakpoint-medium-large) {
+                    font-size: 1.6rem;
+                }
+                @media screen and (max-width: $breakpoint-medium) {
+                    font-size: 1.4rem;
+                }
+                @media screen and (max-width: $breakpoint-small-plus) {
+                    font-size: 1.3rem;
+                }
+                @media screen and (max-width: $breakpoint-small) {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    .wpb_row {
+        margin-left: 0;
+        margin-right: 0px;
+    }
+
+    .landing__quotes {
+
+    }
+
+    .footer-spacer {
+        // position: relative;
+    }
+
+    .home__random-projects {    
+        margin-bottom: 46px;
+
+        h4, h3 {
+            margin-left: 5vw;
+        }
+    }
+
+    .quotes {
+        h3, h4 {
+            margin-left: 5vw;
+        }
+    }
+
+    .home__ueber-uns {
+        margin-bottom: $spacing-bottom;
+    }
+
+    .footer {
+        margin-top: 30px;
+    }
+
+    @media screen and (max-width: $breakpoint-medium) {
+
+        .wpb_row {
+            margin-right: 30px;
+        }
+
+        .home__ueber-uns {
+            margin-right: 15px;
+        }
+        
+        .landing__content {
+
+            .landing__content__about--large {
+                display: none;
+            }
+
+            .landing__content__about--small {
+                display: inherit;
+            }
+
+            &__left {
+
+                &__slider {
+                    height: calc(100vw / 1.777777);
+                }
+            }
+
+            &__right {
+
+            }
+        }
+
+        .quote {
+            width: 50%;
+            height: calc(100vw * 0.5 / 1.777777);
+        }
+    }
+    
+    @media screen and (max-width: $breakpoint-small) {
+
+        .quote {
+            width: 100%;
+            height: calc(100vw / 1.777777);
+        }
+    }
+
 }

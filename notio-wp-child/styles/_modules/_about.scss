@@ -35,7 +35,7 @@ body.page-template-about {
 
     .main .about {
 
-        margin-top: 60px !important;
+        margin-top: 80px !important;
         padding-left: 0;
 
         &__content {
@@ -54,6 +54,10 @@ body.page-template-about {
                 //     margin-bottom: $spacing-bottom;
                 //     // font-size: 1.8rem;
                 // }
+
+                h1 {
+                    // margin-bottom: 
+                }
 
                 h1, h2  {
                     font-size: 1.8rem;

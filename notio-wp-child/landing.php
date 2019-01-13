@@ -61,26 +61,6 @@
           <h2><?php echo get_post_meta($post->ID, 'landing_subtitle', true); ?></h2>
           <h1><?php echo get_post_meta($post->ID, 'landing_title', true); ?></h1>
         </div>
-        <div class="home__landing__text__project-category__container row">
-          <div class="home__landing__text__project-category home__landing_project-category--projects columns small-4">
-            <a href="<?php echo get_permalink(686)?>">
-              <h5>Projekte</h5>
-              <p><?php echo get_post_meta($post->ID, 'landing_projects_text', true); ?></p>
-            </a>
-          </div>
-          <!--<div class="home__landing__text__project-category home__landing_project-category--insights columns small-4">
-            <a href="https://showcase.concept360.ch/" target="_blank">
-              <h3>Insights</h3>
-              <p><?php echo get_post_meta($post->ID, 'landing_insights_text', true); ?></p>
-            </a>
-            </div>-->
-          <!--<div class="home__landing__text__project-category home__landing_project-category--showcase columns small-4">
-            <a href="<?php echo get_permalink(686)?>">
-              <h3>Showcase</h3>
-              <p><?php echo get_post_meta($post->ID, 'landing_showcase_text', true); ?></p>
-            </a>
-          </div>-->
-        </div>
         <a href="#home__about__slider">
           <div class="home__landing__scroll">
             <?php echo get_field('home_scroll'); ?>
@@ -89,8 +69,53 @@
         </a>
       </div>
     </div>
-    <div class="home__about__slider columns small-12" id="home__about__slider">
-      <?php echo do_shortcode( '[rev_slider alias="home"]' ); ?>
+    <div class="landing__content columns small-12 row" id="home__about__slider">
+      <div class="landing__content__about--small columns small-12 medium-4">
+        <div class="concept-breadcrumbs">
+          <a href="<?php get_home_url(); ?>">Home</a>
+        </div>
+        <?php echo get_field('landing_text'); ?>
+      </div>
+      <div class="landing__content__left columns small-12 medium-8">
+        <div class="landing__content__left__slider">
+          <?php echo do_shortcode( '[rev_slider alias="landing"]' ); ?>
+        </div>
+        <div class="landing__content__left__content">
+          <?php the_content(); ?>
+        </div>
+      </div>
+      <div class="landing__content__right landing__content__about--large columns small-12 medium-4">
+        <div class="concept-breadcrumbs">
+          <a href="<?php get_home_url(); ?>">Home</a>
+        </div>
+        <?php echo get_field('landing_text'); ?>
+      </div>
+    </div>
+    <div class="row quotes landing__quotes columns small-12">
+      <h4><?php echo get_field('quotes_subtitle'); ?></h4>
+      
+      <div class="about__quote__container columns small-12 quote__container">
+
+        <?php
+        if( have_rows('quotes') ): 
+
+          while ( have_rows('quotes') ) : the_row();
+        
+        ?>
+          <a href="<?php the_sub_field('quote_link'); ?>" class="about__quote quote">
+            <div >
+              <h5><?php the_sub_field('quote_quote'); ?></h5>
+              <p><?php the_sub_field('quote_name'); ?></p>
+              <p><?php the_sub_field('quote_details'); ?></p>
+            </div>
+          </a>
+
+        <?php 
+
+          endwhile;
+        endif;
+        ?>
+      </div>
     </div>
     <div class="home__ueber-uns columns small-12">
       <div class="home__ueber-uns__text">
@@ -113,6 +138,8 @@
       </div>
     </div>
     <div class="home__random-projects columns small-12">
+      
+      <h4><?php echo get_field('related_projects_title'); ?></h4>
 
       <?php
 
@@ -173,37 +200,8 @@
         }
       ?>
     </div>
-    <div class="home__customers columns small-12 row">
-        <h3><?php echo get_post_meta($post->ID, 'home_customers_title', true); ?></h3>
-        <p><?php echo get_post_meta($post->ID, 'home_customers_text', true); ?></p>
-      <?php
-        //Get the images ids from the post_metadata
-        $images = acf_photo_gallery('customer_logos', $post->ID);
-        //Check if return array has anything in it
-        if( count($images) ):
-        //Cool, we got some data so now let's loop over it
-        foreach($images as $image):
-          $id = $image['id']; // The attachment id of the media
-          $title = $image['title']; //The title
-          $caption= $image['caption']; //The caption
-          $full_image_url= $image['full_image_url']; //Full size image url
-          // $full_image_url = acf_photo_gallery_resize_image($full_image_url, 262, 160); //Resized size to 262px width by 160px height image url
-          $thumbnail_image_url= $image['thumbnail_image_url']; //Get the thumbnail size image url 150px by 150px
-          $url= $image['url']; //Goto any link when clicked
-          $target= $image['target']; //Open normal or new tab
-          $alt = get_field('photo_gallery_alt', $id); //Get the alt which is a extra field (See below how to add extra fields)
-          $class = get_field('photo_gallery_class', $id); //Get the class which is a extra field (See below how to add extra fields)
-      ?>
-          <div class="home__customers__item columns small-3 medium-2">
-            <div class="thumbnail">
-              <?php if( !empty($url) ){ ?><a href="<?php echo $url; ?>" <?php echo ($target == 'true' )? 'target="_blank"': ''; ?>><?php } ?>
-                <img src="<?php echo $full_image_url; ?>" alt="<?php echo $title; ?>" title="<?php echo $title; ?>">
-              <?php if( !empty($url) ){ ?></a><?php } ?>
-            </div>
-          </div>
-      <?php endforeach; endif; ?>
-    </div>
   </div>
+  <div class="footer-spacer"></div>
 
 <?php
 

@@ -63,7 +63,7 @@ a {
 //     }
 // }
 
-p, a, span, b, i, strong, pre {
+p, a, span, b, i, strong, pre, .landing__content li {
 
     letter-spacing: -0.3px;
 
@@ -1791,14 +1791,15 @@ div[role=main] {
             // @media screen and (max-width: $breakpoint-small) {
             //     font-size: 1rem;
             // }
+
             @media screen and (max-width: $breakpoint-medium) {
-                font-size: 1.2rem;
+                font-size: 1rem;
             }
             @media screen and (max-width: $breakpoint-medium-large) {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
             }
             @media screen and (min-width: $breakpoint-medium-large) {
-                font-size: 1.8rem;
+                font-size: 1.4rem;
             }
         }
     }
@@ -1841,7 +1842,7 @@ div[role=main] {
         p {
             position: absolute;
             left: $spacing-side-large;
-            top: 5px;
+            top: 7px;
             font-size: 0.6rem !important;
             font-weight: $light;
             letter-spacing: 0.6px;
@@ -1876,7 +1877,16 @@ div[role=main] {
     @media screen and (max-width: $breakpoint-medium) {
 
         .footer__call-to-action {
-            padding: 35px $spacing-side-large;
+            // padding: 35px $spacing-side-large;
+            padding: 30px 40px 30px 20px;
+        }
+
+        .footer__info > .columns {        
+            padding-right: 20px;
+        }
+
+        .footer__contact-form, .footer__contact-form > p {
+            padding-right: 20px;
         }
     }
     
@@ -2245,6 +2255,7 @@ div[role=main] {
     margin-right: 0 !important;
     margin-top: 0 !important;
     max-height: 100% !important;
+    max-width: 100% !important;
     max-width: calc(100vh / 0.5625) !important;
 
     @include center;
@@ -2286,6 +2297,7 @@ div[role=main] {
     transition: none;
     transform: none !important;
     max-height: 55px;
+    visibility: visible !important; 
     
     .fbx-close-caption {
         display: none;
@@ -2299,13 +2311,15 @@ div[role=main] {
     bottom: -20px !important;
     transition: opacity $transition-time;
     opacity: 0;
+    top: 15px;
+    font-size: 0.8rem;
 }
 
 .fbx-close {
     // top: -35px !important;
-    // right: -35px !important;
+    right: -40px !important;
     top: 5px !important;
-    right: 5px !important;
+    // right: 5px !important;
 }
 
 .lg-backdrop, .lg-outer, .fbx-fullscreen-toggle, .fbx-credit, .pagination-space, .fbx-play {
@@ -2313,6 +2327,8 @@ div[role=main] {
 }
 
 .fbx-next, .fbx-prev {
+
+    position: fixed;
     
     &:hover {
         .fbx-next::before, .fbx-prev::before {
@@ -2337,6 +2353,7 @@ div[role=main] {
     }
     
 }
+
 
 @media screen and (max-width: $breakpoint-medium), screen and (max-height: $breakpoint-small) {
 
@@ -2376,6 +2393,13 @@ div[role=main] {
         right: 5px !important;
     }
     
+}
+
+
+@media screen and (min-width: $breakpoint-medium) {
+    .fbx-prev, .fbx-next {
+        // top: 65% !important;
+    }
 }
 
 .thb-cookie-bar {
