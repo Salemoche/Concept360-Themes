@@ -23,8 +23,14 @@ body.page-template-about {
             @media screen and (max-width: $breakpoint-medium-large) {
                 font-size: 1.2rem !important;
             }
-            @media screen and (min-width: $breakpoint-medium-large) {
+            @media screen and (max-width: $breakpoint-large) {
                 font-size: 1.4rem !important;
+            }
+            @media screen and (max-width: $breakpoint-extra-large) {
+                font-size: 1.8rem !important;
+            }
+            @media screen and (min-width: $breakpoint-extra-large) {
+                font-size: 2.4rem !important;
             }
         }
 

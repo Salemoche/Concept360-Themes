@@ -28,7 +28,7 @@
         <?php if(has_category(37)): ?>
           <div class="projects__project project__insight project__thumbnail <?php echo ($isHighlighted && $post->comment_status != 1) ? 'projects__project__highlight' : '' ?>">
             <a href="<?php the_permalink() ?>">
-              <div>
+              <div class="project__insight__title__container">
                 <h3><?php the_title(); ?></h3>
               </div>
             </a>

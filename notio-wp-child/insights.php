@@ -20,7 +20,7 @@
         <?php if(has_category(37)): ?>
           <a href="<?php the_permalink() ?>">
             <div class="projects__project project__insight project__thumbnail <?php echo get_post_meta($masterPostID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
-                <div>
+                <div class="project__insight__title__container">
                   <h3><?php the_title(); ?></h3>
                 </div>
             </div>
