@@ -1225,30 +1225,31 @@ body.page-template-landing {
             padding: 5vw !important;
 
             h1, h2, h3, h4, h5, h6 {
-                    
+
+
                 @media screen and (min-width: $breakpoint-extra-large) {
-                    font-size: 2.8rem;
-                }
-                @media screen and (max-width: $breakpoint-extra-large) {
                     font-size: 2.4rem;
                 }
-                @media screen and (max-width: $breakpoint-large) {
-                    font-size: 2rem;
-                }
-                @media screen and (max-width: $breakpoint-medium-large-plus) {
+                @media screen and (max-width: $breakpoint-extra-large) {
                     font-size: 1.8rem;
                 }
-                @media screen and (max-width: $breakpoint-medium-large) {
+                @media screen and (max-width: $breakpoint-large) {
                     font-size: 1.6rem;
                 }
-                @media screen and (max-width: $breakpoint-medium) {
+                @media screen and (max-width: $breakpoint-medium-large-plus) {
                     font-size: 1.4rem;
                 }
-                @media screen and (max-width: $breakpoint-small-plus) {
+                @media screen and (max-width: $breakpoint-medium-large) {
                     font-size: 1.3rem;
                 }
-                @media screen and (max-width: $breakpoint-small) {
+                @media screen and (max-width: $breakpoint-medium) {
                     font-size: 1.2rem;
+                }
+                @media screen and (max-width: $breakpoint-small-plus) {
+                    font-size: 1.1rem;
+                }
+                @media screen and (max-width: $breakpoint-small) {
+                    font-size: 1rem;
                 }
             }
         }

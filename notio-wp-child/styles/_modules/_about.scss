@@ -457,8 +457,7 @@ body.page-template-about {
 
             &__logo__container {
                 // left: 10vw;
-                height: 15vw;
-                margin-top: 20px;
+                height: 10vw;
                 
 
                 // img {
@@ -468,10 +467,6 @@ body.page-template-about {
                 //     top: 0;
                 //     left: 0;
                 // }
-
-                @media screen and (max-width: $breakpoint-small) {
-                    height: 10vw;
-                }
             }
 
             .press, a{
