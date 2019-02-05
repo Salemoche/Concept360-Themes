@@ -185,11 +185,15 @@ body.page-template-solutions {
             }
 
             &__container {
-                margin-top: $spacing-side;
 
                 .wpb_wrapper {
                     display: flex;
                     flex-wrap: wrap;
+                }
+
+                @media screen and (max-width: $breakpoint-medium) {
+                    margin-top: $spacing-side;
+                    
                 }
             }
 
@@ -205,9 +209,6 @@ body.page-template-solutions {
                 }
 
                 h6 {
-                    font-family: 'Ubuntu';
-                    font-weight: 400;
-                    font-size: 1.2rem;
                 }
 
                 p {

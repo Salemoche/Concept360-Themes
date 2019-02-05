@@ -47,33 +47,33 @@ body.page-template-highlights, body.page-template-journalismus, body.page-templa
 
                 p {
                     
-                    font-size: 0.8vw;
+                    // font-size: 0.8vw;
                     
-                    @media screen and (max-width: $breakpoint-extra-large) {
-                        font-size: 1.4rem;
-                    }
+                    // @media screen and (max-width: $breakpoint-extra-large) {
+                    //     font-size: 1.4rem;
+                    // }
                     
-                    @media screen and (max-width: $breakpoint-extra-large) {
-                        font-size: 1.4rem;
-                    }
-                    @media screen and (max-width: $breakpoint-large) {
-                        font-size: 1.3rem;
-                    }
-                    @media screen and (max-width: $breakpoint-medium-large-plus) {
-                        font-size: 1.2rem;
-                    }
-                    @media screen and (max-width: $breakpoint-medium-large) {
-                        font-size: 1.1rem;
-                    }
-                    @media screen and (max-width: $breakpoint-medium) {
-                        font-size: 1rem;
-                    }
-                    @media screen and (max-width: $breakpoint-small-plus) {
-                        font-size: 0.9rem;
-                    }
-                    @media screen and (max-width: $breakpoint-small) {
-                        font-size: 0.8rem;
-                    }
+                    // @media screen and (max-width: $breakpoint-extra-large) {
+                    //     font-size: 1.4rem;
+                    // }
+                    // @media screen and (max-width: $breakpoint-large) {
+                    //     font-size: 1.3rem;
+                    // }
+                    // @media screen and (max-width: $breakpoint-medium-large-plus) {
+                    //     font-size: 1.2rem;
+                    // }
+                    // @media screen and (max-width: $breakpoint-medium-large) {
+                    //     font-size: 1.1rem;
+                    // }
+                    // @media screen and (max-width: $breakpoint-medium) {
+                    //     font-size: 1rem;
+                    // }
+                    // @media screen and (max-width: $breakpoint-small-plus) {
+                    //     font-size: 0.9rem;
+                    // }
+                    // @media screen and (max-width: $breakpoint-small) {
+                    //     font-size: 0.8rem;
+                    // }
                 }
             }
 
@@ -147,7 +147,7 @@ body.page-template-insights {
                 transition: $transition-time;
                 cursor: pointer;
     
-                h3 {
+                h4 {
                     color: $anthrazit;
                     transition: $transition-time;
                 }
@@ -155,7 +155,7 @@ body.page-template-insights {
                 &:hover {
                     background: $anthrazit;
 
-                    h3 {
+                    h4 {
                         color: white;
                     }
                 }

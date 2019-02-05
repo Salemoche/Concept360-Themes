@@ -31,7 +31,7 @@
             <div>
                 <?php echo the_post_thumbnail($post->ID) ? the_post_thumbnail($post->ID) : '<p>Bitte Bild hinzufügen</p>'; ?>
                 <div class="search-results__project__info project-hover-info">
-                    <h3><?php echo the_title(); ?></h3>
+                    <h4><?php echo the_title(); ?></h4>
                     <p><?php echo $post_description_short ?></p>
                 <?php echo has_category(37); ?>
                 </div>

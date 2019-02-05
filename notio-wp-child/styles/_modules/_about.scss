@@ -14,24 +14,6 @@ body.page-template-about {
             max-width: 90vw;
             margin-left: $spacing-side-large;
 
-            @media screen and (max-width: $breakpoint-small) {
-                font-size: 1rem !important;
-            }
-            @media screen and (max-width: $breakpoint-medium) {
-                font-size: 1rem !important;
-            }
-            @media screen and (max-width: $breakpoint-medium-large) {
-                font-size: 1.2rem !important;
-            }
-            @media screen and (max-width: $breakpoint-large) {
-                font-size: 1.4rem !important;
-            }
-            @media screen and (max-width: $breakpoint-extra-large) {
-                font-size: 1.8rem !important;
-            }
-            @media screen and (min-width: $breakpoint-extra-large) {
-                font-size: 2.4rem !important;
-            }
         }
 
         &.press {
@@ -66,21 +48,32 @@ body.page-template-about {
                 }
 
                 h1, h2  {
-                    font-size: 1.8rem;
                     text-transform: uppercase;
-                    margin-bottom: $spacing-bottom;
-    
-                    @media screen and (max-width: $breakpoint-small) {
-                        font-size: 1.2rem;
+                    margin-bottom: $spacing-bottom;   
+
+                    @media screen and (min-width: $breakpoint-extra-large) {
+                        font-size: 2.4rem;
                     }
-                    @media screen and (max-width: $breakpoint-medium) {
-                        font-size: 1.3rem;
+                    @media screen and (max-width: $breakpoint-extra-large) {
+                        font-size: 1.8rem;
                     }
-                    @media screen and (max-width: $breakpoint-medium-large) {
+                    @media screen and (max-width: $breakpoint-large) {
                         font-size: 1.6rem;
                     }
-                    @media screen and (min-width: $breakpoint-medium-large) {
-                        font-size: 1.8rem;
+                    @media screen and (max-width: $breakpoint-medium-large-plus) {
+                        font-size: 1.4rem;
+                    }
+                    @media screen and (max-width: $breakpoint-medium-large) {
+                        font-size: 1.3rem;
+                    }
+                    @media screen and (max-width: $breakpoint-medium) {
+                        font-size: 1.2rem;
+                    }
+                    @media screen and (max-width: $breakpoint-small-plus) {
+                        font-size: 1.1rem;
+                    }
+                    @media screen and (max-width: $breakpoint-small) {
+                        font-size: 1rem;
                     }
                 }
 
@@ -118,15 +111,38 @@ body.page-template-about {
     
                 }
 
-                h2h2 {
+                h2 {
                     text-transform: uppercase;
                 }
     
                 h3 {
-                    font-size: 1rem;
                     text-transform: uppercase;
                     font-weight: 600;
                     margin-bottom: 0px;
+               
+                    font-size: 0.7vw;
+                    
+                    @media screen and (max-width: $breakpoint-extra-large) {
+                        font-size: 1.3rem;
+                    }
+                    @media screen and (max-width: $breakpoint-large) {
+                        font-size: 1.2rem;
+                    }
+                    @media screen and (max-width: $breakpoint-medium-large-plus) {
+                        font-size: 1.1rem;
+                    }
+                    @media screen and (max-width: $breakpoint-medium-large) {
+                        font-size: 1rem;
+                    }
+                    @media screen and (max-width: $breakpoint-medium) {
+                        font-size: 0.9rem;
+                    }
+                    @media screen and (max-width: $breakpoint-small-plus) {
+                        font-size: 0.8rem;
+                    }
+                    @media screen and (max-width: $breakpoint-small) {
+                        font-size: 0.7rem;
+                    }
                 }
 
                 
@@ -268,7 +284,7 @@ body.page-template-about {
         .main .row {
             padding: 0;
 
-            > h3 {
+            > h4 {
                 margin: 0 $spacing-side-large;
                 margin-bottom: 10px;
 
@@ -385,7 +401,7 @@ body.page-template-about {
                 max-width: unset;
             }
 
-            > h3 {
+            > h4 {
                 font-size: 1rem;
                 text-transform: uppercase;
 
@@ -442,6 +458,7 @@ body.page-template-about {
             &__logo__container {
                 // left: 10vw;
                 height: 15vw;
+                margin-top: 20px;
                 
 
                 // img {
@@ -451,6 +468,10 @@ body.page-template-about {
                 //     top: 0;
                 //     left: 0;
                 // }
+
+                @media screen and (max-width: $breakpoint-small) {
+                    height: 10vw;
+                }
             }
 
             .press, a{

@@ -29,7 +29,7 @@
           <div class="projects__project project__insight project__thumbnail <?php echo ($isHighlighted && $post->comment_status != 1) ? 'projects__project__highlight' : '' ?>">
             <a href="<?php the_permalink() ?>">
               <div>
-                <h3><?php the_title(); ?></h3>
+                <h4><?php the_title(); ?></h4>
               </div>
             </a>
           </div>
@@ -40,7 +40,7 @@
                 <?php echo get_the_post_thumbnail($masterPostID, 'large') ? get_the_post_thumbnail($masterPostID, 'large') : ''; ?>
                 <div class="projects__project__info project-hover-info">
                   <div class="project-hover-info__aligner">
-                    <h3><?php echo the_title(); ?></h3>
+                    <h4><?php echo the_title(); ?></h4>
                     <p><?php echo $post_description_short ?></p>
                   </div>
                 <?php echo has_category(37); ?>

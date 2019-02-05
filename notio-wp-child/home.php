@@ -27,14 +27,14 @@
         // add extra params to iframe src
         $params = array(
             'controls'    => 0,
-			'disablekb' => 1,
-			'modestbranding' => 1,
+            'disablekb' => 1,
+            'modestbranding' => 1,
             'hd'        => 3,
             'autohide'    => 1,
             'autoplay' => 1,
             'mute' => 1,
             'loop' => 1,
-			'playlist' => '65N0noy0aEI',
+			      'playlist' => '65N0noy0aEI',
         );
 
         $new_src = add_query_arg($params, $src);
@@ -154,7 +154,7 @@
                   <?php echo get_the_post_thumbnail( $randPost->ID, 'large' ); ?>
                   <div class="projects__project__info project-hover-info">
                     <div class="project-hover-info__aligner">
-                      <h3><?php echo get_the_title($randPost->ID); ?></h3>
+                      <h4><?php echo get_the_title($randPost->ID); ?></h4>
                       <p><?php echo $post_description_short ?></p>
                     </div>
                   <?php echo has_category(37); ?>

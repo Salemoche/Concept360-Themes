@@ -65,7 +65,7 @@
             <img src=" <?php the_sub_field('team-member_foto'); ?>" alt="">
             <div class="team-member-hover-info">
               <div class="team-member-hover-info__aligner">
-                <h3><?php the_sub_field('team-member_name'); ?></h3>
+                <h4><?php the_sub_field('team-member_name'); ?></h4>
                 <p><?php the_sub_field('team-member_position'); ?></p>
               </div>
             </div>

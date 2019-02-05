@@ -21,7 +21,7 @@
           <a href="<?php the_permalink() ?>">
             <div class="projects__project project__insight project__thumbnail <?php echo get_post_meta($masterPostID, 'highlight', true) ? 'projects__project__highlight' : '' ?>">
                 <div class="project__insight__title__container">
-                  <h3><?php the_title(); ?></h3>
+                  <h4><?php the_title(); ?></h4>
                 </div>
             </div>
           </a>
@@ -31,7 +31,7 @@
               <div>
                 <?php echo the_post_thumbnail($masterPostID) ? the_post_thumbnail($masterPostID) : '<p>Bitte Bild hinzufügen</p>'; ?>
                 <div class="projects__project__info project-hover-info">
-                  <h3><?php echo the_title(); ?></h3>
+                  <h4><?php echo the_title(); ?></h4>
                   <p><?php echo $post_description_short ?></p>
                 <?php echo has_category(37); ?>
                 </div>

@@ -160,11 +160,34 @@
             }
 
             h1, h2, h3 {
-                margin-left: $spacing-side-large;
-                font-size: 0.9rem;
+                
+               
+                font-size: 0.7vw;
+                
+                @media screen and (max-width: $breakpoint-extra-large) {
+                    font-size: 1.3rem;
+                }
+                @media screen and (max-width: $breakpoint-large) {
+                    font-size: 1.2rem;
+                }
+                @media screen and (max-width: $breakpoint-medium-large-plus) {
+                    font-size: 1.1rem;
+                }
+                @media screen and (max-width: $breakpoint-medium-large) {
+                    font-size: 1rem;
+                }
+                @media screen and (max-width: $breakpoint-medium) {
+                    font-size: 0.9rem;
+                }
+                @media screen and (max-width: $breakpoint-small-plus) {
+                    font-size: 0.8rem;
+                }
+                @media screen and (max-width: $breakpoint-small) {
+                    font-size: 0.7rem;
+                }
             }
 
-            h1, h2, h3 {
+            h1, h2, h3, h4 {
                 margin-bottom: 0;
             }
 
@@ -202,16 +225,6 @@
 
             }
 
-            @media screen and (min-width: $breakpoint-medium-large-project) {
-
-                p, b, span, h1, h2, h3, h4, a, strong, em, pre {
-                    // font-size: 1.2rem;
-                }
-
-                h1, h2, h3, h4 {
-                    font-size: 1rem;
-                }
-            }
 
         }
 
@@ -391,8 +404,8 @@
     .project__related-projects {
         
         h4 {
-            margin-left: $spacing-side-large;
-            text-transform: uppercase;
+            // margin-left: $spacing-side-large;
+            // text-transform: uppercase;
         }
     }
 
@@ -605,7 +618,7 @@
     height: 220px;
     margin-bottom: $spacing-bottom;
 
-    h3 {
+    h4 {
         margin: 0 40px;
         margin-bottom: 20px;
         text-transform: uppercase;
