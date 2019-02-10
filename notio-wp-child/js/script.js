@@ -297,6 +297,12 @@ $(document).ready( function () {
     // Lightbox
     //
 
+    
+    $('.fbx-close, .fbx-modal').click( function() {
+        $('.fbx-caption').css('opacity', 0);
+        $('.fbx-count').css('opacity', 0);
+    });
+
     $('.project__image img, .fbx-prev, .fbx-next').click( function() {
         // var that = $(this);
 
@@ -308,16 +314,18 @@ $(document).ready( function () {
         $('.fbx-count').css('visibility', 'hidden');
         $('.fbx-count').css('opacity', 0);
         $('.fbx-count').css('visibility', 'visible');
+        $('.fbx-caption').css('opacity', 1);
 
         setTimeout(function() {  
         //    $('.fbx-count').appendTo($('.fbx-caption-title'));
             // $('.fbx-count').appendTo($('.fbx-caption-desc'));
-            $('.fbx-count').css('left', $('.fbx-caption').text().length * 7);
+            $('.fbx-count').css('left', $('.fbx-caption').text().length * 8);
             $('.fbx-count').css('opacity', 1);
         }, 1000)
 
-        // console.log($('.fbx-count').text());
+        console.log($('.fbx-count').text());
     })
+
 
     $('.fbx-btn-transition::before').mouseenter( function() {
         $(this).css('display', 'none');

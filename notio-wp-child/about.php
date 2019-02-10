@@ -120,18 +120,20 @@
         
         <a href="<?php the_sub_field('press_link'); ?>">
           <div class="about__press press">
-            <div class="press__logo__container">
-              <?php if (get_sub_field('logo-hover') == true) : ?>
-                <div class="about__press__logo press__logo  press__logo--regular" style="background-image: url( <?php the_sub_field('press_logo'); ?>);"></div>
-                <div class="about__press__logo press__logo press__logo--hover" style="background-image: url( <?php the_sub_field('logo-hover'); ?>);"></div> 
-              <?php else : ?>
-                <div class="about__press__logo press__logo  press__logo--regular" style="background-image: url( <?php the_sub_field('press_logo'); ?>);"></div>
-                <div class="about__press__logo press__logo press__logo--hover" style="background-image: url( <?php the_sub_field('press_logo'); ?>);"></div> 
-              <?php endif ?>
+            <div>
+              <div class="press__logo__container">
+                <?php if (get_sub_field('logo-hover') == true) : ?>
+                  <div class="about__press__logo press__logo  press__logo--regular" style="background-image: url( <?php the_sub_field('press_logo'); ?>);"></div>
+                  <div class="about__press__logo press__logo press__logo--hover" style="background-image: url( <?php the_sub_field('logo-hover'); ?>);"></div> 
+                <?php else : ?>
+                  <div class="about__press__logo press__logo  press__logo--regular" style="background-image: url( <?php the_sub_field('press_logo'); ?>);"></div>
+                  <div class="about__press__logo press__logo press__logo--hover" style="background-image: url( <?php the_sub_field('press_logo'); ?>);"></div> 
+                <?php endif ?>
+              </div>
+                <!-- <img src="" alt=""> -->
+              <h5 class="about__press__article"><?php the_sub_field('press_article'); ?></h5>
+              <p><?php the_sub_field('press_details'); ?></p>
             </div>
-              <!-- <img src="" alt=""> -->
-            <p class="about__press__article"><?php the_sub_field('press_article'); ?></p>
-            <p><?php the_sub_field('press_details'); ?></p>
           </div>
         </a>
 

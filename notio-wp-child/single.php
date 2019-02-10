@@ -38,7 +38,7 @@
         </div>
         <div class="project__info__spacer">
           <div class="project__info__title">
-            <h4><?php the_title(); ?></h4>
+            <h3><?php the_title(); ?></h3>
           </div>
           <div class="project__info__description">
             <p><?php if(get_post_meta($post->ID, 'project_description', true)) echo get_post_meta($post->ID, 'project_description', true); ?>  </p>

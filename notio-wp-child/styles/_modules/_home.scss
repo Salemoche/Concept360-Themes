@@ -164,7 +164,7 @@ body.home, body.page-template-landing {
                             font-size: 0.9rem;
                         }
                         @media screen and (max-width: $breakpoint-small) {
-                            font-size: 0.8rem;
+                            font-size: 1rem;
                         }
                     }
 
@@ -238,7 +238,7 @@ body.home, body.page-template-landing {
                         font-size: 0.9rem;
                     }
                     @media screen and (max-width: $breakpoint-small) {
-                        font-size: 0.8rem;
+                        font-size: 1rem;
                     }
 
                     @include center-horizontally;
@@ -330,8 +330,8 @@ body.home, body.page-template-landing {
                             line-height: 1.3rem !important;
                         }
                         @media screen and (max-width: $breakpoint-small) {
-                            font-size: 0.8rem !important;
-                            line-height: 1.2rem !important;
+                            font-size: 1rem !important;
+                            line-height: 1.4rem !important;
                         }
                     }
 
@@ -374,8 +374,8 @@ body.home, body.page-template-landing {
                             line-height: 1.3rem !important;
                         }
                         @media screen and (max-width: $breakpoint-small) {
-                            font-size: 1.2rem !important;
-                            line-height: 1.2rem !important;
+                            font-size: 1.4rem !important;
+                            line-height: 1.4rem !important;
                         }
                     }
 
@@ -467,7 +467,7 @@ body.home, body.page-template-landing {
             color: white;
             display: flex;
             padding: 40px $spacing-side-large;
-            align-items: center;
+            align-items: flex-start;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -693,8 +693,6 @@ body.home, body.page-template-landing {
                 flex-grow: 1;
                 height: $teaser-height-33;
                 max-height: $teaser-max-height-33;
-                min-width: 33%;
-                max-width: 34%;
                 width: calc(100% / 3);
 
                 float: left;
@@ -1249,7 +1247,7 @@ body.page-template-landing {
                     font-size: 1.1rem;
                 }
                 @media screen and (max-width: $breakpoint-small) {
-                    font-size: 1rem;
+                    font-size: 1.2rem;
                 }
             }
         }
@@ -1271,7 +1269,7 @@ body.page-template-landing {
     .home__random-projects {    
         margin-bottom: 46px;
 
-        h4, h3 {
+        > h4, > h3 {
             margin-left: 5vw;
         }
     }

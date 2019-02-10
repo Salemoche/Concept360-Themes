@@ -183,7 +183,7 @@
                     font-size: 0.8rem;
                 }
                 @media screen and (max-width: $breakpoint-small) {
-                    font-size: 0.7rem;
+                    font-size: 0.9rem;
                 }
             }
 
@@ -382,7 +382,7 @@
             &:first-of-type {
                 height: calc(#{$teaser-height-33}*2);
                 max-height: calc(#{$teaser-max-height-33} * 2);
-                width: 66.6%;
+                width: calc(100% / 3 * 2);
             }
             
 
@@ -403,8 +403,8 @@
 
     .project__related-projects {
         
-        h4 {
-            // margin-left: $spacing-side-large;
+        > h4 {
+            margin-left: $spacing-side-large;
             // text-transform: uppercase;
         }
     }

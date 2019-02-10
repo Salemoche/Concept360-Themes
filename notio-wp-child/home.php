@@ -94,7 +94,7 @@
     </div>
     <div class="home__ueber-uns columns small-12">
       <div class="home__ueber-uns__text">
-        <h3><?php echo get_post_meta($post->ID, 'home_about-us_title', true); ?></h3>
+        <h4><?php echo get_post_meta($post->ID, 'home_about-us_title', true); ?></h4>
         <p><?php echo get_post_meta($post->ID, 'home_about-us_text', true); ?></p>
       </div>
       <div class="home__ueber-uns__info__container">
