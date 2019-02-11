@@ -1858,25 +1858,25 @@ div[role=main] {
         font-size: 0.7vw;
         
         @media screen and (max-width: $breakpoint-extra-large) {
-            font-size: 1.3rem;
-        }
-        @media screen and (max-width: $breakpoint-large) {
-            font-size: 1.2rem;
-        }
-        @media screen and (max-width: $breakpoint-medium-large-plus) {
             font-size: 1.1rem;
         }
-        @media screen and (max-width: $breakpoint-medium-large) {
+        @media screen and (max-width: $breakpoint-large) {
             font-size: 1rem;
         }
-        @media screen and (max-width: $breakpoint-medium) {
+        @media screen and (max-width: $breakpoint-medium-large-plus) {
             font-size: 0.9rem;
         }
-        @media screen and (max-width: $breakpoint-small-plus) {
+        @media screen and (max-width: $breakpoint-medium-large) {
             font-size: 0.8rem;
         }
+        @media screen and (max-width: $breakpoint-medium) {
+            font-size: 0.7rem;
+        }
+        @media screen and (max-width: $breakpoint-small-plus) {
+            font-size: 0.6rem;
+        }
         @media screen and (max-width: $breakpoint-small) {
-            font-size: 0.9rem;
+            font-size: 0.7rem;
         }
     }
 }

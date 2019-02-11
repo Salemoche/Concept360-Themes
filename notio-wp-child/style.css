@@ -1037,25 +1037,25 @@ div[role=main] {
     font-size: 0.7vw; }
     @media screen and (max-width: 2520px) {
       .concept-breadcrumbs a, .concept-breadcrumbs .breadcrumb, .concept-breadcrumbs span {
-        font-size: 1.3rem; } }
+        font-size: 1.1rem; } }
     @media screen and (max-width: 1920px) {
       .concept-breadcrumbs a, .concept-breadcrumbs .breadcrumb, .concept-breadcrumbs span {
-        font-size: 1.2rem; } }
+        font-size: 1rem; } }
     @media screen and (max-width: 1440px) {
       .concept-breadcrumbs a, .concept-breadcrumbs .breadcrumb, .concept-breadcrumbs span {
-        font-size: 1.1rem; } }
+        font-size: 0.9rem; } }
     @media screen and (max-width: 1080px) {
       .concept-breadcrumbs a, .concept-breadcrumbs .breadcrumb, .concept-breadcrumbs span {
-        font-size: 1rem; } }
+        font-size: 0.8rem; } }
     @media screen and (max-width: 768px) {
       .concept-breadcrumbs a, .concept-breadcrumbs .breadcrumb, .concept-breadcrumbs span {
-        font-size: 0.9rem; } }
+        font-size: 0.7rem; } }
     @media screen and (max-width: 571px) {
       .concept-breadcrumbs a, .concept-breadcrumbs .breadcrumb, .concept-breadcrumbs span {
-        font-size: 0.8rem; } }
+        font-size: 0.6rem; } }
     @media screen and (max-width: 375px) {
       .concept-breadcrumbs a, .concept-breadcrumbs .breadcrumb, .concept-breadcrumbs span {
-        font-size: 0.9rem; } }
+        font-size: 0.7rem; } }
 
 .footer-spacer {
   height: 30px;
