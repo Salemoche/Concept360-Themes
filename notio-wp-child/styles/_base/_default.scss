@@ -1924,19 +1924,29 @@ div[role=main] {
             margin-bottom: 0;
             box-shadow: none !important;
 
+            font-size: 0.9vw;
     
-            // // @media screen and (max-width: $breakpoint-small) {
-            // //     font-size: 1rem;
-            // // }
-            // @media screen and (max-width: $breakpoint-medium) {
-            //     font-size: 1rem;
-            // }
-            // @media screen and (max-width: $breakpoint-medium-large) {
-            //     font-size: 1.2rem;
-            // }
-            // @media screen and (min-width: $breakpoint-medium-large) {
-            //     font-size: 1.4rem;
-            // }
+            @media screen and (max-width: $breakpoint-extra-large) {
+                font-size: 1.6rem;
+            }
+            @media screen and (max-width: $breakpoint-large) {
+                font-size: 1.5rem;
+            }
+            @media screen and (max-width: $breakpoint-medium-large-plus) {
+                font-size: 1.4rem;
+            }
+            @media screen and (max-width: $breakpoint-medium-large) {
+                font-size: 1.3rem;
+            }
+            @media screen and (max-width: $breakpoint-medium) {
+                font-size: 1.2rem;
+            }
+            @media screen and (max-width: $breakpoint-small-plus) {
+                font-size: 1.1rem;
+            }
+            @media screen and (max-width: $breakpoint-small) {
+                font-size: 1.2rem;
+            }
         }
 
         b {
@@ -1977,22 +1987,30 @@ div[role=main] {
             margin: 0 auto;
             display: inline;
             transition: $transition-time;
-            // transform: translateX(15px);
-            // padding-left: 30px;
 
-            // @media screen and (max-width: $breakpoint-small) {
-            //     font-size: 1rem;
-            // }
-
-            // @media screen and (max-width: $breakpoint-medium) {
-            //     font-size: 1rem;
-            // }
-            // @media screen and (max-width: $breakpoint-medium-large) {
-            //     font-size: 1.2rem;
-            // }
-            // @media screen and (min-width: $breakpoint-medium-large) {
-            //     font-size: 1.4rem;
-            // }
+            font-size: 0.9vw;
+    
+            @media screen and (max-width: $breakpoint-extra-large) {
+                font-size: 1.6rem;
+            }
+            @media screen and (max-width: $breakpoint-large) {
+                font-size: 1.5rem;
+            }
+            @media screen and (max-width: $breakpoint-medium-large-plus) {
+                font-size: 1.4rem;
+            }
+            @media screen and (max-width: $breakpoint-medium-large) {
+                font-size: 1.3rem;
+            }
+            @media screen and (max-width: $breakpoint-medium) {
+                font-size: 1.2rem;
+            }
+            @media screen and (max-width: $breakpoint-small-plus) {
+                font-size: 1.1rem;
+            }
+            @media screen and (max-width: $breakpoint-small) {
+                font-size: 1.2rem;
+            }
         }
     }
 
@@ -2023,25 +2041,25 @@ div[role=main] {
             font-size: 0.9vw;
     
             @media screen and (max-width: $breakpoint-extra-large) {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
             @media screen and (max-width: $breakpoint-large) {
-                font-size: 1.4rem;
+                font-size: 1.5rem;
             }
             @media screen and (max-width: $breakpoint-medium-large-plus) {
-                font-size: 1.3rem;
+                font-size: 1.4rem;
             }
             @media screen and (max-width: $breakpoint-medium-large) {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
             @media screen and (max-width: $breakpoint-medium) {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
             @media screen and (max-width: $breakpoint-small-plus) {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             @media screen and (max-width: $breakpoint-small) {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
         }
 
